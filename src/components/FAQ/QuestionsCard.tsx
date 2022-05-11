@@ -22,7 +22,7 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
   return (
     <Container
       width="100%"
-      bg="white"
+      bg="dirtywhite"
       height="181px"
       onClick={() => setDisplay(!display)}
     >

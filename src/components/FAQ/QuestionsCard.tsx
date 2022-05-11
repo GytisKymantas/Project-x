@@ -25,7 +25,6 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
     <Container
       width="100%"
       bg="dirtywhite"
-      height="181px"
       onClick={() => setDisplay(!display)}
     >
       <ContentWrapper padding="s25">

@@ -19,6 +19,14 @@ export const Navigation: React.FC = () => {
           {/* <Image src="logoblack" width="190px" /> */}
           {/* <Image src="logotrans2" /> */}
         </Homelink>
+        <FlexWrapper as="ul" gap="10px">
+          <Link to="/" textDecoration="none">
+            Home
+          </Link>
+          <Link to="/">About</Link>
+          <Link to="/">Partners</Link>
+          <Link to="/">Testimonials</Link>
+        </FlexWrapper>
         <QuizStartButton>Start Quiz</QuizStartButton>
       </FlexWrapper>
     </Box>

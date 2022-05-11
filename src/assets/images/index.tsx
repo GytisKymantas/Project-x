@@ -4,3 +4,6 @@ export * from "./icons/Bullet";
 export * from "./icons/BulletBlank";
 export * from "./icons/Cross";
 export * from "./icons/Minus";
+export * from "./icons/Instagram";
+export * from "./icons/Twitter";
+export * from "./icons/Facebook";

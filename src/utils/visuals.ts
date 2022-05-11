@@ -6,6 +6,19 @@ import yellowtombstone from "assets/images/yellowtombstone.png";
 import skipper from "assets/images/skipper.png";
 import yoga from "assets/images/yoga.png";
 import yogabackground from "assets/images/yogabackground.png";
+import logo from "assets/images/logo.png";
+import logotrans from "assets/images/logotrans.png";
+import logotrans2 from "assets/images/logotrans2.png";
+import spiral from "assets/images/spiral.png";
+import curl from "assets/images/curl.png";
+import lunge from "assets/images/lunge.png";
+import logofinal from "assets/images/logofinal.png";
+import logoblack from "assets/images/logoblack.png";
+import partner1 from "assets/images/partner1.png";
+import partner2 from "assets/images/partner2.png";
+import partner3 from "assets/images/partner3.png";
+import partner4 from "assets/images/partner4.png";
+import partner5 from "assets/images/partner5.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -19,4 +32,17 @@ export const visuals: Record<string, string> = {
   skipper,
   yoga,
   yogabackground,
+  logo,
+  logotrans,
+  logotrans2,
+  spiral,
+  curl,
+  lunge,
+  logofinal,
+  logoblack,
+  partner1,
+  partner2,
+  partner3,
+  partner4,
+  partner5,
 };

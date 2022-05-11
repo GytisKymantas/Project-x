@@ -39,6 +39,14 @@ export const BaseButton = styled.button<ButtonStyles>`
   width: 100%;
   font-weight: ${({ theme }) => theme.fontWeights.fw700};
 
+  &:hover {
+    background: orange;
+  }
+
+  &:active {
+    filter: brightness(110%);
+  }
+
   && {
     ${defaultButtonProps}
   }

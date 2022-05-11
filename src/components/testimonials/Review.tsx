@@ -4,13 +4,11 @@ import {
   Container,
   Box,
   FlexWrapper,
-  Image,
   GridWrapper,
+  ReviewCard,
 } from "components";
-import { Star, Bullet, BulletBlank } from "assets/images";
-
+import { StaticImage } from "gatsby-plugin-image";
 import { SectionHeader } from "components/sectionHeader/SectionHeader";
-import { Typography } from "components/typography/Typography";
 
 export const Review: React.FC = () => (
   <SectionWrapper>
@@ -26,40 +24,14 @@ export const Review: React.FC = () => (
       </Box>
       <Box>
         <GridWrapper gridTemplateColumns="repeat(2,1fr)" margin="0 70px">
-          <FlexWrapper flexDirection="column" gap="30px">
-            <SectionHeader
-              type="h4"
-              header="What Customes Say"
-              paragraph="“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”"
-            />
-            <Box mb="s25">
-              <FlexWrapper>
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </FlexWrapper>
-            </Box>
-
-            <Box>
-              <FlexWrapper flexDirection="column" gap="5px">
-                <Typography type="span" fontWeight="fw700" color="primary">
-                  Dragos Gontariu
-                </Typography>
-                <Typography type="span" fontSize="fs16" color="gray">
-                  Marketing Manager
-                </Typography>
-              </FlexWrapper>
-              <FlexWrapper justifyContent="center">
-                <Bullet />
-                <BulletBlank />
-                <BulletBlank />
-              </FlexWrapper>
-            </Box>
-          </FlexWrapper>
+          <ReviewCard />
           <Box margin="s0auto" position="relative">
-            <Image src="yoga" />
+            <StaticImage
+              src="../../assets/images/yoga.png"
+              alt="Woman doing yoga"
+              placeholder="tracedSVG"
+              draggable="false"
+            />{" "}
             <Box
               position="absolute"
               top="0"
@@ -67,7 +39,16 @@ export const Review: React.FC = () => (
               opacity="0.6"
               zIndex={-1}
             >
-              <Image src="yellowtombstone" height="200px" height="320px" />
+              <StaticImage
+                src="../../assets/images/yellowtombstone.png"
+                alt="yellow background"
+                placeholder="tracedSVG"
+                draggable="false"
+                // style={{
+                //   maxWidth: "500px",
+                //   margin: "0 auto",
+                // }}
+              />{" "}
             </Box>
           </Box>
         </GridWrapper>

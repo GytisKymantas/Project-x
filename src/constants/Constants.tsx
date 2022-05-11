@@ -39,3 +39,33 @@ export const FAQ_DETAILS = [
       "Offending belonging promotion provision an be oh consulted ourselves it. Blessing welcomed ladyship she met humoured sir breeding her.",
   },
 ];
+
+export const RATING_STAR_ARRAY = [
+  {
+    id: "632",
+  },
+  {
+    id: "633",
+  },
+  {
+    id: "634",
+  },
+  {
+    id: "635",
+  },
+  {
+    id: "636",
+  },
+];
+
+export const REVIEW_CARD_ARRAY = [
+  {
+    id: "638",
+  },
+  {
+    id: "639",
+  },
+  {
+    id: "640",
+  },
+];

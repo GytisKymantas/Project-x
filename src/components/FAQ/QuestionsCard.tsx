@@ -6,6 +6,8 @@ import {
   ContentWrapper,
   Typography,
 } from "components";
+import { Cross, Minus } from "assets/images";
+
 import { FlexWrapper } from "components/wrappers/FlexWrapper";
 
 interface QuestionsCardProps {
@@ -27,10 +29,13 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
       onClick={() => setDisplay(!display)}
     >
       <ContentWrapper padding="s25">
-        <FlexWrapper flexDirection="column" gap="35px">
-          <Typography type="h6" color="primary">
-            {question}
-          </Typography>
+        <FlexWrapper flexDirection="column" gap="15px">
+          <FlexWrapper alignItems="center" justifyContent="space-between">
+            <Typography type="h6" color="primary" fontSize="fs16">
+              {question}
+            </Typography>
+            {display ? <Minus /> : <Cross />}
+          </FlexWrapper>
           {display && <Typography color="primary">{answer}</Typography>}
         </FlexWrapper>
       </ContentWrapper>

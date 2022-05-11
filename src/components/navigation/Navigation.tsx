@@ -7,19 +7,17 @@ import { theme } from "styles/theme";
 
 export const Navigation: React.FC = () => {
   return (
-    <Box
-      height={"72px"}
-      maxWidth={"1440px"}
-      backgroundColor={"white"}
-    >
+    <Box height={"72px"} maxWidth={"1440px"} backgroundColor={"white"}>
       <FlexWrapper
-        // alignItems="center"
+        alignItems="center"
         justifyContent="space-around"
         height="100%"
       >
         <Homelink to="/">
           Fit<span> </span>
-          on<span>-</span>Time
+          on<span style={{ color: "red" }}>-</span>Time
+          {/* <Image src="logoblack" width="190px" /> */}
+          {/* <Image src="logotrans2" /> */}
         </Homelink>
         <QuizStartButton>Start Quiz</QuizStartButton>
       </FlexWrapper>

@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { Link } from "gatsby";
 import { theme } from "styles/theme";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 export const Navigation: React.FC = () => {
   return (
@@ -20,12 +21,12 @@ export const Navigation: React.FC = () => {
           {/* <Image src="logotrans2" /> */}
         </Homelink>
         <FlexWrapper as="ul" gap="10px">
-          <Link to="/" textDecoration="none">
-            Home
-          </Link>
-          <Link to="/">About</Link>
-          <Link to="/">Partners</Link>
-          <Link to="/">Testimonials</Link>
+          <ListItem onClick={() => scrollTo("#home")}>Home</ListItem>
+          <ListItem onClick={() => scrollTo("#about")}>About</ListItem>
+          <ListItem onClick={() => scrollTo("#partners")}>Partners</ListItem>
+          <ListItem onClick={() => scrollTo("#testimonials")}>
+            Testimonials
+          </ListItem>
         </FlexWrapper>
         <QuizStartButton>Start Quiz</QuizStartButton>
       </FlexWrapper>
@@ -38,4 +39,8 @@ const Homelink = styled(Link)`
   font-family: "Satisfy", cursive;
   font-size: ${theme.fontSizes.fs32};
   text-decoration: none;
+`;
+const ListItem = styled.li`
+  cursor: pointer;
+  list-style-type: none;
 `;

@@ -15,7 +15,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 export const HeroSection = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper id="home">
       <ContentWrapper maxWidth="818px">
         <GridWrapper gridTemplateColumns="1fr 1fr">
           <Container>

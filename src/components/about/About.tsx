@@ -10,7 +10,7 @@ import { SectionHeader } from "components/sectionHeader/SectionHeader";
 import { StaticImage } from "gatsby-plugin-image";
 
 export const About = () => (
-  <SectionWrapper>
+  <SectionWrapper id="about">
     <GridWrapper
       gridTemplateColumns="repeat(2,1fr)"
       gridTemplateRows="repeat(2,1fr)"

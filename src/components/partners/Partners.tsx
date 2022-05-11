@@ -3,7 +3,7 @@ import { SectionHeader } from "components/sectionHeader/SectionHeader";
 import { SectionWrapper, GridWrapper, FlexWrapper, Image } from "components";
 
 export const Partners: React.FC = () => (
-  <SectionWrapper>
+  <SectionWrapper id="partners">
     <GridWrapper gridTemplateColumns="repeat(2,1fr)" margin="auto 100px">
       <FlexWrapper width="600px">
         <SectionHeader

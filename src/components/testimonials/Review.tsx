@@ -11,7 +11,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { SectionHeader } from "components/sectionHeader/SectionHeader";
 
 export const Review: React.FC = () => (
-  <SectionWrapper>
+  <SectionWrapper id="testimonials">
     <Container>
       <Box mx="auto" my="s50" textAlign="center" maxWidth="750px">
         <FlexWrapper flexDirection="column">

@@ -2,28 +2,22 @@ import React, { useState } from "react";
 import { Box, FlexWrapper, BaseButton } from "components";
 import { Check } from "assets/images";
 
-interface QuizButtonProps {
+interface QuizAnswerProps {
   children: React.ReactNode;
   isSubmit?: boolean;
 }
 
-export const QuizButton: React.FC<QuizButtonProps> = ({
+export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   children,
   isSubmit,
 }) => {
   const [select, setSelect] = useState(false);
   return (
-    <Box
-      bg="white"
-      minWidth="22.5625rem"
-      height="3rem"
-      position={"relative"}
-      m="s8"
-    >
+    <Box minWidth="22.5625rem" height="3rem" position={"relative"} m="s8">
       {isSubmit ? (
         <BaseButton
           type="submit"
-          background="blue"
+          background={"blue"}
           boxShadow="0px 16px 32px rgba(16, 51, 251, 0.24);"
           mt="s50"
         >
@@ -33,6 +27,7 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
         <BaseButton
           type="button"
           onClick={() => setSelect(!select)}
+          background={"white"}
           border={select ? "solid 2px black" : "solid 2px transparent"}
         >
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>

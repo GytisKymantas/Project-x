@@ -5,6 +5,7 @@ import { Theme } from "styles/theme";
 
 export const GridWrapper = styled(Box)<GridProps<Theme>>`
   display: grid;
+  gap: ${({ gap }) => gap};
 
   && {
     ${grid}

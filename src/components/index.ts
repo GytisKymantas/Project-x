@@ -11,7 +11,7 @@ export * from "./wrappers/Input";
 export * from "./buttons/elements/BaseButton";
 
 //QuizQuestion
-export * from "./buttons/QuizButton";
+export * from "./buttons/QuizAnswer";
 export * from "./quizAnswersContainer/QuizQuestionsContainer";
 
 //texts
@@ -20,3 +20,7 @@ export * from "./typography/Typography";
 
 // images
 export * from "./Image";
+
+//FAQ
+export * from "./FAQ/QuestionsCard";
+export * from "./FAQ/QuestionsCardContainer";

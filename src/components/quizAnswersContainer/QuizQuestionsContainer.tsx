@@ -1,10 +1,12 @@
 import React from "react";
-import { QuizButton } from "../buttons/QuizButton";
-import { SectionWrapper } from "components/wrappers/SectionWrapper";
-import { QUIZ_ANSWERS } from "constants/Constants";
-import { ContentWrapper } from "components/wrappers/ContentWrapper";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
-import { Typography } from "components/typography/Typography";
+import { QuizAnswer } from "../buttons/QuizAnswer";
+import { QUIZ_DETAILS } from "constants/Constants";
+import {
+  Typography,
+  FlexWrapper,
+  ContentWrapper,
+  SectionWrapper,
+} from "components";
 
 export const QuizQuestionsContainer: React.FC = () => {
   return (
@@ -13,12 +15,15 @@ export const QuizQuestionsContainer: React.FC = () => {
         <Typography color="primary" type="h2" textAlign={"center"}>
           How often do you do physical exercises?
         </Typography>
-        <FlexWrapper flexDirection="column" alignItems="center" mt="50px">
-          {QUIZ_ANSWERS.map(({ title, id }) => (
-            <QuizButton key={id}>{title}</QuizButton>
+        <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
+          {QUIZ_DETAILS.map(({ title, id }) => (
+            <QuizAnswer key={id}>{title}</QuizAnswer>
           ))}
-          <QuizButton isSubmit>submit</QuizButton>
+          <QuizAnswer isSubmit>submit</QuizAnswer>
         </FlexWrapper>
+        {/* <Box position={"absolute"} top="0" left="0" zIndex={-1}>
+          <Image src="quizBackGround" />
+        </Box> */}
       </ContentWrapper>
     </SectionWrapper>
   );

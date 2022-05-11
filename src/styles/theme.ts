@@ -5,8 +5,10 @@ const colors = {
   secondary: "#29C0CD",
   accent: "#E34578",
   white: "#ffffff",
-  blue: "blue",
+  blue: "rgb(16 51 251 / 24%)",
   gray: "gray",
+  taxi: "#f4f4b3",
+  // teal: "#cae6f0",
 };
 
 export const theme = {
@@ -14,8 +16,11 @@ export const theme = {
   fontFamily: { primary: "Red Hat Display" },
   fontSizes: {
     fs16: "1rem",
+    fs24: "1.5rem",
+    fs32: "2rem",
   },
   radii: {
+    br14: 14,
     br24: 24,
   },
   fontWeights: {
@@ -29,17 +34,18 @@ export const theme = {
   },
   breakpoints: ["24rem", "47rem", "90rem"] as unknown as Breakpoints,
   space: {
-    s8: 8,
-    s16: 16,
-    s50: 50,
+    s8: "8px",
+    s20: "20px",
+    s16: "16px",
+    s25: "25px",
+    s50: "50px",
   },
   typography: {
     h1: {
       fontSize: "5rem",
-      fontSizeMobile: "4rem",
-      lineHeight: "5.5rem",
+      fontSizeMobile: "2rem",
+      lineHeight: "2rem",
       lineHeightMobile: "56px",
-
       fontWeight: 700,
     },
     h2: {

@@ -7,3 +7,4 @@ export * from "./icons/Minus";
 export * from "./icons/Instagram";
 export * from "./icons/Twitter";
 export * from "./icons/Facebook";
+export * from "./icons/Mobnav";

@@ -9,9 +9,10 @@ interface BulletContainerProps {
 export const BulletContainer: React.FC<BulletContainerProps> = ({ index }) => {
   return (
     <FlexWrapper justifyContent="center">
-      <Bullet />
+      {index}
+      {/* <Bullet />
       <BulletBlank />
-      <BulletBlank />
+      <BulletBlank /> */}
     </FlexWrapper>
   );
 };

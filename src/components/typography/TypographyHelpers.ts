@@ -2,6 +2,7 @@ import { TextType } from "./Typography";
 import { css } from "styled-components/macro";
 import { Theme } from "styles/theme";
 import { useQuery } from "styles/breakpoints";
+import { tablet } from "styles/breakpoints";
 
 export const applyTextType = (type: TextType, theme: Theme) => {
   const { isTablet } = useQuery();
@@ -13,12 +14,17 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h1.fontSize};
         line-height: ${theme.typography.h1.lineHeight};
 
-        ${isTablet
+        @media ${tablet} {
+          font-size: ${theme.typography.h1.fontSizeMobile};
+          line-height: ${theme.typography.h1.lineHeightMobile};
+        }
+
+        /* ${isTablet
           ? css`
               font-size: ${theme.typography.h1.fontSizeMobile};
               line-height: ${theme.typography.h1.lineHeightMobile};
             `
-          : ""}
+          : ""} */
       `;
     case "h2":
       return css`
@@ -27,12 +33,10 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h2.fontSize};
         line-height: ${theme.typography.h2.lineHeight};
 
-        ${isTablet
-          ? css`
-              font-size: ${theme.typography.h2.fontSizeMobile};
-              line-height: ${theme.typography.h2.lineHeightMobile};
-            `
-          : ""}
+        @media ${tablet} {
+          font-size: ${theme.typography.h2.fontSizeMobile};
+          line-height: ${theme.typography.h2.lineHeightMobile};
+        }
       `;
 
     case "h3":
@@ -41,12 +45,10 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h3.fontSize};
         line-height: ${theme.typography.h3.lineHeight};
 
-        ${isTablet
-          ? css`
-              font-size: ${theme.typography.h3.fontSizeMobile};
-              line-height: ${theme.typography.h3.lineHeightMobile};
-            `
-          : ""}
+        @media ${tablet} {
+          font-size: ${theme.typography.h3.fontSizeMobile};
+          line-height: ${theme.typography.h3.lineHeightMobile};
+        }
       `;
 
     case "h4":
@@ -55,12 +57,10 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h4.fontSize};
         line-height: ${theme.typography.h4.lineHeight};
 
-        ${isTablet
-          ? css`
-              font-size: ${theme.typography.h4.fontSizeMobile};
-              line-height: ${theme.typography.h4.lineHeightMobile};
-            `
-          : ""}
+        @media ${tablet} {
+          font-size: ${theme.typography.h4.fontSizeMobile};
+          line-height: ${theme.typography.h4.lineHeightMobile};
+        }
       `;
 
     case "h5":
@@ -69,12 +69,10 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h5.fontSize};
         line-height: ${theme.typography.h5.lineHeight};
 
-        ${isTablet
-          ? css`
-              font-size: ${theme.typography.h5.fontSizeMobile};
-              line-height: ${theme.typography.h5.lineHeightMobile};
-            `
-          : ""}
+        @media ${tablet} {
+          font-size: ${theme.typography.h5.fontSizeMobile};
+          line-height: ${theme.typography.h5.lineHeightMobile};
+        }
       `;
 
     case "h6":
@@ -83,12 +81,10 @@ export const applyTextType = (type: TextType, theme: Theme) => {
         font-size: ${theme.typography.h6.fontSize};
         line-height: ${theme.typography.h6.lineHeight};
 
-        ${isTablet
-          ? css`
-              font-size: ${theme.typography.h6.fontSizeMobile};
-              line-height: ${theme.typography.h6.lineHeightMobile};
-            `
-          : ""}
+        @media ${tablet} {
+          font-size: ${theme.typography.h6.fontSizeMobile};
+          line-height: ${theme.typography.h6.lineHeightMobile};
+        }
       `;
   }
 };

@@ -12,8 +12,8 @@ import { StaticImage } from "gatsby-plugin-image";
 export const About = () => (
   <SectionWrapper id="about">
     <GridWrapper
-      gridTemplateColumns="repeat(2,1fr)"
-      gridTemplateRows="repeat(2,1fr)"
+      gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
+      gridTemplateRows={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       gap="40px"
       margin="50px"
     >

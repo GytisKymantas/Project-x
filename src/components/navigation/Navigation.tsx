@@ -5,6 +5,8 @@ import styled from "styled-components/macro";
 import { Link } from "gatsby";
 import { theme } from "styles/theme";
 import scrollTo from "gatsby-plugin-smoothscroll";
+import { Mobnav } from "assets/images";
+import { Breakpoints } from "styles/theme";
 
 export const Navigation: React.FC = () => {
   return (
@@ -20,12 +22,22 @@ export const Navigation: React.FC = () => {
           {/* <Image src="logoblack" width="190px" /> */}
           {/* <Image src="logotrans2" /> */}
         </Homelink>
-        <FlexWrapper as="ul" gap="10px">
-          <ListItem onClick={() => scrollTo("#home")}>Home</ListItem>
-          <ListItem onClick={() => scrollTo("#about")}>About</ListItem>
-          <ListItem onClick={() => scrollTo("#partners")}>Partners</ListItem>
-          <ListItem onClick={() => scrollTo("#testimonials")}>
+        <FlexWrapper
+          as="ul"
+          gap="10px"
+          display={{ _: "none", ltablet: "flex" }}
+        >
+          <ListItem as="li" onClick={() => scrollTo("#home")}>
+            Home
+          </ListItem>
+          <ListItem as="li" onClick={() => scrollTo("#about")}>
+            About
+          </ListItem>
+          <ListItem as="li" onClick={() => scrollTo("#testimonials")}>
             Testimonials
+          </ListItem>
+          <ListItem as="li" onClick={() => scrollTo("#partners")}>
+            Partners
           </ListItem>
         </FlexWrapper>
         <QuizStartButton>Start Quiz</QuizStartButton>

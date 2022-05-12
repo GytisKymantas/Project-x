@@ -10,6 +10,7 @@ import {
 import { StaticImage } from "gatsby-plugin-image";
 import { SectionHeader } from "components/sectionHeader/SectionHeader";
 import { REVIEW_DATA } from "constants/Constants";
+// import { Breakpoints } from "styles/theme";
 
 export const Review: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -36,7 +37,10 @@ export const Review: React.FC = () => {
           </FlexWrapper>
         </Box>
         <Box>
-          <GridWrapper gridTemplateColumns="repeat(2,1fr)" margin="0 70px">
+          <GridWrapper
+            gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
+            margin="0 70px"
+          >
             <ReviewCard
               key={REVIEW_DATA[index].id}
               header={REVIEW_DATA[index].header}

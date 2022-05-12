@@ -9,7 +9,6 @@ const colors = {
   blue: "rgb(16 51 251 / 24%)",
   gray: "#5F5F5F",
   taxi: "#f4f4b3",
-  // teal: "#cae6f0",
 };
 
 export const theme = {
@@ -47,9 +46,9 @@ export const theme = {
   typography: {
     h1: {
       fontSize: "24px",
-      fontSizeMobile: "2rem",
+      fontSizeMobile: "16px",
       lineHeight: "2rem",
-      lineHeightMobile: "56px",
+      lineHeightMobile: "24px",
       fontWeight: 700,
     },
     h2: {
@@ -88,9 +87,9 @@ export const theme = {
       fontWeight: 600,
     },
     body16: {
-      fontSize: "18px",
-      fontSizeMobile: "24px",
-      lineHeightMobile: "32px",
+      fontSize: "16px",
+      fontSizeMobile: "16px",
+      lineHeightMobile: "24px",
       lineHeight: "28px",
       fontWeight: 400,
     },

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexWrapper, Box, Typography } from "components";
 import { SectionHeader } from "components/sectionHeader/SectionHeader";
-import { Star, Bullet, BulletBlank } from "assets/images";
+import { Star } from "assets/images";
 import { RATING_STAR_ARRAY } from "constants/Constants";
 
 interface ReviewCardProps {
@@ -36,11 +36,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
             {occupation}
           </Typography>
         </FlexWrapper>
-        <FlexWrapper justifyContent="center">
+        {/* <FlexWrapper justifyContent="center">
           <Bullet />
           <BulletBlank />
           <BulletBlank />
-        </FlexWrapper>
+        </FlexWrapper> */}
       </Box>
     </FlexWrapper>
   );

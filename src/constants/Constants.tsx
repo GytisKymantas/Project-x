@@ -69,3 +69,30 @@ export const REVIEW_CARD_ARRAY = [
     id: "640",
   },
 ];
+
+export const REVIEW_DATA = [
+  {
+    id: "2452",
+    header: "Great service!",
+    name: "jimmy jones",
+    paragraph:
+      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+    occupation: "Janitor",
+  },
+  {
+    id: "2454",
+    header: "Amazing service!",
+    name: "Terry jones",
+    paragraph:
+      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+    occupation: "robot",
+  },
+  {
+    id: "2455",
+    header: "The best service!",
+    name: "Will Smith",
+    paragraph:
+      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+    occupation: "spaceman",
+  },
+];

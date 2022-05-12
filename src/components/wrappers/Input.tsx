@@ -1,6 +1,9 @@
 import React from "react";
 import { Styles } from "components/wrappers/Box";
+import { color } from "styled-system";
+
 import { Theme } from "../../styles/theme";
+import styled from "styled-components/macro";
 
 export type InputType = "text" | "email" | "password" | "date";
 
@@ -16,7 +19,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 type InputFieldProps = InputProps & Styles<Theme>;
 
-export const InputField: React.FC<InputFieldProps> = ({
+export const Input: React.FC<InputFieldProps> = ({
   minValue,
   maxValue,
   label,
@@ -28,7 +31,7 @@ export const InputField: React.FC<InputFieldProps> = ({
 }) => (
   <>
     {label && <label htmlFor="input">{label}</label>}
-    <input
+    <InputElement
       id={label}
       type={type}
       placeholder={placeholder}
@@ -40,3 +43,14 @@ export const InputField: React.FC<InputFieldProps> = ({
     {error && <span>{error}</span>}
   </>
 );
+
+const InputElement = styled.input`
+  border: none;
+  outline: none;
+  /* border-bottom: 1px solid black; */
+  padding: 1rem 1rem 0.2rem 1rem;
+
+  && {
+    ${color}
+  }
+`;

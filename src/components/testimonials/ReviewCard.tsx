@@ -22,8 +22,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
       <SectionHeader type="h4" header={header} paragraph={paragraph} />
       <Box mb="s25">
         <FlexWrapper>
-          {RATING_STAR_ARRAY.map((star) => (
-            <Star key={star} />
+          {RATING_STAR_ARRAY.map((star, i) => (
+            <Star key={i} />
           ))}
         </FlexWrapper>
       </Box>

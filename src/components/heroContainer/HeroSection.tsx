@@ -39,8 +39,8 @@ export const HeroSection = () => {
                 paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
               />{" "}
               <FlexWrapper gap="10px" mt="s20">
-                <QuizStartButton>Male</QuizStartButton>
-                <QuizStartButton>Female</QuizStartButton>
+                <QuizStartButton width="137px">Male</QuizStartButton>
+                <QuizStartButton width="137px">Female</QuizStartButton>
               </FlexWrapper>
             </FlexWrapper>
           </Container>

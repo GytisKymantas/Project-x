@@ -8,15 +8,24 @@ import {
   SectionWrapper,
 } from "components";
 
-export const QuizQuestionsContainer: React.FC = () => {
+interface QuizQuestionsContainerProps {
+  question: string;
+  answers?: any;
+}
+
+export const QuizQuestionsContainer: React.FC<QuizQuestionsContainerProps> = ({
+  question,
+  answers,
+}) => {
   return (
     <SectionWrapper>
       <ContentWrapper>
         <Typography color="primary" type="h2" textAlign={"center"}>
-          How often do you do physical exercises?
+          {/* How often do you do physical exercises? */}
+          {question}
         </Typography>
         <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {QUIZ_DETAILS.map(({ title, id }) => (
+          {answers.map(({ title, id }) => (
             <QuizAnswer key={id}>{title}</QuizAnswer>
           ))}
           <QuizAnswer isSubmit>submit</QuizAnswer>

@@ -1,6 +1,6 @@
 import { Box, Container, Image, FlexWrapper } from "components";
 import { QuizStartButton } from "components/buttons/QuizStartButton";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Link } from "gatsby";
 import { theme } from "styles/theme";
@@ -9,8 +9,27 @@ import { Mobnav } from "assets/images";
 import { Breakpoints } from "styles/theme";
 
 export const Navigation: React.FC = () => {
+  const [fix, setFix] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 780) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <Box height={"72px"} maxWidth={"1440px"} backgroundColor={"white"}>
+    <Box
+      height="72px"
+      width="100%"
+      backgroundColor="white"
+      position={fix ? "fixed" : "block"}
+      zIndex={11}
+      // margin-top={fix ? "72px" : "0"}
+    >
       <FlexWrapper
         alignItems="center"
         justifyContent="space-around"
@@ -40,7 +59,7 @@ export const Navigation: React.FC = () => {
             Partners
           </ListItem>
         </FlexWrapper>
-        <QuizStartButton>Start Quiz</QuizStartButton>
+        <QuizStartButton width="137px">Start Quiz</QuizStartButton>
       </FlexWrapper>
     </Box>
   );

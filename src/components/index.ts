@@ -9,9 +9,10 @@ export * from "./wrappers/Input";
 
 //button
 export * from "./buttons/elements/BaseButton";
+export * from "./buttons/QuizAnswer";
+export * from "./buttons/QuizStartButton";
 
 //QuizQuestion
-export * from "./buttons/QuizAnswer";
 export * from "./quizAnswersContainer/QuizQuestionsContainer";
 
 //texts
@@ -27,6 +28,16 @@ export * from "./testimonials/ReviewCard";
 //FAQ
 export * from "./FAQ/QuestionsCard";
 export * from "./FAQ/QuestionsCardContainer";
+//partners
+export * from "./partners/Partners";
+
+//footer
+export * from "./footer/Footer";
+//navigation
+export * from "./navigation/Navigation";
+
+//hero
+export * from "./heroContainer/HeroSection";
 
 // section header
 // export * from "./sectionHeader/SectionHeader";

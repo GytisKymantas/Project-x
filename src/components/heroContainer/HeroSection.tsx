@@ -2,10 +2,8 @@ import React from "react";
 import { QuizStartButton } from "components/buttons/QuizStartButton";
 import {
   Box,
-  Image,
   SectionWrapper,
   ContentWrapper,
-  Typography,
   FlexWrapper,
   GridWrapper,
   Container,
@@ -20,16 +18,11 @@ export const HeroSection = () => {
         <GridWrapper gridTemplateColumns="1fr 1fr">
           <Container>
             <Box>
-              {/* <Image src="healthfitness" /> */}
               <StaticImage
                 src="../../assets/images/healthfitness.png"
                 alt="health and fitness logo"
                 placeholder="tracedSVG"
                 draggable="false"
-                // style={{
-                //   maxWidth: "500px",
-                //   margin: "0 auto",
-                // }}
               />
             </Box>
             <FlexWrapper flexDirection="column" maxWidth="418px">

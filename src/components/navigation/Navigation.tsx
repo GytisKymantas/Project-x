@@ -1,4 +1,4 @@
-import { Box, Container, Image, FlexWrapper } from "components";
+import { Box, FlexWrapper } from "components";
 import { QuizStartButton } from "components/buttons/QuizStartButton";
 import React, { useState } from "react";
 import styled from "styled-components/macro";
@@ -6,7 +6,6 @@ import { Link } from "gatsby";
 import { theme } from "styles/theme";
 import scrollTo from "gatsby-plugin-smoothscroll";
 import { Mobnav } from "assets/images";
-import { Breakpoints } from "styles/theme";
 
 export const Navigation: React.FC = () => {
   const [fix, setFix] = useState(false);

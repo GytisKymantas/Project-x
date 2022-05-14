@@ -1,6 +1,5 @@
 import React from "react";
 import { QuizAnswer } from "../buttons/QuizAnswer";
-import { QUIZ_DETAILS } from "constants/Constants";
 import {
   Typography,
   FlexWrapper,
@@ -11,6 +10,8 @@ import {
 interface QuizQuestionsContainerProps {
   question: string;
   answers?: any;
+  id?: string;
+  title?: string;
 }
 
 export const QuizQuestionsContainer: React.FC<QuizQuestionsContainerProps> = ({
@@ -21,11 +22,10 @@ export const QuizQuestionsContainer: React.FC<QuizQuestionsContainerProps> = ({
     <SectionWrapper>
       <ContentWrapper>
         <Typography color="primary" type="h2" textAlign={"center"}>
-          {/* How often do you do physical exercises? */}
           {question}
         </Typography>
         <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {answers.map(({ title, id }) => (
+          {answers.map(({ title, id }: string) => (
             <QuizAnswer key={id}>{title}</QuizAnswer>
           ))}
           <QuizAnswer isSubmit>submit</QuizAnswer>

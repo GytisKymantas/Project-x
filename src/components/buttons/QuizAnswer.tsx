@@ -5,15 +5,24 @@ import { Check } from "assets/images";
 interface QuizAnswerProps {
   children: React.ReactNode;
   isSubmit?: boolean;
+
+  onClick?: () => void;
 }
 
 export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   children,
   isSubmit,
+  onClick,
 }) => {
   const [select, setSelect] = useState(false);
   return (
-    <Box minWidth="22.5625rem" height="3rem" position={"relative"} m="s8">
+    <Box
+      minWidth="22.5625rem"
+      height="3rem"
+      position={"relative"}
+      m="s8"
+      onClick={onClick}
+    >
       {isSubmit ? (
         <BaseButton
           type="submit"
@@ -33,7 +42,16 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>
         </BaseButton>
       )}
-
+      {/* {id === 1 && (
+        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
+          bam
+        </Box>
+      )}
+      {
+        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
+          Bum
+        </Box>
+      } */}
       {select && (
         <Box position={"absolute"} top="28%" left="5%">
           <Check />

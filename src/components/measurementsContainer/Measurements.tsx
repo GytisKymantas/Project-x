@@ -21,7 +21,7 @@ export const Measurements = () => {
         <Typography color="primary" type="h2">
           Enter your measurements
         </Typography>
-        <ContentWrapper margin="0 auto" width="25rem">
+        <ContentWrapper margin="s0auto" width="25rem">
           <FlexWrapper flexDirection="column" alignItems="center">
             <FlexWrapper gap="10px">
               <Typography color="primary" onClick={() => setIfImperial(true)}>
@@ -63,18 +63,11 @@ export const Measurements = () => {
                   style={{ borderBottom: "1px solid black" }}
                 />
               )}
-              {/* <Input
-              type="text"
-              placeholder="Height"
-              style={{ borderBottom: "1px solid black" }}
-            /> */}
-
               <Input
                 type="text"
                 placeholder="Weight"
                 style={{ borderBottom: "1px solid black" }}
               />
-
               <Input
                 type="text"
                 placeholder="Desired Weight"

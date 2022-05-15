@@ -20,6 +20,7 @@ export interface QuizAnswers {
 export interface UserState {
   user_data: any;
   quiz_answers: any; // type of answers keys and values
+  // multiple_choice: any;
   // email: string
 }
 

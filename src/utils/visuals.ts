@@ -20,6 +20,7 @@ import partner3 from "assets/images/partner3.png";
 import partner4 from "assets/images/partner4.png";
 import partner5 from "assets/images/partner5.png";
 import shape360 from "assets/images/shape360.png";
+import green360 from "assets/images/green360.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -47,4 +48,5 @@ export const visuals: Record<string, string> = {
   partner4,
   partner5,
   shape360,
+  green360,
 };

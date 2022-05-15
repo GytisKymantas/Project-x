@@ -24,7 +24,12 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <>
-      <FlexWrapper flexDirection="column" gap="20px" justifyContent="center">
+      <FlexWrapper
+        flexDirection="column"
+        gap="20px"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Typography type={type} color="primary">
           {header}
         </Typography>

@@ -1,3 +1,6 @@
+import { Gender, Height, Scales, Age } from "assets/images";
+import React from "react";
+
 export const QUIZ_DETAILS = [
   {
     title: "2-3 hrs per week",
@@ -94,5 +97,32 @@ export const REVIEW_DATA = [
     paragraph:
       "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
     occupation: "spaceman",
+  },
+];
+
+export const MEASUREMENT_CONTAINER_DATA = [
+  {
+    image: <Gender />,
+    title: "",
+    subtitle: "Gender",
+    id: "1212",
+  },
+  {
+    image: <Age />,
+    title: "",
+    subtitle: "Age",
+    id: "1313",
+  },
+  {
+    image: <Height />,
+    title: "",
+    subtitle: "Height cm",
+    id: "1414",
+  },
+  {
+    image: <Scales />,
+    title: "",
+    subtitle: "Weight",
+    id: "1515",
   },
 ];

@@ -5,10 +5,7 @@ import { STEP_ONE } from "constants/QuestionConstants";
 const One: React.FC = () => {
   return (
     <>
-      <QuizQuestionsContainer
-        question="How often do you do physical activity?"
-        answers={STEP_ONE}
-      />
+      <QuizQuestionsContainer answers={STEP_ONE} />
     </>
   );
 };

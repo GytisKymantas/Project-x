@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import { QuizQuestionsContainer } from "components";
 import { useDispatch, useSelector } from "react-redux";
 import { QuizAnswer } from "components";
-import {
-  selectUserData,
-  selectMultipleAnswersGoals,
-  selectState,
-} from "state/selectors";
+import { selectUserData } from "state/selectors";
 import { setQuizAnswers } from "state/slice";
 import { navigate } from "gatsby";
-import { setUserData, setMultipleChoiceGoals } from "state/slice";
+import { setUserData } from "state/slice";
 import { Link } from "gatsby";
 import styled from "styled-components/macro";
 import {
@@ -23,61 +19,41 @@ import {
 export const STEP_SIX = [
   {
     id: "1",
-    title: "Muscle tone",
-    quizAnswer6: "Muscle tone",
+    title: "High blood pressure",
+    quizAnswer3: "Pressure",
   },
   {
     id: "2",
-    title: "Strength",
-    quizAnswer6: "Strength",
+    title: "Overweight",
+    quizAnswer3: "Overweight",
   },
   {
     id: "3",
-    title: "Flexibility",
-    quizAnswer6: "Flexibility",
-  },
-  {
-    id: "4",
-    title: "Reduce stress",
-    quizAnswer6: "Stress",
-  },
-  {
-    id: "5",
-    title: "Overall health",
-    quizAnswer6: "Health",
-  },
-  {
-    id: "6",
-    title: "Weight loss",
-    quizAnswer6: "Weight",
-  },
-  {
-    id: "7",
-    title: "Cardiovascularity",
-    quizAnswer6: "Cardiovascularity",
+    title: "Diabetes",
+    quizAnswer3: "Diabetes",
   },
 ];
 
-const TestThree: React.FC = () => {
+const TestTest: React.FC = () => {
   const dispatch = useDispatch();
-  const multipleGoals = useSelector(selectMultipleAnswersGoals);
-  const state = useSelector(selectState);
-  console.log(state, "overall STATE RIGHT HERE");
+  const userData = useSelector(selectUserData);
+  const quizAnswer = useSelector(setQuizAnswers);
 
-  console.log(multipleGoals, "this is user data from redux !");
+  console.log(userData, "this is user data from redux !");
+  console.log(quizAnswer, "this is quiz data from redux !");
 
-  const [selectedUser, setSelectedUser] = useState<any>([]);
-  const userArray = selectedUser;
-  console.log(selectedUser, "from local state");
+  const [selectedUser, setSelectedUser] = useState<any>({
+    Pressure: "",
+    Overweight: "",
+    Diabetes: "",
+  });
 
-  const handleStateButton = () => {
-    dispatch(setMultipleChoiceGoals(selectedUser));
-    navigate("/checkout");
-  };
+  console.log(selectedUser, "from test_2");
 
-  // if (userArray.includes("None")) {
-  //   setSelectedUser([]);
-  // }
+  //   const handleStateButton = () => {
+  //     dispatch(setQuizAnswers(selectedUser));
+  //     navigate("/questions/female/test_4");
+  //   };
 
   return (
     <SectionWrapper>
@@ -86,12 +62,12 @@ const TestThree: React.FC = () => {
           Which of the following conditions apply to you?{" "}
         </Typography>
         <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {STEP_SIX.map(({ title, id, quizAnswer6 }: any) => (
+          {STEP_SIX.map(({ title, id, quizAnswer3 }: any) => (
             <Box
               key={id}
               onClick={() =>
                 setSelectedUser((selectedUser) =>
-                  selectedUser.concat(quizAnswer6)
+                  selectedUser.concat(quizAnswer3)
                 )
               }
             >
@@ -114,4 +90,4 @@ const TestThree: React.FC = () => {
   );
 };
 
-export default TestThree;
+export default TestTest;

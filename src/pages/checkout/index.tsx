@@ -12,6 +12,12 @@ import { SectionHeader } from "components/sectionHeader/SectionHeader";
 import { selectQuizAnswers } from "state/selectors";
 import { useSelector } from "react-redux";
 import { navigate } from "gatsby";
+import FactsContainer from "components/checkoutContainer/FactsContainer";
+import { CaloricCounter } from "components/checkoutContainer/CaloricCounter";
+import { BMI } from "components/checkoutContainer/BMI";
+import { Variations } from "components/checkoutContainer/Variations";
+import { Satisfaction } from "components/checkoutContainer/Satisfaction";
+import MeasurementsInfoContainer from "components/checkoutContainer/MeasurementsInfoContainer";
 const Checkout: React.FC = () => {
   //   const answers = selectQuizAnswers();
   const userQuizAnswers = useSelector(selectQuizAnswers);
@@ -21,48 +27,23 @@ const Checkout: React.FC = () => {
 
   return (
     <>
-      <Navigation />
       <SectionWrapper>
         <Box>
           <SectionHeader
-            type="h2"
+            type="h4"
             header="See how Fit on-time can improve your daily life"
             paragraph="Bond with your baby and support his or her development with creative, fun and easy activities."
           />
-          <Typography type="h2" color="primary">
-            Your summary
-          </Typography>
+          <Box mt="50px">
+            <Typography type="h5" color="primary" textAlign="center">
+              Your summary
+            </Typography>
+          </Box>
         </Box>
-        <GridWrapper gridTemplateColumns="repeat(4,1fr)" gap="20px">
-          <Box bg="blue">
-            <Image />
-            <Typography type="h6" color="primary">
-              Male
-            </Typography>
-            <Typography>Gender</Typography>
-          </Box>
-          <Box bg="blue">
-            <Image />
-            <Typography type="h6" color="primary">
-              Male
-            </Typography>
-            <Typography>Gender</Typography>
-          </Box>
-          <Box bg="blue">
-            <Image />
-            <Typography type="h6" color="primary">
-              Male
-            </Typography>
-            <Typography>Gender</Typography>
-          </Box>
-          <Box bg="blue">
-            <Image />
-            <Typography type="h6" color="primary">
-              Male
-            </Typography>
-            <Typography>Gender</Typography>
-          </Box>
-        </GridWrapper>
+        <MeasurementsInfoContainer />
+
+        <FactsContainer />
+
         <Box m="50px">
           <Box>
             {workoutFrequencyAnswer && (

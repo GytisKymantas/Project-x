@@ -5,6 +5,7 @@ import { Check } from "assets/images";
 interface QuizAnswerProps {
   children: React.ReactNode;
   isSubmit?: boolean;
+  disabled?: boolean;
 
   onClick?: () => void;
 }
@@ -12,6 +13,7 @@ interface QuizAnswerProps {
 export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   children,
   isSubmit,
+  disabled,
   onClick,
 }) => {
   const [select, setSelect] = useState(false);
@@ -29,6 +31,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           background={"blue"}
           boxShadow="0px 16px 32px rgba(16, 51, 251, 0.24);"
           mt="s50"
+          disabled={disabled}
         >
           Submit
         </BaseButton>

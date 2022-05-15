@@ -16,6 +16,8 @@ const initialState = {
     quizAnswer5: "",
     quizAnswer6: {},
   },
+  multiple_choice: {},
+  multiple_choiceGoals: {},
 };
 
 console.log(initialState.user_data);
@@ -27,6 +29,15 @@ const userSlice = createSlice({
     setUserData: (state, actions: PayloadAction<any>) => {
       state.user_data = { ...state.user_data, ...actions.payload };
     },
+    setMultipleChoice: (state, actions: any) => {
+      state.multiple_choice = { ...state.multiple_choice, ...actions.payload };
+    },
+    setMultipleChoiceGoals: (state, actions: any) => {
+      state.multiple_choiceGoals = {
+        ...state.multiple_choiceGoals,
+        ...actions.payload,
+      };
+    },
     setQuizAnswers: (state, actions: PayloadAction<any>) => {
       state.quiz_answers = {
         ...state.quiz_answers,
@@ -36,7 +47,12 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUserData, setQuizAnswers } = userSlice.actions;
+export const {
+  setMultipleChoiceGoals,
+  setMultipleChoice,
+  setUserData,
+  setQuizAnswers,
+} = userSlice.actions;
 export default userSlice;
 
 //OLD-FASHIONED REDUCER

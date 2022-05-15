@@ -8,3 +8,7 @@ export * from "./icons/Instagram";
 export * from "./icons/Twitter";
 export * from "./icons/Facebook";
 export * from "./icons/Mobnav";
+export * from "./icons/Gender";
+export * from "./icons/Scales";
+export * from "./icons/Age";
+export * from "./icons/Height";

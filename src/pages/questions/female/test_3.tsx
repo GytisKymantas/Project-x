@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { QuizQuestionsContainer } from "components";
 import { useDispatch, useSelector } from "react-redux";
 import { QuizAnswer } from "components";
-import { selectUserData } from "state/selectors";
 import { setQuizAnswers } from "state/slice";
+import { setMultipleChoice } from "state/slice";
 import { navigate } from "gatsby";
-import { setUserData } from "state/slice";
+// import setMultipleChoice from "state/slice";
 import { Link } from "gatsby";
 import styled from "styled-components/macro";
+import {
+  selectMultipleAnswers,
+  selectUserData,
+  selectState,
+} from "state/selectors";
+
 import {
   Typography,
   FlexWrapper,
@@ -15,12 +20,13 @@ import {
   Box,
   SectionWrapper,
 } from "components";
+import { arrayBuffer } from "stream/consumers";
 
 export const STEP_SIX = [
   {
     id: "1",
     title: "High blood pressure",
-    quizAnswer3: "High Blood Pressure",
+    quizAnswer3: "Pressure",
   },
   {
     id: "2",
@@ -68,22 +74,48 @@ const TestThree: React.FC = () => {
   const dispatch = useDispatch();
   const userData = useSelector(selectUserData);
   const quizAnswer = useSelector(setQuizAnswers);
+  const multiple = useSelector(selectMultipleAnswers);
+  const state = useSelector(selectState);
 
-  console.log(userData, "this is user data from redux !");
-  console.log(quizAnswer, "this is quiz data from redux !");
-
+  // console.log(userData, "this is user data from redux !");
+  console.log(multiple, "this is multiple data from redux !");
+  console.log(state, "overall STATE RIGHT HERE");
   const [selectedUser, setSelectedUser] = useState<any>([]);
+  console.log(selectedUser, "from local state");
+  const userArray = selectedUser;
 
-  console.log(selectedUser, "from test_2");
-  const handleStateButton = () => dispatch(setQuizAnswers(selectedUser));
-  console.log(
-    quizAnswer.payload.user.quiz_answers.quizAnswer,
-    "bullseye from 3"
-  );
+  const handleStateButton = () => {
+    dispatch(setMultipleChoice(userArray));
+    navigate("/questions/female/test_4");
+  };
 
-  // useEffect(() => {
-  //   dispatch(setQuizAnswers(selectedUser));
-  // }, [selectedUser]);
+  if (userArray.includes("None")) {
+    setSelectedUser([]);
+  }
+
+  //   userArray.pop("Other");
+  // }
+  // if (userArray.includes("Pressure")) {
+  //   userArray.pop("Pressure");
+  // }
+  // if (userArray.includes("Overweight")) {
+  //   userArray.pop("Overweight");
+  // }
+  // if (userArray.includes("Diabetes")) {
+  //   userArray.pop("Diabetes");
+  // }
+  // if (userArray.includes("Bulimia")) {
+  //   userArray.pop("Bulimia");
+  // }
+  // if (userArray.includes("Chest")) {
+  //   userArray.pop("Chest");
+  // }
+  // if (userArray.includes("Shortness")) {
+  //   userArray.pop("Shortness");
+  // }
+  // if (userArray.includes("Anxiety")) {
+  //   userArray.pop("Anxiety");
+  // }
 
   return (
     <SectionWrapper>
@@ -96,40 +128,24 @@ const TestThree: React.FC = () => {
             <Box
               key={id}
               onClick={() =>
-                setSelectedUser((selectedUser) =>
-                  selectedUser.concat(quizAnswer3)
-                )
+                setSelectedUser((array) => array.concat(quizAnswer3))
               }
+              // onClick={handleNumber(quizAnswer3)}
             >
-              <QuizAnswer
-                onClick={() => {
-                  navigate("/questions/female/test_4");
-                }}
-                key={id}
-              >
-                {title}
-              </QuizAnswer>
+              <QuizAnswer key={id}>{title}</QuizAnswer>
             </Box>
           ))}
-          <Box bg="red" onClick={() => dispatch(setQuizAnswers(selectedUser))}>
-            <button
-              type="button"
-              onClick={() => {
-                navigate("/questions/female/test_4");
-              }}
-            >
-              {" "}
-              bunn
-            </button>
-          </Box>
+          <QuizAnswer onClick={handleStateButton} isSubmit>
+            submit
+          </QuizAnswer>
         </FlexWrapper>
-        <Box
+        {/* <Box
           onClick={() => {
             navigate("/checkout");
           }}
         >
           Navigate to checkout
-        </Box>
+        </Box> */}
       </ContentWrapper>
     </SectionWrapper>
   );

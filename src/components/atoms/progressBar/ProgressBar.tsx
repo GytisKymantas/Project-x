@@ -1,8 +1,20 @@
 import React from "react";
-import { Box } from "components";
+import { Box, Image } from "components";
+import styled from "styled-components/macro";
 
-const ProgressBar = () => {
-  return <Box>ProgressBar</Box>;
+interface ProgressBarProps {
+  width: string;
+}
+export const ProgressBar: React.FC<ProgressBarProps> = ({ width }) => {
+  return (
+    <>
+      <ProgressLine position="relative" width={width} bg="orange">
+        <Image />
+      </ProgressLine>
+    </>
+  );
 };
 
-export default ProgressBar;
+const ProgressLine = styled(Box)`
+  transition: width 0.2s ease;
+`;

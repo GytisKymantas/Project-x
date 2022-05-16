@@ -9,6 +9,7 @@ const colors = {
   blue: "rgb(16 51 251 / 24%)",
   gray: "#5F5F5F",
   taxi: "#f4f4b3",
+  orange: "orange",
 };
 
 export const theme = {

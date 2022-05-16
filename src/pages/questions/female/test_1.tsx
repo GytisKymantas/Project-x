@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { QuizQuestionsContainer } from "components";
+import { QuizQuestionsContainer, QuizStartButton } from "components";
 import { useDispatch, useSelector } from "react-redux";
 import { QuizAnswer } from "components";
 import { selectUserData } from "state/selectors";
 import { setQuizAnswers } from "state/slice";
+import { Arrow } from "assets/images";
+import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
 import { navigate } from "gatsby";
 import { setUserData } from "state/slice";
 import { Link } from "gatsby";
@@ -12,6 +14,7 @@ import {
   Typography,
   FlexWrapper,
   ContentWrapper,
+  BaseButton,
   Box,
   SectionWrapper,
 } from "components";
@@ -54,43 +57,48 @@ const TestOne: React.FC = () => {
   }, [selectedUser]);
 
   return (
-    <SectionWrapper>
-      <ContentWrapper>
-        <Typography color="primary" type="h2" textAlign={"center"}>
-          How often do you do physical activity?
-        </Typography>
-        <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {STEP_ONE.map(({ title, id, quizAnswer }: any) => (
-            <Box
-              key={id}
-              onClick={() =>
-                setSelectedUser({
-                  quizAnswer,
-                })
-              }
-            >
-              <QuizAnswer
-                onClick={() => {
-                  navigate("/questions/female/test_2");
-                }}
+    <>
+      <ProgressBar width="10%" />
+      <SectionWrapper>
+        <ContentWrapper>
+          <Typography color="primary" type="h2" textAlign={"center"}>
+            How often do you do physical activity?
+          </Typography>
+          <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
+            {STEP_ONE.map(({ title, id, quizAnswer }: any) => (
+              <Box
                 key={id}
+                onClick={() =>
+                  setSelectedUser({
+                    quizAnswer,
+                  })
+                }
               >
-                {title}
-              </QuizAnswer>
-            </Box>
-          ))}
-        </FlexWrapper>
-        {/* <button
-          type="button"
-          onClick={() => {
-            navigate("/questions/female/test_2");
-          }}
-        >
-          okay
-        </button>
-        <Link to="/questions/female/test_2">Link</Link> */}
-      </ContentWrapper>
-    </SectionWrapper>
+                <QuizAnswer
+                  onClick={() => {
+                    navigate("/questions/female/test_2");
+                  }}
+                  key={id}
+                >
+                  {title}
+                </QuizAnswer>
+              </Box>
+            ))}
+            <QuizStartButton
+              type="button"
+              width="20%"
+              onClick={() => {
+                navigate("/questions/female/test_2");
+              }}
+            >
+              <Arrow /> Go back
+            </QuizStartButton>
+          </FlexWrapper>
+
+          {/* <Link to="/questions/female/test_2">Link</Link> */}
+        </ContentWrapper>
+      </SectionWrapper>
+    </>
   );
 };
 

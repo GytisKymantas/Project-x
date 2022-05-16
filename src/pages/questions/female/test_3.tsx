@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { QuizAnswer } from "components";
 import { setQuizAnswers } from "state/slice";
 import { setMultipleChoice } from "state/slice";
+import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
 import { navigate } from "gatsby";
 // import setMultipleChoice from "state/slice";
 import { Link } from "gatsby";
@@ -60,11 +61,16 @@ export const STEP_SIX = [
   },
   {
     id: "8",
+    title: "Sleep",
+    quizAnswer3: "Sleep",
+  },
+  {
+    id: "9",
     title: "Other",
     quizAnswer3: "Other",
   },
   {
-    id: "9",
+    id: "10",
     title: "None",
     quizAnswer3: "None",
   },
@@ -118,36 +124,44 @@ const TestThree: React.FC = () => {
   // }
 
   return (
-    <SectionWrapper>
-      <ContentWrapper>
-        <Typography color="primary" type="h2" textAlign={"center"}>
-          Which of the following conditions apply to you?{" "}
-        </Typography>
-        <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {STEP_SIX.map(({ title, id, quizAnswer3 }: any) => (
-            <Box
-              key={id}
-              onClick={() =>
-                setSelectedUser((array) => array.concat(quizAnswer3))
-              }
-              // onClick={handleNumber(quizAnswer3)}
-            >
-              <QuizAnswer key={id}>{title}</QuizAnswer>
-            </Box>
-          ))}
-          <QuizAnswer onClick={handleStateButton} isSubmit>
-            submit
-          </QuizAnswer>
-        </FlexWrapper>
-        {/* <Box
+    <>
+      <ProgressBar width="35%" />
+      <SectionWrapper>
+        <ContentWrapper>
+          <Typography color="primary" type="h2" textAlign={"center"}>
+            Which of the following conditions apply to you?{" "}
+          </Typography>
+          <FlexWrapper
+            alignItems="center"
+            mt="s50"
+            flexWrap="wrap"
+            justifyContent="center"
+          >
+            {STEP_SIX.map(({ title, id, quizAnswer3 }: any) => (
+              <Box
+                key={id}
+                onClick={() =>
+                  setSelectedUser((array) => array.concat(quizAnswer3))
+                }
+                // onClick={handleNumber(quizAnswer3)}
+              >
+                <QuizAnswer key={id}>{title}</QuizAnswer>
+              </Box>
+            ))}
+            <QuizAnswer onClick={handleStateButton} isSubmit>
+              submit
+            </QuizAnswer>
+          </FlexWrapper>
+          {/* <Box
           onClick={() => {
             navigate("/checkout");
           }}
         >
           Navigate to checkout
         </Box> */}
-      </ContentWrapper>
-    </SectionWrapper>
+        </ContentWrapper>
+      </SectionWrapper>
+    </>
   );
 };
 

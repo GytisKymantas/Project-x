@@ -8,16 +8,17 @@ import {
   GridWrapper,
   Image,
 } from "components";
-import { SectionHeader } from "components/sectionHeader/SectionHeader";
+import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 import { selectQuizAnswers } from "state/selectors";
 import { useSelector } from "react-redux";
+import { Arrow } from "assets/images";
 import { navigate } from "gatsby";
-import FactsContainer from "components/checkoutContainer/FactsContainer";
-import { CaloricCounter } from "components/checkoutContainer/CaloricCounter";
-import { BMI } from "components/checkoutContainer/BMI";
-import { Variations } from "components/checkoutContainer/Variations";
-import { Satisfaction } from "components/checkoutContainer/Satisfaction";
-import MeasurementsInfoContainer from "components/checkoutContainer/MeasurementsInfoContainer";
+import FactsContainer from "components/molecules/checkoutContainer/FactsContainer";
+import { CaloricCounter } from "components/molecules/checkoutContainer/CaloricCounter";
+import { BMI } from "components/molecules/checkoutContainer/BMI";
+import { Variations } from "components/molecules/checkoutContainer/Variations";
+import { Satisfaction } from "components/molecules/checkoutContainer/Satisfaction";
+import MeasurementsInfoContainer from "components/molecules/checkoutContainer/MeasurementsInfoContainer";
 const Checkout: React.FC = () => {
   //   const answers = selectQuizAnswers();
   const userQuizAnswers = useSelector(selectQuizAnswers);
@@ -47,7 +48,7 @@ const Checkout: React.FC = () => {
         <Box m="50px">
           <Box>
             {workoutFrequencyAnswer && (
-              <Box bg="taxi">
+              <Box bg="taxi" p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <Box position="relative">
                     <Image src="shape360" />
@@ -73,7 +74,7 @@ const Checkout: React.FC = () => {
               </Box>
             )}
             {doYouSmokeAnswer && (
-              <Box bg="taxi">
+              <Box bg="taxi" p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <FlexWrapper flexDirection="column">
                     <Typography color="primary" type="h2">
@@ -93,7 +94,7 @@ const Checkout: React.FC = () => {
               </Box>
             )}
             {doYouSmokeAnswer && (
-              <Box bg="taxi">
+              <Box bg="taxi" p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <Box position="relative">
                     <Image src="shape360" />

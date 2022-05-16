@@ -12,3 +12,4 @@ export * from "./icons/Gender";
 export * from "./icons/Scales";
 export * from "./icons/Age";
 export * from "./icons/Height";
+export * from "./icons/Arrow";

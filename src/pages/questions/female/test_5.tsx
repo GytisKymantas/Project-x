@@ -7,6 +7,8 @@ import { setQuizAnswers } from "state/slice";
 import { navigate } from "gatsby";
 import { setUserData } from "state/slice";
 import { Link } from "gatsby";
+import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
+
 import styled from "styled-components/macro";
 import {
   Typography,
@@ -52,41 +54,44 @@ const TestFive: React.FC = () => {
   }, [selectedUser]);
 
   return (
-    <SectionWrapper>
-      <ContentWrapper>
-        <Typography color="primary" type="h2" textAlign={"center"}>
-          Do you or does your family have history with heart issues?{" "}
-        </Typography>
-        <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-          {STEP_FIVE.map(({ title, id, quizAnswer5 }: any) => (
-            <Box
-              key={id}
-              onClick={() =>
-                setSelectedUser({
-                  quizAnswer5,
-                })
-              }
-            >
-              <QuizAnswer
-                onClick={() => {
-                  navigate("/questions/female/test_6");
-                }}
+    <>
+      <ProgressBar width="65%" />
+      <SectionWrapper>
+        <ContentWrapper>
+          <Typography color="primary" type="h2" textAlign={"center"}>
+            Do you or does your family have history with heart issues?{" "}
+          </Typography>
+          <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
+            {STEP_FIVE.map(({ title, id, quizAnswer5 }: any) => (
+              <Box
                 key={id}
+                onClick={() =>
+                  setSelectedUser({
+                    quizAnswer5,
+                  })
+                }
               >
-                {title}
-              </QuizAnswer>
-            </Box>
-          ))}
-        </FlexWrapper>
-        <Box
-          onClick={() => {
-            navigate("/checkout");
-          }}
-        >
-          Navigate to checkout
-        </Box>
-      </ContentWrapper>
-    </SectionWrapper>
+                <QuizAnswer
+                  onClick={() => {
+                    navigate("/questions/female/test_6");
+                  }}
+                  key={id}
+                >
+                  {title}
+                </QuizAnswer>
+              </Box>
+            ))}
+          </FlexWrapper>
+          <Box
+            onClick={() => {
+              navigate("/checkout");
+            }}
+          >
+            Navigate to checkout
+          </Box>
+        </ContentWrapper>
+      </SectionWrapper>
+    </>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { Navigation } from "components/navigation/Navigation";
-import { HeroSection } from "components/heroContainer/HeroSection";
-import { QuestionsCardContainer } from "components/FAQ/QuestionsCardContainer";
-import { Review } from "components/testimonials/Review";
-import { About } from "components/about/About";
-import { Partners } from "components/partners/Partners";
-import { Footer } from "components/footer/Footer";
+import { Navigation } from "components/molecules/testimonials/navigation/Navigation";
+import { HeroSection } from "components/molecules/testimonials/heroContainer/HeroSection";
+import { QuestionsCardContainer } from "components/molecules/FAQ/QuestionsCardContainer";
+import { Review } from "components/molecules/testimonials/Review";
+import { About } from "components/molecules/about/About";
+import { Partners } from "components/molecules/partners/Partners";
+import { Footer } from "components/molecules/footer/Footer";
 
 const Landing: React.FC = () => (
   <>

@@ -14,7 +14,7 @@ const initialState = {
     quizAnswer3: "",
     quizAnswer4: "",
     quizAnswer5: "",
-    quizAnswer6: {},
+    quizAnswer6: "",
   },
   multiple_choice: {},
   multiple_choiceGoals: {},

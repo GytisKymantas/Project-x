@@ -13,3 +13,4 @@ export * from "./icons/Scales";
 export * from "./icons/Age";
 export * from "./icons/Height";
 export * from "./icons/Arrow";
+export * from "./icons/CheckBlank";

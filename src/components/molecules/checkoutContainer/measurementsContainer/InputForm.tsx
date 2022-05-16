@@ -7,6 +7,7 @@ import {
   Typography,
   BaseButton,
 } from "components";
+
 import styled from "styled-components/macro";
 
 export const InputForm = () => {

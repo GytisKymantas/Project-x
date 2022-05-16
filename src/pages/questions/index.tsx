@@ -1,11 +1,12 @@
 import React from "react";
-import { InputForm } from "components/molecules/checkoutContainer/measurementsContainer/InputForm";
+import { Box } from "components";
+import { SubscriptionBoxContainer } from "components/atoms/subscribtionBox/SubscriptionBoxContainer";
 
 const question: React.FC = () => {
   return (
-    <div>
-      <InputForm />
-    </div>
+    <Box>
+      <SubscriptionBoxContainer />
+    </Box>
   );
 };
 

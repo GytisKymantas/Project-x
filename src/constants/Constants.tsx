@@ -126,3 +126,30 @@ export const MEASUREMENT_CONTAINER_DATA = [
     id: "1515",
   },
 ];
+
+export const SUBSCRIPTION_DETAILS = [
+  {
+    discount: "50% OFF",
+    month: "6 month plan",
+    monthlyValue: "$15.99",
+    oldValue: "$93.98",
+    newValue: "$46.99",
+    billed: "every 6 months",
+  },
+  {
+    discount: "25% OFF",
+    month: "3 month plan",
+    monthlyValue: "$15.99",
+    oldValue: "$45.99",
+    newValue: "$36.99",
+    billed: "every 3 months",
+  },
+  {
+    discount: "10% OFF",
+    month: "1 month plan",
+    monthlyValue: "$20.99",
+    oldValue: "$20.99",
+    newValue: "$16.99",
+    billed: "monthly",
+  },
+];

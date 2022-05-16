@@ -79,7 +79,7 @@ const TestThree: React.FC = () => {
 
   const handleStateButton = () => {
     dispatch(setMultipleChoiceGoals(selectedUser));
-    navigate("/checkout");
+    navigate("/loading");
   };
 
   // if (userArray.includes("None")) {

@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Image, Typography } from "components";
-import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
+import { Box } from "components";
+import { ScaleResult } from "components/atoms/scale/ScaleResult";
 
 const Female = () => {
   return (
-    <Box>
-      <ProgressBar width="40%" />
+    <Box m="200px">
+      <ScaleResult />
     </Box>
   );
 };

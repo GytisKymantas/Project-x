@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Input,
@@ -9,18 +9,64 @@ import {
 } from "components";
 
 import styled from "styled-components/macro";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setUserData } from "state/slice";
+import { selectUserData } from "state/selectors";
+import { navigate } from "gatsby";
 export const InputForm = () => {
   const [ifImperial, setIfImperial] = useState(false);
   const [age, setAge] = useState(0);
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [desiredWeight, setDesiredWeight] = useState(0);
+  const [isMale, setIsMale] = useState("");
+  const [userState, setUserState] = useState({
+    age: null,
+    height: null,
+    weight: null,
+    desiredWeight: null,
+    isMale: null,
+  });
+  const ageReal = age;
 
-  console.log(age, "this is age");
-  console.log(height, "this is height");
-  console.log(weight, "this is weight");
-  console.log(desiredWeight, "this is desired weight");
+  const userData = useSelector(selectUserData);
+  const dispatch = useDispatch();
+
+  const handleFunction = (e) => {
+    e.preventDefault();
+    setUserState({
+      age: age,
+      height: height,
+      weight: weight,
+      desiredWeight: desiredWeight,
+      isMale: isMale,
+    });
+    navigate("checkout");
+  };
+  const handleImperialSystem = () => {
+    setIfImperial(true);
+    setUserData({
+      age: null,
+      height: null,
+      weight: null,
+      desiredWeight: null,
+      isMale: null,
+    });
+  };
+  const handleMetricSystem = () => {
+    setIfImperial(false);
+    setUserData({
+      age: null,
+      height: null,
+      weight: null,
+      desiredWeight: null,
+      isMale: null,
+    });
+  };
+
+  useEffect(() => {
+    dispatch(setUserData(userState));
+  }, [userState]);
 
   return (
     <ContentWrapper margin="s0auto" width="25rem">
@@ -37,15 +83,15 @@ export const InputForm = () => {
             fontWeight="700"
             color={ifImperial ? "orange" : "primary"}
             borderBottom={ifImperial ? "1px solid orange" : "1x solid primary"}
-            onClick={() => setIfImperial(true)}
+            onClick={handleImperialSystem}
           >
             Imperial
           </Typography>
           <Typography
-            fontWeight="700"
+            fontWeight="fw700"
             color={ifImperial ? "primary" : "orange"}
             borderBottom={ifImperial ? "1px solid primary" : "1x solid orange"}
-            onClick={() => setIfImperial(false)}
+            onClick={handleMetricSystem}
           >
             Metric
           </Typography>
@@ -187,7 +233,27 @@ export const InputForm = () => {
                 </Typography>
               </Box>
             </FlexWrapper>
-            <BaseButton type="submit">SUBMIT</BaseButton>
+            <FlexWrapper gap="10px">
+              <Input
+                type="radio"
+                name="gender"
+                onClick={() => setIsMale("Male")}
+                label="male"
+              />
+              <Input
+                type="radio"
+                name="gender"
+                onClick={() => setIsMale("Female")}
+                label="female"
+              />
+            </FlexWrapper>
+            {age && height && weight && desiredWeight && isMale ? (
+              <BaseButton onClick={handleFunction} type="submit">
+                SUBMIT
+              </BaseButton>
+            ) : (
+              ""
+            )}
           </FlexWrapper>
         </FormContainer>
       </FlexWrapper>

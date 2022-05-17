@@ -1,53 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { QuizQuestionsContainer } from "components";
 import { useDispatch, useSelector } from "react-redux";
-import { QuizAnswer } from "components";
-import { selectUserData } from "state/selectors";
+import { STEP_FIVE } from "constants/Questions";
 import { setQuizAnswers } from "state/slice";
+import { ReturnButton } from "components/atoms/buttons/ReturnButton";
 import { navigate } from "gatsby";
-import { setUserData } from "state/slice";
-import { Link } from "gatsby";
 import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
-
-import styled from "styled-components/macro";
 import {
   Typography,
   FlexWrapper,
   ContentWrapper,
   Box,
   SectionWrapper,
+  QuizAnswer,
 } from "components";
-
-export const STEP_FIVE = [
-  {
-    id: "1",
-    title: "Yes",
-    quizAnswer5: "Yes",
-  },
-  {
-    id: "2",
-    title: "No",
-    quizAnswer5: "No",
-  },
-];
 
 const TestFive: React.FC = () => {
   const dispatch = useDispatch();
-  const userData = useSelector(selectUserData);
-  const quizAnswer = useSelector(setQuizAnswers);
-
-  console.log(userData, "this is user data from redux !");
-  console.log(quizAnswer, "this is quiz data from redux !");
-
   const [selectedUser, setSelectedUser] = useState({
     quizAnswer5: "",
   });
-  console.log(selectedUser, "from test_1");
-  const handleStateButton = () => dispatch(setQuizAnswers(selectedUser));
-  console.log(
-    quizAnswer.payload.user.quiz_answers.quizAnswer,
-    "bullseye from 5"
-  );
 
   useEffect(() => {
     dispatch(setQuizAnswers(selectedUser));
@@ -82,13 +53,12 @@ const TestFive: React.FC = () => {
               </Box>
             ))}
           </FlexWrapper>
-          <Box
-            onClick={() => {
-              navigate("/checkout");
-            }}
+          <ReturnButton
+            width="100px"
+            onClick={() => navigate("/questions/female/test_4")}
           >
-            Navigate to checkout
-          </Box>
+            return
+          </ReturnButton>
         </ContentWrapper>
       </SectionWrapper>
     </>

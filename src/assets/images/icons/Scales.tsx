@@ -4,8 +4,8 @@ export const Scales: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="33"
-      height="32"
+      width="60"
+      height="60"
       viewBox="0 0 33 32"
     >
       <g>

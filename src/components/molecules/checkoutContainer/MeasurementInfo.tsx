@@ -14,10 +14,11 @@ export const MeasurementInfo: React.FC<MeasurementsProps> = ({
   subtitle,
   image,
 }) => {
-  console.log(title, "this is title");
   return (
-    <Box bg="blue" width="250px">
-      {image}
+    <Box bg="blue" width="100%" p="20px">
+      <Box margin="0 auto" width="50px">
+        {image}
+      </Box>
       <Box p="s20">
         <SectionHeader type="h3" header={title} paragraph={subtitle} />
       </Box>

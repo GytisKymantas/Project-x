@@ -3,7 +3,7 @@ import { Typography, Container, SectionWrapper } from "components";
 import { InputForm } from "./InputForm";
 import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
 
-export const Measurements = () => {
+export const Measurements: React.FC = () => {
   return (
     <>
       <ProgressBar width="90%" />

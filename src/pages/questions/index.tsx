@@ -1,13 +1,8 @@
 import React from "react";
 import { Box } from "components";
-import { SubscriptionBoxContainer } from "components/atoms/subscribtionBox/SubscriptionBoxContainer";
 
 const question: React.FC = () => {
-  return (
-    <Box>
-      <SubscriptionBoxContainer />
-    </Box>
-  );
+  return <Box>gg</Box>;
 };
 
 export default question;

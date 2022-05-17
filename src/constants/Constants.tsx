@@ -77,18 +77,18 @@ export const REVIEW_DATA = [
   {
     id: "2452",
     header: "Great service!",
-    name: "jimmy jones",
+    name: "Johnny Depp",
     paragraph:
       "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
-    occupation: "Janitor",
+    occupation: "Actor",
   },
   {
     id: "2454",
     header: "Amazing service!",
-    name: "Terry jones",
+    name: "Amber Heard",
     paragraph:
       "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
-    occupation: "robot",
+    occupation: "Actress",
   },
   {
     id: "2455",
@@ -96,7 +96,7 @@ export const REVIEW_DATA = [
     name: "Will Smith",
     paragraph:
       "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
-    occupation: "spaceman",
+    occupation: "Comedian",
   },
 ];
 
@@ -135,6 +135,7 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$93.98",
     newValue: "$46.99",
     billed: "every 6 months",
+    id: "1",
   },
   {
     discount: "25% OFF",
@@ -143,6 +144,7 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$45.99",
     newValue: "$36.99",
     billed: "every 3 months",
+    id: "2",
   },
   {
     discount: "10% OFF",
@@ -151,5 +153,6 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$20.99",
     newValue: "$16.99",
     billed: "monthly",
+    id: "3",
   },
 ];

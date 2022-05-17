@@ -4,8 +4,8 @@ export const Height: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="32"
+      width="50"
+      height="60"
       viewBox="0 0 30 32"
     >
       <g>

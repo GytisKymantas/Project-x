@@ -1,31 +1,35 @@
 import React from "react";
 import {
-  Navigation,
   SectionWrapper,
   Box,
   Typography,
   FlexWrapper,
-  GridWrapper,
   Image,
 } from "components";
+import { Footer } from "components";
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
-import { selectQuizAnswers } from "state/selectors";
+import {
+  selectQuizAnswers,
+  selectState,
+  selectUserData,
+} from "state/selectors";
 import { useSelector } from "react-redux";
-import { Arrow } from "assets/images";
 import { navigate } from "gatsby";
 import FactsContainer from "components/molecules/checkoutContainer/FactsContainer";
-import { CaloricCounter } from "components/molecules/checkoutContainer/CaloricCounter";
-import { BMI } from "components/molecules/checkoutContainer/BMI";
-import { Variations } from "components/molecules/checkoutContainer/Variations";
-import { Satisfaction } from "components/molecules/checkoutContainer/Satisfaction";
 import MeasurementsInfoContainer from "components/molecules/checkoutContainer/MeasurementsInfoContainer";
+import { SubscriptionBoxSection } from "components/atoms/subscriptionBox/SubscriptionSetion";
+
 const Checkout: React.FC = () => {
   //   const answers = selectQuizAnswers();
   const userQuizAnswers = useSelector(selectQuizAnswers);
   const workoutFrequencyAnswer = userQuizAnswers.quizAnswer;
   const doYouSmokeAnswer = userQuizAnswers.quizAnswer2;
-  console.log(userQuizAnswers, "from checkout");
+  const isAsthmatic = userQuizAnswers.quizAnswer4;
 
+  const select = useSelector(selectState);
+  const userData = useSelector(selectUserData);
+  console.log(select, "From react redux");
+  console.log(userQuizAnswers, "from redux user data");
   return (
     <>
       <SectionWrapper>
@@ -42,13 +46,11 @@ const Checkout: React.FC = () => {
           </Box>
         </Box>
         <MeasurementsInfoContainer />
-
         <FactsContainer />
-
         <Box m="50px">
           <Box>
             {workoutFrequencyAnswer && (
-              <Box bg="taxi" p="20px">
+              <Box p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <Box position="relative">
                     <Image src="shape360" />
@@ -73,8 +75,8 @@ const Checkout: React.FC = () => {
                 </FlexWrapper>
               </Box>
             )}
-            {doYouSmokeAnswer && (
-              <Box bg="taxi" p="20px">
+            {doYouSmokeAnswer === true ? (
+              <Box p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <FlexWrapper flexDirection="column">
                     <Typography color="primary" type="h2">
@@ -92,15 +94,15 @@ const Checkout: React.FC = () => {
                   <Image src="shape360" />
                 </FlexWrapper>
               </Box>
+            ) : (
+              ""
             )}
             {doYouSmokeAnswer && (
-              <Box bg="taxi" p="20px">
+              <Box p="20px">
                 <FlexWrapper alignItems="center" gap="20px">
                   <Box position="relative">
                     <Image src="shape360" />
-                    {/* <Typography color="primary" type="h2">
-                 {workoutFrequencyAnswer}
-               </Typography> */}
+
                     <Box position="absolute" top="35%" left="33%">
                       <Typography color="primary" type="h6">
                         Heart
@@ -122,6 +124,25 @@ const Checkout: React.FC = () => {
                 </FlexWrapper>
               </Box>
             )}
+            {isAsthmatic && (
+              <Box p="20px">
+                <FlexWrapper alignItems="center" gap="20px">
+                  <FlexWrapper flexDirection="column">
+                    <Typography color="primary" type="h2">
+                      You're Asthmatic!
+                    </Typography>
+                    <Typography color="primary" type="h6">
+                      Stay in areas with minimal air pollution. Avoid sports
+                      with continuous activity. Basketball, soccer, and
+                      long-distance running can be hard on the lungs if your
+                      asthma is poorly controlled. Avoid sports that are done in
+                      the cold, like cross-country skiing and hockey.
+                    </Typography>
+                  </FlexWrapper>
+                  <Image src="shape360" />
+                </FlexWrapper>
+              </Box>
+            )}
           </Box>
         </Box>
         <Box>
@@ -135,6 +156,8 @@ const Checkout: React.FC = () => {
           </button>
         </Box>
       </SectionWrapper>
+      <SubscriptionBoxSection />
+      <Footer />
     </>
   );
 };

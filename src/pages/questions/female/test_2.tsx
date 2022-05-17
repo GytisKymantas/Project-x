@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { QuizQuestionsContainer } from "components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { QuizAnswer } from "components";
-import { selectUserData } from "state/selectors";
+import { ReturnButton } from "components/atoms/buttons/ReturnButton";
 import { setQuizAnswers } from "state/slice";
 import { navigate } from "gatsby";
-import { setUserData } from "state/slice";
+import { STEP_TWO } from "constants/Questions";
 import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
-import { Link } from "gatsby";
-import styled from "styled-components/macro";
 import {
   Typography,
   FlexWrapper,
@@ -16,36 +13,12 @@ import {
   Box,
   SectionWrapper,
 } from "components";
-export const STEP_THREE = [
-  {
-    id: 1,
-    title: "Yes",
-    quizAnswer2: "True",
-  },
-  {
-    id: 2,
-    title: "No",
-    quizAnswer2: "False",
-  },
-];
 
 const TestTwo: React.FC = () => {
   const dispatch = useDispatch();
-  const userData = useSelector(selectUserData);
-  const quizAnswer = useSelector(setQuizAnswers);
-
-  console.log(userData, "this is user data from redux !");
-  console.log(quizAnswer, "this is quiz data from redux !");
-
   const [selectedUser, setSelectedUser] = useState({
     quizAnswer2: "",
   });
-  console.log(selectedUser, "from test_2");
-  const handleStateButton = () => dispatch(setQuizAnswers(selectedUser));
-  console.log(
-    quizAnswer.payload.user.quiz_answers.quizAnswer,
-    "bullseye from 2"
-  );
 
   useEffect(() => {
     dispatch(setQuizAnswers(selectedUser));
@@ -60,7 +33,7 @@ const TestTwo: React.FC = () => {
             Have you consumed any type of tobacco products in the past 14 days
           </Typography>
           <FlexWrapper flexDirection="column" alignItems="center" mt="s50">
-            {STEP_THREE.map(({ title, id, quizAnswer2 }: any) => (
+            {STEP_TWO.map(({ title, id, quizAnswer2 }: any) => (
               <Box
                 key={id}
                 onClick={() =>
@@ -80,13 +53,12 @@ const TestTwo: React.FC = () => {
               </Box>
             ))}
           </FlexWrapper>
-          <Box
-            onClick={() => {
-              navigate("/checkout");
-            }}
+          <ReturnButton
+            width="100px"
+            onClick={() => navigate("/questions/female/test_1")}
           >
-            Navigate to checkout
-          </Box>
+            return
+          </ReturnButton>
         </ContentWrapper>
       </SectionWrapper>
     </>

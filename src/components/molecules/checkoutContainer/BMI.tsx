@@ -1,11 +1,14 @@
 import React from "react";
 import { Box, FlexWrapper, Typography } from "components";
+import { useSelector } from "react-redux";
+import { selectUserData } from "state/selectors";
 
-interface BMIProps {
-  answer: number;
-}
+export const BMI: React.FC = () => {
+  const userData = useSelector(selectUserData);
+  const BMI =
+    ((userData.weight * 1000) / (userData.height * userData.height)) * 10;
+  const BMIrounded = Math.round(BMI);
 
-export const BMI: React.FC<BMIProps> = ({ answer }) => {
   return (
     <Box
       bg="white"
@@ -15,11 +18,11 @@ export const BMI: React.FC<BMIProps> = ({ answer }) => {
     >
       <FlexWrapper
         bg=""
-        justifyContent={answer > 22 ? "space-around" : "flex-end"}
+        justifyContent={BMIrounded > 22 ? "space-around" : "flex-end"}
       >
-        {answer > 22 ? (
+        {BMIrounded > 22 ? (
           <Typography type="h5" color="red">
-            {answer}%
+            {BMIrounded}%
           </Typography>
         ) : (
           ""
@@ -31,14 +34,14 @@ export const BMI: React.FC<BMIProps> = ({ answer }) => {
 
       <FlexWrapper
         justifyContent={
-          (answer > 19 && answer < 22) || answer == 22
+          (BMIrounded > 19 && BMIrounded < 22) || BMIrounded == 22
             ? "space-around"
             : "flex-end"
         }
       >
-        {(answer > 19 && answer < 22) || answer == 22 ? (
+        {(BMIrounded > 19 && BMIrounded < 22) || BMIrounded == 22 ? (
           <Typography type="h5" color="red">
-            {answer}%
+            {BMIrounded}%
           </Typography>
         ) : (
           ""
@@ -47,10 +50,12 @@ export const BMI: React.FC<BMIProps> = ({ answer }) => {
           Normal
         </Typography>
       </FlexWrapper>
-      <FlexWrapper justifyContent={answer < 19 ? "space-around" : "flex-end"}>
-        {answer < 19 ? (
+      <FlexWrapper
+        justifyContent={BMIrounded < 19 ? "space-around" : "flex-end"}
+      >
+        {BMIrounded < 19 ? (
           <Typography type="h5" color="red">
-            {answer}%
+            {BMIrounded}%
           </Typography>
         ) : (
           ""

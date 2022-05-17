@@ -5,8 +5,12 @@ import { Foodies } from "./types";
 
 const initialState = {
   user_data: {
-    id: null as unknown as number,
-    title: "",
+    // id: null as unknown as number,
+    age: null as unknown as number,
+    height: null as unknown as number,
+    weight: null as unknown as number,
+    desiredWeight: null as unknown as number,
+    isMale: null as unknown as boolean,
   },
   quiz_answers: {
     quizAnswer: "",
@@ -27,7 +31,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUserData: (state, actions: PayloadAction<any>) => {
-      state.user_data = { ...state.user_data, ...actions.payload };
+      state.user_data = actions.payload;
     },
     setMultipleChoice: (state, actions: any) => {
       state.multiple_choice = { ...state.multiple_choice, ...actions.payload };

@@ -11,6 +11,7 @@ interface SubscriptionBoxProps {
   oldValue?: string;
   newValue?: string;
   billed: string;
+  id: string;
 }
 
 export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
@@ -26,7 +27,7 @@ export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
     <Box
       borderRadius="br14"
       border={isSelected ? "2px solid orange" : "2px solid rgba(0, 0, 0, 0.08)"}
-      maxWidth="360px"
+      width="360px"
       onClick={() => setIsSelected(!isSelected)}
       p="16px"
     >

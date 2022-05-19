@@ -6,6 +6,7 @@ interface QuizAnswerProps {
   children: React.ReactNode;
   isSubmit?: boolean;
   disabled?: boolean;
+  border?: string;
 
   onClick?: () => void;
 }
@@ -14,6 +15,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   children,
   isSubmit,
   disabled,
+  border,
   onClick,
 }) => {
   const [select, setSelect] = useState(false);
@@ -40,7 +42,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           type="button"
           onClick={() => setSelect(!select)}
           background={"white"}
-          border={select ? "solid 2px black" : "solid 2px transparent"}
+          border={border}
         >
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>
         </BaseButton>
@@ -55,11 +57,11 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           Bum
         </Box>
       } */}
-      {select && (
+      {/* {select && (
         <Box position={"absolute"} top="28%" left="5%">
           <Check />
         </Box>
-      )}
+      )} */}
     </Box>
   );
 };

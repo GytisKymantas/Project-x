@@ -7,7 +7,11 @@ import { theme } from "styles/theme";
 import scrollTo from "gatsby-plugin-smoothscroll";
 import { Mobnav } from "assets/images";
 
-export const Navigation: React.FC = () => {
+interface NavigationProps {
+  checkoutPage: boolean;
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   const [fix, setFix] = useState(false);
 
   const handleScroll = () => {
@@ -27,7 +31,6 @@ export const Navigation: React.FC = () => {
       backgroundColor="white"
       position={fix ? "fixed" : "block"}
       zIndex={11}
-      // margin-top={fix ? "72px" : "0"}
     >
       <FlexWrapper
         alignItems="center"
@@ -40,25 +43,33 @@ export const Navigation: React.FC = () => {
           {/* <Image src="logoblack" width="190px" /> */}
           {/* <Image src="logotrans2" /> */}
         </Homelink>
-        <FlexWrapper
-          as="ul"
-          gap="10px"
-          display={{ _: "none", ltablet: "flex" }}
-        >
-          <ListItem as="li" onClick={() => scrollTo("#home")}>
-            Home
-          </ListItem>
-          <ListItem as="li" onClick={() => scrollTo("#about")}>
-            About
-          </ListItem>
-          <ListItem as="li" onClick={() => scrollTo("#testimonials")}>
-            Testimonials
-          </ListItem>
-          <ListItem as="li" onClick={() => scrollTo("#partners")}>
-            Partners
-          </ListItem>
-        </FlexWrapper>
-        <QuizStartButton width="137px">Start Quiz</QuizStartButton>
+        {checkoutPage ? (
+          ""
+        ) : (
+          <FlexWrapper
+            as="ul"
+            gap="10px"
+            display={{ _: "none", ltablet: "flex" }}
+          >
+            <ListItem as="li" onClick={() => scrollTo("#home")}>
+              Home
+            </ListItem>
+            <ListItem as="li" onClick={() => scrollTo("#about")}>
+              About
+            </ListItem>
+            <ListItem as="li" onClick={() => scrollTo("#testimonials")}>
+              Testimonials
+            </ListItem>
+            <ListItem as="li" onClick={() => scrollTo("#partners")}>
+              Partners
+            </ListItem>
+          </FlexWrapper>
+        )}
+        {checkoutPage ? (
+          <QuizStartButton width="137px">Check Product</QuizStartButton>
+        ) : (
+          <QuizStartButton width="137px">Start Quiz</QuizStartButton>
+        )}
       </FlexWrapper>
     </Box>
   );

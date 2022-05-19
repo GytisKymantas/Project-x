@@ -7,7 +7,7 @@ import {
   Image,
 } from "components";
 
-const HealthResult: React.FC = ({ fromRight }) => {
+const HealthResult: React.FC = ({ fromRight, quizAnswer }) => {
   return (
     <Box p="20px">
       <FlexWrapper alignItems="center" gap="20px">
@@ -16,7 +16,7 @@ const HealthResult: React.FC = ({ fromRight }) => {
         </Box>
         <FlexWrapper flexDirection="column">
           <Typography color="primary" type="h2">
-            {workoutFrequencyAnswer}
+            {quizAnswer}
           </Typography>
           <Typography color="primary" type="h6">
             Get at least 150 minutes of moderate aerobic activity or 75 minutes

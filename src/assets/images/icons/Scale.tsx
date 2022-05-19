@@ -10,7 +10,7 @@ export const Scale: React.FC = () => {
     >
       <g fill="none" fill-rule="evenodd">
         <path
-          fill="#eeff00"
+          fill="#eeff00d7"
           d="M384 120.945L321.612 116.314 256.028 109.422 192.823 77.543 128.54 56.865 64.171 18.715 0 0 0 189 384 189z"
           opacity=".5"
           transform="matrix(-1 0 0 1 385 2) matrix(-1 0 0 1 384 0)"

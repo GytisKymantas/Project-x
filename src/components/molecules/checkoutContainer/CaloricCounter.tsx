@@ -8,7 +8,12 @@ export const CaloricCounter: React.FC = () => {
   const caloricIntake = userData.weight * 0.9 * 30;
 
   return (
-    <Box bg="white" width="100%" height="100%" boxShadow={"1px 5px 16px black"}>
+    <Box
+      bg="white"
+      width="425px"
+      height="425px"
+      boxShadow={"1px 1px 10px black"}
+    >
       <FlexWrapper flexDirection="column" alignItems="center" gap={"10px"}>
         <Typography type="h5" color="primary">
           Daily Calory Intake

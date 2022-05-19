@@ -1,27 +1,209 @@
-import { STEP_ONE } from "constants/QuestionConstants";
-import { STEP_TWO } from "constants/QuestionConstants";
-import { STEP_THREE } from "constants/QuestionConstants";
-import { STEP_FOUR } from "constants/QuestionConstants";
-import { STEP_FIVE } from "constants/QuestionConstants";
-import { STEP_SIX } from "constants/QuestionConstants";
-
-export const MASSIVE = [
+export const ANSWERS = [
   {
-    STEP_ONE,
+    question: {
+      title: "How often do you do physical activity?",
+      answers: [
+        {
+          title: "2-3 hrs per week",
+          id: "2342",
+          quizAnswer: "2-3 hrs per week",
+          isWorkingOut: true,
+        },
+        {
+          title: "4-6 hrs per week",
+          id: "23424",
+          quizAnswer: "4-6 hrs per week",
+          isWorkingOut: true,
+        },
+        {
+          title: "6-9 hrs per week",
+          id: "22342",
+          quizAnswer: "6-9 hrs per week",
+          isWorkingOut: true,
+        },
+      ],
+    },
   },
   {
-    STEP_TWO,
+    question: {
+      title:
+        "Have you consumed any type of tobacco products in the past 14 days",
+      answers: [
+        {
+          id: 1,
+          title: "Yes",
+          quizAnswer: true,
+          isSmoker: true,
+        },
+        {
+          id: 2,
+          title: "No",
+          quizAnswer: false,
+          isSmoker: true,
+        },
+      ],
+    },
   },
   {
-    STEP_THREE,
+    question: {
+      title: "Which of the following conditions apply to you?",
+      answers: [
+        {
+          id: "1",
+          title: "High blood pressure",
+          quizAnswer: "Pressure",
+          isMultiple: true,
+        },
+        {
+          id: "2",
+          title: "Overweight",
+          quizAnswer: "Overweight",
+          isMultiple: true,
+        },
+        {
+          id: "3",
+          title: "Diabetes",
+          quizAnswer: "Diabetes",
+          isMultiple: true,
+        },
+        {
+          id: "4",
+          title: "Bulimia",
+          quizAnswer: "Bulimia",
+          isMultiple: true,
+        },
+        {
+          id: "5",
+          title: "Chest discomfort",
+          quizAnswer: "Chest",
+          isMultiple: true,
+        },
+        {
+          id: "6",
+          title: "Shortness of Breath",
+          quizAnswer: "Shortness",
+          isMultiple: true,
+        },
+        {
+          id: "7",
+          title: "Anxiety",
+          quizAnswer: "Anxiety",
+          isMultiple: true,
+        },
+        {
+          id: "8",
+          title: "Sleep",
+          quizAnswer: "Sleep",
+          isMultiple: true,
+        },
+        {
+          id: "9",
+          title: "Other",
+          quizAnswer: "Other",
+          isMultiple: true,
+        },
+        {
+          id: "10",
+          title: "None",
+          quizAnswer: "None",
+          isMultiple: true,
+          showSubmit: true,
+        },
+      ],
+    },
   },
   {
-    STEP_FOUR,
+    question: {
+      title: "Are you asthmatic??",
+      answers: [
+        {
+          id: "1",
+          title: "Yes",
+          quizAnswer: true,
+          isAsthmatic: true,
+        },
+        {
+          id: "2",
+          title: "No",
+          quizAnswer: false,
+          isAsthmatic: true,
+        },
+      ],
+    },
   },
   {
-    STEP_FIVE,
+    question: {
+      title: "Do you or does your family have history with heart issues?",
+      answers: [
+        {
+          id: "1",
+          title: "Yes",
+          quizAnswer: true,
+          isHeart: true,
+        },
+        {
+          id: "2",
+          title: "No",
+          quizAnswer: false,
+          isHeart: true,
+        },
+      ],
+    },
   },
   {
-    STEP_SIX,
+    question: {
+      title: "Which of the following conditions apply to you?",
+      answers: [
+        {
+          id: "1",
+          title: "Muscle tone",
+          quizAnswer: "Muscle tone",
+          isMultipleChoice: true,
+        },
+        {
+          id: "2",
+          title: "Strength",
+          quizAnswer: "Strength",
+          isMultipleChoice: true,
+        },
+        {
+          id: "3",
+          title: "Flexibility",
+          quizAnswer: "Flexibility",
+          isMultipleChoice: true,
+        },
+        {
+          id: "4",
+          title: "Reduce stress",
+          quizAnswer: "Stress",
+          isMultipleChoice: true,
+        },
+        {
+          id: "5",
+          title: "Overall health",
+          quizAnswer: "Health",
+          isMultipleChoice: true,
+        },
+        {
+          id: "6",
+          title: "Weight loss",
+          quizAnswer: "Weight",
+          isMultipleChoice: true,
+        },
+        {
+          id: "7",
+          title: "Cardiovascularity",
+          quizAnswer: "Cardiovascularity",
+          isMultipleChoice: true,
+        },
+        {
+          id: "8",
+          title: "Other",
+          quizAnswer: "Other",
+          isMultipleChoice: true,
+          showGoalsSubmit: true,
+        },
+      ],
+    },
   },
 ];

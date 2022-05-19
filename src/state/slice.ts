@@ -13,12 +13,10 @@ const initialState = {
     isMale: null as unknown as boolean,
   },
   quiz_answers: {
-    quizAnswer: "",
-    quizAnswer2: "",
-    quizAnswer3: "",
-    quizAnswer4: "",
-    quizAnswer5: "",
-    quizAnswer6: "",
+    isWorkingOut: "",
+    isSmoking: "",
+    isAsthmatic: "",
+    isHeartCondition: "",
   },
   multiple_choice: {},
   multiple_choiceGoals: {},
@@ -48,10 +46,38 @@ const userSlice = createSlice({
         ...actions.payload,
       };
     },
+    setIsWorkingOut: (state, actions: PayloadAction<any>) => {
+      state.quiz_answers = {
+        ...state.quiz_answers,
+        isWorkingOut: actions.payload,
+      };
+    },
+    setIsSmoking: (state, actions: PayloadAction<any>) => {
+      state.quiz_answers = {
+        ...state.quiz_answers,
+        isSmoking: actions.payload,
+      };
+    },
+    setIsAsthmatic: (state, actions: PayloadAction<any>) => {
+      state.quiz_answers = {
+        ...state.quiz_answers,
+        isAsthmatic: actions.payload,
+      };
+    },
+    setIsHeart: (state, actions: PayloadAction<any>) => {
+      state.quiz_answers = {
+        ...state.quiz_answers,
+        isHeartCondition: actions.payload,
+      };
+    },
   },
 });
 
 export const {
+  setIsHeart,
+  setIsAsthmatic,
+  setIsSmoking,
+  setIsWorkingOut,
   setMultipleChoiceGoals,
   setMultipleChoice,
   setUserData,

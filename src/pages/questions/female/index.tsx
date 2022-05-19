@@ -1,11 +1,11 @@
 import React from "react";
 import { Box } from "components";
-import { ScaleResult } from "components/atoms/scale/ScaleResult";
+import TryOut from "./TryOut";
 
 const Female = () => {
   return (
-    <Box m="200px">
-      <ScaleResult />
+    <Box>
+      <TryOut />
     </Box>
   );
 };

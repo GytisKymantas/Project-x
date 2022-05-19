@@ -10,6 +10,7 @@ const colors = {
   gray: "#5F5F5F",
   taxi: "#f4f4b3",
   orange: "orange",
+  orangelight: "#ffa50026;",
 };
 
 export const theme = {

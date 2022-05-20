@@ -3,25 +3,22 @@ import {
   SectionWrapper,
   Typography,
   Container,
-  ContentWrapper,
+  ScaleResult,
+  FlexWrapper,
 } from "components";
-import { BMI } from "components/molecules/checkoutContainer/BMI";
-import { ScaleResult } from "../ScaleResult";
-import { FlexWrapper } from "components/atoms/wrappers/FlexWrapper";
 import { CaloricCounter } from "components/molecules/checkoutContainer/CaloricCounter";
 
-const ScaleSection = () => {
+const ScaleSection: React.FC = () => {
   return (
     <SectionWrapper>
-      <Container mb="50px">
+      <Container mb="s50">
         <Typography fontWeight="fw700" color="primary">
           Based on quiz results, you will be
         </Typography>
       </Container>
       <Container>
-        <FlexWrapper gap="20px" justifyContent="center">
+        <FlexWrapper gap="1.25rem" justifyContent="center">
           <ScaleResult />
-          {/* <BMI /> */}
           <CaloricCounter />
         </FlexWrapper>
       </Container>

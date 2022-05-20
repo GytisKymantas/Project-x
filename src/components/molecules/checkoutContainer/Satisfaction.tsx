@@ -16,7 +16,7 @@ export const Satisfaction: React.FC = () => {
         <Box position={"relative"}>
           <Image src="green360" />
           <Box position="absolute" top="32%" left="30%">
-            <Typography type="h2" color="primary" t>
+            <Typography type="h2" color="primary">
               97%
             </Typography>
           </Box>

@@ -38,6 +38,19 @@ const TryOut: React.FC = () => {
   const [asthmaticAnswer, setAsthmaticAnswer] = useState({});
   const [heartAnswer, setHeartAnswer] = useState({});
 
+  console.log(selectedUserState, "seleted user state");
+  if (selectedUserState.length > 5) {
+    console.log("it is more than 5 !!!!");
+  }
+
+  const testFunction = () => {
+    if (selectedUserState.length < 6) {
+      console.log("it is more than 5 !!!!");
+    } else {
+      setSelectedUserState((array) => array.concat(quizAnswer));
+    }
+  };
+
   const handleUserState = () => {
     dispatch(setMultipleChoice(selectedUserState));
     setArrayIndex(arrayIndex + 1);

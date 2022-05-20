@@ -8,7 +8,13 @@ export const BMI: React.FC = () => {
   const BMI =
     ((userData.weight * 1000) / (userData.height * userData.height)) * 10;
   const BMIrounded = Math.round(BMI);
-
+  const heightInches = userData.feet * 12 + parseInt(userData.inches);
+  const imperialBMI = (userData.weight * 703) / (heightInches * heightInches);
+  const imperialBMIrounded = Math.round(imperialBMI);
+  console.log(imperialBMI);
+  console.log(typeof userData.inches);
+  console.log(BMI);
+  console.log(userData.height);
   return (
     <Box
       bg="white"
@@ -17,12 +23,18 @@ export const BMI: React.FC = () => {
       boxShadow={"1px 5px 16px black"}
     >
       <FlexWrapper
-        bg=""
-        justifyContent={BMIrounded > 22 ? "space-around" : "flex-end"}
+        justifyContent={
+          BMIrounded > 22 || imperialBMIrounded > 22
+            ? "space-around"
+            : "flex-end"
+        }
       >
-        {BMIrounded > 22 ? (
+        {BMIrounded > 22 || imperialBMIrounded > 22 ? (
           <Typography type="h5" color="red">
-            {BMIrounded}%
+            {BMIrounded === Infinity
+              ? `${imperialBMIrounded}`
+              : `${BMIrounded}`}
+            %
           </Typography>
         ) : (
           ""
@@ -34,14 +46,19 @@ export const BMI: React.FC = () => {
 
       <FlexWrapper
         justifyContent={
-          (BMIrounded > 19 && BMIrounded < 22) || BMIrounded == 22
+          (BMIrounded > 19 && BMIrounded <= 22) ||
+          (imperialBMIrounded > 19 && imperialBMIrounded <= 22)
             ? "space-around"
             : "flex-end"
         }
       >
-        {(BMIrounded > 19 && BMIrounded < 22) || BMIrounded == 22 ? (
+        {(BMIrounded > 19 && BMIrounded <= 22) ||
+        (imperialBMIrounded > 19 && imperialBMIrounded <= 22) ? (
           <Typography type="h5" color="red">
-            {BMIrounded}%
+            {BMIrounded === Infinity
+              ? `${imperialBMIrounded}`
+              : `${BMIrounded}`}
+            %
           </Typography>
         ) : (
           ""
@@ -51,11 +68,18 @@ export const BMI: React.FC = () => {
         </Typography>
       </FlexWrapper>
       <FlexWrapper
-        justifyContent={BMIrounded < 19 ? "space-around" : "flex-end"}
+        justifyContent={
+          BMIrounded < 19 || imperialBMIrounded < 19
+            ? "space-around"
+            : "flex-end"
+        }
       >
-        {BMIrounded < 19 ? (
+        {BMIrounded < 19 || imperialBMIrounded < 19 ? (
           <Typography type="h5" color="red">
-            {BMIrounded}%
+            {BMIrounded === Infinity
+              ? `${imperialBMIrounded}`
+              : `${BMIrounded}`}
+            %
           </Typography>
         ) : (
           ""

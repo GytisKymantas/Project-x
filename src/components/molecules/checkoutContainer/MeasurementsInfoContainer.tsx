@@ -12,15 +12,18 @@ import { Gender, Height, Scales, Age } from "assets/images";
 // const desiredWeight = data.desiredWeight;
 // const isMale = data.isMale;
 
-export const MeasurementsInfoContainer = () => {
+export const MeasurementsInfoContainer: React.FC = () => {
   const userData = useSelector(selectUserData);
   const age = userData.age;
   const height = userData.height;
   const weight = userData.weight;
+  const feet = userData.feet;
+  const inches = userData.inches;
+  const heightInches = userData.feet * 12 + userData.inches;
   const desiredWeight = userData.desiredWeight;
   const isMale = userData.isMale;
 
-  console.log(isMale);
+  console.log(userData, "this is userData");
   // const handleGender = () => {
   //   if (isMale === true) {
   //     return (isMale = "Male");
@@ -43,6 +46,9 @@ export const MeasurementsInfoContainer = () => {
     {
       image: <Height />,
       title: height,
+      feet: feet,
+      inches: inches,
+      imperialSubtitle: "Height ft",
       subtitle: "Height cm",
       id: "1414",
     },
@@ -64,14 +70,19 @@ export const MeasurementsInfoContainer = () => {
   return (
     <SectionWrapper>
       <GridWrapper gridTemplateColumns="repeat(4,1fr)" my="10rem" gap="20px">
-        {MEASUREMENT_CONTAINER_DATA.map(({ id, image, title, subtitle }) => (
-          <MeasurementInfo
-            key={id}
-            title={title}
-            subtitle={subtitle}
-            image={image}
-          />
-        ))}
+        {MEASUREMENT_CONTAINER_DATA.map(
+          ({ id, image, title, subtitle, feet, inches, imperialSubtitle }) => (
+            <MeasurementInfo
+              key={id}
+              title={title}
+              subtitle={subtitle}
+              image={image}
+              feet={feet}
+              inches={inches}
+              imperialSubtitle={imperialSubtitle}
+            />
+          )
+        )}
       </GridWrapper>
     </SectionWrapper>
   );

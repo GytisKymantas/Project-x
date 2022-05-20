@@ -25,7 +25,7 @@ export const Review: React.FC = () => {
   }, [index]);
 
   return (
-    <SectionWrapper id="testimonials">
+    <SectionWrapper id="Testimonials">
       <Container>
         <Box mx="auto" my="s50" textAlign="center" maxWidth="750px">
           <FlexWrapper flexDirection="column">

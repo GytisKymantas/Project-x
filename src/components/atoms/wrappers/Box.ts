@@ -49,9 +49,12 @@ export interface Styles<T>
     TextAlignProps<T>,
     SpaceProps<T> {
   gap?: string;
+  fixed?: string;
 }
 
 export const Box = styled.div<Styles<Theme>>`
+  position: ${({ fixed }) => fixed || ""};
+
   && {
     ${boxProps};
   }

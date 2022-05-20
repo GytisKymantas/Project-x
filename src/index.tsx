@@ -2,6 +2,7 @@ import React, { StrictMode } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components/macro";
 import { theme } from "styles/theme";
 import { Provider } from "react-redux";
+
 import { store } from "state/store";
 
 const GlobalStyle = createGlobalStyle`

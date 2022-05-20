@@ -3,7 +3,7 @@ import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 import { SectionWrapper, GridWrapper, FlexWrapper, Image } from "components";
 
 export const Partners: React.FC = () => (
-  <SectionWrapper id="partners">
+  <SectionWrapper id="Partners">
     <GridWrapper
       gap={{ _: "50px", ltablet: "0" }}
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}

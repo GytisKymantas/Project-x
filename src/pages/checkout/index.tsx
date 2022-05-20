@@ -20,7 +20,7 @@ import { useSelector } from "react-redux";
 import { navigate } from "gatsby";
 import FactsContainer from "components/molecules/checkoutContainer/FactsContainer";
 import MeasurementsInfoContainer from "components/molecules/checkoutContainer/MeasurementsInfoContainer";
-import { SubscriptionBoxSection } from "components/atoms/subscriptionBox/SubscriptionSetion";
+import { SubscriptionBoxSection } from "components/atoms/subscriptionBox/SubscriptionBoxSection";
 
 const Checkout: React.FC = () => {
   //   const answers = selectQuizAnswers();

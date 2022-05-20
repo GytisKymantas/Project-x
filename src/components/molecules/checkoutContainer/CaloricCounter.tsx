@@ -5,7 +5,9 @@ import { selectUserData } from "state/selectors";
 
 export const CaloricCounter: React.FC = () => {
   const userData = useSelector(selectUserData);
+  const feet = userData.feet;
   const caloricIntake = userData.weight * 0.9 * 30;
+  const caloricIntakeImperial = userData.weight * 0.9 * 14;
 
   return (
     <Box
@@ -18,9 +20,15 @@ export const CaloricCounter: React.FC = () => {
         <Typography type="h5" color="primary">
           Daily Calory Intake
         </Typography>
-        <Typography type="h4" color="primary">
-          {caloricIntake} - {caloricIntake + 200}
-        </Typography>
+        {feet ? (
+          <Typography type="h4" color="primary">
+            {caloricIntakeImperial} - {caloricIntakeImperial + 200}
+          </Typography>
+        ) : (
+          <Typography type="h4" color="primary">
+            {caloricIntake} - {caloricIntake + 200}
+          </Typography>
+        )}
         <Image src="shape360" />
       </FlexWrapper>
     </Box>

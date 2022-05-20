@@ -1,6 +1,5 @@
 import React from "react";
 import { BaseButton, Box } from "components";
-import { StringifyOptions } from "querystring";
 
 interface QuizStartButtonProps {
   children: React.ReactNode;

@@ -5,6 +5,6 @@ interface BulletContainerProps {
   index: number;
 }
 
-export const BulletContainer: React.FC<BulletContainerProps> = ({ index }) => {
-  return <FlexWrapper justifyContent="center">{index}</FlexWrapper>;
-};
+export const BulletContainer: React.FC<BulletContainerProps> = ({ index }) => (
+  <FlexWrapper justifyContent="center">{index}</FlexWrapper>
+);

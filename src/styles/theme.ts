@@ -10,7 +10,8 @@ const colors = {
   gray: "#5F5F5F",
   taxi: "#f4f4b3",
   orange: "orange",
-  orangelight: "#ffa50026;",
+  orangelight: "#ffa50026",
+  red: "red",
 };
 
 export const theme = {
@@ -18,12 +19,14 @@ export const theme = {
   fontFamily: { primary: "Red Hat Display" },
   fontSizes: {
     fs16: "1rem",
+    fs20: "1.25rem",
     fs24: "1.5rem",
     fs32: "2rem",
   },
   radii: {
     br14: 14,
     br24: 24,
+    br50: "50%",
   },
   fontWeights: {
     fw700: 700,
@@ -38,8 +41,10 @@ export const theme = {
   space: {
     auto: "auto",
     s0auto: "0 auto",
+    s5: "5px",
     s8: "8px",
     s16: "16px",
+    s18: "18px",
     s20: "20px",
     s20s50: "20px 50px",
     s25: "25px",

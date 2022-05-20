@@ -1,21 +1,14 @@
 import React from "react";
-import {
-  SectionWrapper,
-  GridWrapper,
-  Box,
-  FlexWrapper,
-  Typography,
-} from "components";
+import { SectionWrapper, GridWrapper, Box, Typography } from "components";
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
-import { StaticImage } from "gatsby-plugin-image";
 
 export const About = () => (
-  <SectionWrapper id="about">
+  <SectionWrapper id="About">
     <GridWrapper
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       gridTemplateRows={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-      gap="40px"
-      margin="50px"
+      gap="2.5rem"
+      margin="s50"
     >
       <Box bg="blue">
         {/* <StaticImage

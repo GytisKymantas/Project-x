@@ -1,18 +1,22 @@
 import { Gender, Height, Scales, Age } from "assets/images";
 import React from "react";
 
-export const QUIZ_DETAILS = [
+export const NAVIGATION_LINKS = [
   {
-    title: "2-3 hrs per week",
-    id: "2342",
+    title: "Home",
+    id: "1",
   },
   {
-    title: "4-6 hrs per week",
-    id: "23424",
+    title: "About",
+    id: "2",
   },
   {
-    title: "6-9 hrs per week",
-    id: "22342",
+    title: "Testimonials",
+    id: "3",
+  },
+  {
+    title: "Partners",
+    id: "4",
   },
 ];
 

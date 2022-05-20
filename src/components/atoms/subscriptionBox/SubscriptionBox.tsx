@@ -11,7 +11,7 @@ interface SubscriptionBoxProps {
   oldValue?: string;
   newValue?: string;
   billed: string;
-  id: string;
+  id?: string;
 }
 
 export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
@@ -27,20 +27,20 @@ export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
     <Box
       borderRadius="br14"
       border={isSelected ? "2px solid orange" : "2px solid rgba(0, 0, 0, 0.08)"}
-      width="360px"
+      width="22.5rem"
       onClick={() => setIsSelected(!isSelected)}
-      p="16px"
+      p="s16"
     >
-      <FlexWrapper alignItems="center" gap="8px">
-        <Typography color="Primary">{month}</Typography>
-        <Box bg="taxi" p="5px">
-          <Typography fontWeight={700} color="primary">
+      <FlexWrapper alignItems="center" gap="0.5rem">
+        <Typography color="primary">{month}</Typography>
+        <Box bg="taxi" p="s5">
+          <Typography fontWeight="fw700" color="primary">
             {discount}
           </Typography>
         </Box>
       </FlexWrapper>
-      <FlexWrapper alignItems="center" gap="8px" pt="18px">
-        <Typography fontWeight={700} fontSize="20px" color="Primary">
+      <FlexWrapper alignItems="center" gap="8px" pt="s18">
+        <Typography fontWeight="fw700" fontSize="fs20" color="primary">
           {monthlyValue}
         </Typography>
         <FlexWrapper justifyContent="space-between" width="100%">
@@ -50,8 +50,8 @@ export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
           {isSelected ? <Check /> : <CheckBlank />}
         </FlexWrapper>
       </FlexWrapper>
-      <FlexWrapper alignItems="center" gap="8px" pt="18px">
-        <Typography fontWeight={700} fontSize="20px" color="orange">
+      <FlexWrapper alignItems="center" gap="8px" pt="s18">
+        <Typography fontWeight="fw700" fontSize="fs20" color="orange">
           <CrossedPrice>{oldValue}</CrossedPrice>
           {newValue}
         </Typography>
@@ -64,6 +64,6 @@ export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
 };
 
 const CrossedPrice = styled.s`
-  color: black;
-  margin-right: 5px;
+  color: ${theme.colors.primary};
+  margin-right: 0.3125rem;
 `;

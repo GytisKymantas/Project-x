@@ -10,6 +10,8 @@ const initialState = {
     height: null as unknown as number,
     weight: null as unknown as number,
     desiredWeight: null as unknown as number,
+    feet: null as unknown as number,
+    inches: null as unknown as number,
     isMale: null as unknown as boolean,
   },
   quiz_answers: {

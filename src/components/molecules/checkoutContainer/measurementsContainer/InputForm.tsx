@@ -7,26 +7,45 @@ import {
   Typography,
   BaseButton,
 } from "components";
-
+import { AgeInput } from "./AgeInput";
 import styled from "styled-components/macro";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "state/slice";
 import { selectUserData } from "state/selectors";
 import { navigate } from "gatsby";
+import { WeightInput } from "./WeightInput";
+import { HeightInput } from "./HeightInput";
+import { DesiredWeightInput } from "./DesiredWeightInput";
+import { Imperial } from "./Imperial";
+
 export const InputForm = () => {
   const [ifImperial, setIfImperial] = useState(false);
-  const [age, setAge] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [weight, setWeight] = useState(0);
-  const [desiredWeight, setDesiredWeight] = useState(0);
+  const [age, setAge] = useState("");
+  const [height, setHeight] = useState("");
+  const [feet, setFeet] = useState("");
+  const [inches, setInches] = useState("");
+  const [weight, setWeight] = useState("");
+  const [desiredWeight, setDesiredWeight] = useState("");
   const [isMale, setIsMale] = useState("");
+
+  console.log(age, "this is age returned value");
+  console.log(weight, "this is weight returned value");
+  console.log(height, "this is height returned value");
+  console.log(desiredWeight, "this is desired weight returned value");
+  console.log(inches, "this is inches returned value");
+  console.log(feet, "this is feet returned value");
+
   const [userState, setUserState] = useState({
     age: null,
     height: null,
     weight: null,
+    feet: null,
+    inches: null,
     desiredWeight: null,
     isMale: null,
   });
+
+  console.log(userState, "user state ");
   const ageReal = age;
 
   const userData = useSelector(selectUserData);
@@ -39,29 +58,27 @@ export const InputForm = () => {
       height: height,
       weight: weight,
       desiredWeight: desiredWeight,
+      feet: feet,
+      inches: inches,
       isMale: isMale,
     });
-    navigate("checkout");
+    navigate("/loading");
   };
   const handleImperialSystem = () => {
     setIfImperial(true);
-    setUserData({
-      age: null,
-      height: null,
-      weight: null,
-      desiredWeight: null,
-      isMale: null,
-    });
+    setAge("");
+    setHeight("");
+    setFeet("");
+    setInches("");
+    setWeight("");
+    setDesiredWeight("");
   };
   const handleMetricSystem = () => {
     setIfImperial(false);
-    setUserData({
-      age: null,
-      height: null,
-      weight: null,
-      desiredWeight: null,
-      isMale: null,
-    });
+    setAge("");
+    setHeight("");
+    setWeight("");
+    setDesiredWeight("");
   };
 
   useEffect(() => {
@@ -79,160 +96,62 @@ export const InputForm = () => {
           justifyContent="center"
           borderBottom="1px solid gray"
         >
-          <Typography
-            fontWeight="700"
-            color={ifImperial ? "orange" : "primary"}
-            borderBottom={ifImperial ? "1px solid orange" : "1x solid primary"}
-            onClick={handleImperialSystem}
-          >
-            Imperial
-          </Typography>
-          <Typography
-            fontWeight="fw700"
-            color={ifImperial ? "primary" : "orange"}
-            borderBottom={ifImperial ? "1px solid primary" : "1x solid orange"}
-            onClick={handleMetricSystem}
-          >
-            Metric
-          </Typography>
+          <MeasurementWrapper>
+            <Typography
+              fontWeight="700"
+              color={ifImperial ? "orange" : "primary"}
+              borderBottom={
+                ifImperial ? "1px solid orange" : "1x solid primary"
+              }
+              onClick={handleImperialSystem}
+            >
+              Imperial
+            </Typography>
+          </MeasurementWrapper>
+          <MeasurementWrapper>
+            <Typography
+              fontWeight="fw700"
+              color={ifImperial ? "primary" : "orange"}
+              borderBottom={
+                ifImperial ? "1px solid primary" : "1x solid orange"
+              }
+              onClick={handleMetricSystem}
+            >
+              Metric
+            </Typography>
+          </MeasurementWrapper>
         </FlexWrapper>
         <FormContainer>
           <FlexWrapper flexDirection="column" gap="25px" width="100%">
-            <FlexWrapper
-              width="100%"
-              borderBottom="1px solid black"
-              justifyContent="space-between"
-            >
-              <Input
-                type="number"
-                placeholder="Age"
-                onChange={(e) => setAge(e.target.value)}
-                required
-                minValue={18}
-                maxValue={100}
-              />
-              <Box mt="17px">
-                <Typography
-                  color="primary"
-                  fontFamily="Satisfy"
-                  fontSize="15px"
-                >
-                  years
-                </Typography>
-              </Box>
-            </FlexWrapper>
             {ifImperial ? (
-              <FlexWrapper gap="26px">
-                <FlexWrapper
-                  width="100%"
-                  borderBottom="1px solid black"
-                  justifyContent="space-between"
-                >
-                  <Input
-                    type="text"
-                    placeholder="Height"
-                    onChange={(e) => setHeight(e.target.value)}
-                    width="162px"
-                  />
-                  <Box mt="17px">
-                    <Typography
-                      color="primary"
-                      fontFamily="Satisfy"
-                      fontSize="15px"
-                    >
-                      Ft
-                    </Typography>
-                  </Box>
-                </FlexWrapper>
-                <FlexWrapper
-                  width="100%"
-                  borderBottom="1px solid black"
-                  justifyContent="space-between"
-                >
-                  <Input type="text" placeholder="Inches" width="162px" />
-                  <Box mt="17px">
-                    <Typography
-                      color="primary"
-                      fontFamily="Satisfy"
-                      fontSize="15px"
-                    >
-                      in
-                    </Typography>
-                  </Box>
-                </FlexWrapper>
-              </FlexWrapper>
-            ) : (
-              <FlexWrapper
-                width="100%"
-                borderBottom="1px solid black"
-                justifyContent="space-between"
-              >
-                <Input
-                  type="number"
-                  placeholder="Height"
-                  width="100%"
-                  onChange={(e) => setHeight(e.target.value)}
-                  required
-                  minValue={100}
-                  maxValue={230}
+              <>
+                <AgeInput setStateValue={setAge} value={age} />
+                <Imperial
+                  setStateValueInches={setInches}
+                  setStateValueFeet={setFeet}
                 />
-                <Box mt="17px">
-                  <Typography
-                    color="primary"
-                    fontFamily="Satisfy"
-                    fontSize="15px"
-                  >
-                    cm
-                  </Typography>
-                </Box>
-              </FlexWrapper>
+                <WeightInput
+                  setStateValue={setWeight}
+                  value={weight}
+                  imperial
+                />
+                <DesiredWeightInput
+                  setStateValue={setDesiredWeight}
+                  value={desiredWeight}
+                  imperial
+                />
+              </>
+            ) : (
+              <>
+                <AgeInput setStateValue={setAge} value={age} />
+                <HeightInput setStateValue={setHeight} />
+                <WeightInput setStateValue={setWeight} value={weight} />
+                <DesiredWeightInput
+                  setStateValue={setDesiredWeight}
+                  value={desiredWeight}
+                />
+              </>
             )}
-            <FlexWrapper
-              width="100%"
-              borderBottom="1px solid black"
-              justifyContent="space-between"
-            >
-              <Input
-                type="number"
-                placeholder="Weight"
-                required
-                onChange={(e) => setWeight(e.target.value)}
-                minValue={10}
-                maxValue={230}
-              />
-              <Box mt="17px">
-                <Typography
-                  color="primary"
-                  fontFamily="Satisfy"
-                  fontSize="15px"
-                >
-                  kg
-                </Typography>
-              </Box>
-            </FlexWrapper>
-            <FlexWrapper
-              width="100%"
-              borderBottom="1px solid black"
-              justifyContent="space-between"
-            >
-              <Input
-                type="text"
-                placeholder="Desired Weight"
-                required
-                onChange={(e) => setDesiredWeight(e.target.value)}
-                minValue={30}
-                maxValue={230}
-              />
-              <Box mt="17px">
-                <Typography
-                  color="primary"
-                  fontFamily="Satisfy"
-                  fontSize="15px"
-                >
-                  kg
-                </Typography>
-              </Box>
-            </FlexWrapper>
             <FlexWrapper gap="10px">
               <Input
                 type="radio"
@@ -247,19 +166,19 @@ export const InputForm = () => {
                 label="female"
               />
             </FlexWrapper>
-            {age && height && weight && desiredWeight && isMale ? (
-              <BaseButton onClick={handleFunction} type="submit">
-                SUBMIT
-              </BaseButton>
-            ) : (
-              ""
-            )}
+            <BaseButton onClick={handleFunction} type="submit">
+              SUBMIT
+            </BaseButton>
           </FlexWrapper>
         </FormContainer>
       </FlexWrapper>
     </ContentWrapper>
   );
 };
+
+const MeasurementWrapper = styled(Box)`
+  cursor: pointer;
+`;
 const FormContainer = styled.form`
   width: 100%;
 `;

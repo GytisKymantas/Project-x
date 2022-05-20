@@ -206,4 +206,14 @@ export const ANSWERS = [
       ],
     },
   },
+  {
+    question: {
+      title: "Enter your measurements",
+      answers: [
+        {
+          isMeasurement: true,
+        },
+      ],
+    },
+  },
 ];

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { InputForm } from "components/molecules/checkoutContainer/measurementsContainer/InputForm";
 import { Check } from "assets/images";
+import { ReturnButton } from "components/atoms/buttons/ReturnButton";
 import {
   setQuizAnswers,
   setIsAsthmatic,
@@ -20,8 +22,6 @@ import {
   SectionWrapper,
   QuizAnswer,
 } from "components";
-import { navigate } from "gatsby";
-import { selectQuizAnswers } from "state/selectors";
 
 const TryOut: React.FC = () => {
   const dispatch = useDispatch();
@@ -38,30 +38,9 @@ const TryOut: React.FC = () => {
   const [asthmaticAnswer, setAsthmaticAnswer] = useState({});
   const [heartAnswer, setHeartAnswer] = useState({});
 
-  console.log(ANSWERS);
-  // console.log(workAnswer, "this is work answer");
-  // console.log(smokingAnswer, "this is smoking answer");
-  // console.log(asthmaticAnswer, "this is asthmatic answer");
-  // console.log(heartAnswer, "this is heart answer");
-
-  // const userArray = selectedUserState;
-  console.log(selectedUserState, "from local userstate");
-
   const handleUserState = () => {
     dispatch(setMultipleChoice(selectedUserState));
     setArrayIndex(arrayIndex + 1);
-  };
-  const handleGoalsState = () => {
-    // dispatch(setMultipleChoiceGoals(multipleChoiceGoals));
-    navigate("/landing");
-    // setArrayIndex(arrayIndex + 1);
-  };
-
-  const testFunction = (quizAnswer) => {
-    if (selectedUserState.includes(quizAnswer) === false) {
-      setSelectedUserState((array) => array.concat(quizAnswer));
-    }
-    return;
   };
 
   if (selectedUserState.includes("None")) {
@@ -92,13 +71,15 @@ const TryOut: React.FC = () => {
     dispatch(setIsHeart(heartAnswer));
   }, [heartAnswer]);
 
-  // const handleWorkingOut = () => {
-  //   dispatch(setIsWorkingOut(selectedUser));
-  // };
-
   const handleClick = () => {
     const nextQuestion = arrayIndex + 1;
     if (nextQuestion < ANSWERS.length) {
+      setArrayIndex(nextQuestion);
+    }
+  };
+  const handleReturnClick = () => {
+    const nextQuestion = arrayIndex - 1;
+    if (nextQuestion >= 0) {
       setArrayIndex(nextQuestion);
     }
   };
@@ -121,16 +102,13 @@ const TryOut: React.FC = () => {
               isAsthmatic,
               isSmoker,
               isHeart,
+              isMeasurement,
               showSubmit,
               showGoalsSubmit,
             }) => (
               <Box key={id}>
                 {isMultiple && (
-                  <Box
-                    key={id}
-                    position="relative"
-                    // onClick={() => setBorder(id)}
-                  >
+                  <Box key={id} position="relative">
                     <QuizAnswer
                       border={
                         selectedUserState.includes(quizAnswer)
@@ -148,11 +126,6 @@ const TryOut: React.FC = () => {
                                 array.concat(quizAnswer)
                               )
                       }
-                      // onClick={() =>
-                      //   setSelectedUserState((array) =>
-                      //     array.concat(quizAnswer)
-                      //   )
-                      // }
                       key={id}
                     >
                       {title}
@@ -165,15 +138,7 @@ const TryOut: React.FC = () => {
                   </Box>
                 )}
                 {isMultipleChoice && (
-                  <Box
-                    position="relative"
-                    key={id}
-                    // onClick={() =>
-                    //   setMultipleChoiceGoals({
-                    //     quizAnswer,
-                    //   })
-                    // }
-                  >
+                  <Box position="relative" key={id}>
                     <QuizAnswer
                       border={
                         multipleChoiceGoals.includes(quizAnswer)
@@ -239,6 +204,7 @@ const TryOut: React.FC = () => {
                     </QuizAnswer>
                   </Box>
                 )}
+                {isMeasurement && <InputForm />}
                 {isHeart && (
                   <Box
                     key={id}
@@ -253,30 +219,43 @@ const TryOut: React.FC = () => {
                     </QuizAnswer>
                   </Box>
                 )}
-                {showSubmit && (
+                {showSubmit && selectedUserState.length < 1 && (
+                  <Box>
+                    <QuizAnswer onClick={handleUserState} disabled isSubmit>
+                      submit
+                    </QuizAnswer>
+                  </Box>
+                )}
+
+                {showSubmit && selectedUserState.length >= 1 && (
                   <Box>
                     <QuizAnswer onClick={handleUserState} isSubmit>
                       submit
                     </QuizAnswer>
                   </Box>
                 )}
-                {showGoalsSubmit && (
+
+                {showGoalsSubmit && multipleChoiceGoals.length < 1 && (
                   <Box>
-                    {/* <QuizAnswer
-                      width="300px"
-                      onClick={handleGoalsState}
-                      isSubmit
-                    >
+                    <QuizAnswer onClick={handleUserState} disabled isSubmit>
                       submit
-                    </QuizAnswer> */}
-                    <button type="button" onClick={handleGoalsState}>
-                      aubmit
-                    </button>
+                    </QuizAnswer>
+                  </Box>
+                )}
+
+                {showGoalsSubmit && multipleChoiceGoals.length >= 1 && (
+                  <Box>
+                    <QuizAnswer onClick={handleUserState} isSubmit>
+                      submit
+                    </QuizAnswer>
                   </Box>
                 )}
               </Box>
             )
           )}
+          <ReturnButton width="100px" onClick={handleReturnClick}>
+            return
+          </ReturnButton>
         </FlexWrapper>
       </ContentWrapper>
     </SectionWrapper>

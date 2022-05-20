@@ -11,6 +11,7 @@ export interface DefaultButtonProps
   boxShadow?: string;
   border?: string;
   cursor?: string;
+  pointer?: string;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
@@ -24,6 +25,7 @@ export type ButtonStyles = Pick<
   | "background"
   | "boxShadow"
   | "cursor"
+  | "pointer"
 >;
 
 export const BaseButton = styled.button<ButtonStyles>`
@@ -32,18 +34,18 @@ export const BaseButton = styled.button<ButtonStyles>`
   border: ${({ border }) => border};
   background-color: ${({ background }) => background || ""};
   box-shadow: ${({ boxShadow }) => boxShadow || ""};
-  cursor: pointer;
   display: block;
   height: 100%;
   padding: ${({ padding }) => padding || "0.5rem 1rem"};
   width: 100%;
   font-weight: ${({ theme }) => theme.fontWeights.fw700};
 
-  &:hover {
+  &:hover:enabled {
     background: orange;
+    cursor: pointer;
   }
 
-  &:active {
+  &:active:enabled {
     filter: brightness(110%);
   }
 

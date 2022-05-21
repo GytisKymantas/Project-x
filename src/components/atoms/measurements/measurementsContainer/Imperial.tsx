@@ -21,8 +21,8 @@ export const Imperial: React.FC<ImperialInputProps> = ({
     <FlexWrapper gap="26px">
       <FlexWrapper
         width="100%"
-        borderBottom="1px solid black"
         justifyContent="space-between"
+        position="relative"
       >
         <Input
           type="number"
@@ -30,16 +30,16 @@ export const Imperial: React.FC<ImperialInputProps> = ({
           onChange={(e) => setStateValueFeet(e.target.value)}
           width="162px"
         />
-        <Box mt="17px">
+        <Box mt="17px" position="absolute" right="0">
           <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
-            Ft
+            ft
           </Typography>
         </Box>
       </FlexWrapper>
       <FlexWrapper
         width="100%"
-        borderBottom="1px solid black"
         justifyContent="space-between"
+        position="relative"
       >
         <Input
           type="number"
@@ -47,7 +47,7 @@ export const Imperial: React.FC<ImperialInputProps> = ({
           width="162px"
           onChange={(e) => setStateValueInches(e.target.value)}
         />
-        <Box mt="17px">
+        <Box mt="17px" position="absolute" right="0">
           <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
             in
           </Typography>

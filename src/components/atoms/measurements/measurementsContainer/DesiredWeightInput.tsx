@@ -22,8 +22,8 @@ export const DesiredWeightInput: React.FC<DesiredWeightInputProps> = ({
   return (
     <FlexWrapper
       width="100%"
-      borderBottom="1px solid black"
       justifyContent="space-between"
+      position="relative"
     >
       <Input
         type="number"
@@ -34,7 +34,7 @@ export const DesiredWeightInput: React.FC<DesiredWeightInputProps> = ({
         minValue={30}
         maxValue={230}
       />
-      <Box mt="17px">
+      <Box mt="17px" position="absolute" right="0">
         {imperial ? (
           <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
             lb

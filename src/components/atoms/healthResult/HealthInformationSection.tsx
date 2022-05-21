@@ -1,33 +1,28 @@
 import React from "react";
-import { Box, Typography, FlexWrapper, Image } from "components";
 import { HealthInformation } from "../checkoutContainer/HealthInformation";
 import { useSelector } from "react-redux";
 import { selectQuizAnswers } from "state/selectors";
 
 export const HealthInformationSection: React.FC = () => {
   const userQuizAnswers = useSelector(selectQuizAnswers);
-  const workoutFrequencyAnswer = userQuizAnswers.isWorkingOut;
-  const isSmoking = userQuizAnswers.isSmoking;
-  const isHeartCondition = userQuizAnswers.isHeartCondition;
-  const isAsthmatic = userQuizAnswers.isAsthmatic;
+  const workoutFrequencyAnswer = userQuizAnswers.isWorkingOut.quizAnswer;
+  const isSmoking = userQuizAnswers.isSmoking.quizAnswer;
+  const isHeartCondition = userQuizAnswers.isHeartCondition.quizAnswer;
+  const isAsthmatic = userQuizAnswers.isAsthmatic.quizAnswer;
 
   const HEALTH_INFORMATION_DATA = [
     {
       id: "1",
-      title: "Frequency",
+      title: workoutFrequencyAnswer,
       treatment:
         "Get at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week",
-      workoutFrequencyAnswer: true,
-      isRight: false,
-      answer: workoutFrequencyAnswer,
+      answer: true,
     },
     {
       id: "2",
       title: "So, you're a smoker!",
       treatment:
         "Smoking accelerates the buildup of plaque in the arteries, beginning as early as adolescence. It also increases therisk of heart disease, stroke, peripheral vascular disease, aortic aneurysm and sudden death. Regardless of how many years you have used tobacco, quitting now can save your heart.",
-      isSmoking: true,
-      isRight: true,
       answer: isSmoking,
     },
     {
@@ -35,8 +30,6 @@ export const HealthInformationSection: React.FC = () => {
       title: "Your heart is valuable",
       treatment:
         " 1 in 4 deaths in the United States is a result of heart disease. 1 person dies every 36 seconds from heart disease. Coronary heart disease is the most common form of heart disease. Over 800,000 Americans have a heart attack each year.",
-      isHeartCondition: true,
-      isRight: false,
       answer: isHeartCondition,
     },
     {
@@ -44,41 +37,21 @@ export const HealthInformationSection: React.FC = () => {
       title: "You're asthmatic!",
       treatment:
         "Stay in areas with minimal air pollution. Avoid sports with continuous activity. Basketball, soccer, and long-distance running can be hard on the lungs if your asthma is poorly controlled. Avoid sports that are done in the cold, likecross-country skiing and hockey.",
-      isAsthmatic: true,
-      isRight: true,
       answer: isAsthmatic,
     },
   ];
-  console.log(HEALTH_INFORMATION_DATA);
-  console.log(HEALTH_INFORMATION_DATA[3].answer, " is it asthmatic");
 
   return (
     <>
-      {HEALTH_INFORMATION_DATA.map(
-        ({
-          id,
-          title,
-          treatment,
-          isRight,
-          isAsthmatic,
-          isHeartCondition,
-          isSmoking,
-          workoutFrequencyAnswer,
-          answer,
-        }) => (
-          <HealthInformation
-            key={id}
-            title={title}
-            treatment={treatment}
-            isRight={isRight}
-            isAsthmatic={isAsthmatic}
-            isHeartCondition={isHeartCondition}
-            isSmoking={isSmoking}
-            workoutFrequencyAnswer={workoutFrequencyAnswer}
-            answer={answer}
-          />
-        )
-      )}
+      {HEALTH_INFORMATION_DATA.map(({ id, title, treatment, answer }) => (
+        <HealthInformation
+          key={id}
+          title={title}
+          treatment={treatment}
+          answer={answer}
+          id={id}
+        />
+      ))}
     </>
   );
 };

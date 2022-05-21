@@ -16,7 +16,7 @@ export const QuizHeader: React.FC<QuizHeaderProps> = ({
       <FlexWrapper alignItems="center" justifyContent="space-around">
         <HomeLink />
         <Typography color="primary" textAlign="center">
-          {arrayIndex + 1}of 7
+          {arrayIndex + 1} of 7
         </Typography>
       </FlexWrapper>
       <Box mt={arrayIndex === 2 || arrayIndex === 5 ? "s20" : "s100"}>

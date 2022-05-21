@@ -16,8 +16,8 @@ export const HeightInput: React.FC<HeightInputProps> = ({ setStateValue }) => {
   return (
     <FlexWrapper
       width="100%"
-      borderBottom="1px solid black"
       justifyContent="space-between"
+      position="relative"
     >
       <Input
         type="number"
@@ -28,7 +28,7 @@ export const HeightInput: React.FC<HeightInputProps> = ({ setStateValue }) => {
         minValue={100}
         maxValue={230}
       />
-      <Box mt="17px">
+      <Box mt="17px" position="absolute" right="0">
         <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
           cm
         </Typography>

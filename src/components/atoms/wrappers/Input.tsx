@@ -2,7 +2,7 @@ import React from "react";
 import { Styles } from "components/atoms/wrappers/Box";
 import { color } from "styled-system";
 
-import { Theme } from "../../../styles/theme";
+import { theme } from "../../../styles/theme";
 import styled from "styled-components/macro";
 
 export type InputType = "text" | "email" | "password" | "date" | "number";
@@ -47,8 +47,8 @@ export const Input: React.FC<InputFieldProps> = ({
 const InputElement = styled.input`
   border: none;
   outline: none;
-  /* border-bottom: 1px solid black; */
   padding: 1rem 1rem 0.2rem 1rem;
+  border-bottom: 1px solid ${theme.colors.lightwhite};
   width: 100%;
 
   ::-webkit-inner-spin-button,
@@ -56,6 +56,9 @@ const InputElement = styled.input`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+  }
+  :focus {
+    border-bottom: 1px solid orange;
   }
 
   && {

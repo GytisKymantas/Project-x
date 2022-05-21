@@ -28,13 +28,10 @@ import {
 
 const TryOut: React.FC = () => {
   const dispatch = useDispatch();
-  const globalstate = useSelector(selectState);
 
   const [arrayIndex, setArrayIndex] = useState(0);
   const [selectedUserState, setSelectedUserState] = useState<any>([]);
-  const [multipleChoiceGoals, setMultipleChoiceGoals] = useState<any>([]);
-  const [border, setBorder] = useState();
-  const [selectedUser, setSelectedUser] = useState({});
+  const [multipleGoals, setMultipleGoals] = useState<any>([]);
   const [workAnswer, setWorkAnswer] = useState({});
   const [smokingAnswer, setSmokingAnswer] = useState({});
   const [asthmaticAnswer, setAsthmaticAnswer] = useState({});
@@ -45,17 +42,16 @@ const TryOut: React.FC = () => {
     setArrayIndex(arrayIndex + 1);
   };
 
-  if (selectedUserState.includes("None")) {
-    setSelectedUserState([]);
-  }
-
-  if (multipleChoiceGoals.includes("None")) {
-    setMultipleChoiceGoals([]);
-  }
+  const handleGoalsChoiceState = () => {
+    dispatch(setMultipleChoiceGoals(multipleGoals));
+    setArrayIndex(arrayIndex + 1);
+  };
 
   useEffect(() => {
-    dispatch(setQuizAnswers(selectedUser));
-  }, [selectedUser]);
+    if (selectedUserState.includes("None")) {
+      setSelectedUserState(["None"]);
+    }
+  }, []);
 
   useEffect(() => {
     dispatch(setIsWorkingOut(workAnswer));
@@ -150,20 +146,31 @@ const TryOut: React.FC = () => {
                     <Box position="relative" key={id}>
                       <QuizAnswer
                         border={
-                          multipleChoiceGoals.includes(quizAnswer)
+                          multipleGoals.includes(quizAnswer)
                             ? "solid 2px black"
                             : "solid 2px transparent"
                         }
-                        onClick={() =>
-                          setMultipleChoiceGoals((array) =>
-                            array.concat(quizAnswer)
-                          )
+                        // onClick={() =>
+                        //   setMultipleChoiceGoals((array) =>
+                        //     array.concat(quizAnswer)
+                        //   )
+                        // }
+                        onClick={
+                          multipleGoals.includes(quizAnswer)
+                            ? () =>
+                                setMultipleGoals((array) =>
+                                  array.filter((e) => !e.includes(quizAnswer))
+                                )
+                            : () =>
+                                setMultipleGoals((array) =>
+                                  array.concat(quizAnswer)
+                                )
                         }
                         key={id}
                       >
                         {title}
                       </QuizAnswer>
-                      {multipleChoiceGoals.includes(quizAnswer) && (
+                      {multipleGoals.includes(quizAnswer) && (
                         <Box position={"absolute"} top="28%" left="5%">
                           <Check />
                         </Box>
@@ -249,17 +256,21 @@ const TryOut: React.FC = () => {
                     </Box>
                   )}
 
-                  {showGoalsSubmit && multipleChoiceGoals.length < 1 && (
+                  {showGoalsSubmit && multipleGoals.length < 1 && (
                     <Box>
-                      <QuizAnswer onClick={handleUserState} disabled isSubmit>
+                      <QuizAnswer
+                        onClick={handleGoalsChoiceState}
+                        disabled
+                        isSubmit
+                      >
                         submit
                       </QuizAnswer>
                     </Box>
                   )}
 
-                  {showGoalsSubmit && multipleChoiceGoals.length >= 1 && (
+                  {showGoalsSubmit && multipleGoals.length >= 1 && (
                     <Box>
-                      <QuizAnswer onClick={handleUserState} isSubmit>
+                      <QuizAnswer onClick={handleGoalsChoiceState} isSubmit>
                         submit
                       </QuizAnswer>
                     </Box>

@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "state/slice";
 import { selectUserData } from "state/selectors";
 import { navigate } from "gatsby";
+import { theme } from "styles/theme";
 import { WeightInput } from "../../atoms/measurements/measurementsContainer/WeightInput";
 import { HeightInput } from "../../atoms/measurements/measurementsContainer/HeightInput";
 import { DesiredWeightInput } from "../../atoms/measurements/measurementsContainer/DesiredWeightInput";
@@ -92,30 +93,34 @@ export const InputForm = () => {
         <FlexWrapper
           gap="10px"
           width="100%"
-          py="10px"
+          pt="10px"
           mb="25px"
           justifyContent="center"
-          borderBottom="1px solid gray"
+          borderBottom={`1px solid ${theme.colors.lightwhite}`}
         >
-          <MeasurementWrapper>
+          <MeasurementWrapper
+            pb="s10"
+            borderBottom={
+              ifImperial ? "1px solid orange" : "1x solid transparent"
+            }
+          >
             <Typography
               fontWeight="700"
               color={ifImperial ? "orange" : "primary"}
-              borderBottom={
-                ifImperial ? "1px solid orange" : "1x solid primary"
-              }
               onClick={handleImperialSystem}
             >
               Imperial
             </Typography>
           </MeasurementWrapper>
-          <MeasurementWrapper>
+          <MeasurementWrapper
+            pb="s10"
+            borderBottom={
+              !ifImperial ? "1px solid orange" : "1x solid transparent"
+            }
+          >
             <Typography
               fontWeight="fw700"
               color={ifImperial ? "primary" : "orange"}
-              borderBottom={
-                ifImperial ? "1px solid primary" : "1x solid orange"
-              }
               onClick={handleMetricSystem}
             >
               Metric

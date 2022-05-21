@@ -28,13 +28,14 @@ export * from "./molecules/partners/Partners";
 export * from "./molecules/footer/Footer";
 //navigation
 export * from "./molecules/navigation/Navigation";
+//checkoutHero
+export * from "./atoms/checkoutContainer/CheckoutHero";
+//measurements info
+export * from "./molecules/measurementsInfoContainer/MeasurementsInfoContainer";
 //hero
 export * from "./molecules/heroContainer/HeroSection";
 // Progress Bar
 export * from "./atoms/progressBar/ProgressBar";
-// scale
-export * from "./atoms/scale/ScaleResult";
-export * from "./molecules/scaleSection/ScaleSection";
 //sub box
 export * from "./atoms/subscriptionBox/SubscriptionBox";
 export * from "./atoms/subscriptionBox/SubscriptionBoxContainer";
@@ -47,12 +48,15 @@ export * from "./atoms/checkoutContainer/HealthInformation";
 // health results
 export * from "./atoms/healthResult/HealthResult";
 export * from "./molecules/healthResults/HealthResultsSection";
+export * from "./atoms/healthResult/HealthInformationSection";
 
 //quiz header
 export * from "./molecules/quizHeader/QuizHeader";
 
 //homelink
 export * from "./molecules/homeLink/HomeLink";
-
+// scale
+export * from "./atoms/scale/ScaleResult";
+export * from "./molecules/scaleSection/ScaleSection";
 // section header
 // export * from "./sectionHeader/SectionHeader";

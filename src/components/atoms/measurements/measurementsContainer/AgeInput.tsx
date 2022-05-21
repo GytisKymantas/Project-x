@@ -17,7 +17,7 @@ export const AgeInput: React.FC<AgeInputProps> = ({ setStateValue, value }) => {
   return (
     <FlexWrapper
       width="100%"
-      borderBottom="1px solid black"
+      position="relative"
       justifyContent="space-between"
     >
       <Input
@@ -30,7 +30,7 @@ export const AgeInput: React.FC<AgeInputProps> = ({ setStateValue, value }) => {
         minValue={18}
         maxValue={100}
       />
-      <Box mt="17px">
+      <Box mt="17px" position="absolute" right="0">
         <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
           years
         </Typography>

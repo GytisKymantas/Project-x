@@ -9,7 +9,7 @@ import { NAVIGATION_LINKS } from "constants/Constants";
 import { Mobnav } from "assets/images";
 
 interface NavigationProps {
-  checkoutPage: boolean;
+  checkoutPage?: boolean;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {

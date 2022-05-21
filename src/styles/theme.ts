@@ -6,6 +6,7 @@ const colors = {
   accent: "#E34578",
   white: "#ffffff",
   dirtywhite: "#F8F9FC",
+  lightwhite: "rgba(216, 216, 216, 0.6)",
   blue: "rgb(16 51 251 / 24%)",
   gray: "#5F5F5F",
   taxi: "#f4f4b3",

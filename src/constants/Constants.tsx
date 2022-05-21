@@ -139,7 +139,7 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$93.98",
     newValue: "$46.99",
     billed: "every 6 months",
-    id: "1",
+    id: 1,
   },
   {
     discount: "25% OFF",
@@ -148,7 +148,7 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$45.99",
     newValue: "$36.99",
     billed: "every 3 months",
-    id: "2",
+    id: 2,
   },
   {
     discount: "10% OFF",
@@ -157,7 +157,7 @@ export const SUBSCRIPTION_DETAILS = [
     oldValue: "$20.99",
     newValue: "$16.99",
     billed: "monthly",
-    id: "3",
+    id: 3,
   },
 ];
 

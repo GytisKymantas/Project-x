@@ -11,10 +11,7 @@ export const BMI: React.FC = () => {
   const heightInches = userData.feet * 12 + parseInt(userData.inches);
   const imperialBMI = (userData.weight * 703) / (heightInches * heightInches);
   const imperialBMIrounded = Math.round(imperialBMI);
-  console.log(imperialBMI);
-  console.log(typeof userData.inches);
-  console.log(BMI);
-  console.log(userData.height);
+
   return (
     <Box
       bg="white"

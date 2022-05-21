@@ -7,16 +7,17 @@ import {
   Typography,
   BaseButton,
 } from "components";
-import { AgeInput } from "./AgeInput";
+import { AgeInput } from "../../atoms/measurements/measurementsContainer/AgeInput";
 import styled from "styled-components/macro";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "state/slice";
 import { selectUserData } from "state/selectors";
 import { navigate } from "gatsby";
-import { WeightInput } from "./WeightInput";
-import { HeightInput } from "./HeightInput";
-import { DesiredWeightInput } from "./DesiredWeightInput";
-import { Imperial } from "./Imperial";
+import { WeightInput } from "../../atoms/measurements/measurementsContainer/WeightInput";
+import { HeightInput } from "../../atoms/measurements/measurementsContainer/HeightInput";
+import { DesiredWeightInput } from "../../atoms/measurements/measurementsContainer/DesiredWeightInput";
+import { Imperial } from "../../atoms/measurements/measurementsContainer/Imperial";
+import { QuizAnswer } from "components/atoms/buttons/QuizAnswer";
 
 export const InputForm = () => {
   const [ifImperial, setIfImperial] = useState(false);
@@ -166,9 +167,9 @@ export const InputForm = () => {
                 label="female"
               />
             </FlexWrapper>
-            <BaseButton onClick={handleFunction} type="submit">
+            <QuizAnswer onClick={handleFunction} type="submit">
               SUBMIT
-            </BaseButton>
+            </QuizAnswer>
           </FlexWrapper>
         </FormContainer>
       </FlexWrapper>

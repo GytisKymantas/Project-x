@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionWrapper, GridWrapper } from "components";
 import { FAQ_DETAILS } from "constants/Constants";
-import { QuestionsCard } from "./QuestionsCard";
+import { QuestionsCard } from "../../atoms/FAQcard/QuestionsCard";
 import { Breakpoints } from "styles/theme";
 
 export const QuestionsCardContainer = () => (

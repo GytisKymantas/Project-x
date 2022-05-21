@@ -7,7 +7,8 @@ export const CheckoutHero: React.FC = () => {
     <SectionWrapper>
       <Box>
         <SectionHeader
-          type="h4"
+          center
+          type="h3"
           header="See how Fit on-time can improve your daily life"
           paragraph="Bond with your baby and support his or her development with creative, fun and easy activities."
         />

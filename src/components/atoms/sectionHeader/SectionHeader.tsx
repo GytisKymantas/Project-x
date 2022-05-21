@@ -15,12 +15,14 @@ interface SectionHeaderProps {
   header: string;
   paragraph?: string;
   type?: TextType;
+  center?: boolean;
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   header,
   paragraph,
   type,
+  center,
 }) => (
   <>
     <FlexWrapper
@@ -29,7 +31,11 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       justifyContent="center"
       alignItems="center"
     >
-      <Typography type={type} color="primary">
+      <Typography
+        type={type}
+        color="primary"
+        textAlign={center ? "center" : "default"}
+      >
         {header}
       </Typography>
       <Typography color="gray">{paragraph}</Typography>

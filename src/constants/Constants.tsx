@@ -160,3 +160,5 @@ export const SUBSCRIPTION_DETAILS = [
     id: "3",
   },
 ];
+
+export const WIDTH_SCALE = ["14%", "28%", "42%", "58%", "72%", "86%", "100%"];

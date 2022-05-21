@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionWrapper, Box, FlexWrapper } from "components";
-import HealthResult from "./HealthResult";
+import HealthResult from "../../atoms/healthResult/HealthResult";
 import { useSelector } from "react-redux";
 import { selectQuizAnswers } from "state/selectors";
 

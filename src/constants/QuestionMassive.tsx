@@ -198,6 +198,18 @@ export const ANSWERS = [
         },
         {
           id: "8",
+          title: "Yoga",
+          quizAnswer: "Yoga",
+          isMultipleChoice: true,
+        },
+        {
+          id: "9",
+          title: "Endurance",
+          quizAnswer: "Endurance",
+          isMultipleChoice: true,
+        },
+        {
+          id: "10",
           title: "Other",
           quizAnswer: "Other",
           isMultipleChoice: true,

@@ -20,8 +20,10 @@ export const ReturnButton: React.FC<ReturnButtonProps> = ({
       onClick={onClick}
       type="button"
     >
-      <Arrow />
-      {children}
+      <FlexWrapper justifyContent="center" gap="6px">
+        <Arrow />
+        {children}
+      </FlexWrapper>
     </BaseButton>
   </FlexWrapper>
 );

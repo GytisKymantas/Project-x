@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Image } from "components";
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
-import { Gender } from "assets/images";
+import { theme } from "styles/theme";
 
 interface MeasurementsProps {
   title: string;
@@ -21,8 +21,13 @@ export const MeasurementInfo: React.FC<MeasurementsProps> = ({
   inches,
 }) => {
   return (
-    <Box bg="blue" width="100%" p="20px">
-      <Box margin="s0auto" width="50px">
+    <Box
+      bg="white"
+      width="100%"
+      p="1.25rem"
+      boxShadow={`1px 1px 11px ${theme.colors.primary}`}
+    >
+      <Box margin="s0auto" width="3.125rem">
         {image}
       </Box>
       {feet ? (

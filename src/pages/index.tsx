@@ -1,5 +1,5 @@
 import React from "react";
-import { Measurements } from "components/molecules/checkoutContainer/measurementsContainer/Measurements";
+import { Measurements } from "components/atoms/measurements/measurementsContainer/Measurements";
 
 const Landing = () => {
   return (

@@ -1,4 +1,4 @@
-import { Box, FlexWrapper } from "components";
+import { Box, FlexWrapper, HomeLink } from "components";
 import { QuizStartButton } from "components/atoms/buttons/QuizStartButton";
 import React, { useState } from "react";
 import styled from "styled-components/macro";
@@ -56,12 +56,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
         height="100%"
       >
         {/* <Box>mob</Box> */}
-        <Homelink to="/">
-          Fit<span> </span>
-          on<span style={{ color: "red" }}>-</span>Time
-          {/* <Image src="logoblack" width="190px" /> */}
-          {/* <Image src="logotrans2" /> */}
-        </Homelink>
+        <HomeLink />
         {checkoutPage ? (
           ""
         ) : (
@@ -103,12 +98,12 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   );
 };
 
-const Homelink = styled(Link)`
-  color: ${theme.colors.primary};
-  font-family: "Satisfy", cursive;
-  font-size: ${theme.fontSizes.fs32};
-  text-decoration: none;
-`;
+// const Homelink = styled(Link)`
+//   color: ${theme.colors.primary};
+//   font-family: "Satisfy", cursive;
+//   font-size: ${theme.fontSizes.fs32};
+//   text-decoration: none;
+// `;
 const ListItem = styled.li`
   cursor: pointer;
   list-style-type: none;

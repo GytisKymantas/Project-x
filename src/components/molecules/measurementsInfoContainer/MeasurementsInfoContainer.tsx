@@ -1,10 +1,12 @@
 import React from "react";
-import { MeasurementInfo } from "./MeasurementInfo";
+import { MeasurementInfo } from "../../atoms/checkoutContainer/MeasurementInfo";
 import { Box, SectionWrapper, GridWrapper } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
 // import { MEASUREMENT_CONTAINER_DATA } from "constants/Constants";
 import { Gender, Height, Scales, Age } from "assets/images";
+import { BMI } from "components/atoms/BMI/BMI";
+import FactsContainer from "../factsContainer/FactsContainer";
 
 // const age = data.age;
 // const height = data.height;
@@ -69,7 +71,13 @@ export const MeasurementsInfoContainer: React.FC = () => {
 
   return (
     <SectionWrapper>
-      <GridWrapper gridTemplateColumns="repeat(4,1fr)" my="10rem" gap="20px">
+      <GridWrapper
+        gridTemplateColumns="repeat(4,1fr)"
+        maxWidth="1150px"
+        m="s0auto"
+        p="5rem"
+        gap="20px"
+      >
         {MEASUREMENT_CONTAINER_DATA.map(
           ({ id, image, title, subtitle, feet, inches, imperialSubtitle }) => (
             <MeasurementInfo

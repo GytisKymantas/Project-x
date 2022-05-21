@@ -12,6 +12,7 @@ const colors = {
   orange: "orange",
   orangelight: "#ffa50026",
   red: "red",
+  graylight: "#e6e6e6",
 };
 
 export const theme = {
@@ -47,6 +48,7 @@ export const theme = {
     s18: "18px",
     s20: "20px",
     s20s50: "20px 50px",
+    s50s0: "50px 0",
     s25: "25px",
     s50: "50px",
   },

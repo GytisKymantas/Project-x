@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Container, SectionWrapper } from "components";
-import { InputForm } from "./InputForm";
+import { InputForm } from "../../../molecules/inputForm/InputForm";
 import { ProgressBar } from "components/atoms/progressBar/ProgressBar";
 
 export const Measurements: React.FC = () => {

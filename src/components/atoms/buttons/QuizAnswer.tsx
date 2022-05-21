@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Box, FlexWrapper, BaseButton } from "components";
+import { Check } from "assets/images";
 
 interface QuizAnswerProps {
   children: React.ReactNode;
   isSubmit?: boolean;
   disabled?: boolean;
   border?: string;
-
   onClick?: () => void;
 }
 
@@ -23,7 +23,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
       minWidth="22.5625rem"
       height="3rem"
       position={"relative"}
-      m={isSubmit ? "s50" : "s8"}
+      m={isSubmit ? "s50s0" : "s8"}
       onClick={onClick}
     >
       {isSubmit ? (
@@ -38,12 +38,27 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
         <BaseButton
           type="button"
           onClick={() => setSelect(!select)}
-          background={"white"}
+          background="graylight"
           border={border}
         >
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>
         </BaseButton>
       )}
+      {/* {id === 1 && (
+        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
+          bam
+        </Box>
+      )}
+      {
+        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
+          Bum
+        </Box>
+      } */}
+      {/* {select && (
+        <Box position={"absolute"} top="28%" left="5%">
+          <Check />
+        </Box>
+      )} */}
     </Box>
   );
 };

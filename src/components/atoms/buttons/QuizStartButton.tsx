@@ -16,5 +16,3 @@ export const QuizStartButton: React.FC<QuizStartButtonProps> = ({
     </BaseButton>
   </Box>
 );
-
-// width={"137px"}

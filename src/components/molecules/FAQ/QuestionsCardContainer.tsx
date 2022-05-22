@@ -5,7 +5,7 @@ import { QuestionsCard } from "../../atoms/FAQcard/QuestionsCard";
 import { Breakpoints } from "styles/theme";
 
 export const QuestionsCardContainer = () => (
-  <SectionWrapper backgroundColor="taxi">
+  <SectionWrapper>
     <GridWrapper
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       gap="30px"

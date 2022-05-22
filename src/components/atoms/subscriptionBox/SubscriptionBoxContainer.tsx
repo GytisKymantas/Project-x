@@ -1,11 +1,30 @@
 import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import React, { useState } from "react";
-import { FlexWrapper, SubscriptionBox, Box } from "components";
+import { useDispatch, useSelector } from "react-redux";
+import { selectState } from "state/selectors";
+import { selectPurchaseData } from "state/selectors";
+import { setPurchaseData } from "state/slice";
+import { navigate } from "gatsby";
+import { FlexWrapper, SubscriptionBox, Box, QuizAnswer } from "components";
 
 export const SubscriptionBoxContainer: React.FC = () => {
+  const dispatch = useDispatch();
   const [selectedUser, setSelectedUser] = useState({
     id: null as unknown as number,
+    month: "",
+    newValue: null as unknown as number,
   });
+
+  const purchaseData = useSelector(selectPurchaseData);
+  console.log(purchaseData, "this is purchase");
+  const global = useSelector(selectState);
+
+  const handleSubscription = () => {
+    navigate("/success");
+    dispatch(setPurchaseData(selectedUser));
+  };
+
+  console.log(global, "sub box");
   return (
     <FlexWrapper
       flexDirection="column"
@@ -17,6 +36,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
         ({ discount, month, monthlyValue, oldValue, id, newValue, billed }) => (
           <Box
             borderRadius="br14"
+            key={id}
             width="22.5rem"
             p="s16"
             border={
@@ -24,7 +44,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
                 ? "2px solid orange"
                 : "2px solid transparent"
             }
-            onClick={() => setSelectedUser({ id })}
+            onClick={() => setSelectedUser({ id, month, newValue })}
           >
             <SubscriptionBox
               discount={discount}
@@ -40,6 +60,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
           </Box>
         )
       )}
+      <QuizAnswer onClick={handleSubscription}>Purchase</QuizAnswer>
     </FlexWrapper>
   );
 };

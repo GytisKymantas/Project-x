@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => (
         </Container>
         <Box position="relative">
           <StaticImage
-            src="../../assets/images/green360.png"
+            src="../../assets/images/skipper.png"
             alt="Man skipping on a rope"
             placeholder="tracedSVG"
             draggable="false"

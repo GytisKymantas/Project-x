@@ -26,6 +26,7 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
       width="100%"
       bg="dirtywhite"
       onClick={() => setDisplay(!display)}
+      boxShadow="1px 3px 5px black"
     >
       <ContentWrapper padding="s25">
         <FlexWrapper flexDirection="column" gap="15px">

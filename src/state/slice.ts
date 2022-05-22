@@ -14,6 +14,11 @@ const initialState = {
     inches: null as unknown as number,
     isMale: null as unknown as boolean,
   },
+  purchase_data: {
+    id: null as unknown as number,
+    month: "",
+    newValue: null as unknown as number,
+  },
   quiz_answers: {
     isWorkingOut: "",
     isSmoking: "",
@@ -72,10 +77,14 @@ const userSlice = createSlice({
         isHeartCondition: actions.payload,
       };
     },
+    setPurchaseData: (state, actions: PayloadAction<any>) => {
+      state.purchase_data = actions.payload;
+    },
   },
 });
 
 export const {
+  setPurchaseData,
   setIsHeart,
   setIsAsthmatic,
   setIsSmoking,

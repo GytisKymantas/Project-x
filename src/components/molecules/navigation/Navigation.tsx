@@ -5,8 +5,12 @@ import styled from "styled-components/macro";
 import { Link } from "gatsby";
 import { theme } from "styles/theme";
 import scrollTo from "gatsby-plugin-smoothscroll";
+import { navigate } from "gatsby";
 import { NAVIGATION_LINKS } from "constants/Constants";
 import { Mobnav } from "assets/images";
+import { BaseButton } from "components/atoms/buttons/elements/BaseButton";
+import { GenderButtons } from "components/atoms/genderButtons/GenderButtons";
+import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 
 interface NavigationProps {
   checkoutPage?: boolean;
@@ -15,7 +19,11 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   const [fix, setFix] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-  console.log(mobileView);
+  const [popup, setPopup] = useState(false);
+
+  const handleQuizStart = () => {
+    navigate("/questions/female");
+  };
   const handleScroll = () => {
     if (window.scrollY >= 780) {
       setFix(true);
@@ -34,6 +42,21 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
       position={fix ? "fixed" : "initial"}
       zIndex={11}
     >
+      {/* {popup && (
+        <QuizPopup bg="taxi">
+          <FlexWrapper>
+            <SectionHeader
+              type="h2"
+              header="Begin the quiz"
+              paragraph="give your details"
+            />
+            <Box onClick={() => setPopup(!popup)}>X</Box>
+          </FlexWrapper>
+          <FlexWrapper justifyContent="center">
+            <GenderButtons />
+          </FlexWrapper>
+        </QuizPopup>
+      )} */}
       {mobileView && (
         <MobileCover>
           <FlexWrapper
@@ -55,7 +78,6 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
         justifyContent="space-around"
         height="100%"
       >
-        {/* <Box>mob</Box> */}
         <HomeLink />
         {checkoutPage ? (
           ""
@@ -75,7 +97,13 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
         {checkoutPage ? (
           <QuizStartButton width="8.5625rem">Check Product</QuizStartButton>
         ) : (
-          <QuizStartButton width="8.5625rem">Start Quiz</QuizStartButton>
+          <BaseButton
+            onClick={() => setPopup(!popup)}
+            width="8.5625rem"
+            zIndex={5}
+          >
+            Start Quiz
+          </BaseButton>
         )}
         {mobileView ? (
           <MobileWrapper
@@ -98,15 +126,16 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   );
 };
 
-// const Homelink = styled(Link)`
-//   color: ${theme.colors.primary};
-//   font-family: "Satisfy", cursive;
-//   font-size: ${theme.fontSizes.fs32};
-//   text-decoration: none;
-// `;
 const ListItem = styled.li`
   cursor: pointer;
   list-style-type: none;
+`;
+const QuizPopup = styled(Box)`
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  opacity: 90%;
 `;
 const MobileCover = styled(FlexWrapper)`
   background: orange;

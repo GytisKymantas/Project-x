@@ -58,5 +58,10 @@ export * from "./molecules/homeLink/HomeLink";
 // scale
 export * from "./atoms/scale/ScaleResult";
 export * from "./molecules/scaleSection/ScaleSection";
+// //genderButtons
+// export * from "./atoms/genderButtons/GenderButtons";
+//purchasd box
+export * from "./atoms/purchaseBox/PurchaseBox";
+
 // section header
 // export * from "./sectionHeader/SectionHeader";

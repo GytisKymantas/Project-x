@@ -4,6 +4,7 @@ import { BaseButton, Box } from "components";
 interface QuizStartButtonProps {
   children: React.ReactNode;
   width?: String;
+  onClick?: () => void;
 }
 
 export const QuizStartButton: React.FC<QuizStartButtonProps> = ({

@@ -90,8 +90,8 @@ const Home: React.FC = () => {
         </Typography>
         <Image src="gatsbyImg" maxHeight="6.25rem" />
         {/* arba toki arba toki staticas sunku su sarasu dideliu del didelio masto (staticImage)*/}
-        <StaticImage
-          src="../../assets/images/image.png"
+        {/* <StaticImage
+          src="../../assets/images/healthfitness.png"
           alt="foto"
           placeholder="tracedSVG"
           draggable="false"
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
             maxWidth: "500px",
             margin: "0 auto",
           }}
-        />
+        /> */}
         {/* {FOODS.map(({id,name,food}=>
             <Box key={id}>
               <Typography color='accent'>

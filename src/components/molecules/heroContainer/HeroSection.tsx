@@ -8,7 +8,9 @@ import {
   Container,
   QuizStartButton,
 } from "components";
+
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
+import { GenderButtons } from "components/atoms/genderButtons/GenderButtons";
 import { StaticImage } from "gatsby-plugin-image";
 
 export const HeroSection: React.FC = () => (
@@ -17,12 +19,12 @@ export const HeroSection: React.FC = () => (
       <GridWrapper gridTemplateColumns="1fr 1fr">
         <Container>
           <Box>
-            <StaticImage
-              src="../../assets/images/healthfitness.png"
-              alt="health and fitness logo"
+            {/* <StaticImage
+              src="src/assets/images/healthfitness.png"
+              alt="Health and fitness "
               placeholder="tracedSVG"
               draggable="false"
-            />
+            /> */}
           </Box>
           <FlexWrapper flexDirection="column" maxWidth="26.125rem">
             <SectionHeader
@@ -30,19 +32,16 @@ export const HeroSection: React.FC = () => (
               header="Always get adieus nature day course for common."
               paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
             />{" "}
-            <FlexWrapper gap="0.625rem" mt="s20">
-              <QuizStartButton width="8.5625rem">Male</QuizStartButton>
-              <QuizStartButton width="8.5625rem">Female</QuizStartButton>
-            </FlexWrapper>
+            <GenderButtons />
           </FlexWrapper>
         </Container>
         <Box position="relative">
-          <StaticImage
+          {/* <StaticImage
             src="../../assets/images/skipper.png"
             alt="Man skipping on a rope"
             placeholder="tracedSVG"
             draggable="false"
-          />
+          /> */}
         </Box>
       </GridWrapper>
     </ContentWrapper>

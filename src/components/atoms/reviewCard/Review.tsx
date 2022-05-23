@@ -49,12 +49,12 @@ export const Review: React.FC = () => {
               occupation={REVIEW_DATA[index].occupation}
             />
             <Box margin="s0auto" position="relative">
-              <StaticImage
-                src="../../assets/images/yoga.png"
+              {/* <StaticImage
+                src="src/assets/images/yoga.png"
                 alt="Woman doing yoga"
                 placeholder="tracedSVG"
                 draggable="false"
-              />{" "}
+              />{" "} */}
               <Box
                 position="absolute"
                 top="0"
@@ -62,12 +62,12 @@ export const Review: React.FC = () => {
                 opacity="0.6"
                 zIndex={-1}
               >
-                <StaticImage
+                {/* <StaticImage
                   src="../../assets/images/yogabackground.png"
                   alt="yellow background"
                   placeholder="tracedSVG"
                   draggable="false"
-                />{" "}
+                />{" "} */}
               </Box>
             </Box>
           </GridWrapper>

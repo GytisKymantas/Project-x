@@ -9,6 +9,7 @@ import {
   Typography,
   Container,
   ContentWrapper,
+  PurchaseBox,
 } from "components";
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 import { useSelector } from "react-redux";
@@ -37,27 +38,7 @@ const success: React.FC = () => {
               Order Summary:
             </Typography>
           </Box>
-
-          <Box m="10rem">
-            <FlexWrapper
-              justify-content="center"
-              borderBottom="1px solid primary"
-            >
-              <Typography color="primary">{purchaseData.month}</Typography>
-              <Typography color="primary">{purchaseData.newValue}</Typography>
-            </FlexWrapper>
-            <FlexWrapper
-              justify-content="flex-end"
-              borderBottom="1px solid primary"
-            >
-              <Typography fontWeight="fw700" color="primary">
-                Total
-              </Typography>
-              <Typography fontWeight="fw700" color="primary">
-                {purchaseData.newValue}
-              </Typography>
-            </FlexWrapper>
-          </Box>
+          <PurchaseBox />
         </Box>
       </SectionWrapper>
       <Footer />

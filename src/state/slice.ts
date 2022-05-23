@@ -29,19 +29,22 @@ const initialState = {
   multiple_choiceGoals: {},
 };
 
-console.log(initialState.user_data);
+// console.log(initialState.user_data);
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
     setUserData: (state, actions: PayloadAction<any>) => {
-      state.user_data = actions.payload;
+      state.user_data = { ...state.user_data, ...actions.payload };
     },
-    setMultipleChoice: (state, actions: any) => {
+    setGenderData: (state, actions: PayloadAction<any>) => {
+      state.user_data = { ...state.user_data, isMale: actions.payload };
+    },
+    setMultipleChoice: (state, actions: PayloadAction<any>) => {
       state.multiple_choice = { ...state.multiple_choice, ...actions.payload };
     },
-    setMultipleChoiceGoals: (state, actions: any) => {
+    setMultipleChoiceGoals: (state, actions: PayloadAction<any>) => {
       state.multiple_choiceGoals = {
         ...state.multiple_choiceGoals,
         ...actions.payload,
@@ -84,6 +87,7 @@ const userSlice = createSlice({
 });
 
 export const {
+  setGenderData,
   setPurchaseData,
   setIsHeart,
   setIsAsthmatic,
@@ -95,37 +99,3 @@ export const {
   setQuizAnswers,
 } = userSlice.actions;
 export default userSlice;
-
-//OLD-FASHIONED REDUCER
-// import { Foods } from './types';
-// import { AnyAction } from 'redux';
-// import { SET_QUIZ_ANSWERS, SET_USER_DATA } from './constants';
-
-// const initialState = {
-// 	user_data: {
-// 		id: null as unknown as number,
-// 		name: '',
-// 		food: null as unknown as Foods,
-// 	},
-// 	quiz_answers: {
-// 		question_key: false,
-// 		question_key2: '',
-// 		question_key3: null,
-// 	},
-// };
-
-// const userReducer = (state = initialState, action: AnyAction) => {
-// 	switch (action.type) {
-// 		case SET_USER_DATA:
-// 			return (state.user_data = action.payload);
-// 		case SET_QUIZ_ANSWERS:
-// 			return (state.quiz_answers = {
-// 				...state.quiz_answers,
-// 				...action.payload,
-// 			});
-// 		default:
-// 			return state;
-// 	}
-// };
-
-// export default userReducer;

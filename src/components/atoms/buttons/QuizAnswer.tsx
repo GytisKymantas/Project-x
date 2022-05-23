@@ -44,21 +44,6 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>
         </BaseButton>
       )}
-      {/* {id === 1 && (
-        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
-          bam
-        </Box>
-      )}
-      {
-        <Box border={isSelected ? "solid 2px black" : "solid 2px transparent"}>
-          Bum
-        </Box>
-      } */}
-      {/* {select && (
-        <Box position={"absolute"} top="28%" left="5%">
-          <Check />
-        </Box>
-      )} */}
     </Box>
   );
 };

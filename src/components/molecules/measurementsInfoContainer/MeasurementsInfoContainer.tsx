@@ -8,12 +8,6 @@ import { Gender, Height, Scales, Age } from "assets/images";
 import { BMI } from "components/atoms/BMI/BMI";
 import FactsContainer from "../factsContainer/FactsContainer";
 
-// const age = data.age;
-// const height = data.height;
-// const weight = data.weight;
-// const desiredWeight = data.desiredWeight;
-// const isMale = data.isMale;
-
 export const MeasurementsInfoContainer: React.FC = () => {
   const userData = useSelector(selectUserData);
   const age = userData.age;

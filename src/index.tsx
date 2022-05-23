@@ -2,8 +2,8 @@ import React, { StrictMode } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components/macro";
 import { theme } from "styles/theme";
 import { Provider } from "react-redux";
-
-import { store } from "state/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "state/store";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -22,10 +22,12 @@ const GlobalStyle = createGlobalStyle`
 export const wrapRootElement = ({ element }: any) => (
   <StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {element}
-      </ThemeProvider>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          {element}
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
   </StrictMode>
 );

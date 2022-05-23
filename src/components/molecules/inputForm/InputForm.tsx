@@ -28,7 +28,6 @@ export const InputForm = () => {
   const [inches, setInches] = useState("");
   const [weight, setWeight] = useState("");
   const [desiredWeight, setDesiredWeight] = useState("");
-  const [isMale, setIsMale] = useState("");
 
   console.log(age, "this is age returned value");
   console.log(weight, "this is weight returned value");
@@ -44,17 +43,12 @@ export const InputForm = () => {
     feet: null,
     inches: null,
     desiredWeight: null,
-    isMale: null,
   });
-
-  console.log(userState, "user state ");
-  const ageReal = age;
 
   const userData = useSelector(selectUserData);
   const dispatch = useDispatch();
 
-  const handleFunction = (e) => {
-    e.preventDefault();
+  const handleFunction = () => {
     setUserState({
       age: age,
       height: height,
@@ -62,9 +56,7 @@ export const InputForm = () => {
       desiredWeight: desiredWeight,
       feet: feet,
       inches: inches,
-      isMale: isMale,
     });
-    navigate("/loading");
   };
   const handleImperialSystem = () => {
     setIfImperial(true);
@@ -127,7 +119,12 @@ export const InputForm = () => {
             </Typography>
           </MeasurementWrapper>
         </FlexWrapper>
-        <FormContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            navigate("/loading");
+          }}
+        >
           <FlexWrapper flexDirection="column" gap="25px" width="100%">
             {ifImperial ? (
               <>
@@ -158,23 +155,9 @@ export const InputForm = () => {
                 />
               </>
             )}
-            <FlexWrapper gap="10px">
-              <Input
-                type="radio"
-                name="gender"
-                onClick={() => setIsMale("Male")}
-                label="male"
-              />
-              <Input
-                type="radio"
-                name="gender"
-                onClick={() => setIsMale("Female")}
-                label="female"
-              />
-            </FlexWrapper>
-            <QuizAnswer onClick={handleFunction} type="submit">
+            <BaseButton onClick={handleFunction} type="submit">
               SUBMIT
-            </QuizAnswer>
+            </BaseButton>
           </FlexWrapper>
         </FormContainer>
       </FlexWrapper>
@@ -188,3 +171,21 @@ const MeasurementWrapper = styled(Box)`
 const FormContainer = styled.form`
   width: 100%;
 `;
+{
+  /* <FlexWrapper gap="10px">
+              <Input
+                type="radio"
+                name="gender"
+                required
+                onClick={() => setIsMale("Male")}
+                label="male"
+              />
+              <Input
+                type="radio"
+                name="gender"
+                required
+                onClick={() => setIsMale("Female")}
+                label="female"
+              />
+            </FlexWrapper> */
+}

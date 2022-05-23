@@ -27,6 +27,9 @@ export const Imperial: React.FC<ImperialInputProps> = ({
         <Input
           type="number"
           placeholder="Height"
+          min={4}
+          max={8}
+          required
           onChange={(e) => setStateValueFeet(e.target.value)}
           width="162px"
         />
@@ -45,6 +48,9 @@ export const Imperial: React.FC<ImperialInputProps> = ({
           type="number"
           placeholder="Inches"
           width="162px"
+          min={0}
+          max={11}
+          required
           onChange={(e) => setStateValueInches(e.target.value)}
         />
         <Box mt="17px" position="absolute" right="0">

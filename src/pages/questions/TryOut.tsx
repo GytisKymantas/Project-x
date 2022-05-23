@@ -28,6 +28,8 @@ import {
 
 const TryOut: React.FC = () => {
   const dispatch = useDispatch();
+  const global = useSelector(selectState);
+  console.log(global, "This is global");
 
   const [arrayIndex, setArrayIndex] = useState(0);
   const [selectedUserState, setSelectedUserState] = useState<any>([]);
@@ -46,6 +48,28 @@ const TryOut: React.FC = () => {
     dispatch(setMultipleChoiceGoals(multipleGoals));
     setArrayIndex(arrayIndex + 1);
   };
+
+  // const massiveFunction = (quizAnswer,uniqueID,array) => {
+
+  //   Switch(uniqueID) {
+  //     case "1":
+  //       return setWorkAnswer({quizAnswer});
+  //       dispatch(setIsWorkingOut(array));
+  //     case "2";
+  //       return setAsthmaticAnswer({quizAnswer});
+  //       dispatch(setIsAsthmatic(array));
+  //     case "3";
+  //       return setSmokingAnswer({quizAnswer});
+  //       dispatch(setIsSmoking(array));
+  //     case "4";
+  //       return setHeartAnswer({quizAnswer});
+  //       dispatch(setIsHeart(array));
+  //     case "5";
+  //       return setHeartAnswer({quizAnswer});
+  //       dispatch(setIsHeart(array));
+
+  //   }
+  // }
 
   useEffect(() => {
     if (selectedUserState.includes("None")) {
@@ -150,11 +174,6 @@ const TryOut: React.FC = () => {
                             ? "solid 2px black"
                             : "solid 2px transparent"
                         }
-                        // onClick={() =>
-                        //   setMultipleChoiceGoals((array) =>
-                        //     array.concat(quizAnswer)
-                        //   )
-                        // }
                         onClick={
                           multipleGoals.includes(quizAnswer)
                             ? () =>

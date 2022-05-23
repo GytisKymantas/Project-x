@@ -1,13 +1,13 @@
 import React from "react";
 import { Box } from "components";
-import { HealthInformationSection } from "components/atoms/healthResult/HealthInformationSection";
+import TryOut from "./TryOut";
 
-const question: React.FC = () => {
+const Questions: React.FC = () => {
   return (
     <Box>
-      <HealthInformationSection />
+      <TryOut />
     </Box>
   );
 };
 
-export default question;
+export default Questions;

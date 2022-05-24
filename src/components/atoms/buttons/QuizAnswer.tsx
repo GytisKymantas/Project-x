@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, FlexWrapper, BaseButton } from "components";
-import { Check } from "assets/images";
 
 interface QuizAnswerProps {
   children: React.ReactNode;
@@ -18,18 +17,19 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   onClick,
 }) => {
   const [select, setSelect] = useState(false);
+  //TODO: delete ^
   return (
     <Box
       minWidth="22.5625rem"
       height="3rem"
       position={"relative"}
-      m={isSubmit ? "s50s0" : "s8"}
+      m={isSubmit ? "s8" : "s8"}
       onClick={onClick}
     >
       {isSubmit ? (
         <BaseButton
           type="submit"
-          boxShadow={disabled ? "" : "0px 16px 32px rgba(16, 51, 251, 0.24);"}
+          boxShadow={disabled ? "" : "default"}
           disabled={disabled}
         >
           {children}

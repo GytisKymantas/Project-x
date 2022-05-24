@@ -7,20 +7,20 @@ interface ReturnButtonProps {
   onClick?: () => void;
   width?: String;
 }
-
+//TODO:check if width is viable?
 export const ReturnButton: React.FC<ReturnButtonProps> = ({
   children,
   onClick,
   width,
 }) => (
-  <FlexWrapper justifyContent="center" gap="10px" mt="20px">
+  <FlexWrapper justifyContent="center" gap="0.625rem" mt="s20">
     <BaseButton
       background={"taxi"}
       width={width}
       onClick={onClick}
       type="button"
     >
-      <FlexWrapper justifyContent="center" gap="6px">
+      <FlexWrapper justifyContent="center" gap="0.375rem">
         <Arrow />
         {children}
       </FlexWrapper>

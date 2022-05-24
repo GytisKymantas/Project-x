@@ -1,13 +1,19 @@
 import React from "react";
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
-import { SectionWrapper, GridWrapper, FlexWrapper, Image } from "components";
+import {
+  SectionWrapper,
+  GridWrapper,
+  FlexWrapper,
+  Image,
+  SectionHeader,
+} from "components";
+import { PARTNER_IMAGES } from "constants/Constants";
 
 export const Partners: React.FC = () => (
   <SectionWrapper id="Partners">
     <GridWrapper
-      gap={{ _: "50px", ltablet: "0" }}
+      gap={{ _: "3.125rem", ltablet: "0" }}
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-      margin={{ _: "auto 50px", ltablet: "auto 100px" }}
+      margin={{ _: "sautos50", ltablet: "sautos100" }}
     >
       <FlexWrapper width="100%">
         <SectionHeader
@@ -17,11 +23,9 @@ export const Partners: React.FC = () => (
         />
       </FlexWrapper>
       <FlexWrapper flexWrap="wrap" justifyContent="center">
-        <Image src="partner1" width="150px" />
-        <Image src="partner2" width="150px" />
-        <Image src="partner1" width="150px" />
-        <Image src="partner4" width="150px" />
-        <Image src="partner5" width="150px" />
+        {PARTNER_IMAGES.map((image) => (
+          <Image key={image} src={image} width="9.375rem" />
+        ))}
       </FlexWrapper>
     </GridWrapper>
   </SectionWrapper>

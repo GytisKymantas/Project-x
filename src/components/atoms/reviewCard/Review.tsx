@@ -8,16 +8,16 @@ import {
   ReviewCard,
   SectionHeader,
 } from "components";
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
 import { REVIEW_DATA } from "constants/Constants";
-
+//TODO: fix z index
 export const Review: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timeout = setTimeout(
       () => setIndex(index === 2 ? index - 2 : index + 1),
-      3000
+      45000
     );
 
     return () => clearTimeout(timeout);
@@ -28,7 +28,7 @@ export const Review: React.FC = () => {
       <Container>
         <Box mx="auto" my="s50" textAlign="center" maxWidth="750px">
           <FlexWrapper flexDirection="column">
-            <Box pb="100px">
+            <Box pb="s100">
               <SectionHeader
                 type="h3"
                 header="What Customes Say"
@@ -40,7 +40,7 @@ export const Review: React.FC = () => {
         <Box>
           <GridWrapper
             gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-            margin="0 70px"
+            ma="s0s70"
           >
             <ReviewCard
               key={REVIEW_DATA[index].id}

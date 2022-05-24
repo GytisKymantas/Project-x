@@ -5,22 +5,24 @@ import {
   FlexWrapper,
   SectionHeader,
   Box,
+  QuestionsCard,
+  GenderButtons,
 } from "components";
 import { FAQ_DETAILS } from "constants/Constants";
-import { QuestionsCard } from "../../atoms/FAQcard/QuestionsCard";
-import { theme } from "styles/theme";
-import { Breakpoints } from "styles/theme";
-import { GenderButtons } from "components/atoms/genderButtons/GenderButtons";
 
 export const QuestionsCardContainer = () => (
   <SectionWrapper>
     <GridWrapper
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-      gap="30px"
+      gap="1.875rem"
       margin="s20s50"
     >
-      <Box pr="3rem" borderRight="1px solid black">
-        <FlexWrapper flexDirection="column">
+      <Box
+        pr={{ _: "0", ltablet: "s50" }}
+        borderRight={{ _: "none" }}
+        borderBottom={{ ltablet: "scale" }}
+      >
+        <FlexWrapper flexDirection="column" gap="0.625rem">
           {FAQ_DETAILS.map(({ question, answer, id }) => (
             <QuestionsCard question={question} answer={answer} key={id} />
           ))}
@@ -29,7 +31,7 @@ export const QuestionsCardContainer = () => (
       <FlexWrapper
         flexDirection="column"
         justifyContent="center"
-        maxHeight="368px"
+        maxHeight="23rem"
       >
         <SectionHeader
           center

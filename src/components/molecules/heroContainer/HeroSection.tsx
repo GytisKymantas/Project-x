@@ -7,10 +7,9 @@ import {
   GridWrapper,
   Container,
   QuizStartButton,
+  SectionHeader,
+  GenderButtons,
 } from "components";
-
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
-import { GenderButtons } from "components/atoms/genderButtons/GenderButtons";
 import { StaticImage } from "gatsby-plugin-image";
 
 export const HeroSection: React.FC = () => (
@@ -46,7 +45,7 @@ export const HeroSection: React.FC = () => (
             placeholder="tracedSVG"
             draggable="false"
             style={{
-              maxWidth: "500px",
+              maxWidth: "31.25rem",
               margin: "0 auto",
             }}
           />

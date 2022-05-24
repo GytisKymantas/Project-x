@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Input,
-  FlexWrapper,
-  ContentWrapper,
-  Typography,
-  BaseButton,
-} from "components";
+import React from "react";
+import { Box, Input, FlexWrapper, Typography } from "components";
 
 interface ImperialInputProps {
-  setStateValueFeet: (e) => void;
-  setStateValueInches: (e) => void;
+  setStateValueFeet: (e: React.FormEvent<HTMLInputElement>) => void;
+  setStateValueInches: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export const Imperial: React.FC<ImperialInputProps> = ({
@@ -18,7 +11,7 @@ export const Imperial: React.FC<ImperialInputProps> = ({
   setStateValueInches,
 }) => {
   return (
-    <FlexWrapper gap="26px">
+    <FlexWrapper gap="1.625rem">
       <FlexWrapper
         width="100%"
         justifyContent="space-between"
@@ -31,10 +24,10 @@ export const Imperial: React.FC<ImperialInputProps> = ({
           max={8}
           required
           onChange={(e) => setStateValueFeet(e.target.value)}
-          width="162px"
+          width="10.125rem"
         />
-        <Box mt="17px" position="absolute" right="0">
-          <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
+        <Box mt="s16px" position="absolute" right="0">
+          <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
             ft
           </Typography>
         </Box>
@@ -47,14 +40,14 @@ export const Imperial: React.FC<ImperialInputProps> = ({
         <Input
           type="number"
           placeholder="Inches"
-          width="162px"
+          width="10.125rem"
           min={0}
           max={11}
           required
           onChange={(e) => setStateValueInches(e.target.value)}
         />
-        <Box mt="17px" position="absolute" right="0">
-          <Typography color="primary" fontFamily="Satisfy" fontSize="15px">
+        <Box mt="s16" position="absolute" right="0">
+          <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
             in
           </Typography>
         </Box>

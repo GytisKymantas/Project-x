@@ -16,6 +16,8 @@ export * from "./molecules/quizQuestionContainer/QuizQuestionsContainer";
 export * from "./atoms/typography/Typography";
 // images
 export * from "./Image";
+//input form
+export * from "./molecules/inputForm/InputForm";
 //testimonials
 export * from "./atoms/reviewCard/Review";
 export * from "./atoms/reviewCard/ReviewCard";
@@ -43,23 +45,22 @@ export * from "./atoms/subscriptionBox/SubscriptionBoxSection";
 // about
 export * from "./molecules/about/About";
 // checkout container
-export * from "./atoms/checkoutContainer/HealthInformation";
+export * from "./atoms/healthResult/HealthInformation";
 // export * from "./molecules/checkoutContainer/About";
 // health results
-export * from "./atoms/healthResult/HealthResult";
-export * from "./molecules/healthResults/HealthResultsSection";
 export * from "./atoms/healthResult/HealthInformationSection";
 
 //quiz header
 export * from "./molecules/quizHeader/QuizHeader";
-
+//caloric counter
+export * from "./atoms/caloricCounter/CaloricCounter";
 //homelink
 export * from "./molecules/homeLink/HomeLink";
 // scale
 export * from "./atoms/scale/ScaleResult";
 export * from "./molecules/scaleSection/ScaleSection";
 // //genderButtons
-// export * from "./atoms/genderButtons/GenderButtons";
+export * from "./atoms/genderButtons/GenderButtons";
 //purchasd box
 export * from "./atoms/purchaseBox/PurchaseBox";
 // quizQUESTIONS
@@ -76,3 +77,19 @@ export * from "./atoms/blogCard/BlogCard";
 // section header
 // export * from "./sectionHeader/SectionHeader";
 export * from "./atoms/sectionHeader/SectionHeader";
+//BMI
+export * from "./atoms/BMI/BMI";
+// AgeInput,
+// WeightInput,
+// HeightInput,
+// DesiredWeightInput,
+// Imperial,
+export * from "./atoms/measurements/measurementsContainer/AgeInput";
+export * from "./atoms/measurements/measurementsContainer/Imperial";
+export * from "./atoms/measurements/measurementsContainer/HeightInput";
+export * from "./atoms/measurements/measurementsContainer/DesiredWeightInput";
+export * from "./atoms/measurements/measurementsContainer/Measurements";
+export * from "./atoms/measurements/measurementsContainer/WeightInput";
+
+//measuremnt info
+export * from "./atoms/checkoutContainer/MeasurementInfo";

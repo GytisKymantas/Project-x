@@ -10,6 +10,7 @@ import {
 
 export const BMI: React.FC = () => {
   const userData = useSelector(selectUserData);
+  // console.log(userData, "user data");
   const BMIrounded = metricBMIcalculator(userData.weight, userData.height);
   const heightInches = heightToInches(userData.feet, userData.inches);
   const imperialBMIrounded = imperialBMIcalculator(
@@ -18,27 +19,28 @@ export const BMI: React.FC = () => {
   );
 
   //TODO: fix the bug
-  console.log(BMIrounded, "bmi rounded");
-  console.log(heightInches, "this is imp bmi");
-  console.log(imperialBMIrounded, "BMI imperial");
+  // console.log(BMIrounded, "bmi rounded");
+  // console.log(heightInches, "this is imp bmi");
+  // console.log(imperialBMIrounded, "BMI imperial");
 
   return (
     <Box
       bg="white"
-      width="250px"
-      height="165px"
-      boxShadow={"1px 5px 16px black"}
+      width="15.625rem"
+      height="10.3125rem"
+      margin="s0auto"
+      boxShadow="default"
     >
       <FlexWrapper
         justifyContent={
-          BMIrounded > 22 || imperialBMIrounded > 22
+          BMIrounded > 23 || imperialBMIrounded > 23
             ? "space-around"
             : "flex-end"
         }
       >
-        {BMIrounded > 22 || imperialBMIrounded > 22 ? (
+        {BMIrounded > 23 || imperialBMIrounded > 23 ? (
           <Typography type="h5" color="red">
-            {BMIrounded === Infinity && BMIrounded > 22
+            {BMIrounded === Infinity && BMIrounded > 23
               ? `${imperialBMIrounded}`
               : `${BMIrounded}`}
             %

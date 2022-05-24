@@ -16,7 +16,7 @@ interface SectionHeaderProps {
     | "span";
   center?: boolean;
 }
-
+//TODO: fix type ^
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   header,
   paragraph,
@@ -33,11 +33,11 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       <Typography
         type={type}
         color="primary"
-        textAlign={center ? "center" : "default"}
+        textAlign={center ? "center" : "start"}
       >
         {header}
       </Typography>
-      <Typography textAlign={center ? "center" : "default"} color="gray">
+      <Typography textAlign={center ? "center" : "start"} color="gray">
         {paragraph}
       </Typography>
     </FlexWrapper>

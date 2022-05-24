@@ -6,21 +6,20 @@ import {
   ContentWrapper,
   Typography,
   BaseButton,
+  AgeInput,
+  WeightInput,
+  HeightInput,
+  DesiredWeightInput,
+  Imperial,
+  QuizAnswer,
 } from "components";
-import { AgeInput } from "../../atoms/measurements/measurementsContainer/AgeInput";
 import styled from "styled-components/macro";
-import { useDispatch, useSelector } from "react-redux";
-import { setUserData } from "state/slice";
-import { selectUserData } from "state/selectors";
+import { useDispatch } from "react-redux";
 import { navigate } from "gatsby";
 import { theme } from "styles/theme";
-import { WeightInput } from "../../atoms/measurements/measurementsContainer/WeightInput";
-import { HeightInput } from "../../atoms/measurements/measurementsContainer/HeightInput";
-import { DesiredWeightInput } from "../../atoms/measurements/measurementsContainer/DesiredWeightInput";
-import { Imperial } from "../../atoms/measurements/measurementsContainer/Imperial";
-import { QuizAnswer } from "components/atoms/buttons/QuizAnswer";
+import { setUserData } from "state/slices/userDataSlice";
 
-export const InputForm = () => {
+export const InputForm: React.FC = () => {
   const [ifImperial, setIfImperial] = useState(false);
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
@@ -45,7 +44,6 @@ export const InputForm = () => {
     desiredWeight: null,
   });
 
-  const userData = useSelector(selectUserData);
   const dispatch = useDispatch();
 
   const handleFunction = () => {
@@ -83,12 +81,12 @@ export const InputForm = () => {
     <ContentWrapper margin="s0auto" width="25rem">
       <FlexWrapper flexDirection="column" alignItems="center">
         <FlexWrapper
-          gap="10px"
+          gap="0.625rem"
           width="100%"
-          pt="10px"
-          mb="25px"
+          pt="s10"
+          mb="s25"
           justifyContent="center"
-          borderBottom={`1px solid ${theme.colors.lightwhite}`}
+          borderBottom="scales"
         >
           <MeasurementWrapper
             pb="s10"
@@ -97,7 +95,7 @@ export const InputForm = () => {
             }
           >
             <Typography
-              fontWeight="700"
+              fontWeight="fw700"
               color={ifImperial ? "orange" : "primary"}
               onClick={handleImperialSystem}
             >
@@ -125,7 +123,7 @@ export const InputForm = () => {
             navigate("/loading");
           }}
         >
-          <FlexWrapper flexDirection="column" gap="25px" width="100%">
+          <FlexWrapper flexDirection="column" gap="1.5625rem" width="100%">
             {ifImperial ? (
               <>
                 <AgeInput setStateValue={setAge} value={age} />
@@ -171,21 +169,3 @@ const MeasurementWrapper = styled(Box)`
 const FormContainer = styled.form`
   width: 100%;
 `;
-{
-  /* <FlexWrapper gap="10px">
-              <Input
-                type="radio"
-                name="gender"
-                required
-                onClick={() => setIsMale("Male")}
-                label="male"
-              />
-              <Input
-                type="radio"
-                name="gender"
-                required
-                onClick={() => setIsMale("Female")}
-                label="female"
-              />
-            </FlexWrapper> */
-}

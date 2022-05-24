@@ -1,14 +1,22 @@
 import React from "react";
-import { SectionWrapper, GridWrapper, Box, Typography } from "components";
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
+import {
+  SectionWrapper,
+  GridWrapper,
+  Box,
+  Typography,
+  SectionHeader,
+} from "components";
+import { Breakpoints } from "styles/theme";
+import { mobile } from "styles/breakpoints";
 
-export const About = () => (
+export const About: React.FC = () => (
   <SectionWrapper id="About">
     <GridWrapper
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       gridTemplateRows={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       gap="2.5rem"
-      margin="s50"
+      margin={{ _: "s16", ltablet: "s50" }}
+      textAlign={{ _: "justify", ltablet: "unset" }}
     >
       <Box bg="blue">
         {/* <StaticImage
@@ -20,6 +28,7 @@ export const About = () => (
       </Box>
       <Box margin="auto">
         <SectionHeader
+          center={mobile ? true : false}
           type="h2"
           header="What we do?"
           paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little gerret repair to desire he esteem."

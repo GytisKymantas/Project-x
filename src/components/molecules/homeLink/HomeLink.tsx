@@ -4,17 +4,15 @@ import styled from "styled-components/macro";
 import { theme } from "styles/theme";
 import { Link } from "gatsby";
 
-export const HomeLink: React.FC = () => {
-  return (
-    <Box>
-      {" "}
-      <Homelink to="/">
-        Fit<span> </span>
-        on<span style={{ color: "red" }}>-</span>Time
-      </Homelink>
-    </Box>
-  );
-};
+export const HomeLink: React.FC = () => (
+  <Box>
+    {" "}
+    <Homelink to="/">
+      Fit<span> </span>
+      on<span style={{ color: "red" }}>-</span>Time
+    </Homelink>
+  </Box>
+);
 
 const Homelink = styled(Link)`
   color: ${theme.colors.primary};

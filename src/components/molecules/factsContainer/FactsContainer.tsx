@@ -1,22 +1,12 @@
 import React from "react";
-import { Box, GridWrapper } from "components";
-import { CaloricCounter } from "../../atoms/caloricCounter/CaloricCounter";
-import { BMI } from "../../atoms/BMI/BMI";
-import { Satisfaction } from "../../atoms/checkoutContainer/Satisfaction";
-import { Variations } from "../../atoms/checkoutContainer/Variations";
+import { Box, GridWrapper, BMI } from "components";
 
-const FactsContainer: React.FC = () => {
-  return (
-    <Box>
-      <GridWrapper
-        gridTemplateColumns="repeat(2,1fr)"
-        margin="0 20%"
-        gap="20px"
-      >
-        <BMI />
-      </GridWrapper>
-    </Box>
-  );
-};
+const FactsContainer: React.FC = () => (
+  <Box>
+    <GridWrapper gridTemplateColumns="repeat(2,1fr)" m="s0auto" gap="1.25rem">
+      <BMI />
+    </GridWrapper>
+  </Box>
+);
 
 export default FactsContainer;

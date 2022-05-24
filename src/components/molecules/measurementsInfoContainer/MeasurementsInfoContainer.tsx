@@ -1,12 +1,8 @@
 import React from "react";
-import { MeasurementInfo } from "../../atoms/checkoutContainer/MeasurementInfo";
-import { Box, SectionWrapper, GridWrapper } from "components";
+import { SectionWrapper, GridWrapper, MeasurementInfo } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
-// import { MEASUREMENT_CONTAINER_DATA } from "constants/Constants";
 import { Gender, Height, Scales, Age } from "assets/images";
-import { BMI } from "components/atoms/BMI/BMI";
-import FactsContainer from "../factsContainer/FactsContainer";
 
 export const MeasurementsInfoContainer: React.FC = () => {
   const userData = useSelector(selectUserData);
@@ -15,29 +11,23 @@ export const MeasurementsInfoContainer: React.FC = () => {
   const weight = userData.weight;
   const feet = userData.feet;
   const inches = userData.inches;
-  const heightInches = userData.feet * 12 + userData.inches;
   const desiredWeight = userData.desiredWeight;
   const isMale = userData.isMale;
 
   console.log(userData, "this is userData");
-  // const handleGender = () => {
-  //   if (isMale === true) {
-  //     return (isMale = "Male");
-  //     console.log(isMale, "in function");
-  //   }
-  // };
+
   const MEASUREMENT_CONTAINER_DATA = [
     {
       image: <Gender />,
       title: isMale,
       subtitle: "Gender",
-      id: "1212",
+      id: "1",
     },
     {
       image: <Age />,
       title: age,
       subtitle: "Age",
-      id: "1313",
+      id: "2",
     },
     {
       image: <Height />,
@@ -46,13 +36,13 @@ export const MeasurementsInfoContainer: React.FC = () => {
       inches: inches,
       imperialSubtitle: "Height ft",
       subtitle: "Height cm",
-      id: "1414",
+      id: "3",
     },
     {
       image: <Scales />,
       title: weight,
       subtitle: "Weight",
-      id: "1515",
+      id: "4",
     },
   ];
 
@@ -67,10 +57,10 @@ export const MeasurementsInfoContainer: React.FC = () => {
     <SectionWrapper>
       <GridWrapper
         gridTemplateColumns="repeat(4,1fr)"
-        maxWidth="1150px"
+        maxWidth="71.875rem"
         m="s0auto"
         p="5rem"
-        gap="20px"
+        gap="1.25rem"
       >
         {MEASUREMENT_CONTAINER_DATA.map(
           ({ id, image, title, subtitle, feet, inches, imperialSubtitle }) => (
@@ -91,14 +81,3 @@ export const MeasurementsInfoContainer: React.FC = () => {
 };
 
 export default MeasurementsInfoContainer;
-
-{
-  /* {MEASUREMENT_CONTAINER_DATA.map(({ id, image, title, subtitle }) => (
-  <MeasurementInfo
-    key={id}
-    title={title}
-    subtitle={subtitle}
-    image={image}
-  />
-))} */
-}

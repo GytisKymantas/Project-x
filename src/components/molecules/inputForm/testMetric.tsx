@@ -7,21 +7,19 @@ interface testMetricProps {
   id: string;
 }
 
-export const testMetric: React.FC = ({ setValue, id }) => {
-  return (
-    <MeasurementWrapper
-      borderBottom={ifImperial ? "1px solid orange" : "1x solid primary"}
+export const testMetric: React.FC = ({ setValue, id }) => (
+  <MeasurementWrapper
+    borderBottom={ifImperial ? "1px solid orange" : "1x solid primary"}
+  >
+    <Typography
+      fontWeight="fw700"
+      color={ifImperial ? "orange" : "primary"}
+      onClick={handleImperialSystem}
     >
-      <Typography
-        fontWeight="700"
-        color={ifImperial ? "orange" : "primary"}
-        onClick={handleImperialSystem}
-      >
-        Imperial
-      </Typography>
-    </MeasurementWrapper>
-  );
-};
+      Imperial
+    </Typography>
+  </MeasurementWrapper>
+);
 
 const MeasurementWrapper = styled(Box)`
   cursor: pointer;

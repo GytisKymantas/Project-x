@@ -5,7 +5,7 @@ interface HealthInformationProps {
   title: string;
   treatment: string;
   answer?: string | boolean;
-  id?: number | string;
+  id: string;
 }
 
 export const HealthInformation: React.FC<HealthInformationProps> = ({
@@ -16,8 +16,8 @@ export const HealthInformation: React.FC<HealthInformationProps> = ({
 }) => (
   <>
     {answer && (
-      <Box p="20px">
-        <FlexWrapper alignItems="center" gap="20px">
+      <Box p="s20">
+        <FlexWrapper alignItems="center" gap="1.25rem">
           <Box position="relative">
             {id % 2 === 1 && (
               <Box position="relative">

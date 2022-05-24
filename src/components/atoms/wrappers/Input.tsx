@@ -14,7 +14,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   minValue?: number;
   maxValue?: number;
-  onChange?: () => void;
+  value?: number | string;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 type InputFieldProps = InputProps & Styles<Theme>;

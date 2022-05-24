@@ -1,31 +1,28 @@
 import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectState } from "state/selectors";
 import { selectPurchaseData } from "state/selectors";
-import { setPurchaseData } from "state/slice";
 import { navigate } from "gatsby";
 import { theme } from "styles/theme";
 import { FlexWrapper, SubscriptionBox, Box, QuizAnswer } from "components";
+import { setPurchaseData } from "state/slices/purchaseDataSlice";
 
 export const SubscriptionBoxContainer: React.FC = () => {
   const dispatch = useDispatch();
   const [selectedUser, setSelectedUser] = useState({
     id: null as unknown as number,
     month: "",
-    newValue: null as unknown as number,
+    newValue: null as unknown as string,
   });
 
   const purchaseData = useSelector(selectPurchaseData);
   console.log(purchaseData, "this is purchase");
-  const global = useSelector(selectState);
 
   const handleSubscription = () => {
     navigate("/success");
     dispatch(setPurchaseData(selectedUser));
   };
 
-  console.log(global, "sub box");
   return (
     <FlexWrapper
       flexDirection="column"
@@ -62,7 +59,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
         )
       )}
       {selectedUser.id ? (
-        <QuizAnswer mt="50px" onClick={handleSubscription}>
+        <QuizAnswer mt="s50" onClick={handleSubscription}>
           Purchase
         </QuizAnswer>
       ) : (

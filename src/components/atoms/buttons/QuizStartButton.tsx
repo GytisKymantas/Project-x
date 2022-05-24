@@ -10,8 +10,9 @@ interface QuizStartButtonProps {
 export const QuizStartButton: React.FC<QuizStartButtonProps> = ({
   children,
   width,
+  onClick,
 }) => (
-  <Box borderRadius="br14" height="48px" width={width}>
+  <Box borderRadius="br14" height="3rem" onClick={() => onClick} width={width}>
     <BaseButton background={"taxi"} type="button">
       {children}
     </BaseButton>

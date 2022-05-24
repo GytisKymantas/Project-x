@@ -1,14 +1,14 @@
 import React from "react";
-import { HealthInformation } from "../checkoutContainer/HealthInformation";
+import { HealthInformation } from "components";
 import { useSelector } from "react-redux";
 import { selectQuizAnswers } from "state/selectors";
 
 export const HealthInformationSection: React.FC = () => {
   const userQuizAnswers = useSelector(selectQuizAnswers);
-  const workoutFrequencyAnswer = userQuizAnswers.isWorkingOut.quizAnswer;
-  const isSmoking = userQuizAnswers.isSmoking.quizAnswer;
-  const isHeartCondition = userQuizAnswers.isHeartCondition.quizAnswer;
-  const isAsthmatic = userQuizAnswers.isAsthmatic.quizAnswer;
+  const workoutFrequencyAnswer = userQuizAnswers?.isWorkingOut;
+  const isSmoking = userQuizAnswers?.isSmoking;
+  const isHeartCondition = userQuizAnswers?.isHeartCondition;
+  const isAsthmatic = userQuizAnswers?.isAsthmatic;
 
   const HEALTH_INFORMATION_DATA = [
     {

@@ -174,3 +174,11 @@ export const BULLET_ARRAY = [
     id: 2,
   },
 ];
+
+export const PARTNER_IMAGES = [
+  "partner1",
+  "partner2",
+  "partner3",
+  "partner4",
+  "partner5",
+];

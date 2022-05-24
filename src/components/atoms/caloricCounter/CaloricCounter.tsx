@@ -2,13 +2,14 @@ import React from "react";
 import { Box, FlexWrapper, Typography, Image } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
+import { caloricImperialIntake, caloricMetricIntake } from "utils/metrics";
 
 export const CaloricCounter: React.FC = () => {
   const userData = useSelector(selectUserData);
   const feet = userData.feet;
-  const caloricIntake = userData.weight * 0.9 * 30;
-  const caloricIntakeImperial = userData.weight * 0.9 * 14;
-
+  const caloricIntake = caloricMetricIntake(userData?.weight);
+  const caloricIntakeImperial = caloricImperialIntake(userData?.weight);
+  //TODO: fix image
   return (
     <Box bg="white" width="26.5625rem" height="26.5625rem">
       <FlexWrapper flexDirection="column" alignItems="center" gap={"0.625rem"}>

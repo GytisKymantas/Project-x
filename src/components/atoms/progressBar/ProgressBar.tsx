@@ -15,10 +15,9 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ width }) => (
 );
 
 const ProgressLine = styled(Box)`
-  transition: width 0.2s ease;
-  /* background-image: */
-  content: "";
   background-repeat: no-repeat;
   background-position: 50% center;
   background-size: contain;
+  content: "";
+  transition: width 0.2s ease;
 `;

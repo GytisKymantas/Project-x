@@ -12,6 +12,7 @@ const colors = {
   taxi: "#f4f4b3",
   orange: "orange",
   orangelight: "#ffa50026",
+  orangelighter: "#ffa500cf",
   red: "red",
   graylight: "#e6e6e6",
 };
@@ -33,6 +34,13 @@ export const theme = {
   fontWeights: {
     fw700: 700,
   },
+  shadows: {
+    default: `1px 1px 11px ${colors.primary}`,
+  },
+  borders: {
+    default: `1px solid ${colors.primary}`,
+    scale: `3px solid ${colors.lightwhite}`,
+  },
   zIndices: {
     base: 0,
     upperElement: 1,
@@ -45,13 +53,19 @@ export const theme = {
     s0auto: "0 auto",
     s5: "5px",
     s8: "8px",
+    s10: "10px",
     s16: "16px",
     s18: "18px",
     s20: "20px",
     s20s50: "20px 50px",
     s50s0: "50px 0",
+    sautos50: "auto 50px",
+    s0s70: "0 70px",
     s25: "25px",
     s50: "50px",
+    s80: "80px",
+    s100: "100px",
+    sautos100: "auto 100px",
   },
   typography: {
     h1: {

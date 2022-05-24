@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, SubscriptionBoxContainer } from "components";
-import { SectionHeader } from "../sectionHeader/SectionHeader";
+import { Box, SubscriptionBoxContainer, SectionHeader } from "components";
 
 export const SubscriptionBoxSection: React.FC = () => (
   <Box>

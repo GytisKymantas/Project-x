@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import {
-  Box,
-  SectionWrapper,
-  Container,
-  ContentWrapper,
-  Typography,
-} from "components";
+import { Container, ContentWrapper, Typography, FlexWrapper } from "components";
 import { Cross, Minus } from "assets/images";
-
-import { FlexWrapper } from "components/atoms/wrappers/FlexWrapper";
 
 interface QuestionsCardProps {
   question: string;
@@ -26,10 +18,10 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
       width="100%"
       bg="dirtywhite"
       onClick={() => setDisplay(!display)}
-      boxShadow="1px 3px 5px black"
+      boxShadow="default"
     >
       <ContentWrapper padding="s25">
-        <FlexWrapper flexDirection="column" gap="15px">
+        <FlexWrapper flexDirection="column" gap="0.9375rem">
           <FlexWrapper alignItems="center" justifyContent="space-between">
             <Typography type="h6" color="primary" fontSize="fs16">
               {question}

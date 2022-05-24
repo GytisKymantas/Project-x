@@ -6,7 +6,8 @@ import { UserState } from "./types";
 import { persistReducer, persistStore } from "redux-persist";
 import localStorage from "redux-persist/es/storage";
 import sessionStorage from "redux-persist/es/storage/session";
-import { getDefaultMiddleware } from "@reduxjs/toolkit";
+import createSagaMiddleware from "@redux-saga/core";
+import rootSaga from "./rootSaga";
 
 export interface RootState {
   user: UserState;
@@ -30,10 +31,14 @@ const persistConfig = {
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const sagaMiddleware = createSagaMiddleware();
+
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  middleware: [sagaMiddleware],
 });
+
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);
 

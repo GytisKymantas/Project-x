@@ -6,11 +6,10 @@ import {
   FlexWrapper,
   GridWrapper,
   ReviewCard,
+  SectionHeader,
 } from "components";
 import { StaticImage } from "gatsby-plugin-image";
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 import { REVIEW_DATA } from "constants/Constants";
-// import { Breakpoints } from "styles/theme";
 
 export const Review: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -29,11 +28,13 @@ export const Review: React.FC = () => {
       <Container>
         <Box mx="auto" my="s50" textAlign="center" maxWidth="750px">
           <FlexWrapper flexDirection="column">
-            <SectionHeader
-              type="h3"
-              header="What Customes Say"
-              paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
-            />
+            <Box pb="100px">
+              <SectionHeader
+                type="h3"
+                header="What Customes Say"
+                paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
+              />
+            </Box>
           </FlexWrapper>
         </Box>
         <Box>
@@ -45,16 +46,20 @@ export const Review: React.FC = () => {
               key={REVIEW_DATA[index].id}
               header={REVIEW_DATA[index].header}
               name={REVIEW_DATA[index].name}
+              index={index}
               paragraph={REVIEW_DATA[index].paragraph}
               occupation={REVIEW_DATA[index].occupation}
             />
             <Box margin="s0auto" position="relative">
               {/* <StaticImage
-                src="src/assets/images/yoga.png"
-                alt="Woman doing yoga"
+                src="../../assets/images/yoga.png"
+                alt="foto"
                 placeholder="tracedSVG"
                 draggable="false"
-              />{" "} */}
+                style={{
+                  maxWidth: "500px",
+                  margin: "0 auto",
+                }} */}
               <Box
                 position="absolute"
                 top="0"
@@ -64,10 +69,14 @@ export const Review: React.FC = () => {
               >
                 {/* <StaticImage
                   src="../../assets/images/yogabackground.png"
-                  alt="yellow background"
+                  alt="foto"
                   placeholder="tracedSVG"
                   draggable="false"
-                />{" "} */}
+                  style={{
+                    maxWidth: "500px",
+                    margin: "0 auto",
+                  }}
+                /> */}
               </Box>
             </Box>
           </GridWrapper>

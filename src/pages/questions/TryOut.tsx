@@ -4,6 +4,7 @@ import { InputForm } from "components/molecules/inputForm/InputForm";
 import { Check } from "assets/images";
 import { ReturnButton } from "components/atoms/buttons/ReturnButton";
 import { WIDTH_SCALE } from "constants/Constants";
+import { selectUsers } from "state/selectors";
 import {
   setQuizAnswers,
   setIsAsthmatic,
@@ -13,8 +14,9 @@ import {
 } from "state/slice";
 import { setMultipleChoice } from "state/slice";
 import { setMultipleChoiceGoals } from "state/slice";
-import { ANSWERS } from "constants/QuestionMassive";
 import { selectState } from "state/selectors";
+import { fetchUsersAction } from "state/sagasActions";
+
 import {
   Typography,
   FlexWrapper,
@@ -24,6 +26,12 @@ import {
   QuizAnswer,
   ProgressBar,
   QuizHeader,
+  IsMultiple,
+  IsWorkingOut,
+  IsMultipleChoice,
+  IsAsthmatic,
+  IsSmoking,
+  IsHeart,
 } from "components";
 
 const TryOut: React.FC = () => {
@@ -38,6 +46,14 @@ const TryOut: React.FC = () => {
   const [smokingAnswer, setSmokingAnswer] = useState({});
   const [asthmaticAnswer, setAsthmaticAnswer] = useState({});
   const [heartAnswer, setHeartAnswer] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const ANSWERS = useSelector(selectUsers);
+  console.log(ANSWERS, "this is just answers");
+
+  useEffect(() => {
+    dispatch(fetchUsersAction());
+    setIsLoading(false);
+  }, []);
 
   const handleUserState = () => {
     dispatch(setMultipleChoice(selectedUserState));
@@ -49,12 +65,15 @@ const TryOut: React.FC = () => {
     setArrayIndex(arrayIndex + 1);
   };
 
-  // const massiveFunction = (quizAnswer,uniqueID,array) => {
+  // const massiveFunction = (uniqueID) => {
 
   //   Switch(uniqueID) {
   //     case "1":
-  //       return setWorkAnswer({quizAnswer});
-  //       dispatch(setIsWorkingOut(array));
+  //       return dispatch(setIsWorkingOut(array));
+  // const nextQuestion = arrayIndex + 1;
+  // if (nextQuestion < ANSWERS.length) {
+  //   setArrayIndex(nextQuestion);
+  // }
   //     case "2";
   //       return setAsthmaticAnswer({quizAnswer});
   //       dispatch(setIsAsthmatic(array));
@@ -120,7 +139,7 @@ const TryOut: React.FC = () => {
             justifyContent="center"
             mt="s50"
           >
-            {ANSWERS[arrayIndex].question.answers.map(
+            {ANSWERS[arrayIndex]?.question.answers.map(
               ({
                 title,
                 id,
@@ -136,169 +155,96 @@ const TryOut: React.FC = () => {
                 showGoalsSubmit,
               }) => (
                 <Box key={id}>
+                  {isLoading && <Box>LOADING....</Box>}
                   {isMultiple && (
-                    <Box key={id} position="relative">
-                      <QuizAnswer
-                        border={
-                          selectedUserState.includes(quizAnswer)
-                            ? "solid 2px black"
-                            : "solid 2px transparent"
-                        }
-                        onClick={
-                          selectedUserState.includes(quizAnswer)
-                            ? () =>
-                                setSelectedUserState((array) =>
-                                  array.filter((e) => !e.includes(quizAnswer))
-                                )
-                            : () =>
-                                setSelectedUserState((array) =>
-                                  array.concat(quizAnswer)
-                                )
-                        }
-                        key={id}
-                      >
-                        {title}
-                      </QuizAnswer>
-                      {selectedUserState.includes(quizAnswer) && (
-                        <Box position={"absolute"} top="28%" left="5%">
-                          <Check />
-                        </Box>
-                      )}
-                    </Box>
+                    <IsMultiple
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      selectedUserState={selectedUserState}
+                      setSelectedUserState={setSelectedUserState}
+                    />
                   )}
                   {isMultipleChoice && (
-                    <Box position="relative" key={id}>
-                      <QuizAnswer
-                        border={
-                          multipleGoals.includes(quizAnswer)
-                            ? "solid 2px black"
-                            : "solid 2px transparent"
-                        }
-                        onClick={
-                          multipleGoals.includes(quizAnswer)
-                            ? () =>
-                                setMultipleGoals((array) =>
-                                  array.filter((e) => !e.includes(quizAnswer))
-                                )
-                            : () =>
-                                setMultipleGoals((array) =>
-                                  array.concat(quizAnswer)
-                                )
-                        }
-                        key={id}
-                      >
-                        {title}
-                      </QuizAnswer>
-                      {multipleGoals.includes(quizAnswer) && (
-                        <Box position={"absolute"} top="28%" left="5%">
-                          <Check />
-                        </Box>
-                      )}
-                    </Box>
+                    <IsMultipleChoice
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      multipleGoals={multipleGoals}
+                      setMultipleGoals={setMultipleGoals}
+                    />
                   )}
                   {isWorkingOut && (
-                    <Box
+                    <IsWorkingOut
                       key={id}
-                      position="relative"
-                      onClick={() =>
-                        setWorkAnswer({
-                          quizAnswer,
-                        })
-                      }
-                    >
-                      <QuizAnswer onClick={handleClick} key={id}>
-                        {title}
-                      </QuizAnswer>
-                      {isWorkingOut === quizAnswer && (
-                        <Box position={"absolute"} top="28%" left="5%">
-                          <Check />
-                        </Box>
-                      )}
-                    </Box>
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      handleClick={handleClick}
+                      workAnswer={workAnswer}
+                      isWorkingOut
+                      setWorkAnswer={setWorkAnswer}
+                    />
                   )}
                   {isAsthmatic && (
-                    <Box
+                    <IsAsthmatic
                       key={id}
-                      onClick={() =>
-                        setAsthmaticAnswer({
-                          quizAnswer,
-                        })
-                      }
-                    >
-                      <QuizAnswer onClick={handleClick} key={id}>
-                        {title}
-                      </QuizAnswer>
-                    </Box>
+                      title={title}
+                      handleClick={handleClick}
+                      quizAnswer={quizAnswer}
+                      setAsthmaticAnswer={setAsthmaticAnswer}
+                    />
                   )}
                   {isSmoker && (
-                    <Box
+                    <IsSmoking
                       key={id}
-                      onClick={() =>
-                        setSmokingAnswer({
-                          quizAnswer,
-                        })
-                      }
-                    >
-                      <QuizAnswer onClick={handleClick} key={id}>
-                        {title}
-                      </QuizAnswer>
-                    </Box>
+                      setSmokingAnswer={setSmokingAnswer}
+                      quizAnswer={quizAnswer}
+                      title={title}
+                      handleClick={handleClick}
+                    />
                   )}
                   {isMeasurement && <InputForm />}
                   {isHeart && (
-                    <Box
+                    <IsHeart
                       key={id}
-                      onClick={() =>
-                        setHeartAnswer({
-                          quizAnswer,
-                        })
-                      }
-                    >
-                      <QuizAnswer onClick={handleClick} key={id}>
-                        {title}
-                      </QuizAnswer>
-                    </Box>
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      setHeartAnswer={setHeartAnswer}
+                      handleClick={handleClick}
+                    />
                   )}
                   {showSubmit && selectedUserState.length < 1 && (
-                    <Box>
-                      <QuizAnswer onClick={handleUserState} disabled isSubmit>
-                        submit
-                      </QuizAnswer>
-                    </Box>
+                    <QuizAnswer onClick={handleUserState} disabled isSubmit>
+                      submit
+                    </QuizAnswer>
                   )}
 
                   {showSubmit && selectedUserState.length >= 1 && (
-                    <Box>
-                      <QuizAnswer onClick={handleUserState} isSubmit>
-                        submit
-                      </QuizAnswer>
-                    </Box>
+                    <QuizAnswer onClick={handleUserState} isSubmit>
+                      submit
+                    </QuizAnswer>
                   )}
 
                   {showGoalsSubmit && multipleGoals.length < 1 && (
-                    <Box>
-                      <QuizAnswer
-                        onClick={handleGoalsChoiceState}
-                        disabled
-                        isSubmit
-                      >
-                        submit
-                      </QuizAnswer>
-                    </Box>
+                    <QuizAnswer
+                      onClick={handleGoalsChoiceState}
+                      disabled
+                      isSubmit
+                    >
+                      submit
+                    </QuizAnswer>
                   )}
 
                   {showGoalsSubmit && multipleGoals.length >= 1 && (
-                    <Box>
-                      <QuizAnswer onClick={handleGoalsChoiceState} isSubmit>
-                        submit
-                      </QuizAnswer>
-                    </Box>
+                    <QuizAnswer onClick={handleGoalsChoiceState} isSubmit>
+                      submit
+                    </QuizAnswer>
                   )}
                 </Box>
               )
             )}
           </FlexWrapper>
-          <ReturnButton width="100px" onClick={handleReturnClick}>
+          <ReturnButton width="6.25rem" onClick={handleReturnClick}>
             return
           </ReturnButton>
         </ContentWrapper>

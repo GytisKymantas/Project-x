@@ -35,8 +35,8 @@ export const BaseButton = styled.button<ButtonStyles>`
   background-color: ${({ background }) => background || ""};
   box-shadow: ${({ boxShadow }) => boxShadow || ""};
   display: block;
-  height: 100%;
-  padding: ${({ padding }) => padding || "0.5rem 1rem"};
+  transition: 0.3s;
+  padding: ${({ padding }) => padding || "1rem 1.5rem"};
   width: 100%;
   font-weight: ${({ theme }) => theme.fontWeights.fw700};
 

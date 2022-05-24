@@ -83,7 +83,7 @@ export const REVIEW_DATA = [
     header: "Great service!",
     name: "Johnny Depp",
     paragraph:
-      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+      "“Are so beguiled and demoralized by the charms of pleasure. Six curiosity day assurance bed necessary.”",
     occupation: "Actor",
   },
   {
@@ -99,7 +99,7 @@ export const REVIEW_DATA = [
     header: "The best service!",
     name: "Will Smith",
     paragraph:
-      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+      "“Men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
     occupation: "Comedian",
   },
 ];
@@ -162,3 +162,15 @@ export const SUBSCRIPTION_DETAILS = [
 ];
 
 export const WIDTH_SCALE = ["14%", "28%", "42%", "58%", "72%", "86%", "100%"];
+
+export const BULLET_ARRAY = [
+  {
+    id: 0,
+  },
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+];

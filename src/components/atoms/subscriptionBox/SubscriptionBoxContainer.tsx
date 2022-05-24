@@ -5,6 +5,7 @@ import { selectState } from "state/selectors";
 import { selectPurchaseData } from "state/selectors";
 import { setPurchaseData } from "state/slice";
 import { navigate } from "gatsby";
+import { theme } from "styles/theme";
 import { FlexWrapper, SubscriptionBox, Box, QuizAnswer } from "components";
 
 export const SubscriptionBoxContainer: React.FC = () => {
@@ -41,8 +42,8 @@ export const SubscriptionBoxContainer: React.FC = () => {
             p="s16"
             border={
               selectedUser.id === id
-                ? "2px solid orange"
-                : "2px solid transparent"
+                ? `2px solid ${theme.colors.orange}`
+                : `2px solid ${theme.colors.lightwhite}`
             }
             onClick={() => setSelectedUser({ id, month, newValue })}
           >
@@ -60,7 +61,15 @@ export const SubscriptionBoxContainer: React.FC = () => {
           </Box>
         )
       )}
-      <QuizAnswer onClick={handleSubscription}>Purchase</QuizAnswer>
+      {selectedUser.id ? (
+        <QuizAnswer mt="50px" onClick={handleSubscription}>
+          Purchase
+        </QuizAnswer>
+      ) : (
+        <QuizAnswer disabled isSubmit onClick={handleSubscription}>
+          Purchase
+        </QuizAnswer>
+      )}
     </FlexWrapper>
   );
 };

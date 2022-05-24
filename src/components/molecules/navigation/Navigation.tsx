@@ -97,11 +97,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
         {checkoutPage ? (
           <QuizStartButton width="8.5625rem">Check Product</QuizStartButton>
         ) : (
-          <BaseButton
-            onClick={() => setPopup(!popup)}
-            width="8.5625rem"
-            zIndex={5}
-          >
+          <BaseButton onClick={() => setPopup(!popup)} width="8.5625rem">
             Start Quiz
           </BaseButton>
         )}

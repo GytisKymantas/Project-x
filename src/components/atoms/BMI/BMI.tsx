@@ -2,15 +2,25 @@ import React from "react";
 import { Box, FlexWrapper, Typography } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
+import {
+  metricBMIcalculator,
+  heightToInches,
+  imperialBMIcalculator,
+} from "utils/metrics";
 
 export const BMI: React.FC = () => {
   const userData = useSelector(selectUserData);
-  const BMI =
-    ((userData.weight * 1000) / (userData.height * userData.height)) * 10;
-  const BMIrounded = Math.round(BMI);
-  const heightInches = userData.feet * 12 + parseInt(userData.inches);
-  const imperialBMI = (userData.weight * 703) / (heightInches * heightInches);
-  const imperialBMIrounded = Math.round(imperialBMI);
+  const BMIrounded = metricBMIcalculator(userData.weight, userData.height);
+  const heightInches = heightToInches(userData.feet, userData.inches);
+  const imperialBMIrounded = imperialBMIcalculator(
+    userData.weight,
+    heightInches
+  );
+
+  //TODO: fix the bug
+  console.log(BMIrounded, "bmi rounded");
+  console.log(heightInches, "this is imp bmi");
+  console.log(imperialBMIrounded, "BMI imperial");
 
   return (
     <Box
@@ -28,7 +38,7 @@ export const BMI: React.FC = () => {
       >
         {BMIrounded > 22 || imperialBMIrounded > 22 ? (
           <Typography type="h5" color="red">
-            {BMIrounded === Infinity
+            {BMIrounded === Infinity && BMIrounded > 22
               ? `${imperialBMIrounded}`
               : `${BMIrounded}`}
             %

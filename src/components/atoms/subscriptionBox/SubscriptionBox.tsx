@@ -11,7 +11,7 @@ interface SubscriptionBoxProps {
   monthlyValue: string;
   selectedUserId: number;
   oldValue?: string;
-  newValue?: string;
+  newValue?: number;
   billed: string;
   id: number;
 }

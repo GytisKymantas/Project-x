@@ -19,29 +19,37 @@ export const HeroSection: React.FC = () => (
       <GridWrapper gridTemplateColumns="1fr 1fr">
         <Container>
           <Box>
-            {/* <StaticImage
-              src="src/assets/images/healthfitness.png"
-              alt="Health and fitness "
+            <StaticImage
+              src="../../assets/images/healthfitness.png"
+              alt="foto"
               placeholder="tracedSVG"
               draggable="false"
-            /> */}
+              style={{
+                maxWidth: "500px",
+                margin: "0 auto",
+              }}
+            />{" "}
           </Box>
           <FlexWrapper flexDirection="column" maxWidth="26.125rem">
             <SectionHeader
               type="h1"
               header="Always get adieus nature day course for common."
               paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
-            />{" "}
+            />
             <GenderButtons />
           </FlexWrapper>
         </Container>
         <Box position="relative">
-          {/* <StaticImage
+          <StaticImage
             src="../../assets/images/skipper.png"
-            alt="Man skipping on a rope"
+            alt="foto"
             placeholder="tracedSVG"
             draggable="false"
-          /> */}
+            style={{
+              maxWidth: "500px",
+              margin: "0 auto",
+            }}
+          />
         </Box>
       </GridWrapper>
     </ContentWrapper>

@@ -1,0 +1,19 @@
+const massiveFunction = (uniqueID): any => {
+  // const nextQuestion = arrayIndex + 1;
+  // if (nextQuestion < ANSWERS.length) {
+  //   setArrayIndex(nextQuestion);
+  // }
+  console.log(uniqueID);
+  // switch (uniqueID) {
+  //   case "1":
+  //     setArrayIndex(uniqueID);
+  //   case "2":
+  //     return dispatch(setIsAsthmatic(IsAsthmatic));
+  //   case "3":
+  //     return dispatch(setIsSmoking(IsSmoking));
+  //   case "4":
+  //     return dispatch(setIsHeart(heartAnswer));
+  //   default:
+  //     return;
+  // }
+};

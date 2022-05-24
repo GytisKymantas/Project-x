@@ -62,6 +62,17 @@ export * from "./molecules/scaleSection/ScaleSection";
 // export * from "./atoms/genderButtons/GenderButtons";
 //purchasd box
 export * from "./atoms/purchaseBox/PurchaseBox";
+// quizQUESTIONS
+export * from "./atoms/quizQuestion/IsMultiple";
+export * from "./atoms/quizQuestion/IsWorkingOut";
+export * from "./atoms/quizQuestion/IsAsthmatic";
+export * from "./atoms/quizQuestion/IsSmoking";
+export * from "./atoms/quizQuestion/isHeart";
 
+export * from "./atoms/quizQuestion/IsMultipleChoice";
+
+//blog card
+export * from "./atoms/blogCard/BlogCard";
 // section header
 // export * from "./sectionHeader/SectionHeader";
+export * from "./atoms/sectionHeader/SectionHeader";

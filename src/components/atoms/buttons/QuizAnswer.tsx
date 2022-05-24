@@ -32,7 +32,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           boxShadow={disabled ? "" : "0px 16px 32px rgba(16, 51, 251, 0.24);"}
           disabled={disabled}
         >
-          Submit
+          {children}
         </BaseButton>
       ) : (
         <BaseButton

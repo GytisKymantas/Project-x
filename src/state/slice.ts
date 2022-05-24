@@ -1,11 +1,7 @@
-import { Foods, QuizAnswers } from "./types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { useEffect } from "react";
-import { Foodies } from "./types";
 
-const initialState = {
+export const initialState = {
   user_data: {
-    // id: null as unknown as number,
     age: null as unknown as number,
     height: null as unknown as number,
     weight: null as unknown as number,
@@ -27,9 +23,9 @@ const initialState = {
   },
   multiple_choice: {},
   multiple_choiceGoals: {},
+  quizData: [],
+  status: "idle",
 };
-
-// console.log(initialState.user_data);
 
 const userSlice = createSlice({
   name: "user",
@@ -83,10 +79,18 @@ const userSlice = createSlice({
     setPurchaseData: (state, actions: PayloadAction<any>) => {
       state.purchase_data = actions.payload;
     },
+    setUsers: (state, actions: PayloadAction<any["users"]>) => {
+      state.quizData = actions.payload;
+    },
+    setStatus: (state, actions: PayloadAction<any["status"]>) => {
+      state.status = actions.payload;
+    },
   },
 });
 
 export const {
+  setUsers,
+  setStatus,
   setGenderData,
   setPurchaseData,
   setIsHeart,

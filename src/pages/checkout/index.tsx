@@ -8,7 +8,7 @@ import {
   // ScaleSection,
   CheckoutHero,
 } from "components";
-
+import { BMI } from "components/atoms/BMI/BMI";
 //TODO:
 import ScaleSection from "components/molecules/scaleSection/ScaleSection";
 
@@ -16,6 +16,7 @@ const Checkout: React.FC = () => (
   <>
     <Navigation checkoutPage />
     <CheckoutHero />
+    <BMI />
     <MeasurementsInfoContainer />
     <ScaleSection />
     <HealthInformationSection />

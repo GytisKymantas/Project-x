@@ -8,18 +8,21 @@ export const ANSWERS = [
           id: "2342",
           quizAnswer: "2-3 hrs per week",
           isWorkingOut: true,
+          uniqueID: "1",
         },
         {
           title: "4-6 hrs per week",
           id: "23424",
           quizAnswer: "4-6 hrs per week",
           isWorkingOut: true,
+          uniqueID: "2",
         },
         {
           title: "6-9 hrs per week",
           id: "22342",
           quizAnswer: "6-9 hrs per week",
           isWorkingOut: true,
+          uniqueID: "2",
         },
       ],
     },
@@ -28,6 +31,7 @@ export const ANSWERS = [
     question: {
       title:
         "Have you consumed any type of tobacco products in the past 14 days",
+      uniqueID: "2",
       answers: [
         {
           id: 1,

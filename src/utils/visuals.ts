@@ -22,6 +22,9 @@ import partner5 from "assets/images/partner5.png";
 import shape360 from "assets/images/shape360.png";
 import green360 from "assets/images/green360.png";
 import party from "assets/images/party.png";
+import jdepp from "assets/images/jdepp.png";
+import bullet from "assets/images/bullet.png";
+import bulletBlank from "assets/images/bulletBlank.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -51,4 +54,7 @@ export const visuals: Record<string, string> = {
   shape360,
   green360,
   party,
+  jdepp,
+  bulletBlank,
+  bullet,
 };

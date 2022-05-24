@@ -1,0 +1,57 @@
+  {isMultiple && (
+                    <IsMultiple
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      selectedUserState={selectedUserState}
+                      setSelectedUserState={setSelectedUserState}
+                    />
+                  )}
+                  {isMultipleChoice && (
+                    <IsMultipleChoice
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      multipleGoals={multipleGoals}
+                      setMultipleGoals={setMultipleGoals}
+                    />
+                  )}
+                  {isWorkingOut && (
+                    <IsWorkingOut
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      handleClick={handleClick}
+                      workAnswer={workAnswer}
+                      isWorkingOut
+                      setWorkAnswer={setWorkAnswer}
+                    />
+                  )}
+                  {isAsthmatic && (
+                    <IsAsthmatic
+                      key={id}
+                      title={title}
+                      handleClick={handleClick}
+                      quizAnswer={quizAnswer}
+                      setAsthmaticAnswer={setAsthmaticAnswer}
+                    />
+                  )}
+                  {isSmoker && (
+                    <IsSmoking
+                      key={id}
+                      setSmokingAnswer={setSmokingAnswer}
+                      quizAnswer={quizAnswer}
+                      title={title}
+                      handleClick={handleClick}
+                    />
+                  )}
+                  {isMeasurement && <InputForm />}
+                  {isHeart && (
+                    <IsHeart
+                      key={id}
+                      title={title}
+                      quizAnswer={quizAnswer}
+                      setHeartAnswer={setHeartAnswer}
+                      handleClick={handleClick}
+                    />
+                  )}

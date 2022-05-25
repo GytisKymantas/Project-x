@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBack } from "state/slices/pageSlice";
-import { Box } from "components";
+import { Box, InputFormContainer } from "components";
 import { QuizContainerWrapper } from "../../components/atoms/wrappers/QuizContainerWrapper";
 import { fetchUsersAction } from "state/sagasActions";
 import { ReturnButton } from "components/atoms/buttons/ReturnButton";
@@ -42,7 +42,7 @@ export const QuizQuestions: React.FC = () => {
       case 5:
         return <MultipleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
       case 6:
-        return <IsInputFormTest />;
+        return <InputFormContainer />;
     }
   };
   return (

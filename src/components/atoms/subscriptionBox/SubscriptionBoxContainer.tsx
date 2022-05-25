@@ -14,13 +14,13 @@ export const SubscriptionBoxContainer: React.FC = () => {
     month: "",
     newValue: null as unknown as string,
   });
-
+  console.log(selectedUser, "local state");
   const purchaseData = useSelector(selectPurchaseData);
   console.log(purchaseData, "this is purchase");
 
   const handleSubscription = () => {
-    navigate("/success");
     dispatch(setPurchaseData(selectedUser));
+    navigate("/success");
   };
 
   return (

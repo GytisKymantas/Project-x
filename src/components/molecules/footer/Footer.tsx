@@ -4,7 +4,7 @@ import { Instagram, Twitter, Facebook } from "assets/images";
 import { Breakpoints } from "styles/theme";
 //TODO: fix the tyypography and socials
 export const Footer: React.FC = () => (
-  <Box as="footer" borderTop="scale">
+  <Box as="footer" borderTop="scale" mt="s100">
     <Box p="s50s0">
       <FlexWrapper justifyContent="space-around">
         <FlexWrapper flexDirection="column" gap="20px">

@@ -16,5 +16,6 @@ export const selectMultipleChoiceGoals = (state: any) =>
   state.question.multiple_choiceGoals;
 export const selectQuizAnswers = (state: any) => state.quizAnswers.quiz_answers;
 export const selectQuizData = (state: any) => state.quizData.quizData;
-export const selectPurchaseData = (state: any) => state.purchaseData.quizData;
+export const selectPurchaseData = (state: any) =>
+  state.purchaseData.purchase_data;
 export const selectUserData = (state: any) => state.userData.user_data;

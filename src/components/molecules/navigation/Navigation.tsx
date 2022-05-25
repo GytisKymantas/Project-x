@@ -39,7 +39,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
 
   return (
     <Box
-      height="4.5rem"
+      height="10vh"
       width="100%"
       backgroundColor="white"
       position={fix ? "fixed" : "initial"}

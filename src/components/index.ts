@@ -17,7 +17,9 @@ export * from "./atoms/typography/Typography";
 // images
 export * from "./Image";
 //input form
-export * from "./molecules/inputForm/InputForm";
+export * from "./organisms/inputForm/InputFormContainer";
+export * from "./organisms/inputForm/InputFormData";
+export * from "./organisms/inputForm/MetricWrapper";
 //testimonials
 export * from "./atoms/reviewCard/Review";
 export * from "./atoms/reviewCard/ReviewCard";
@@ -70,10 +72,7 @@ export * from "./atoms/quizQuestion/IsAsthmatic";
 export * from "./atoms/quizQuestion/IsSmoking";
 export * from "./atoms/quizQuestion/isHeart";
 
-export * from "./atoms/quizQuestion/IsMultipleChoice";
-
 //blog card
-export * from "./atoms/blogCard/BlogCard";
 // section header
 // export * from "./sectionHeader/SectionHeader";
 export * from "./atoms/sectionHeader/SectionHeader";

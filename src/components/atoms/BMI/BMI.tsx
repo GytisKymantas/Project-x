@@ -55,14 +55,14 @@ export const BMI: React.FC = () => {
 
       <FlexWrapper
         justifyContent={
-          (BMIrounded > 19 && BMIrounded <= 22) ||
-          (imperialBMIrounded > 19 && imperialBMIrounded <= 22)
+          (BMIrounded > 19 && BMIrounded <= 21.9) ||
+          (imperialBMIrounded > 19 && imperialBMIrounded <= 21.9)
             ? "space-around"
             : "flex-end"
         }
       >
-        {(BMIrounded > 19 && BMIrounded <= 22) ||
-        (imperialBMIrounded > 19 && imperialBMIrounded <= 22) ? (
+        {(BMIrounded > 19 && BMIrounded <= 21.9) ||
+        (imperialBMIrounded > 19 && imperialBMIrounded <= 21.9) ? (
           <Typography type="h5" color="red">
             {BMIrounded === Infinity
               ? `${imperialBMIrounded}`

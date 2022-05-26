@@ -9,9 +9,9 @@ export const CaloricCounter: React.FC = () => {
   const feet = userData.feet;
   const caloricIntake = caloricMetricIntake(userData?.weight);
   const caloricIntakeImperial = caloricImperialIntake(userData?.weight);
-  //TODO: fix image
+  //TODO: fix
   return (
-    <Box bg="white" width="26.5625rem" height="26.5625rem">
+    <Box bg="white" height="26.5625rem">
       <FlexWrapper flexDirection="column" alignItems="center" gap={"0.625rem"}>
         <Typography type="h5" color="primary">
           Daily Calory Intake

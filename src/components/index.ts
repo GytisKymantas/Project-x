@@ -72,6 +72,9 @@ export * from "./atoms/quizQuestion/IsAsthmatic";
 export * from "./atoms/quizQuestion/IsSmoking";
 export * from "./atoms/quizQuestion/isHeart";
 
+//return button
+export * from "./atoms/buttons/ReturnButton";
+
 //blog card
 // section header
 // export * from "./sectionHeader/SectionHeader";

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { Box, QuizAnswer } from "components";
+import React, { useState, useEffect } from "react";
+import { Box, QuizAnswer, FlexWrapper } from "components";
 import { Check } from "assets/images";
 import {
   setMultipleChoice,
   setMultipleChoiceGoals,
 } from "state/slices/multipleChoiceSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import { theme } from "styles/theme";
 import { pageNext } from "state/slices/pageSlice";
 import { selectMultipleChoice } from "state/selectors";
 
 interface MultipleChoiceAnswerProps {
-  answers: any;
-  page: any;
+  answers: Array<string>;
+  page: number;
 }
 
 export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
@@ -23,19 +23,24 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   const multipleAnswers = useSelector(selectMultipleChoice);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (selectedAnswer.includes("None")) {
+      setSelectedAnswer(["none"]);
+    }
+  }, [selectedAnswer]);
+
   const handleSelectAnswer = (answer: string[]) => {
     if (selectedAnswer.includes(answer)) {
       setSelectedAnswer(
         selectedAnswer.filter((item: string[]) => item !== answer)
       );
     } else {
-      setSelectedAnswer((array: string[]) => array.concat(answer));
+      setSelectedAnswer(
+        selectedAnswer.filter((item: string) => item !== "none")
+      ),
+        setSelectedAnswer((array: string[]) => array.concat(answer));
     }
   };
-
-  if (selectedAnswer.includes("None")) {
-    setSelectedAnswer([]);
-  }
 
   const handleNextStep = () => {
     switch (page) {
@@ -52,8 +57,10 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
     }
   };
 
+  console.log(selectedAnswer, "SELECTED ANSEWER");
+
   return (
-    <Box>
+    <FlexWrapper flexWrap="wrap" justifyContent="center">
       {answers[page].question.answers.map((answer: string[], i: number) => (
         <Box position="relative" key={i}>
           <QuizAnswer
@@ -61,28 +68,33 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
             onClick={() => handleSelectAnswer(answer)}
             border={
               selectedAnswer.includes(answer)
-                ? "solid 2px black"
-                : "solid 2px transparent"
+                ? `${theme.borders.answer}`
+                : `${theme.borders.transparent}`
             }
           >
             {answer}
           </QuizAnswer>
 
           {selectedAnswer.includes(answer) && (
-            <Box position={"absolute"} top="28%" left="5%">
+            <Box position="absolute" top="35%" left="5%">
               <Check />
             </Box>
           )}
         </Box>
       ))}
       {selectedAnswer.length < 1 && (
-        <QuizAnswer onClick={handleNextStep} disabled isSubmit>
-          submit
-        </QuizAnswer>
+        <Box mt="s20">
+          <QuizAnswer onClick={handleNextStep} disabled isSubmit>
+            Submit
+          </QuizAnswer>
+        </Box>
       )}
+
       {selectedAnswer.length >= 1 && (
-        <QuizAnswer onClick={handleNextStep}>Submit</QuizAnswer>
+        <Box mt="s20">
+          <QuizAnswer onClick={handleNextStep}>Submit</QuizAnswer>{" "}
+        </Box>
       )}
-    </Box>
+    </FlexWrapper>
   );
 };

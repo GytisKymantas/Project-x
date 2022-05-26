@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
 
-const initialState = { value: 0 };
+export const initialState = { value: 0 };
 
-const PageSlice = createSlice({
+export const PageSlice = createSlice({
   name: "pageination",
   initialState,
   reducers: {
@@ -15,14 +15,11 @@ const PageSlice = createSlice({
         state.value--;
       }
     },
-    // resetPage(state) {
-    //   state.value = initialState.value;
-    // },
-    // chooseStep(state, action) {
-    //   state.value = action.payload;
-    // },
+    pageReset(state) {
+      state.value = 0;
+    },
   },
 });
 
-export const { pageNext, pageBack } = PageSlice.actions;
+export const { pageReset, pageNext, pageBack } = PageSlice.actions;
 export default PageSlice;

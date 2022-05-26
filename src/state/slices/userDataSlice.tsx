@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
 
-const initialState = {
+export const initialState = {
   user_data: {
     age: null as unknown as number,
     height: null as unknown as number,
@@ -13,7 +13,7 @@ const initialState = {
   },
 };
 
-const UserDataSlice = createSlice({
+export const UserDataSlice = createSlice({
   name: "userData",
   initialState,
   reducers: {

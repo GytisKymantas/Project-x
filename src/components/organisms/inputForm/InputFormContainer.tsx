@@ -86,7 +86,7 @@ export const InputFormContainer: React.FC = () => {
               <InputFormData
                 imperial
                 setStateValue={setFeet}
-                imperialStateValue={setInches}
+                imperialSetStateValue={setInches}
                 value={feet}
                 imperialValue={inches}
                 placeholder={"Feet"}

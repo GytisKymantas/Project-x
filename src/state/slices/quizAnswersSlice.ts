@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
 
-const initialState = {
+export const initialState = {
   quiz_answers: {
     isWorkingOut: "",
     isSmoking: "",
@@ -10,7 +10,7 @@ const initialState = {
   },
 };
 
-const QuizAnswersSlice = createSlice({
+export const QuizAnswersSlice = createSlice({
   name: "quizAnswers",
   initialState,
   reducers: {

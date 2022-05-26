@@ -56,10 +56,13 @@ export const MeasurementsInfoContainer: React.FC = () => {
   return (
     <SectionWrapper>
       <GridWrapper
-        gridTemplateColumns="repeat(4,1fr)"
+        gridTemplateColumns={{
+          _: "repeat(1,1fr)",
+          ltablet: "repeat(4,1fr)",
+        }}
         maxWidth="71.875rem"
         m="s0auto"
-        p="5rem"
+        p={{ _: "2rem", ltablet: "0rem" }}
         gap="1.25rem"
       >
         {MEASUREMENT_CONTAINER_DATA.map(

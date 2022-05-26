@@ -86,9 +86,4 @@ const Progress = styled.span`
   color: #fff;
   padding: 5px;
   width: 0;
-  /* left: 50%;
-  max-width: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0); */
 `;

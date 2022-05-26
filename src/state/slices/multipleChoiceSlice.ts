@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IQuestionState } from "../types";
 
-const initialState: any = {
+export const initialState: any = {
   multiple_choice: {},
   multiple_choiceGoals: {},
 };
 
-const MultipleChoiceSlice = createSlice({
+export const MultipleChoiceSlice = createSlice({
   name: "question",
   initialState,
   reducers: {

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
 
-const initialState = {
+export const initialState = {
   purchase_data: {
     id: null as unknown as number,
     month: "",
@@ -9,7 +9,7 @@ const initialState = {
   },
 };
 
-const PurchaseDataSlice = createSlice({
+export const PurchaseDataSlice = createSlice({
   name: "purchaseData",
   initialState,
   reducers: {

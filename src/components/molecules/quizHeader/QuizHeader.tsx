@@ -3,20 +3,21 @@ import { FlexWrapper, Box, Typography, HomeLink } from "components";
 import { ANSWERS } from "constants/QuestionMassive";
 
 interface QuizHeaderProps {
-  arrayIndex: number;
+  page: number;
+  answers?: string[];
 }
 
-export const QuizHeader: React.FC<QuizHeaderProps> = ({ arrayIndex }) => (
+export const QuizHeader: React.FC<QuizHeaderProps> = ({ page, answers }) => (
   <>
     <FlexWrapper alignItems="center" justifyContent="space-around">
       <HomeLink />
       <Typography color="primary" textAlign="center">
-        {arrayIndex + 1} of 7
+        {page + 1} of 7
       </Typography>
     </FlexWrapper>
-    <Box mt={arrayIndex === 2 || arrayIndex === 5 ? "s20" : "s100"}>
+    <Box mt={page === 2 || page === 5 || page === 6 ? "s20" : "s100"}>
       <Typography color="primary" type="h4" textAlign="center">
-        {ANSWERS[arrayIndex]?.question.title}{" "}
+        {answers[page]?.question.title}{" "}
       </Typography>
     </Box>
   </>

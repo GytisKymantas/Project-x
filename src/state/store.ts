@@ -11,7 +11,6 @@ import PurchaseDataSlice from "./slices/purchaseDataSlice";
 import MultipleChoiceSlice from "./slices/multipleChoiceSlice";
 import PageSlice from "./slices/pageSlice";
 import QuizAnswersSlice from "./slices/quizAnswersSlice";
-// import userSlice from "./slice";
 import QuizDataSlice from "./slices/quizDataSlice";
 import UserDataSlice from "./slices/userDataSlice";
 
@@ -25,7 +24,6 @@ export interface RootState {
 }
 
 const combinedReducer = combineReducers<CombinedState<RootState>>({
-  // user: userSlice.reducer,
   userData: UserDataSlice.reducer,
   purchaseData: PurchaseDataSlice.reducer,
   pageination: PageSlice.reducer,

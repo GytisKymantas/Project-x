@@ -3,6 +3,7 @@ import { FlexWrapper, BaseButton, Box } from "components";
 import { useDispatch } from "react-redux";
 import { setGenderData } from "state/slices/userDataSlice";
 import { navigate } from "gatsby";
+import { pageReset } from "state/slices/pageSlice";
 
 export const GenderButtons: React.FC = () => {
   const dispatch = useDispatch();
@@ -11,13 +12,17 @@ export const GenderButtons: React.FC = () => {
     isMale: "",
   });
 
+  const handleQuizStart = () => {
+    dispatch(pageReset()), navigate("/quiz");
+  };
+
   useEffect(() => {
     dispatch(setGenderData(isMale.isMale));
   }, [isMale]);
 
   return (
     <FlexWrapper gap="0.625rem" mt="s20">
-      <Box onClick={() => navigate("/quiz")}>
+      <Box onClick={handleQuizStart}>
         <BaseButton
           onClick={() => setIsMale({ isMale: "Male" })}
           width="8.5625rem"
@@ -25,7 +30,7 @@ export const GenderButtons: React.FC = () => {
           Male
         </BaseButton>
       </Box>
-      <Box onClick={() => navigate("/quiz")}>
+      <Box onClick={handleQuizStart}>
         <BaseButton
           onClick={() => setIsMale({ isMale: "Female" })}
           width="8.5625rem"

@@ -15,3 +15,4 @@ export * from "./icons/CheckBlank";
 export * from "./icons/Scale";
 export * from "./icons/BackwardArrow";
 export * from "./icons/Burger";
+export * from "./icons/Heart";

@@ -16,8 +16,8 @@ const Checkout: React.FC = () => (
   <>
     <Navigation checkoutPage />
     <CheckoutHero />
-    <BMI />
     <MeasurementsInfoContainer />
+    <BMI />
     <ScaleSection />
     <HealthInformationSection />
     <SubscriptionBoxSection />

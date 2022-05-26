@@ -11,18 +11,20 @@ import { WIDTH_SCALE } from "constants/Constants";
 interface QuizContainerWrapperProps {
   page: number;
   children: React.ReactNode;
+  answers?: string[];
 }
 
 export const QuizContainerWrapper: React.FC<QuizContainerWrapperProps> = ({
   page,
   children,
+  answers,
 }) => {
   return (
     <>
       <ProgressBar width={WIDTH_SCALE[page]} />
       <SectionWrapper p="1rem 3rem 3rem 3rem">
         <ContentWrapper maxWidth="100%">
-          <QuizHeader arrayIndex={page} />
+          <QuizHeader page={page} answers={answers} />
           <FlexWrapper
             flexDirection={page === 2 || page === 5 ? "row" : "column"}
             flexWrap="wrap"

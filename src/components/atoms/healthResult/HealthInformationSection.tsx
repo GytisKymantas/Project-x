@@ -10,6 +10,11 @@ export const HealthInformationSection: React.FC = () => {
   const isHeartCondition = userQuizAnswers?.isHeartCondition;
   const isAsthmatic = userQuizAnswers?.isAsthmatic;
 
+  console.log(workoutFrequencyAnswer);
+  console.log(isSmoking, "is smoking");
+  console.log(isHeartCondition, "is haert smoking");
+  console.log(isAsthmatic, "is haert arsthama");
+
   const HEALTH_INFORMATION_DATA = [
     {
       id: "1",

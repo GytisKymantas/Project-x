@@ -24,9 +24,6 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   const [mobileView, setMobileView] = useState(false);
   const [popup, setPopup] = useState(false);
 
-  const handleQuizStart = () => {
-    navigate("/quiz");
-  };
   const handleScrollY = () => {
     if (window.scrollY >= 780) {
       setFix(true);
@@ -73,7 +70,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
                 {title}
               </ListItem>
             ))}
-            <Box p="40px">
+            <Box p="s40">
               <Typography textAlign="center" color="primary">
                 Start The Quiz Now!
               </Typography>
@@ -112,21 +109,25 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
             Start Quiz
           </BaseButton>
         )}
-        {mobileView ? (
-          <MobileWrapper
-            onClick={() => setMobileView(false)}
-            z-index="200"
-            display={{ _: "block", ltablet: "none" }}
-          >
-            <Mobnav />
-          </MobileWrapper>
-        ) : (
-          <MobileWrapper
-            display={{ _: "block", ltablet: "none" }}
-            onClick={() => setMobileView(true)}
-          >
-            <Mobnav />
-          </MobileWrapper>
+        {!checkoutPage && (
+          <Box>
+            {mobileView ? (
+              <MobileWrapper
+                onClick={() => setMobileView(false)}
+                z-index="200"
+                display={{ _: "block", ltablet: "none" }}
+              >
+                <Mobnav />
+              </MobileWrapper>
+            ) : (
+              <MobileWrapper
+                display={{ _: "block", ltablet: "none" }}
+                onClick={() => setMobileView(true)}
+              >
+                <Mobnav />
+              </MobileWrapper>
+            )}
+          </Box>
         )}
       </FlexWrapper>
     </Box>

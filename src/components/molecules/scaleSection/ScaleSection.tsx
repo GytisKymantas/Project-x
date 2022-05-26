@@ -9,26 +9,30 @@ import {
   QuizStartButton,
   CaloricCounter,
 } from "components";
+import { FlexWrapper } from "components/atoms/wrappers/FlexWrapper";
 
 const ScaleSection: React.FC = () => (
   <SectionWrapper>
-    <Container mb="s50">
+    <Container mb={{ _: "s20", ltablet: "s50" }}>
       <Typography fontWeight="fw700" color="primary" textAlign="center">
         Based on quiz results, you will be
       </Typography>
     </Container>
     <GridWrapper
-      gridTemplateColumns="repeat(2,1fr)"
-      display="flex"
+      gridTemplateColumns={{
+        _: "repeat(1,1fr)",
+        ltablet: "repeat(2,1fr)",
+      }}
+      display={{ _: "block", ltablet: "flex" }}
       justifyContent="center"
-      p="s80"
+      p="s40"
     >
       <ScaleResult />
       <CaloricCounter />
     </GridWrapper>
-    <Box margin="s0auto">
+    <FlexWrapper justifyContent="center" margin="s0auto">
       <QuizStartButton width="12.5rem">Get the product!</QuizStartButton>
-    </Box>
+    </FlexWrapper>
   </SectionWrapper>
 );
 

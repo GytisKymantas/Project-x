@@ -18,7 +18,7 @@ export const MeasurementInfo: React.FC<MeasurementsProps> = ({
   feet,
   inches,
 }) => (
-  <Box bg="white" width="100%" p="1.25rem" boxShadow="default">
+  <Box bg="white" minWidth="200px" p="1.25rem" boxShadow="default">
     <Box margin="s0auto" width="3.125rem">
       {image}
     </Box>

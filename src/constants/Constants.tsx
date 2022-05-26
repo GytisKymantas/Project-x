@@ -1,4 +1,12 @@
-import { Gender, Height, Scales, Age } from "assets/images";
+import {
+  Gender,
+  Height,
+  Scales,
+  Age,
+  Instagram,
+  Twitter,
+  Facebook,
+} from "assets/images";
 import React from "react";
 
 export const NAVIGATION_LINKS = [
@@ -131,6 +139,20 @@ export const MEASUREMENT_CONTAINER_DATA = [
   },
 ];
 
+export const SOCIALS_ARRAY = [
+  {
+    image: <Instagram />,
+    id: "1",
+  },
+  {
+    image: <Twitter />,
+    id: "2",
+  },
+  {
+    image: <Facebook />,
+    id: "3",
+  },
+];
 export const SUBSCRIPTION_DETAILS = [
   {
     discount: "50% OFF",

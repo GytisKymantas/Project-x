@@ -54,7 +54,6 @@ export const HealthInformationSection: React.FC = () => {
           title={title}
           treatment={treatment}
           answer={answer}
-          id={id}
         />
       ))}
     </>

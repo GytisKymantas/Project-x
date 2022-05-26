@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBack } from "state/slices/pageSlice";
 import { Box, InputFormContainer, ReturnButton } from "components";
-import { QuizContainerWrapper } from "../../components/atoms/wrappers/QuizContainerWrapper";
+import { QuizContainerWrapper } from "../../atoms/wrappers/QuizContainerWrapper";
 import { fetchUsersAction } from "state/sagasActions";
 import { selectPage } from "state/selectors";
 import { selectQuizData } from "state/selectors";
-import { SingleAnswer } from "components/atoms/quizQuestion/test/SingleAnswer";
-import { MultipleChoiceAnswer } from "components/atoms/quizQuestion/test/MultipleChoiceAnswer";
+import { SingleAnswer } from "components/atoms/quizQuestion/SingleAnswer";
+import { MultipleChoiceAnswer } from "components/atoms/quizQuestion/MultipleChoiceAnswer";
 
-export const QuizQuestions: React.FC = () => {
+export const QuizQuestionsSection: React.FC = () => {
   const [loading, isLoading] = useState(true);
   const dispatch = useDispatch();
   const page = useSelector(selectPage);

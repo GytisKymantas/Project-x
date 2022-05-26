@@ -1,21 +1,23 @@
 import React from "react";
 import { FlexWrapper, Box, Typography } from "components";
-import { Instagram, Twitter, Facebook } from "assets/images";
-import { Breakpoints } from "styles/theme";
+import { mobile } from "styles/breakpoints";
+import { SOCIALS_ARRAY } from "constants/Constants";
+
 //TODO: fix the tyypography and socials
+
 export const Footer: React.FC = () => (
-  <Box as="footer" borderTop="scale" mt="s80">
+  <Box id="Check" as="footer" borderTop="scale" mt="s80">
     <Box p="s35s0">
       <FlexWrapper
         justifyContent="space-around"
-        flexDirection={{ _: "column", ltablet: "row" }}
+        flexDirection={mobile ? "column" : "row"}
         pt="s20"
       >
         <FlexWrapper
           textAlign={{ _: "center", ltablet: "initial" }}
           flexDirection="column"
-          gap="20px"
-          pb="20px"
+          gap="1.25rem"
+          pb="s20"
         >
           <Typography type="h4" color="primary">
             Fit on-time
@@ -27,19 +29,13 @@ export const Footer: React.FC = () => (
         </FlexWrapper>
         <FlexWrapper
           gap="1.25rem"
-          flexDirection={{ _: "row" }}
-          justifyContent={{ _: "center" }}
-          pb={{ _: "20px", ltablet: "0" }}
+          flexDirection={mobile ? "row" : "column"}
+          justifyContent={mobile ? "center" : "flex-end"}
+          pb={{ _: "s20", ltablet: "s0" }}
         >
-          <Box>
-            <Instagram />
-          </Box>
-          <Box>
-            <Twitter />
-          </Box>
-          <Box>
-            <Facebook />
-          </Box>
+          {SOCIALS_ARRAY.map(({ image, id }) => (
+            <Box key={id}>{image}</Box>
+          ))}
         </FlexWrapper>
       </FlexWrapper>
     </Box>
@@ -47,7 +43,6 @@ export const Footer: React.FC = () => (
       height="10vh"
       bg="primary"
       alignItems="center"
-      // fontSize={{ _: "fs14" }}
       justifyContent="center"
     >
       <Typography color="white">

@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
+import { IQuizAnswers } from "state/types";
 
-export const initialState = {
+export const initialState: IQuizAnswers = {
   quiz_answers: {
     isWorkingOut: "",
     isSmoking: "",
@@ -14,25 +15,25 @@ export const QuizAnswersSlice = createSlice({
   name: "quizAnswers",
   initialState,
   reducers: {
-    setIsWorkingOut: (state, actions: PayloadAction<any>) => {
+    setIsWorkingOut: (state, actions) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isWorkingOut: actions.payload,
       };
     },
-    setIsSmoking: (state, actions: PayloadAction<any>) => {
+    setIsSmoking: (state, actions) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isSmoking: actions.payload,
       };
     },
-    setIsAsthmatic: (state, actions: PayloadAction<any>) => {
+    setIsAsthmatic: (state, actions) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isAsthmatic: actions.payload,
       };
     },
-    setIsHeart: (state, actions: PayloadAction<any>) => {
+    setIsHeart: (state, actions) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isHeartCondition: actions.payload,

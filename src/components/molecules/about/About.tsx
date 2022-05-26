@@ -5,8 +5,8 @@ import {
   Box,
   Typography,
   SectionHeader,
+  Image,
 } from "components";
-import { Breakpoints } from "styles/theme";
 import { mobile } from "styles/breakpoints";
 
 export const About: React.FC = () => (
@@ -18,14 +18,7 @@ export const About: React.FC = () => (
       margin={{ _: "s16", ltablet: "s50" }}
       textAlign={{ _: "justify", ltablet: "unset" }}
     >
-      <Box bg="blue">
-        {/* <StaticImage
-          src="../../assets/images/curl.png"
-          alt="Woman curling"
-          placeholder="tracedSVG"
-          draggable="false"
-        /> */}
-      </Box>
+      <Box bg="blue"></Box>
       <Box margin="auto">
         <SectionHeader
           center={mobile ? true : false}
@@ -60,7 +53,9 @@ export const About: React.FC = () => (
           am secure of estate genius at.
         </Typography>
       </Box>
-      <Box bg="taxi"></Box>
+      <Box>
+        <Image src="dbgirl" />
+      </Box>
     </GridWrapper>
   </SectionWrapper>
 );

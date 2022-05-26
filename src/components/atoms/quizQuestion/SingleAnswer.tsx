@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, QuizAnswer } from "components";
 import { useAppDispatch } from "state/store";
-import { Check } from "assets/images";
-// import QuizHeaderTest from "./quiz"
-import { QuizHeaderTest } from "../../../molecules/quizHeader/QuizHeaderTest";
-import { selectMultipleChoice, selectQuizAnswers } from "state/selectors";
-import { useSelector, useDispatch } from "react-redux";
+import { selectMultipleChoice } from "state/selectors";
+import { useSelector } from "react-redux";
 import { pageNext } from "state/slices/pageSlice";
+import { IQuizData } from "state/types";
 import {
   setIsAsthmatic,
   setIsWorkingOut,
@@ -15,19 +13,17 @@ import {
 } from "state/slices/quizAnswersSlice";
 
 interface SingleAnswerTestProps {
-  answers: any;
-  page: any;
+  answers: IQuizData[];
+  page: number;
 }
 
 export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
   answers,
   page,
 }) => {
-  const multipleAnswers = useSelector(selectMultipleChoice);
-  console.log(multipleAnswers, "from isAsthmatic redux ");
   const dispatch = useAppDispatch();
 
-  const handlePage = (answers) => {
+  const handlePage = (answers: Array<string>) => {
     switch (page) {
       case 0:
         return dispatch(setIsWorkingOut(answers)), dispatch(pageNext());
@@ -41,11 +37,10 @@ export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
         dispatch(pageNext());
     }
   };
-  console.log(handlePage);
 
   return (
     <Box>
-      {answers[page]?.question?.answers.map((answers, i) => (
+      {answers[page]?.question?.answers.map((answers: string[], i: number) => (
         <Box key={i}>
           <QuizAnswer onClick={() => handlePage(answers)}>{answers}</QuizAnswer>
         </Box>

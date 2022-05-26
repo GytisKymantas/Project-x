@@ -6,7 +6,6 @@ import {
   FlexWrapper,
   GridWrapper,
   Container,
-  QuizStartButton,
   SectionHeader,
   GenderButtons,
 } from "components";
@@ -40,14 +39,10 @@ export const HeroSection: React.FC = () => (
         </Container>
         <Box position="relative">
           <StaticImage
-            src="../../assets/images/skipper.png"
-            alt="foto"
+            src="src/assets/images/skipper.png"
+            alt="skipping"
             placeholder="tracedSVG"
             draggable="false"
-            style={{
-              maxWidth: "31.25rem",
-              margin: "0 auto",
-            }}
           />
         </Box>
       </GridWrapper>

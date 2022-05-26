@@ -10,8 +10,6 @@ export * from "./atoms/wrappers/Input";
 export * from "./atoms/buttons/elements/BaseButton";
 export * from "./atoms/buttons/QuizAnswer";
 export * from "./atoms/buttons/QuizStartButton";
-//QuizQuestion
-export * from "./molecules/quizQuestionContainer/QuizQuestionsContainer";
 //texts
 export * from "./atoms/typography/Typography";
 // images
@@ -25,9 +23,11 @@ export * from "./atoms/reviewCard/Review";
 export * from "./atoms/reviewCard/ReviewCard";
 //FAQ
 export * from "./atoms/FAQcard/QuestionsCard";
-export * from "./molecules/FAQ/QuestionsCardContainer";
+export * from "./molecules/FAQuestionsCardContainer/QuestionsCardContainer";
 //partners
 export * from "./molecules/partners/Partners";
+//checkout
+export * from "./molecules/FAQuestionsCardContainer/CheckOut";
 //footer
 export * from "./molecules/footer/Footer";
 //navigation
@@ -35,15 +35,15 @@ export * from "./molecules/navigation/Navigation";
 //checkoutHero
 export * from "./atoms/checkoutContainer/CheckoutHero";
 //measurements info
-export * from "./molecules/measurementsInfoContainer/MeasurementsInfoContainer";
+export * from "./organisms/measurementsInfoContainer/MeasurementsInfoContainer";
 //hero
 export * from "./molecules/heroContainer/HeroSection";
 // Progress Bar
 export * from "./atoms/progressBar/ProgressBar";
 //sub box
 export * from "./atoms/subscriptionBox/SubscriptionBox";
-export * from "./atoms/subscriptionBox/SubscriptionBoxContainer";
-export * from "./atoms/subscriptionBox/SubscriptionBoxSection";
+export * from "./molecules/subcriptionBoxContainer/SubscriptionBoxContainer";
+export * from "./organisms/subscriptionBoxSection/SubscriptionBoxSection";
 // about
 export * from "./molecules/about/About";
 // checkout container
@@ -57,20 +57,21 @@ export * from "./molecules/quizHeader/QuizHeader";
 //caloric counter
 export * from "./atoms/caloricCounter/CaloricCounter";
 //homelink
-export * from "./molecules/homeLink/HomeLink";
+export * from "./atoms/homeLink/HomeLink";
 // scale
-export * from "./atoms/scale/ScaleResult";
-export * from "./molecules/scaleSection/ScaleSection";
+export * from "./atoms/scaleResult/ScaleResult";
+export * from "./organisms/scaleSection/ScaleSection";
 // //genderButtons
-export * from "./atoms/genderButtons/GenderButtons";
+export * from "./atoms/buttons/GenderButtons";
 //purchasd box
 export * from "./atoms/purchaseBox/PurchaseBox";
 // quizQUESTIONS
-export * from "./atoms/quizQuestion/IsMultiple";
-export * from "./atoms/quizQuestion/IsWorkingOut";
-export * from "./atoms/quizQuestion/IsAsthmatic";
-export * from "./atoms/quizQuestion/IsSmoking";
-export * from "./atoms/quizQuestion/isHeart";
+export * from "./organisms/quizQuestionsSection/QuizQuestions";
+// export * from "./atoms/quizQuestion/IsMultiple";
+// export * from "./atoms/quizQuestion/IsWorkingOut";
+// export * from "./atoms/quizQuestion/IsAsthmatic";
+// export * from "./atoms/quizQuestion/IsSmoking";
+// export * from "./atoms/quizQuestion/isHeart";
 
 //return button
 export * from "./atoms/buttons/ReturnButton";

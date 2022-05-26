@@ -1,27 +1,44 @@
 import { rootReducer } from "./store";
 
-export enum Foods {
-  GRYBAI = "grybukai",
-  BURGERIUKAI = "burgeriuksai",
-  CEPAI = "cepelinai",
-  SALDUMYNAI = "sokoladai",
+export interface IQuizData {
+  quizData: string[];
 }
 
-export interface Foodies {
-  id: number;
-  title: string;
+export interface IUserDataSlice {
+  user_data: {
+    age: number;
+    height: number;
+    weight: number;
+    desiredWeight: number;
+    feet: number;
+    inches: number;
+    isMale: boolean;
+  };
 }
 
-export interface QuizAnswers {
-  question_key: string;
-  question_key2: string;
-  question_key3: string;
+export interface IMultipleChoice {
+  multiple_choice: string[];
+  multiple_choiceGoals: string[];
 }
-export interface UserState {
-  user_data: any;
-  quiz_answers: any; // type of answers keys and values
-  // multiple_choice: any;
-  // email: string
+export interface IPageination {
+  value: number;
+}
+
+export interface IPurchaseData {
+  purchase_data: {
+    id: number;
+    month: string;
+    newValue: number;
+  };
+}
+
+export interface IQuizAnswers {
+  quiz_answers: {
+    isWorkingOut: string;
+    isSmoking: string;
+    isAsthmatic: string;
+    isHeartCondition: string;
+  };
 }
 
 export type AppState = ReturnType<typeof rootReducer>;

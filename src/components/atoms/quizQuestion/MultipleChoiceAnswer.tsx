@@ -19,7 +19,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   answers,
   page,
 }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
+  const [selectedAnswer, setSelectedAnswer] = useState([]);
   const multipleAnswers = useSelector(selectMultipleChoice);
   const dispatch = useDispatch();
 

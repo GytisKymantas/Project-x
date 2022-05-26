@@ -10,7 +10,7 @@ import {
 } from "components";
 import { BMI } from "components/atoms/BMI/BMI";
 //TODO:
-import ScaleSection from "components/molecules/scaleSection/ScaleSection";
+import ScaleSection from "components/organisms/scaleSection/ScaleSection";
 
 const Checkout: React.FC = () => (
   <>

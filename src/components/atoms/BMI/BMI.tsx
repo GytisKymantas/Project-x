@@ -10,7 +10,6 @@ import {
 
 export const BMI: React.FC = () => {
   const userData = useSelector(selectUserData);
-  // console.log(userData, "user data");
   const BMIrounded = metricBMIcalculator(userData.weight, userData.height);
   const heightInches = heightToInches(userData.feet, userData.inches);
   const imperialBMIrounded = imperialBMIcalculator(

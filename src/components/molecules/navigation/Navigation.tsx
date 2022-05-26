@@ -12,9 +12,10 @@ import styled from "styled-components/macro";
 import scrollTo from "gatsby-plugin-smoothscroll";
 import { navigate } from "gatsby";
 import { NAVIGATION_LINKS } from "constants/Constants";
-import { Mobnav } from "assets/images";
-import { GenderButtons } from "components/atoms/genderButtons/GenderButtons";
+import { Mobnav, MobCross } from "assets/images";
+import { GenderButtons } from "components/atoms/buttons/GenderButtons";
 import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
+
 interface NavigationProps {
   checkoutPage?: boolean;
 }
@@ -42,21 +43,6 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
       position={fix ? "fixed" : "initial"}
       zIndex={11}
     >
-      {/* {popup && (
-        <QuizPopup bg="taxi">
-          <FlexWrapper>
-            <SectionHeader
-              type="h2"
-              header="Begin the quiz"
-              paragraph="give your details"
-            />
-            <Box onClick={() => setPopup(!popup)}>X</Box>
-          </FlexWrapper>
-          <FlexWrapper justifyContent="center">
-            <GenderButtons />
-          </FlexWrapper>
-        </QuizPopup>
-      )} */}
       {mobileView && (
         <MobileCover>
           <FlexWrapper
@@ -103,9 +89,11 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
           </FlexWrapper>
         )}
         {checkoutPage ? (
-          <QuizStartButton>Check Product</QuizStartButton>
+          <Box>
+            <QuizStartButton>Check Product</QuizStartButton>
+          </Box>
         ) : (
-          <BaseButton onClick={() => setPopup(!popup)} width="8.5625rem">
+          <BaseButton onClick={() => scrollTo(`#Check`)} width="8.5625rem">
             Start Quiz
           </BaseButton>
         )}
@@ -114,10 +102,10 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
             {mobileView ? (
               <MobileWrapper
                 onClick={() => setMobileView(false)}
-                z-index="200"
+                z-index="300"
                 display={{ _: "block", ltablet: "none" }}
               >
-                <Mobnav />
+                <MobCross />
               </MobileWrapper>
             ) : (
               <MobileWrapper
@@ -139,13 +127,6 @@ const ListItem = styled.li`
   list-style-type: none;
   text-transform: uppercase;
 `;
-const QuizPopup = styled(Box)`
-  height: 100vh;
-  opacity: 90%;
-  position: fixed;
-  width: 100%;
-  z-index: 5;
-`;
 const MobileCover = styled(FlexWrapper)`
   background: ${theme.colors.orangelighter};
   color: white;
@@ -155,10 +136,9 @@ const MobileCover = styled(FlexWrapper)`
   height: 100vh;
   position: fixed;
   width: 100%;
-  z-index: 30;
+  z-index: ${theme.zIndices.loader};
 `;
 const MobileWrapper = styled(Box)`
   cursor: pointer;
   display: ${({ display }) => display};
-  z-index: 44;
 `;

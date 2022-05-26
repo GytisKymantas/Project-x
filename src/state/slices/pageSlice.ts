@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
+import { IPageination } from "state/types";
 
-export const initialState = { value: 0 };
+export const initialState: IPageination = { value: 0 };
 
 export const PageSlice = createSlice({
   name: "pageination",

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { QuizQuestions } from "./QuizQuestions";
+import { QuizQuestionsSection } from "components";
 
 const Quiz: React.FC = () => {
   return (
     <>
-      <QuizQuestions />
+      <QuizQuestionsSection />
     </>
   );
 };

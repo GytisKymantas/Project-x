@@ -26,6 +26,7 @@ import jdepp from "assets/images/jdepp.png";
 import bullet from "assets/images/bullet.png";
 import bulletBlank from "assets/images/bulletBlank.png";
 import calories from "assets/images/calories.png";
+import dbgirl from "assets/images/dbgirl.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -59,4 +60,5 @@ export const visuals: Record<string, string> = {
   bulletBlank,
   bullet,
   calories,
+  dbgirl,
 };

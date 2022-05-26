@@ -5,14 +5,12 @@ interface HealthInformationProps {
   title: string;
   treatment: string;
   answer?: string | boolean;
-  id: string;
 }
 
 export const HealthInformation: React.FC<HealthInformationProps> = ({
   title,
   treatment,
   answer,
-  id,
 }) => (
   <>
     {answer !== "False" && (

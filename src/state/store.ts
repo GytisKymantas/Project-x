@@ -1,9 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers, CombinedState, AnyAction } from "redux";
 import { useDispatch } from "react-redux";
-import { UserState } from "./types";
 import { persistReducer, persistStore } from "redux-persist";
-import localStorage from "redux-persist/es/storage";
 import sessionStorage from "redux-persist/es/storage/session";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "./rootSaga";
@@ -13,14 +11,22 @@ import PageSlice from "./slices/pageSlice";
 import QuizAnswersSlice from "./slices/quizAnswersSlice";
 import QuizDataSlice from "./slices/quizDataSlice";
 import UserDataSlice from "./slices/userDataSlice";
+import {
+  IQuizData,
+  IQuizAnswers,
+  IPageination,
+  IMultipleChoice,
+  IPurchaseData,
+  IUserDataSlice,
+} from "./types";
 
 export interface RootState {
-  purchaseData: any;
-  pageination: any;
-  quizAnswers: any;
-  quizData: any;
-  question: any;
-  userData: any;
+  purchaseData: IPurchaseData;
+  pageination: IPageination;
+  quizAnswers: IQuizAnswers;
+  quizData: IQuizData;
+  question: IMultipleChoice;
+  userData: IUserDataSlice;
 }
 
 const combinedReducer = combineReducers<CombinedState<RootState>>({

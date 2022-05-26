@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { IStepState } from "state/types";
+import { IUserDataSlice } from "state/types";
 
-export const initialState = {
+export const initialState: IUserDataSlice = {
   user_data: {
     age: null as unknown as number,
     height: null as unknown as number,
@@ -17,10 +18,10 @@ export const UserDataSlice = createSlice({
   name: "userData",
   initialState,
   reducers: {
-    setUserData: (state, actions: PayloadAction<any>) => {
+    setUserData: (state, actions) => {
       state.user_data = { ...state.user_data, ...actions.payload };
     },
-    setGenderData: (state, actions: PayloadAction<any>) => {
+    setGenderData: (state, actions) => {
       state.user_data = { ...state.user_data, isMale: actions.payload };
     },
   },

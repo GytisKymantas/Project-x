@@ -31,7 +31,7 @@ export const BMI: React.FC = () => {
       py="s10"
       px="s5"
     >
-      <FlexWrapper flexDirection="column" gap="20px">
+      <FlexWrapper flexDirection="column" gap="1.25rem">
         <FlexWrapper
           justifyContent={
             (BMIrounded !== Infinity && BMIrounded > 25.0) ||
@@ -41,12 +41,12 @@ export const BMI: React.FC = () => {
           }
         >
           {BMIrounded !== Infinity && BMIrounded > 25.0 && (
-            <Typography type="h5" color="white">
+            <Typography type="h5" color="primary">
               BMI: {BMIrounded}%
             </Typography>
           )}
           {imperialBMIrounded !== Infinity && imperialBMIrounded > 25.0 && (
-            <Typography type="h5" color="white">
+            <Typography type="h5" color="primary">
               BMI: {imperialBMIrounded}%
             </Typography>
           )}

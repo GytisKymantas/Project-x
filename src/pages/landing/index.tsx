@@ -3,7 +3,7 @@ import {
   Navigation,
   HeroSection,
   QuestionsCardContainer,
-  Review,
+  ReviewContainer,
   About,
   Partners,
   Footer,
@@ -14,7 +14,7 @@ const Landing: React.FC = () => (
     <Navigation />
     <HeroSection />
     <QuestionsCardContainer />
-    <Review />
+    <ReviewContainer />
     <Partners />
     <About />
     <Footer />

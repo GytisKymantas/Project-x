@@ -27,6 +27,7 @@ import bullet from "assets/images/bullet.png";
 import bulletBlank from "assets/images/bulletBlank.png";
 import calories from "assets/images/calories.png";
 import dbgirl from "assets/images/dbgirl.png";
+import runninggirl from "assets/images/runninggirl.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -61,4 +62,5 @@ export const visuals: Record<string, string> = {
   bullet,
   calories,
   dbgirl,
+  runninggirl,
 };

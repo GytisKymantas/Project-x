@@ -5,17 +5,12 @@ import { selectUserData } from "state/selectors";
 import { Scale, BackwardArrow } from "assets/images";
 import styled from "styled-components/macro";
 import { SCALE_BULLETS, SCALE_ARRAY } from "constants/Constants";
-
+import { nameOfTwoMonths, nameOfCurrentMonth } from "utils/metrics";
+// import { userData, weight, desiredWeight } from "utils/metrics";
 export const ScaleResult: React.FC = () => {
   const userData = useSelector(selectUserData);
   const weight = userData.weight;
   const desiredWeight = userData.desiredWeight;
-  const nameOfCurrentMonth = new Date().toLocaleString("default", {
-    month: "long",
-  });
-  const nameOfTwoMonths = new Intl.DateTimeFormat("en-US", {
-    month: "long",
-  }).format(new Date("6-6-2022"));
 
   return (
     <Box width="26.5625rem" bg="white" p="s20">
@@ -27,8 +22,8 @@ export const ScaleResult: React.FC = () => {
           top="28%"
           justifyContent="space-between"
         >
-          {SCALE_ARRAY.map((week) => (
-            <Box width="1px" height="100%" bg="lightwhite">
+          {SCALE_ARRAY.map((week, i) => (
+            <Box key={i} width="1px" height="100%" bg="lightwhite">
               {week}
             </Box>
           ))}

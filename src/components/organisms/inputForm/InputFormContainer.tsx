@@ -7,8 +7,8 @@ import {
   MetricWrapper,
 } from "components";
 import styled from "styled-components/macro";
-import { useDispatch } from "react-redux";
 import { navigate } from "gatsby";
+import { useDispatch } from "react-redux";
 import { setUserData } from "state/slices/userDataSlice";
 
 export const InputFormContainer: React.FC = () => {

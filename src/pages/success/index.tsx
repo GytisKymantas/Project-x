@@ -7,11 +7,9 @@ import {
   SectionWrapper,
   Image,
   Typography,
-  Container,
-  ContentWrapper,
+  SectionHeader,
   PurchaseBox,
 } from "components";
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 import { useSelector } from "react-redux";
 import { selectPurchaseData } from "state/selectors";
 

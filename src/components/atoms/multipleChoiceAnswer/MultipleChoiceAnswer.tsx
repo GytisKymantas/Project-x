@@ -5,13 +5,13 @@ import {
   setMultipleChoice,
   setMultipleChoiceGoals,
 } from "state/slices/multipleChoiceSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { theme } from "styles/theme";
 import { pageNext } from "state/slices/pageSlice";
 import { selectMultipleChoice } from "state/selectors";
 
 interface MultipleChoiceAnswerProps {
-  answers: Array<string>;
+  answers: string[];
   page: number;
 }
 
@@ -19,7 +19,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   answers,
   page,
 }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState([]);
+  const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
   const multipleAnswers = useSelector(selectMultipleChoice);
   const dispatch = useDispatch();
 
@@ -61,7 +61,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
 
   return (
     <FlexWrapper flexWrap="wrap" justifyContent="center">
-      {answers[page].question.answers.map((answer: string[], i: number) => (
+      {answers[page].question.answers.map((answer, i) => (
         <Box position="relative" key={i}>
           <QuizAnswer
             key={i}

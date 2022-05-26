@@ -1,10 +1,8 @@
 import React from "react";
 import { Box, QuizAnswer } from "components";
-import { useAppDispatch } from "state/store";
-import { selectMultipleChoice } from "state/selectors";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { pageNext } from "state/slices/pageSlice";
-import { IQuizData } from "state/types";
+import { IQuizData, IQuestionQuizData } from "state/types";
 import {
   setIsAsthmatic,
   setIsWorkingOut,
@@ -13,7 +11,7 @@ import {
 } from "state/slices/quizAnswersSlice";
 
 interface SingleAnswerTestProps {
-  answers: IQuizData[];
+  answers: IQuestionQuizData;
   page: number;
 }
 
@@ -21,7 +19,7 @@ export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
   answers,
   page,
 }) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const handlePage = (answers: Array<string>) => {
     switch (page) {
@@ -40,7 +38,7 @@ export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
 
   return (
     <Box>
-      {answers[page]?.question?.answers.map((answers: string[], i: number) => (
+      {answers[page].question.answers.map((answers: string[], i: number) => (
         <Box key={i}>
           <QuizAnswer onClick={() => handlePage(answers)}>{answers}</QuizAnswer>
         </Box>

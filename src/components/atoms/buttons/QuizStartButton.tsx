@@ -3,7 +3,7 @@ import { BaseButton, Box } from "components";
 
 interface QuizStartButtonProps {
   children: React.ReactNode;
-  width?: String;
+  width?: string;
   onClick?: () => void;
 }
 

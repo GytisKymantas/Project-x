@@ -2,7 +2,7 @@ import React from "react";
 import { FlexWrapper, Typography, Box } from "components";
 
 interface SectionHeaderProps {
-  header: string;
+  header: string | number | boolean;
   paragraph?: string;
   type?:
     | "h1"

@@ -20,12 +20,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   index,
 }) => (
   <FlexWrapper flexDirection="column" gap="1.875rem">
-    <SectionHeader
-      textAlign={{ ltablet: "center" }}
-      type="h4"
-      header={header}
-      paragraph={paragraph}
-    />
+    <SectionHeader center type="h4" header={header} paragraph={paragraph} />
     <Box mb="s25">
       <FlexWrapper>
         {RATING_STAR_ARRAY.map(({ id }) => (
@@ -42,21 +37,21 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           {occupation}
         </Typography>
       </FlexWrapper>
-      <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-        {/* <StaticImage
+      {/* <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+        <StaticImage
           src="src/assets/images/jdepp.png"
           alt="foto"
           placeholder="tracedSVG"
           draggable="false"
           style={{
-            maxWidth: "50px",
-            maxHeight: "50px",
+            maxWidth: "3.125rem",
+            maxHeight: "3.125rem",
             margin: "0 auto",
           }}
-        /> */}
-      </Box>
+        />
+      </Box> */}
     </FlexWrapper>
-    <FlexWrapper gap="5px" justifyContent="center">
+    <FlexWrapper gap="0.3125rem" justifyContent="center">
       {BULLET_ARRAY.map(({ id }) => (
         <Image key={id} src={index === id ? "bullet" : "bulletBlank"} />
       ))}

@@ -18,7 +18,9 @@ export const About: React.FC = () => (
       margin={{ _: "s16", ltablet: "s50" }}
       textAlign={{ _: "justify", ltablet: "unset" }}
     >
-      <Box bg="blue"></Box>
+      <Box>
+        <Image src="runninggirl" />
+      </Box>
       <Box margin="auto">
         <SectionHeader
           center={mobile ? true : false}
@@ -30,8 +32,8 @@ export const About: React.FC = () => (
       <Box>
         <Typography color="primary">
           Wise busy past both park when an ye no. Nay likely her length sooner
-          thrown sex lively income. The expense windows adapted sir. Wrong widen
-          drawn ample eat off doors money. Offending belonging promotion
+          thrown back lively income. The expense windows adapted sir. Wrong
+          widen drawn ample eat off doors money. Offending belonging promotion
           provision an be oh consulted ourselves it. Blessing welcomed ladyship
           she met humoured sir breeding her. Six curiosity day assurance bed
           necessary.
@@ -53,7 +55,7 @@ export const About: React.FC = () => (
           am secure of estate genius at.
         </Typography>
       </Box>
-      <Box>
+      <Box m="auto">
         <Image src="dbgirl" />
       </Box>
     </GridWrapper>

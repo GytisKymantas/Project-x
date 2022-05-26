@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FlexWrapper, BaseButton, Box } from "components";
-import { useDispatch } from "react-redux";
 import { setGenderData } from "state/slices/userDataSlice";
 import { navigate } from "gatsby";
 import { pageReset } from "state/slices/pageSlice";
+import { useDispatch } from "react-redux";
 
 export const GenderButtons: React.FC = () => {
   const dispatch = useDispatch();

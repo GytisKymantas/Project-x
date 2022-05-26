@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Image, SectionHeader } from "components";
+import { Box, SectionHeader } from "components";
 
 interface MeasurementsProps {
-  title: string;
+  title: number | boolean;
   subtitle: string;
   image: React.ReactNode;
   imperialSubtitle?: string;
@@ -10,7 +10,7 @@ interface MeasurementsProps {
   inches?: number;
 }
 
-export const MeasurementInfo: React.FC<MeasurementsProps> = ({
+export const MeasurementCard: React.FC<MeasurementsProps> = ({
   title,
   subtitle,
   image,
@@ -18,7 +18,7 @@ export const MeasurementInfo: React.FC<MeasurementsProps> = ({
   feet,
   inches,
 }) => (
-  <Box bg="white" minWidth="200px" p="1.25rem" boxShadow="default">
+  <Box bg="white" minWidth="12.5rem" p="s20" boxShadow="default">
     <Box margin="s0auto" width="3.125rem">
       {image}
     </Box>

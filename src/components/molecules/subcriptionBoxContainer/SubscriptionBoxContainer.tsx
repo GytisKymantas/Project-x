@@ -1,6 +1,6 @@
 import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectPurchaseData } from "state/selectors";
 import { navigate } from "gatsby";
 import { theme } from "styles/theme";

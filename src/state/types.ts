@@ -3,7 +3,13 @@ import { rootReducer } from "./store";
 export interface IQuizData {
   quizData: string[];
 }
-
+export interface IQuestionQuizData {
+  question: string[];
+  // title: string;
+  // answers: string[];
+  // id: number;
+  page: number;
+}
 export interface IUserDataSlice {
   user_data: {
     age: number;

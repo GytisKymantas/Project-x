@@ -1,15 +1,12 @@
 import { TextType } from "./Typography";
 import { css } from "styled-components/macro";
 import { Theme } from "styles/theme";
-import { useQuery } from "styles/breakpoints";
 import { tablet } from "styles/breakpoints";
 
 export const applyTextType = (type: TextType, theme: Theme) => {
-  const { isTablet } = useQuery();
   switch (type) {
     case "h1":
       return css`
-        // returnninam visa css, nieko ko neatpazysta. Jokios ne funkcijos
         font-weight: ${theme.typography.h1.fontWeight};
         font-size: ${theme.typography.h1.fontSize};
         line-height: ${theme.typography.h1.lineHeight};
@@ -18,17 +15,9 @@ export const applyTextType = (type: TextType, theme: Theme) => {
           font-size: ${theme.typography.h1.fontSizeMobile};
           line-height: ${theme.typography.h1.lineHeightMobile};
         }
-
-        /* ${isTablet
-          ? css`
-              font-size: ${theme.typography.h1.fontSizeMobile};
-              line-height: ${theme.typography.h1.lineHeightMobile};
-            `
-          : ""} */
       `;
     case "h2":
       return css`
-        // returnninam visa css, nieko ko neatpazysta. Jokios ne funkcijos
         font-weight: ${theme.typography.h2.fontWeight};
         font-size: ${theme.typography.h2.fontSize};
         line-height: ${theme.typography.h2.lineHeight};

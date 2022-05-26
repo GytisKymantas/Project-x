@@ -13,7 +13,7 @@ import {
   typography,
 } from "styled-system";
 
-import { Colors, theme, Theme } from "styles/theme";
+import { Colors, Theme } from "styles/theme";
 
 import { applyTextType } from "./TypographyHelpers";
 
@@ -76,20 +76,10 @@ export const Typography: React.FC<TextProps> = ({
 
 const Text = styled.p<TextProps>`
   padding: 0;
-  ${(
-    { type, theme } //destrukturyzuota. Themas globalus/ jeigu paduodam type, prisiraso tada sita funkcija applytexttype
-  ) =>
-    type &&
-    applyTextType(
-      type as TextType,
-      theme as Theme
-    )}; // grazinam tada is switcho
+  ${({ type, theme }) =>
+    type && applyTextType(type as TextType, theme as Theme)};
   color: ${({ theme, color }) =>
-    color
-      ? theme.colors[color]
-      : theme.colors
-          .white}; // jeigu paduodu pareina is theme'o, jei ne tai ne.[] yra objekto key
-
+    color ? theme.colors[color] : theme.colors.white};
   && {
     ${typographyProperties}
   }

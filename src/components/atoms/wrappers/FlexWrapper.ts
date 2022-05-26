@@ -8,12 +8,12 @@ interface FlexWrapperProps {
   justifyContent?: string;
   flexDirection?: string;
   alignItems?: string;
-  wrap?: string;
+  flexWrap?: string;
 }
 //TODO:FIX above
 export const FlexWrapper = styled(Box)<FlexWrapperProps>`
   display: flex;
-  flex-wrap: ${({ wrap }) => wrap || ""};
+  flex-wrap: ${({ flexWrap }) => flexWrap || ""};
   gap: ${({ gap }) => gap};
 
   && {

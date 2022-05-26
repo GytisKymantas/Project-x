@@ -18,15 +18,11 @@ export const HeroSection: React.FC = () => (
         <Container>
           <Box>
             <StaticImage
-              src="../../assets/images/healthfitness.png"
-              alt="foto"
+              src="src/assets/images/dbgirl.png"
+              alt="healthfitness"
               placeholder="tracedSVG"
               draggable="false"
-              style={{
-                maxWidth: "500px",
-                margin: "0 auto",
-              }}
-            />{" "}
+            />
           </Box>
           <FlexWrapper flexDirection="column" maxWidth="26.125rem">
             <SectionHeader
@@ -39,7 +35,7 @@ export const HeroSection: React.FC = () => (
         </Container>
         <Box position="relative">
           <StaticImage
-            src="src/assets/images/skipper.png"
+            src="src/assets/images/dbgirl.png"
             alt="skipping"
             placeholder="tracedSVG"
             draggable="false"

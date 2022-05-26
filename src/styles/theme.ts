@@ -62,6 +62,8 @@ export const theme = {
     s18: "1.125rem",
     s20: "1.25rem",
     s20s50: "1.25rem 3.125rem",
+    s30: "1.875rem",
+    s32: "2rem",
     s35s0: "2.1875rem 0",
     s40: "2.5rem",
     s50s0: "3.125rem 0",

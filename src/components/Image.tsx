@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 import LazyLoad from "react-lazyload";
-
 import { mobile } from "styles/breakpoints";
 import { Visuals, visuals } from "utils/visuals";
 
@@ -17,29 +16,29 @@ interface ImageProps extends Styles {
   src: Visuals;
   mobile_src?: Visuals;
   onClick?: () => void;
+  alt?: string;
 }
 
 const Img = styled.img<Styles>`
-  max-width: ${({ maxWidth }) => maxWidth || ""};
   margin: ${({ margin }) => margin || ""};
+  max-width: ${({ maxWidth }) => maxWidth || ""};
   width: ${({ width }) => width || ""};
   height: ${({ height }) => height || ""};
   max-height: ${({ maxHeight }) => maxHeight || ""};
 `;
 
 export const Image: React.FC<ImageProps> = ({
+  alt,
   src,
   mobile_src,
   onClick,
   ...rest
 }) => {
   return (
-    // kol neuzkraus vartotojui, uzims sitiek, nebus prapleciamos nesamones ir rezervuoja iskarto
     <LazyLoad height={200}>
-      <picture>
+      <picture onClick={onClick}>
         {mobile_src && <source media={mobile} srcSet={visuals[mobile_src]} />}
-        {/* uzsetina sitaip kaip mobile, bet pirma mobile turi buti <source> yra html tagas, turi attributa srcSet*/}
-        <Img src={visuals[src]} alt={src} {...rest} />
+        <Img src={visuals[src]} alt={alt} {...rest} />
       </picture>
     </LazyLoad>
   );

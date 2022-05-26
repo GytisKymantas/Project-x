@@ -3,8 +3,6 @@ import { FlexWrapper, Box, Typography } from "components";
 import { mobile } from "styles/breakpoints";
 import { SOCIALS_ARRAY } from "constants/Constants";
 
-//TODO: fix the tyypography and socials
-
 export const Footer: React.FC = () => (
   <Box id="Check" as="footer" borderTop="scale" mt="s80">
     <Box p="s35s0">

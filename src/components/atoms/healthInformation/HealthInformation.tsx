@@ -15,11 +15,7 @@ export const HealthInformation: React.FC<HealthInformationProps> = ({
   <>
     {answer !== "False" && (
       <Box p="s20">
-        <FlexWrapper
-          alignItems="center"
-          flexDirection={{ _: "column" }}
-          gap="1.25rem"
-        >
+        <FlexWrapper alignItems="center" flexDirection="column" gap="1.25rem">
           <Box position="relative">
             <Box position="relative">
               <Image src="shape360" />

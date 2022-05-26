@@ -1,15 +1,20 @@
 import React from "react";
-import { HealthInformation } from "components";
+import { HealthInformation, SectionWrapper } from "components";
 import { useSelector } from "react-redux";
 import { selectQuizAnswers } from "state/selectors";
-
+// import {
+//   workoutFrequencyAnswer,
+//   isSmoking,
+//   isHeartCondition,
+//   isAsthmatic,
+// } from "utils/metrics";
 export const HealthInformationSection: React.FC = () => {
   const userQuizAnswers = useSelector(selectQuizAnswers);
   const workoutFrequencyAnswer = userQuizAnswers?.isWorkingOut;
   const isSmoking = userQuizAnswers?.isSmoking;
   const isHeartCondition = userQuizAnswers?.isHeartCondition;
   const isAsthmatic = userQuizAnswers?.isAsthmatic;
-
+  //TODO:
   console.log(workoutFrequencyAnswer);
   console.log(isSmoking, "is smoking");
   console.log(isHeartCondition, "is haert smoking");
@@ -47,7 +52,7 @@ export const HealthInformationSection: React.FC = () => {
   ];
 
   return (
-    <>
+    <SectionWrapper>
       {HEALTH_INFORMATION_DATA.map(({ id, title, treatment, answer }) => (
         <HealthInformation
           key={id}
@@ -56,6 +61,6 @@ export const HealthInformationSection: React.FC = () => {
           answer={answer}
         />
       ))}
-    </>
+    </SectionWrapper>
   );
 };

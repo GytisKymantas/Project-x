@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionWrapper, GridWrapper, MeasurementInfo } from "components";
+import { SectionWrapper, GridWrapper, MeasurementCard } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
 import { Gender, Height, Scales, Age } from "assets/images";
@@ -62,12 +62,12 @@ export const MeasurementsInfoContainer: React.FC = () => {
         }}
         maxWidth="71.875rem"
         m="s0auto"
-        p={{ _: "2rem", ltablet: "0rem" }}
+        p={{ _: "s32", ltablet: "0rem" }}
         gap="1.25rem"
       >
         {MEASUREMENT_CONTAINER_DATA.map(
           ({ id, image, title, subtitle, feet, inches, imperialSubtitle }) => (
-            <MeasurementInfo
+            <MeasurementCard
               key={id}
               title={title}
               subtitle={subtitle}

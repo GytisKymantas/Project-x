@@ -8,10 +8,11 @@ import {
   ReviewCard,
   SectionHeader,
 } from "components";
-// import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import { REVIEW_DATA } from "constants/Constants";
+
 //TODO: fix z index
-export const Review: React.FC = () => {
+export const ReviewContainer: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -51,15 +52,16 @@ export const Review: React.FC = () => {
               occupation={REVIEW_DATA[index].occupation}
             />
             <Box margin="s0auto" position="relative">
-              {/* <StaticImage
-                src="../../assets/images/yoga.png"
+              <StaticImage
+                src="src/assets/images/yoga.png"
                 alt="foto"
                 placeholder="tracedSVG"
                 draggable="false"
                 style={{
-                  maxWidth: "500px",
+                  maxWidth: "31.25rem",
                   margin: "0 auto",
-                }} */}
+                }}
+              />
               <Box
                 position="absolute"
                 top="0"
@@ -67,16 +69,16 @@ export const Review: React.FC = () => {
                 opacity="0.6"
                 zIndex={-1}
               >
-                {/* <StaticImage
+                <StaticImage
                   src="../../assets/images/yogabackground.png"
-                  alt="foto"
+                  alt="yoga background"
                   placeholder="tracedSVG"
                   draggable="false"
                   style={{
                     maxWidth: "500px",
                     margin: "0 auto",
                   }}
-                /> */}
+                />
               </Box>
             </Box>
           </GridWrapper>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, ContentWrapper, FlexWrapper, Typography } from "components";
 import styled from "styled-components/macro";
 
@@ -15,7 +15,6 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
   handleMetric,
   Imperial,
 }) => {
-  //   const [ifImperial, setIfImperial] = useState(false);
   return (
     <ContentWrapper margin="s0auto" width="25rem">
       <FlexWrapper flexDirection="column" alignItems="center">
@@ -29,9 +28,7 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
         >
           <MeasurementWrapper
             pb="s10"
-            borderBottom={
-              Imperial ? "1px solid orange" : "1x solid transparent"
-            }
+            borderBottom={Imperial ? "orangedefault" : "transparent"}
           >
             <Typography
               fontWeight="fw700"
@@ -43,9 +40,7 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
           </MeasurementWrapper>
           <MeasurementWrapper
             pb="s10"
-            borderBottom={
-              !Imperial ? "1px solid orange" : "1x solid transparent"
-            }
+            borderBottom={!Imperial ? "orangedefault" : "transparent"}
           >
             <Typography
               fontWeight="fw700"

@@ -1,8 +1,9 @@
 import React from "react";
-import { FlexWrapper, Box, Typography } from "components";
+import { FlexWrapper, Box, Typography, HomeLink } from "components";
 import { mobile } from "styles/breakpoints";
 import { SOCIALS_ARRAY } from "constants/Constants";
 import styled from "styled-components/macro";
+import { theme } from "styles/theme";
 
 export const Footer: React.FC = () => (
   <Box id="Check" as="footer" borderTop="scale" mt="s80">
@@ -13,14 +14,12 @@ export const Footer: React.FC = () => (
         pt="s20"
       >
         <FlexWrapper
-          textAlign={{ _: "center", ltablet: "initial" }}
+          textAlign={{ _: "center" }}
           flexDirection="column"
           gap="1.25rem"
           pb="s20"
         >
-          <Typography type="h4" color="primary">
-            Fit on-time
-          </Typography>
+          <HomeLink />
           <Typography color="gray">
             Lorem ipsum eered calling prudent her. And residence for met the
             estimable disposing. Mean if he they been no hold mr.
@@ -46,8 +45,8 @@ export const Footer: React.FC = () => (
     >
       <Typography color="white">
         {new Date().getFullYear()} © All rights reserved,{" "}
-        <span style={{ color: "orange" }}>Gytis Kymantas</span>, Vilnius,
-        Lithuania
+        <span style={{ color: `${theme.colors.orange}` }}>Gytis Kymantas</span>,
+        Vilnius, Lithuania
       </Typography>
     </FlexWrapper>
   </Box>

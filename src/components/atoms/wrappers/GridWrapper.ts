@@ -4,9 +4,9 @@ import { FlexWrapper } from "components";
 import { Theme } from "styles/theme";
 
 export const GridWrapper = styled(FlexWrapper)<GridProps<Theme>>`
-  justify-content: ${({ justifyContent }) => justifyContent || "center"};
   display: grid;
-  gap: ${({ gap }) => gap};
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+  gap: ${({ gap }) => gap || ""};
 
   && {
     ${grid}

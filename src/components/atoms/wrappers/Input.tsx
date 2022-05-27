@@ -2,7 +2,7 @@ import React from "react";
 import { Styles } from "components/atoms/wrappers/Box";
 import { color } from "styled-system";
 
-import { theme } from "../../../styles/theme";
+import { theme, Theme } from "../../../styles/theme";
 import styled from "styled-components/macro";
 
 export type InputType = "text" | "email" | "password" | "date" | "number";
@@ -59,7 +59,7 @@ const InputElement = styled.input`
     appearance: none;
   }
   :focus {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid ${theme.colors.orange};
   }
 
   && {

@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Input, FlexWrapper, Typography } from "components";
 
 interface InputFormDataProps {
-  setStateValue: (e: React.FormEvent<HTMLInputElement>) => void;
-  imperialSetStateValue?: (e: React.FormEvent<HTMLInputElement>) => void;
+  setStateValue?: React.Dispatch<React.SetStateAction<string>>;
+  imperialSetStateValue?: React.Dispatch<React.SetStateAction<string>>;
   imperial?: boolean;
   value?: string;
   placeholder?: string;
@@ -45,7 +45,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
             placeholder={placeholder}
             required
             value={value}
-            onChange={(e) => setStateValue(e.target.value)}
+            onChange={(e: HTMLInputElement) => setStateValue!(e.target.value)}
             minValue={minValue}
             maxValue={maxValue}
           />
@@ -65,7 +65,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
             placeholder={imperialPlaceholder}
             required
             value={imperialValue}
-            onChange={(e) => imperialSetStateValue(e.target.value)}
+            onChange={(e: any) => imperialSetStateValue!(e.target.value)}
             minValue={imperialMinValue}
             maxValue={imperialMaxValue}
           />
@@ -83,7 +83,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
         placeholder={placeholder}
         required
         value={value}
-        onChange={(e) => setStateValue(e.target.value)}
+        onChange={(e: any) => setStateValue!(e.target.value)}
         minValue={minValue}
         maxValue={maxValue}
       />
@@ -92,7 +92,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
       " "
     ) : (
       <Box mt="s16" position="absolute" right="0">
-        <Typography color="primary" fontFamily="Satisfy" fontSize="fs15">
+        <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
           {placeholder === "Inches" ? "" : measurement}
         </Typography>
       </Box>

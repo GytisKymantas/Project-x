@@ -2,7 +2,6 @@ import React from "react";
 import { Box } from "components";
 import { theme } from "styles/theme";
 import styled from "styled-components/macro";
-import { BackwardArrow } from "assets/images";
 
 interface ProgressBarProps {
   width: string;

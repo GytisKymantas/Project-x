@@ -9,7 +9,7 @@ export const HomeLink: React.FC = () => (
     {" "}
     <Homelink to="/">
       Fit<span> </span>
-      on<span style={{ color: "red" }}>-</span>Time
+      on<span style={{ color: `${theme.colors.orange}` }}>-</span>Time
     </Homelink>
   </Box>
 );

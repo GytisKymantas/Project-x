@@ -1,8 +1,8 @@
 import React from "react";
 import { FlexWrapper, Box, Typography, Image, SectionHeader } from "components";
 import { Star } from "assets/images";
+import { theme } from "styles/theme";
 import { RATING_STAR_ARRAY, BULLET_ARRAY } from "constants/Constants";
-import { StaticImage } from "gatsby-plugin-image";
 
 interface ReviewCardProps {
   header: string;
@@ -33,7 +33,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
         ))}
       </FlexWrapper>
     </Box>
-    <FlexWrapper alignItems="center" gap="7.5rem">
+    <FlexWrapper alignItems="center" gap="7.5rem" justifyContent="space-around">
       <FlexWrapper flexDirection="column" gap="0.3125rem">
         <Typography type="span" fontWeight="fw700" color="primary">
           {name}
@@ -42,19 +42,19 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           {occupation}
         </Typography>
       </FlexWrapper>
-      {/* <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-        <StaticImage
-          src="src/assets/images/jdepp.png"
-          alt="foto"
-          placeholder="tracedSVG"
-          draggable="false"
+      <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+        <Image style={{ borderRadius: `${theme.radii.br50}` }} src="jdepp" />
+      </Box>
+      <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+        <Image
           style={{
-            maxWidth: "3.125rem",
-            maxHeight: "3.125rem",
-            margin: "0 auto",
+            borderRadius: `${theme.radii.br50}`,
+            height: "55px",
+            width: "55px",
           }}
+          src="amber"
         />
-      </Box> */}
+      </Box>
     </FlexWrapper>
     <FlexWrapper gap="0.3125rem" justifyContent="center">
       {BULLET_ARRAY.map(({ id }) => (

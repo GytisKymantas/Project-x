@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, QuizAnswer, FlexWrapper } from "components";
 import { Check } from "assets/images";
+import { mobile } from "styles/breakpoints";
 import {
   setMultipleChoice,
   setMultipleChoiceGoals,
 } from "state/slices/multipleChoiceSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { theme } from "styles/theme";
 import { pageNext } from "state/slices/pageSlice";
-import { selectMultipleChoice } from "state/selectors";
 
 interface MultipleChoiceAnswerProps {
   answers: any;
@@ -54,8 +54,6 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
     }
   };
 
-  console.log(selectedAnswer, "SELECTED ANSEWER");
-
   return (
     <FlexWrapper flexWrap="wrap" justifyContent="center">
       {answers[page].question.answers.map((answer: string[], i: number) => (
@@ -79,15 +77,17 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
         </Box>
       ))}
       {selectedAnswer.length < 1 && (
-        <Box mt="s20">
+        <Box mt={mobile ? "s20" : "s0"}>
           <QuizAnswer onClick={handleNextStep} disabled isSubmit>
             Submit
           </QuizAnswer>
         </Box>
       )}
       {selectedAnswer.length >= 1 && (
-        <Box mt="s20">
-          <QuizAnswer onClick={handleNextStep}>Submit</QuizAnswer>{" "}
+        <Box mt={mobile ? "s20" : "s0"}>
+          <QuizAnswer isSubmit onClick={handleNextStep}>
+            Submit
+          </QuizAnswer>{" "}
         </Box>
       )}
     </FlexWrapper>

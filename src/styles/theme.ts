@@ -13,7 +13,7 @@ const colors = {
   orange: "orange",
   orangelight: "#ffa50026",
   orangelighter: "#ffa500cf",
-  red: "red",
+  red: "#ff0000",
   graylight: "#e6e6e6",
   transparent: "transparent",
 };
@@ -40,6 +40,7 @@ export const theme = {
   },
   borders: {
     default: `1px solid ${colors.primary}`,
+    orangedefault: `1px solid ${colors.orange}`,
     answer: `2px solid ${colors.primary}`,
     transparent: `2px solid ${colors.transparent}`,
     scale: `3px solid ${colors.lightwhite}`,
@@ -49,6 +50,8 @@ export const theme = {
     upperElement: 1,
     modal: 10,
     loader: 11,
+    overall: 12,
+    master: 13,
   },
   breakpoints: ["24rem", "47rem", "90rem"] as unknown as Breakpoints,
   space: {

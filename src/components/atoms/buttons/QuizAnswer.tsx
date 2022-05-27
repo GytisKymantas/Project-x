@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { theme } from "styles/theme";
 import { Box, FlexWrapper, BaseButton } from "components";
 
 interface QuizAnswerProps {
@@ -6,6 +7,7 @@ interface QuizAnswerProps {
   isSubmit?: boolean;
   disabled?: boolean;
   border?: string;
+  type?: "button" | "submit";
   onClick?: () => void;
 }
 
@@ -15,29 +17,26 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   disabled,
   border,
   onClick,
-}) => {
-  //TODO: delete ^
-  return (
-    <Box
-      minWidth="22.5625rem"
-      height="3rem"
-      position={"relative"}
-      m={isSubmit ? "s8" : "s8"}
-      onClick={onClick}
-    >
-      {isSubmit ? (
-        <BaseButton
-          type="submit"
-          boxShadow={disabled ? "" : "default"}
-          disabled={disabled}
-        >
-          {children}
-        </BaseButton>
-      ) : (
-        <BaseButton type="button" background="graylight" border={border}>
-          <FlexWrapper justifyContent="center">{children}</FlexWrapper>
-        </BaseButton>
-      )}
-    </Box>
-  );
-};
+}) => (
+  <Box
+    minWidth="22.5625rem"
+    height="3rem"
+    position={"relative"}
+    m={isSubmit ? "s8" : "s8"}
+    onClick={onClick}
+  >
+    {isSubmit ? (
+      <BaseButton
+        type="submit"
+        boxShadow={disabled ? "" : `${theme.shadows.default}`}
+        disabled={disabled}
+      >
+        {children}
+      </BaseButton>
+    ) : (
+      <BaseButton type="button" background="graylight" border={border}>
+        <FlexWrapper justifyContent="center">{children}</FlexWrapper>
+      </BaseButton>
+    )}
+  </Box>
+);

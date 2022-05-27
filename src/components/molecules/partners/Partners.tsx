@@ -11,7 +11,7 @@ import { PARTNER_IMAGES } from "constants/Constants";
 export const Partners: React.FC = () => (
   <SectionWrapper id="Partners">
     <GridWrapper
-      gap={{ _: "3.125rem", ltablet: "0" }}
+      gap="s50"
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
       margin={{ _: "sautos50", ltablet: "sautos100" }}
     >

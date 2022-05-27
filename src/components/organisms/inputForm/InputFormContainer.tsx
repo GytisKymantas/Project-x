@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box,
   FlexWrapper,
   InputFormData,
-  BaseButton,
   MetricWrapper,
+  QuizAnswer,
 } from "components";
 import styled from "styled-components/macro";
 import { navigate } from "gatsby";
@@ -13,19 +12,19 @@ import { setUserData } from "state/slices/userDataSlice";
 
 export const InputFormContainer: React.FC = () => {
   const [ifImperial, setIfImperial] = useState(false);
-  const [age, setAge] = useState("");
-  const [height, setHeight] = useState("");
-  const [feet, setFeet] = useState("");
-  const [inches, setInches] = useState("");
-  const [weight, setWeight] = useState("");
-  const [desiredWeight, setDesiredWeight] = useState("");
+  const [age, setAge] = useState<HTMLInputElement>("");
+  const [height, setHeight] = useState<HTMLInputElement>("");
+  const [feet, setFeet] = useState<HTMLInputElement>("");
+  const [inches, setInches] = useState<HTMLInputElement>("");
+  const [weight, setWeight] = useState<HTMLInputElement>("");
+  const [desiredWeight, setDesiredWeight] = useState<HTMLInputElement>("");
   const [userState, setUserState] = useState({
-    age: null,
-    height: null,
-    weight: null,
-    feet: null,
-    inches: null,
-    desiredWeight: null,
+    age: null as unknown as string,
+    height: null as unknown as string,
+    weight: null as unknown as string,
+    feet: null as unknown as string,
+    inches: null as unknown as string,
+    desiredWeight: null as unknown as string,
   });
   const dispatch = useDispatch();
 
@@ -151,9 +150,9 @@ export const InputFormContainer: React.FC = () => {
               />
             </>
           )}
-          <BaseButton onClick={handleFunction} type="submit">
+          <QuizAnswer isSubmit onClick={handleFunction} type="submit">
             SUBMIT
-          </BaseButton>
+          </QuizAnswer>
         </FlexWrapper>
       </FormContainer>
     </MetricWrapper>
@@ -163,14 +162,3 @@ export const InputFormContainer: React.FC = () => {
 const FormContainer = styled.form`
   width: 100%;
 `;
-
-// const INPUT_ARRAY = [{
-//   setStateValue:setAge(),
-//   value:age,
-//   palceholder:"Age"
-//   minValue:50,
-//   maxValue:150,
-//   measurement:"years"
-//   id:"1"
-
-// }]

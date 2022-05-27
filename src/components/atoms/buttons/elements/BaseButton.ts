@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { compose, layout, LayoutProps, space, SpaceProps } from "styled-system";
-import { Theme } from "styles/theme";
+import { theme, Theme } from "styles/theme";
 
 const defaultButtonProps = compose(layout, space);
 
@@ -41,7 +41,7 @@ export const BaseButton = styled.button<ButtonStyles>`
   font-weight: ${({ theme }) => theme.fontWeights.fw700};
 
   &:hover:enabled {
-    background: orange;
+    background: ${theme.colors.orange};
     cursor: pointer;
   }
 

@@ -4,18 +4,15 @@ import { pageBack } from "state/slices/pageSlice";
 import { Box, InputFormContainer, ReturnButton } from "components";
 import { QuizContainerWrapper } from "../../atoms/wrappers/QuizContainerWrapper";
 import { fetchUsersAction } from "state/sagasActions";
-import { selectPage, selectSetStatus } from "state/selectors";
+import { selectPage } from "state/selectors";
 import { selectQuizData } from "state/selectors";
-import { setStatus } from "state/slices/quizDataSlice";
 import { SingleChoiceAnswer } from "components/atoms/singleChoiceAnswer/SingleAnswer";
 import { MultipleChoiceAnswer } from "components/atoms/multipleChoiceAnswer/MultipleChoiceAnswer";
 
 export const QuizQuestionsSection: React.FC = () => {
-  const [loading, isLoading] = useState(true);
   const dispatch = useDispatch();
   const page = useSelector(selectPage);
   const ANSWERS_ARRAY = useSelector(selectQuizData);
-  const status = useSelector(selectSetStatus);
 
   useEffect(() => {
     dispatch(fetchUsersAction());
@@ -48,7 +45,6 @@ export const QuizQuestionsSection: React.FC = () => {
       <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
         <Box>{Questions()}</Box>
       </QuizContainerWrapper>
-
       <ReturnButton width="6.25rem" onClick={() => handlePage()} />
     </>
   );

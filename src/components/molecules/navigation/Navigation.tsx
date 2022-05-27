@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Box,
   FlexWrapper,
@@ -30,16 +30,6 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
       setFix(false);
     }
   };
-
-  // if (window.innerWidth === 760) {
-  //   setMobileView(false);
-  // }
-  // useEffect(() => {
-  //   if (tablet) {
-  //     setMobileView(true);
-  //   }
-  // }, [mobileView]);
-
   window.addEventListener("scroll", handleScrollY);
 
   return (
@@ -49,7 +39,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
       backgroundColor="white"
       position={fix ? "fixed" : "initial"}
       boxShadow="default"
-      zIndex={11}
+      zIndex="loader"
     >
       {mobileView && (
         <MobileCover>
@@ -106,11 +96,11 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
           </BaseButton>
         )}
         {!checkoutPage && (
-          <Box zIndex={30}>
+          <Box zIndex="master">
             {mobileView ? (
               <MobileWrapper
                 onClick={() => setMobileView(false)}
-                z-index="300"
+                zIndex="overall"
                 display={{ _: "block", ltablet: "none" }}
               >
                 <MobCross />
@@ -137,7 +127,7 @@ const ListItem = styled.li`
 `;
 const MobileCover = styled(FlexWrapper)`
   background: ${theme.colors.orangelighter};
-  color: white;
+  color: ${theme.colors.white};
   font-size: ${theme.fontSizes.fs24};
   font-weight: ${theme.fontWeights.fw700};
   justify-content: center;

@@ -10,6 +10,7 @@ interface Styles {
   height?: string;
   margin?: string;
   maxHeight?: string;
+  borderRadius?: string;
 }
 
 interface ImageProps extends Styles {
@@ -20,6 +21,7 @@ interface ImageProps extends Styles {
 }
 
 const Img = styled.img<Styles>`
+  border-radius: ${({ borderRadius }) => borderRadius || ""};
   margin: ${({ margin }) => margin || ""};
   max-width: ${({ maxWidth }) => maxWidth || ""};
   width: ${({ width }) => width || ""};

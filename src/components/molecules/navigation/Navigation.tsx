@@ -21,7 +21,6 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
   const [fix, setFix] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-  const [popup, setPopup] = useState(false);
 
   const handleScrollY = () => {
     if (window.scrollY >= 780) {

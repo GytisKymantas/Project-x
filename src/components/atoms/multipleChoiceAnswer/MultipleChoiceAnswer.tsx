@@ -58,17 +58,38 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
     <FlexWrapper flexWrap="wrap" justifyContent="center">
       {answers[page].question.answers.map((answer: string[], i: number) => (
         <Box position="relative" key={i}>
-          <QuizAnswer
-            key={i}
-            onClick={() => handleSelectAnswer(answer)}
-            border={
-              selectedAnswer.includes(answer)
-                ? `${theme.borders.answer}`
-                : `${theme.borders.transparent}`
-            }
-          >
-            {answer}
-          </QuizAnswer>
+          {selectedAnswer.includes("none") ? (
+            <Box>
+              <QuizAnswer
+                key={i}
+                onClick={() => handleSelectAnswer(answer)}
+                border={
+                  selectedAnswer.includes("none") && i === 9
+                    ? `${theme.borders.answer}`
+                    : `${theme.borders.transparent}`
+                }
+              >
+                {answer}
+              </QuizAnswer>
+              {selectedAnswer.includes("none") && i === 9 && (
+                <Box position="absolute" top="35%" left="5%">
+                  <Check />
+                </Box>
+              )}
+            </Box>
+          ) : (
+            <QuizAnswer
+              key={i}
+              onClick={() => handleSelectAnswer(answer)}
+              border={
+                selectedAnswer.includes(answer)
+                  ? `${theme.borders.answer}`
+                  : `${theme.borders.transparent}`
+              }
+            >
+              {answer}
+            </QuizAnswer>
+          )}
           {selectedAnswer.includes(answer) && (
             <Box position="absolute" top="35%" left="5%">
               <Check />

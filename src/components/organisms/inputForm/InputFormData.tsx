@@ -45,7 +45,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
             placeholder={placeholder}
             required
             value={value}
-            onChange={(e: HTMLInputElement) => setStateValue!(e.target.value)}
+            onChange={(e: any) => setStateValue!(e.target.value)}
             minValue={minValue}
             maxValue={maxValue}
           />

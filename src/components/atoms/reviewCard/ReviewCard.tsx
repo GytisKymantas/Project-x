@@ -42,19 +42,21 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           {occupation}
         </Typography>
       </FlexWrapper>
-      <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-        <Image style={{ borderRadius: `${theme.radii.br50}` }} src="jdepp" />
-      </Box>
-      <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-        <Image
-          style={{
-            borderRadius: `${theme.radii.br50}`,
-            height: "55px",
-            width: "55px",
-          }}
-          src="amber"
-        />
-      </Box>
+      {index === 0 && (
+        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+          <Image height="55px" width="55px" borderRadius="br50" src="amber" />
+        </Box>
+      )}
+      {index === 1 && (
+        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+          <Image height="55px" width="55px" borderRadius="br50" src="jdepp" />
+        </Box>
+      )}
+      {index === 2 && (
+        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
+          <Image borderRadius="br50" src="jdepp" />
+        </Box>
+      )}
     </FlexWrapper>
     <FlexWrapper gap="0.3125rem" justifyContent="center">
       {BULLET_ARRAY.map(({ id }) => (

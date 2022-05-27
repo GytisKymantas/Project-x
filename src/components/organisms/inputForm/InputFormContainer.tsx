@@ -12,12 +12,12 @@ import { setUserData } from "state/slices/userDataSlice";
 
 export const InputFormContainer: React.FC = () => {
   const [ifImperial, setIfImperial] = useState(false);
-  const [age, setAge] = useState<HTMLInputElement>("");
-  const [height, setHeight] = useState<HTMLInputElement>("");
-  const [feet, setFeet] = useState<HTMLInputElement>("");
-  const [inches, setInches] = useState<HTMLInputElement>("");
-  const [weight, setWeight] = useState<HTMLInputElement>("");
-  const [desiredWeight, setDesiredWeight] = useState<HTMLInputElement>("");
+  const [age, setAge] = useState<string>("");
+  const [height, setHeight] = useState<string>("");
+  const [feet, setFeet] = useState<string>("");
+  const [inches, setInches] = useState<string>("");
+  const [weight, setWeight] = useState<string>("");
+  const [desiredWeight, setDesiredWeight] = useState<string>("");
   const [userState, setUserState] = useState({
     age: null as unknown as string,
     height: null as unknown as string,

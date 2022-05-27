@@ -16,7 +16,6 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   border,
   onClick,
 }) => {
-  const [select, setSelect] = useState(false);
   //TODO: delete ^
   return (
     <Box
@@ -35,12 +34,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           {children}
         </BaseButton>
       ) : (
-        <BaseButton
-          type="button"
-          onClick={() => setSelect(!select)}
-          background="graylight"
-          border={border}
-        >
+        <BaseButton type="button" background="graylight" border={border}>
           <FlexWrapper justifyContent="center">{children}</FlexWrapper>
         </BaseButton>
       )}

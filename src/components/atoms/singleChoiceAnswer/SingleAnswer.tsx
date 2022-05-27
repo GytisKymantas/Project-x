@@ -38,7 +38,7 @@ export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
 
   return (
     <Box>
-      {answers[page]?.question.answers.map((answers: string[], i: number) => (
+      {answers[page]?.question?.answers.map((answers: string[], i: number) => (
         <Box key={i}>
           <QuizAnswer onClick={() => handlePage(answers)}>{answers}</QuizAnswer>
         </Box>

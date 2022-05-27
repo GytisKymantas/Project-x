@@ -32,7 +32,6 @@ import runninggirl from "assets/images/runninggirl.png";
 export type Visuals = keyof typeof visuals;
 
 export const visuals: Record<string, string> = {
-  // turi buti ir key ir value vienodi
   students,
   gatsbyImg,
   quizBackGround,

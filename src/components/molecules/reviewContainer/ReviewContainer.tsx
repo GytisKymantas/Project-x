@@ -41,7 +41,7 @@ export const ReviewContainer: React.FC = () => {
         <Box>
           <GridWrapper
             gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-            ma="s0s70"
+            m="s0s70"
           >
             <ReviewCard
               key={REVIEW_DATA[index].id}
@@ -75,7 +75,7 @@ export const ReviewContainer: React.FC = () => {
                   placeholder="tracedSVG"
                   draggable="false"
                   style={{
-                    maxWidth: "500px",
+                    maxWidth: "31.25rem",
                     margin: "0 auto",
                   }}
                 />

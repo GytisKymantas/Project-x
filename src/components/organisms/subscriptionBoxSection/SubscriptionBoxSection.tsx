@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, SubscriptionBoxContainer, SectionHeader } from "components";
-//TODO:fix
+
 export const SubscriptionBoxSection: React.FC = () => (
-  <Box pt="6.25rem" width={{ _: "92%", ltbalet: "100%" }}>
+  <Box pt="s100" width={{ _: "92%", ltablet: "100%" }}>
     <SectionHeader
       type="h5"
       center

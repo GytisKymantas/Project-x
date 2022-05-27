@@ -16,12 +16,6 @@ export const BMI: React.FC = () => {
     userData.weight,
     heightInches
   );
-
-  //TODO: fix the bug
-  console.log(BMIrounded, "bmi rounded");
-  console.log(heightInches, "this is imp bmi");
-  console.log(imperialBMIrounded, "BMI imperial");
-
   return (
     <Box
       bg="white"

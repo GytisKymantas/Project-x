@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { IStepState } from "state/types";
+import { createSlice } from "@reduxjs/toolkit";
 import { IUserDataSlice } from "state/types";
 
 export const initialState: IUserDataSlice = {

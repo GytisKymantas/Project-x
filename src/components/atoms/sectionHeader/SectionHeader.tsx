@@ -16,7 +16,6 @@ interface SectionHeaderProps {
     | "span";
   center?: boolean;
 }
-//TODO: fix type ^
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   header,
   paragraph,

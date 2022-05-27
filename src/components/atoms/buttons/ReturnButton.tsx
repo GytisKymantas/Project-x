@@ -6,7 +6,6 @@ interface ReturnButtonProps {
   onClick?: () => void;
   width?: string;
 }
-//TODO:check if width is viable?
 export const ReturnButton: React.FC<ReturnButtonProps> = ({
   onClick,
   width,

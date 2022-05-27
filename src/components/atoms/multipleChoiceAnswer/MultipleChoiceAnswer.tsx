@@ -22,11 +22,9 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (selectedAnswer.includes("None")) {
-      setSelectedAnswer(["none"]);
-    }
-  }, [selectedAnswer]);
+  if (selectedAnswer.includes("None")) {
+    setSelectedAnswer(["none"]);
+  }
 
   const handleSelectAnswer = (answer: string[]) => {
     if (selectedAnswer.includes(answer)) {

@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { Styles } from "./Box";
 import { Theme } from "styles/theme";
 import { flexbox } from "styled-system";
-import { Box } from "./Box";
+import { Box } from "components";
 
 interface FlexWrapperProps {
   justifyContent?: string;
@@ -10,7 +10,6 @@ interface FlexWrapperProps {
   alignItems?: string;
   flexWrap?: string;
 }
-//TODO:FIX above
 export const FlexWrapper = styled(Box)<FlexWrapperProps>`
   display: flex;
   flex-wrap: ${({ flexWrap }) => flexWrap || ""};

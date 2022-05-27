@@ -17,7 +17,7 @@ export const QuizHeader: React.FC<QuizHeaderProps> = ({ page, answers }) => (
     </FlexWrapper>
     <Box mt={page === 2 || page === 5 || page === 6 ? "s20" : "s100"}>
       <Typography color="primary" type="h4" textAlign="center">
-        {answers[page]?.question.title}{" "}
+        {answers[page]?.question?.title}{" "}
       </Typography>
     </Box>
   </>

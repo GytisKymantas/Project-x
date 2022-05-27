@@ -16,7 +16,6 @@ export const QuizQuestionsSection: React.FC = () => {
   const page = useSelector(selectPage);
   const ANSWERS_ARRAY = useSelector(selectQuizData);
   const status = useSelector(selectSetStatus);
-  console.log(status, "this is status");
 
   useEffect(() => {
     dispatch(fetchUsersAction());

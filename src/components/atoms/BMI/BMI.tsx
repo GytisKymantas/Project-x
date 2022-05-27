@@ -65,16 +65,18 @@ export const BMI: React.FC = () => {
               : "flex-end"
           }
         >
-          {BMIrounded !== Infinity && BMIrounded < 24.9 && (
+          {BMIrounded !== Infinity && BMIrounded > 19 && BMIrounded < 24.9 && (
             <Typography type="h5" color="primary">
               BMI: {BMIrounded}%
             </Typography>
           )}
-          {imperialBMIrounded !== Infinity && imperialBMIrounded < 24.9 && (
-            <Typography type="h5" color="primary">
-              BMI: {imperialBMIrounded}%
-            </Typography>
-          )}
+          {imperialBMIrounded !== Infinity &&
+            imperialBMIrounded > 19 &&
+            imperialBMIrounded < 24.9 && (
+              <Typography type="h5" color="primary">
+                BMI: {imperialBMIrounded}%
+              </Typography>
+            )}
           <Typography type="h5" color="primary">
             Normal
           </Typography>

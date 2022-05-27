@@ -6,7 +6,6 @@ import { Scale, BackwardArrow } from "assets/images";
 import styled from "styled-components/macro";
 import { SCALE_BULLETS, SCALE_ARRAY } from "constants/Constants";
 import { nameOfTwoMonths, nameOfCurrentMonth } from "utils/metrics";
-// import { userData, weight, desiredWeight } from "utils/metrics";
 export const ScaleResult: React.FC = () => {
   const userData = useSelector(selectUserData);
   const weight = userData.weight;

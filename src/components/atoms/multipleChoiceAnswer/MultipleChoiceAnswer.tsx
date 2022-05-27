@@ -11,7 +11,7 @@ import { pageNext } from "state/slices/pageSlice";
 import { selectMultipleChoice } from "state/selectors";
 
 interface MultipleChoiceAnswerProps {
-  answers: string[];
+  answers: any;
   page: number;
 }
 
@@ -20,7 +20,6 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   page,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
-  const multipleAnswers = useSelector(selectMultipleChoice);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -61,7 +60,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
 
   return (
     <FlexWrapper flexWrap="wrap" justifyContent="center">
-      {answers[page].question.answers.map((answer, i) => (
+      {answers[page].question.answers.map((answer: string[], i: number) => (
         <Box position="relative" key={i}>
           <QuizAnswer
             key={i}
@@ -74,7 +73,6 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
           >
             {answer}
           </QuizAnswer>
-
           {selectedAnswer.includes(answer) && (
             <Box position="absolute" top="35%" left="5%">
               <Check />
@@ -89,7 +87,6 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
           </QuizAnswer>
         </Box>
       )}
-
       {selectedAnswer.length >= 1 && (
         <Box mt="s20">
           <QuizAnswer onClick={handleNextStep}>Submit</QuizAnswer>{" "}

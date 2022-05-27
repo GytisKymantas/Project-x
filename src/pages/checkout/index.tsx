@@ -5,12 +5,10 @@ import {
   HealthInformationSection,
   MeasurementsInfoContainer,
   SubscriptionBoxSection,
-  // ScaleSection,
+  ScaleSection,
+  BMI,
   CheckoutHero,
 } from "components";
-import { BMI } from "components/atoms/BMI/BMI";
-//TODO:
-import ScaleSection from "components/organisms/scaleSection/ScaleSection";
 
 const Checkout: React.FC = () => (
   <>

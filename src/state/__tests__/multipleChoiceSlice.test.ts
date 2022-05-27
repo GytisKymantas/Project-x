@@ -10,7 +10,7 @@ describe("Multiple choice answer reducer", () => {
     const value = ["value1", "value2"];
     expect(
       MultipleChoiceSlice.reducer(initialState, setMultipleChoice({ value }))
-    ).toEqual({ ...initialState, multiple_choice: { value } });
+    ).toEqual({[ ...initialState, multiple_choice: { value } }]);
   });
 
   it("should return initial state", () => {
@@ -28,7 +28,7 @@ describe("Multiple choice Goals answer reducer", () => {
         initialState,
         setMultipleChoiceGoals({ value })
       )
-    ).toEqual({ ...initialState, multiple_choiceGoals: { value } });
+    ).toEqual([{ ...initialState, multiple_choiceGoals: { value } }]);
   });
 
   it("should return initial state", () => {

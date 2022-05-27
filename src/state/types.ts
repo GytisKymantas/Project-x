@@ -2,6 +2,7 @@ import { rootReducer } from "./store";
 
 export interface IQuizData {
   quizData: string[];
+  status: string;
 }
 export interface IQuestionQuizData {
   question: string[];

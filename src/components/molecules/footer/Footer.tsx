@@ -2,6 +2,7 @@ import React from "react";
 import { FlexWrapper, Box, Typography } from "components";
 import { mobile } from "styles/breakpoints";
 import { SOCIALS_ARRAY } from "constants/Constants";
+import styled from "styled-components/macro";
 
 export const Footer: React.FC = () => (
   <Box id="Check" as="footer" borderTop="scale" mt="s80">
@@ -32,7 +33,7 @@ export const Footer: React.FC = () => (
           pb={{ _: "s20", ltablet: "s0" }}
         >
           {SOCIALS_ARRAY.map(({ image, id }) => (
-            <Box key={id}>{image}</Box>
+            <SocialWrapper key={id}>{image}</SocialWrapper>
           ))}
         </FlexWrapper>
       </FlexWrapper>
@@ -51,3 +52,7 @@ export const Footer: React.FC = () => (
     </FlexWrapper>
   </Box>
 );
+
+const SocialWrapper = styled(Box)`
+  cursor: pointer;
+`;

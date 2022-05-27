@@ -19,7 +19,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   occupation,
   index,
 }) => (
-  <FlexWrapper flexDirection="column" gap="1.875rem">
+  <FlexWrapper
+    flexDirection="column"
+    gap="1.875rem"
+    p="s30"
+    boxShadow="default"
+  >
     <SectionHeader center type="h4" header={header} paragraph={paragraph} />
     <Box mb="s25">
       <FlexWrapper>

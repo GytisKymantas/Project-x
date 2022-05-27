@@ -10,6 +10,7 @@ export function* fetchUsersSaga() {
   try {
     const { data }: AxiosResponse = yield axios.get(url);
     yield put(setUsers(data));
+    yield put(setUsers("false"));
   } catch (err) {
     yield console.log(err);
   }

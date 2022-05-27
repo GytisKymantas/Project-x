@@ -3,6 +3,7 @@ import { IQuizData } from "state/types";
 
 export const initialState: IQuizData = {
   quizData: [],
+  status: "okay",
 };
 
 export const QuizDataSlice = createSlice({
@@ -12,8 +13,11 @@ export const QuizDataSlice = createSlice({
     setUsers: (state, actions) => {
       state.quizData = actions.payload;
     },
+    setStatus: (state, actions) => {
+      state.status = actions.payload;
+    },
   },
 });
 
-export const { setUsers } = QuizDataSlice.actions;
+export const { setStatus, setUsers } = QuizDataSlice.actions;
 export default QuizDataSlice;

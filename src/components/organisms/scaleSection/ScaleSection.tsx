@@ -11,7 +11,7 @@ import {
 } from "components";
 import { FlexWrapper } from "components/atoms/wrappers/FlexWrapper";
 
-const ScaleSection: React.FC = () => (
+export const ScaleSection: React.FC = () => (
   <SectionWrapper>
     <Container mb={{ _: "s20", ltablet: "s50" }}>
       <Typography fontWeight="fw700" color="primary" textAlign="center">
@@ -35,5 +35,3 @@ const ScaleSection: React.FC = () => (
     </FlexWrapper>
   </SectionWrapper>
 );
-
-export default ScaleSection;

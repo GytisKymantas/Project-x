@@ -11,3 +11,4 @@ export const selectQuizData = (state: AppState) => state.quizData.quizData;
 export const selectPurchaseData = (state: AppState) =>
   state.purchaseData.purchase_data;
 export const selectUserData = (state: AppState) => state.userData.user_data;
+export const selectSetStatus = (state: AppState) => state.quizData.status;

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Box,
   FlexWrapper,
@@ -5,16 +6,13 @@ import {
   BaseButton,
   QuizStartButton,
   Typography,
+  GenderButtons,
 } from "components";
 import { theme } from "styles/theme";
-import React, { useState } from "react";
 import styled from "styled-components/macro";
 import scrollTo from "gatsby-plugin-smoothscroll";
-import { navigate } from "gatsby";
 import { NAVIGATION_LINKS } from "constants/Constants";
 import { Mobnav, MobCross } from "assets/images";
-import { GenderButtons } from "components/atoms/buttons/GenderButtons";
-import { SectionHeader } from "components/atoms/sectionHeader/SectionHeader";
 
 interface NavigationProps {
   checkoutPage?: boolean;
@@ -33,6 +31,15 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
     }
   };
 
+  // if (window.innerWidth === 760) {
+  //   setMobileView(false);
+  // }
+  // useEffect(() => {
+  //   if (tablet) {
+  //     setMobileView(true);
+  //   }
+  // }, [mobileView]);
+
   window.addEventListener("scroll", handleScrollY);
 
   return (
@@ -41,6 +48,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
       width="100%"
       backgroundColor="white"
       position={fix ? "fixed" : "initial"}
+      boxShadow="default"
       zIndex={11}
     >
       {mobileView && (
@@ -98,7 +106,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
           </BaseButton>
         )}
         {!checkoutPage && (
-          <Box>
+          <Box zIndex={30}>
             {mobileView ? (
               <MobileWrapper
                 onClick={() => setMobileView(false)}
@@ -137,6 +145,10 @@ const MobileCover = styled(FlexWrapper)`
   position: fixed;
   width: 100%;
   z-index: ${theme.zIndices.loader};
+
+  @media (width: 1068px) {
+    display: none !important;
+  }
 `;
 const MobileWrapper = styled(Box)`
   cursor: pointer;

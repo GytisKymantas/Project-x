@@ -11,11 +11,11 @@ import {
 } from "state/slices/quizAnswersSlice";
 
 interface SingleAnswerTestProps {
-  answers: IQuestionQuizData;
+  answers: any;
   page: number;
 }
 
-export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
+export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
   answers,
   page,
 }) => {
@@ -38,7 +38,7 @@ export const SingleAnswer: React.FC<SingleAnswerTestProps> = ({
 
   return (
     <Box>
-      {answers[page].question.answers.map((answers: string[], i: number) => (
+      {answers[page]?.question.answers.map((answers: string[], i: number) => (
         <Box key={i}>
           <QuizAnswer onClick={() => handlePage(answers)}>{answers}</QuizAnswer>
         </Box>

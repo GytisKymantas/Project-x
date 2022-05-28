@@ -20,7 +20,7 @@ const success: React.FC = () => {
     <>
       <Navigation />
       <SectionWrapper>
-        <Box bg="taxi">
+        <Box>
           <SectionHeader
             type="h2"
             header="Thank You for Purchasing !"

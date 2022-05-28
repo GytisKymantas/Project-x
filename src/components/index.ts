@@ -16,8 +16,8 @@ export * from "./atoms/typography/Typography";
 export * from "./Image";
 //input form
 export * from "./organisms/inputForm/InputFormContainer";
-export * from "./organisms/inputForm/InputFormData";
-export * from "./organisms/inputForm/MetricWrapper";
+export * from "./atoms/inputFormData/InputFormData";
+export * from "./atoms/wrappers/MetricWrapper";
 //testimonials
 export * from "./molecules/reviewContainer/ReviewContainer";
 export * from "./atoms/reviewCard/ReviewCard";

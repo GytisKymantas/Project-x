@@ -1,7 +1,6 @@
 import React from "react";
 import { FlexWrapper, Box, Typography, Image, SectionHeader } from "components";
 import { Star } from "assets/images";
-import { theme } from "styles/theme";
 import { RATING_STAR_ARRAY, BULLET_ARRAY } from "constants/Constants";
 
 interface ReviewCardProps {
@@ -11,7 +10,7 @@ interface ReviewCardProps {
   occupation: string;
   index: number;
 }
-
+//TODO. map array
 export const ReviewCard: React.FC<ReviewCardProps> = ({
   header,
   paragraph,
@@ -43,18 +42,23 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
         </Typography>
       </FlexWrapper>
       {index === 0 && (
-        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-          <Image height="55px" width="55px" borderRadius="br50" src="amber" />
+        <Box>
+          <Image height="55px" width="55px" borderRadius="50%" src="jdepp" />
         </Box>
       )}
       {index === 1 && (
-        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-          <Image height="55px" width="55px" borderRadius="br50" src="jdepp" />
+        <Box>
+          <Image height="55px" width="55px" borderRadius="50%" src="amber" />
         </Box>
       )}
       {index === 2 && (
-        <Box borderRadius="br50" height="3.125rem" width="3.125rem">
-          <Image borderRadius="br50" src="jdepp" />
+        <Box>
+          <Image
+            borderRadius="50%"
+            height="4.125rem"
+            width="4.125rem"
+            src="willsmith"
+          />
         </Box>
       )}
     </FlexWrapper>

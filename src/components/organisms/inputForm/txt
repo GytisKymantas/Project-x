@@ -1,0 +1,100 @@
+  const bam = [
+    {
+      value: age,
+      setStateValue: setAge,
+      placeholder: "age",
+      minValue: 18,
+      imperial: false,
+      maxValure: 100,
+      measurement: "years",
+      metricGroup:true,
+      imperialGroup:true,
+    },
+    {
+      value: feet,
+      imperialValue: inches,
+      setStateValue: setAge,
+      imperialSetStateValue: setInches,
+      placeholder: "feet",
+      imperialPlaceholder: "inches",
+      imperial: true,
+      minValue: 4,
+      maxValue: 11,
+      imperialMinValue: 0,
+      imperialMaxValue: 11,
+      measurement: "ft",
+      imperialMeasurement: "in",
+        imperialGroup:true,
+    },
+    {
+      value: height,
+      setStateValue: setHeight,
+      placeholder: "Height",
+      minValue: 100,
+      imperial: false,
+      maxValure: 250,
+      measurement: "cm",
+       metricGroup:true,
+    },
+    {
+      value: weight,
+      setStateValue: setWeight,
+      placeholder: "Weight",
+      minValue: 100,
+      imperial: false,
+      maxValure: 350,
+      measurement: "lb",
+       metricGroup:true,
+       imperialGroup:true,
+    },
+    {
+      value: desiredWeight,
+      setStateValue: setAge,
+      placeholder: "Desired Weight",
+      imperial: false,
+      minValue: 100,
+      maxValure: 300,
+      measurement: "lb",
+    metricGroup:true,
+       imperialGroup:true,
+    },
+  ];
+
+   {bam.map(
+                ({
+                  setStateValue,
+                  value,
+                  placeholder,
+                  minValue,
+                  maxValue,
+                  measurement,
+                  imperialMeasurement,
+                  imperialSetStateValue,
+                  imperial,
+                  imperialValue,
+                  imperialPlaceholder,
+                  imperialMinValue,
+                  imperialMaxValue,
+                  imperialGroup,
+                  metricGroup,
+                }) => (
+                  <InputFormData
+                    imperialPlaceholder={imperialPlaceholder}
+                    imperialMaxValue={imperialMaxValue}
+                    imperialMinValue={imperialMinValue}
+                    imperialValue={imperialValue}
+                    imperialSetStateValue={imperialSetStateValue}
+                    imperialMeasurement={imperialMeasurement}
+                    measurement={measurement}
+                    imperial={imperial}
+                    minValue={minValue}
+                    maxValue={maxValue}
+                    setStateValue={setStateValue}
+                    value={value}
+                    placeholder={placeholder}
+                    imperialGroup={imperialGroup}
+                    metricGroup={metricGroup}
+
+                  />
+                )
+              )}

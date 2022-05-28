@@ -18,7 +18,7 @@ export const ReviewContainer: React.FC = () => {
   useEffect(() => {
     const timeout = setTimeout(
       () => setIndex(index === 2 ? index - 2 : index + 1),
-      45000
+      3000
     );
 
     return () => clearTimeout(timeout);

@@ -29,11 +29,11 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
           <MeasurementWrapper
             pb="s10"
             borderBottom={Imperial ? "orangedefault" : "transparent"}
+            onClick={handleImperial}
           >
             <Typography
               fontWeight="fw700"
               color={Imperial ? "orange" : "primary"}
-              onClick={handleImperial}
             >
               Imperial
             </Typography>
@@ -41,11 +41,11 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
           <MeasurementWrapper
             pb="s10"
             borderBottom={!Imperial ? "orangedefault" : "transparent"}
+            onClick={handleMetric}
           >
             <Typography
               fontWeight="fw700"
               color={Imperial ? "primary" : "orange"}
-              onClick={handleMetric}
             >
               Metric
             </Typography>

@@ -25,17 +25,17 @@ export const QuizQuestionsSection: React.FC = () => {
   const Questions = () => {
     switch (page) {
       case 0:
-        return <SingleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <SingleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 1:
-        return <SingleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <SingleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 2:
-        return <MultipleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <MultipleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 3:
-        return <SingleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <SingleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 4:
-        return <SingleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <SingleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 5:
-        return <MultipleChoiceAnswer answers={ANSWERS_ARRAY} page={page} />;
+        return <MultipleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 6:
         return <InputFormContainer />;
     }

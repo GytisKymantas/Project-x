@@ -19,8 +19,9 @@ export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
   quizAnswers,
   page,
 }) => {
+  console.log(page);
   const dispatch = useDispatch();
-  const test = quizAnswers[page]?.question.answers;
+  const test = quizAnswers[page]?.question?.answers;
   const handlePage = (answers: Array<string>) => {
     switch (page) {
       case 0:

@@ -12,7 +12,7 @@ import {
 
 const Checkout: React.FC = () => (
   <>
-    <Navigation checkoutPage />
+    <Navigation defaultPage />
     <CheckoutHero />
     <MeasurementsInfoContainer />
     <BMI />

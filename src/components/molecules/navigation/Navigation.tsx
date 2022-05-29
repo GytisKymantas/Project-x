@@ -15,10 +15,20 @@ import { NAVIGATION_LINKS } from "constants/Constants";
 import { Mobnav, MobCross } from "assets/images";
 
 interface NavigationProps {
-  checkoutPage?: boolean;
+  defaultPage?: boolean;
+  successPage?: boolean;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
+//TODO: fix weight values,
+// TODO: fix FAQ cursor
+//TODO: fix About page
+// TODO fix navigation display on success has to be unique
+//TODO fix success page to be more pleasant,
+
+export const Navigation: React.FC<NavigationProps> = ({
+  defaultPage,
+  successPage,
+}) => {
   const [fix, setFix] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -70,7 +80,7 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
         height="100%"
       >
         <HomeLink />
-        {checkoutPage ? (
+        {defaultPage ? (
           ""
         ) : (
           <FlexWrapper
@@ -85,8 +95,8 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
             ))}
           </FlexWrapper>
         )}
-        {checkoutPage ? (
-          <Box>
+        {defaultPage ? (
+          <Box display={successPage ? "none" : "block"}>
             <QuizStartButton>Check Product</QuizStartButton>
           </Box>
         ) : (
@@ -94,7 +104,8 @@ export const Navigation: React.FC<NavigationProps> = ({ checkoutPage }) => {
             Start Quiz
           </BaseButton>
         )}
-        {!checkoutPage && (
+
+        {!defaultPage && (
           <Box zIndex="master">
             {mobileView ? (
               <MobileWrapper

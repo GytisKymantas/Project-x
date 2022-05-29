@@ -11,12 +11,12 @@ import { theme } from "styles/theme";
 import { pageNext } from "state/slices/pageSlice";
 
 interface MultipleChoiceAnswerProps {
-  answers: any;
+  quizAnswers: any; // from types big one
   page: number;
 }
 
 export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
-  answers,
+  quizAnswers,
   page,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
@@ -26,7 +26,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
     setSelectedAnswer(["none"]);
   }
 
-  const handleSelectAnswer = (answer: string[]) => {
+  const handleAnswer = (answer: string[]) => {
     if (selectedAnswer.includes(answer)) {
       setSelectedAnswer(
         selectedAnswer.filter((item: string[]) => item !== answer)
@@ -39,7 +39,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
     }
   };
 
-  const handleNextStep = () => {
+  const handleNextPage = () => {
     switch (page) {
       case 2:
         return (
@@ -56,57 +56,59 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
 
   return (
     <FlexWrapper flexWrap="wrap" justifyContent="center">
-      {answers[page].question.answers.map((answer: string[], i: number) => (
-        <Box position="relative" key={i}>
-          {selectedAnswer.includes("none") ? (
-            <Box>
+      {quizAnswers[page]?.question?.answers.map(
+        (answer: string[], i: number) => (
+          <Box position="relative" key={i}>
+            {selectedAnswer.includes("none") ? (
+              <Box>
+                <QuizAnswer
+                  key={i}
+                  onClick={() => handleAnswer(answer)}
+                  border={
+                    selectedAnswer.includes("none") && i === 9
+                      ? `${theme.borders.answer}`
+                      : `${theme.borders.transparent}`
+                  }
+                >
+                  {answer}
+                </QuizAnswer>
+                {selectedAnswer.includes("none") && i === 9 && (
+                  <Box position="absolute" top="35%" left="5%">
+                    <Check />
+                  </Box>
+                )}
+              </Box>
+            ) : (
               <QuizAnswer
                 key={i}
-                onClick={() => handleSelectAnswer(answer)}
+                onClick={() => handleAnswer(answer)}
                 border={
-                  selectedAnswer.includes("none") && i === 9
+                  selectedAnswer.includes(answer)
                     ? `${theme.borders.answer}`
                     : `${theme.borders.transparent}`
                 }
               >
                 {answer}
               </QuizAnswer>
-              {selectedAnswer.includes("none") && i === 9 && (
-                <Box position="absolute" top="35%" left="5%">
-                  <Check />
-                </Box>
-              )}
-            </Box>
-          ) : (
-            <QuizAnswer
-              key={i}
-              onClick={() => handleSelectAnswer(answer)}
-              border={
-                selectedAnswer.includes(answer)
-                  ? `${theme.borders.answer}`
-                  : `${theme.borders.transparent}`
-              }
-            >
-              {answer}
-            </QuizAnswer>
-          )}
-          {selectedAnswer.includes(answer) && (
-            <Box position="absolute" top="35%" left="5%">
-              <Check />
-            </Box>
-          )}
-        </Box>
-      ))}
+            )}
+            {selectedAnswer.includes(answer) && (
+              <Box position="absolute" top="35%" left="5%">
+                <Check />
+              </Box>
+            )}
+          </Box>
+        )
+      )}
       {selectedAnswer.length < 1 && (
         <Box mt={mobile ? "s20" : "s0"}>
-          <QuizAnswer onClick={handleNextStep} disabled isSubmit>
+          <QuizAnswer onClick={handleNextPage} disabled isSubmit>
             Submit
           </QuizAnswer>
         </Box>
       )}
       {selectedAnswer.length >= 1 && (
         <Box mt={mobile ? "s20" : "s0"}>
-          <QuizAnswer isSubmit onClick={handleNextStep}>
+          <QuizAnswer isSubmit onClick={handleNextPage}>
             Submit
           </QuizAnswer>{" "}
         </Box>

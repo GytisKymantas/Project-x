@@ -27,7 +27,7 @@ export * from "./molecules/FAQuestionsCardContainer/QuestionsCardContainer";
 //partners
 export * from "./molecules/partners/Partners";
 //checkout
-export * from "./molecules/FAQuestionsCardContainer/CheckOut";
+export * from "./atoms/checkOut/CheckOut";
 //footer
 export * from "./molecules/footer/Footer";
 //navigation
@@ -73,3 +73,5 @@ export * from "./atoms/sectionHeader/SectionHeader";
 export * from "./atoms/BMI/BMI";
 //measuremnt info
 export * from "./atoms/measurementsCard/MeasurementCard";
+//Order summary container
+export * from "./molecules/orderSummaryContainer/OrderSummaryContainer";

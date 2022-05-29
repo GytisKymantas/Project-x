@@ -8,6 +8,7 @@ import {
   Partners,
   Footer,
 } from "components";
+import { CheckOutContainer } from "components/atoms/checkOut/CheckOutContainer";
 
 const Landing: React.FC = () => (
   <>
@@ -17,6 +18,7 @@ const Landing: React.FC = () => (
     <ReviewContainer />
     <Partners />
     <About />
+    <CheckOutContainer />
     <Footer />
   </>
 );

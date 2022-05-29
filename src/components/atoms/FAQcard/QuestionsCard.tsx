@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import { Container, ContentWrapper, Typography, FlexWrapper } from "components";
+import {
+  Container,
+  ContentWrapper,
+  Typography,
+  FlexWrapper,
+  Box,
+} from "components";
 import { Cross, Minus } from "assets/images";
+import styled from "styled-components/macro";
 
 interface QuestionsCardProps {
   question: string;
@@ -14,7 +21,7 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
   const [display, setDisplay] = useState<boolean>(false);
 
   return (
-    <Container
+    <ImageHolder
       width="100%"
       bg="dirtywhite"
       onClick={() => setDisplay(!display)}
@@ -31,6 +38,10 @@ export const QuestionsCard: React.FC<QuestionsCardProps> = ({
           {display && <Typography color="primary">{answer}</Typography>}
         </FlexWrapper>
       </ContentWrapper>
-    </Container>
+    </ImageHolder>
   );
 };
+
+const ImageHolder = styled(Box)`
+  cursor: pointer;
+`;

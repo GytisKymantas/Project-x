@@ -1,11 +1,12 @@
-import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import React, { useState } from "react";
+import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import { useSelector, useDispatch } from "react-redux";
 import { selectPurchaseData } from "state/selectors";
 import { navigate } from "gatsby";
 import { theme } from "styles/theme";
 import { FlexWrapper, SubscriptionBox, Box, QuizAnswer } from "components";
 import { setPurchaseData } from "state/slices/purchaseDataSlice";
+import styled from "styled-components/macro";
 
 export const SubscriptionBoxContainer: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,9 +15,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
     month: "",
     newValue: null as unknown as string,
   });
-  console.log(selectedUser, "local state");
   const purchaseData = useSelector(selectPurchaseData);
-  console.log(purchaseData, "this is purchase");
 
   const handleSubscription = () => {
     dispatch(setPurchaseData(selectedUser));
@@ -32,7 +31,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
     >
       {SUBSCRIPTION_DETAILS.map(
         ({ discount, month, monthlyValue, oldValue, id, newValue, billed }) => (
-          <Box
+          <Subscription
             borderRadius="br14"
             key={id}
             width="22.5rem"
@@ -55,7 +54,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
               newValue={newValue}
               billed={billed}
             />
-          </Box>
+          </Subscription>
         )
       )}
       {selectedUser.id ? (
@@ -70,3 +69,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
     </FlexWrapper>
   );
 };
+
+const Subscription = styled(Box)`
+  cursor: pointer;
+`;

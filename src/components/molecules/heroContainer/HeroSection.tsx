@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => (
         <Container>
           <Box>
             <StaticImage
-              src="src/assets/images/dbgirl.png"
+              src="src/assets/images/skipper.png"
               alt="healthfitness"
               placeholder="tracedSVG"
               draggable="false"
@@ -27,8 +27,8 @@ export const HeroSection: React.FC = () => (
           <FlexWrapper flexDirection="column" maxWidth="26.125rem">
             <SectionHeader
               type="h1"
-              header="Always get adieus nature day course for common."
-              paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
+              header="Reach your Fitness goals today!"
+              paragraph="Take a few minute to go through our quick quiz to determine which personal Fitness plan for You!."
             />
             <GenderButtons />
           </FlexWrapper>

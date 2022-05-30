@@ -45,9 +45,7 @@ export const ScaleResult: React.FC = () => {
                 {nameOfTwoMonths}
               </Typography>
               <Typography color="primary">
-                {userData.height
-                  ? `${weight - (weight * 15) / 100}kg`
-                  : `${weight - (weight * 15) / 100}lb`}
+                {userData.height ? `${desiredWeight}kg` : `${desiredWeight}lb`}
               </Typography>
             </FlexWrapper>
           </FlexWrapper>
@@ -63,12 +61,8 @@ export const ScaleResult: React.FC = () => {
               >
                 <Typography color="primary">
                   {userData.height
-                    ? `${Math.round(
-                        desiredWeight - (weight - (weight * coeficient) / 100)
-                      )}kg`
-                    : `${Math.round(
-                        desiredWeight - (weight - (weight * coeficient) / 100)
-                      )}lb`}
+                    ? `${(desiredWeight - weight) / 4}kg`
+                    : `${(desiredWeight - weight) / 4}lb`}
                 </Typography>
               </FlexWrapper>
               <Box

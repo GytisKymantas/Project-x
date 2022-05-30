@@ -8,10 +8,11 @@ import {
 } from "state/slices/multipleChoiceSlice";
 import { useDispatch } from "react-redux";
 import { theme } from "styles/theme";
+import { IQuizData } from "state/types";
 import { pageNext } from "state/slices/pageSlice";
 
 interface MultipleChoiceAnswerProps {
-  quizAnswers: any; // from types big one
+  quizAnswers: IQuizData[];
   page: number;
 }
 
@@ -20,6 +21,8 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   page,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<any>([]);
+  const answers = quizAnswers[page]?.question?.answers;
+
   const dispatch = useDispatch();
 
   if (selectedAnswer.includes("None")) {
@@ -55,50 +58,48 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   };
 
   return (
-    <FlexWrapper flexWrap="wrap" justifyContent="center">
-      {quizAnswers[page]?.question?.answers.map(
-        (answer: string[], i: number) => (
-          <Box position="relative" key={i}>
-            {selectedAnswer.includes("none") ? (
-              <Box>
-                <QuizAnswer
-                  key={i}
-                  onClick={() => handleAnswer(answer)}
-                  border={
-                    selectedAnswer.includes("none") && i === 9
-                      ? `${theme.borders.answer}`
-                      : `${theme.borders.transparent}`
-                  }
-                >
-                  {answer}
-                </QuizAnswer>
-                {selectedAnswer.includes("none") && i === 9 && (
-                  <Box position="absolute" top="35%" left="5%">
-                    <Check />
-                  </Box>
-                )}
-              </Box>
-            ) : (
+    <FlexWrapper flexWrap="wrap" justifyContent="center" maxWidth="66.25rem">
+      {answers?.map((answer, i) => (
+        <Box position="relative" key={i}>
+          {selectedAnswer.includes("none") ? (
+            <Box>
               <QuizAnswer
                 key={i}
-                onClick={() => handleAnswer(answer)}
+                onClick={() => handleAnswer(answer as unknown as string[])}
                 border={
-                  selectedAnswer.includes(answer)
+                  selectedAnswer.includes("none") && i === 9
                     ? `${theme.borders.answer}`
                     : `${theme.borders.transparent}`
                 }
               >
-                {answer}
+                {answer as unknown as React.ReactNode}
               </QuizAnswer>
-            )}
-            {selectedAnswer.includes(answer) && (
-              <Box position="absolute" top="35%" left="5%">
-                <Check />
-              </Box>
-            )}
-          </Box>
-        )
-      )}
+              {selectedAnswer.includes("none") && i === 9 && (
+                <Box position="absolute" top="28%" left="5%">
+                  <Check />
+                </Box>
+              )}
+            </Box>
+          ) : (
+            <QuizAnswer
+              key={i}
+              onClick={() => handleAnswer(answer as unknown as string[])}
+              border={
+                selectedAnswer.includes(answer)
+                  ? `${theme.borders.answer}`
+                  : `${theme.borders.transparent}`
+              }
+            >
+              {answer as unknown as React.ReactNode}
+            </QuizAnswer>
+          )}
+          {selectedAnswer.includes(answer) && (
+            <Box position="absolute" top="35%" left="5%">
+              <Check />
+            </Box>
+          )}
+        </Box>
+      ))}
       {selectedAnswer.length < 1 && (
         <Box mt={mobile ? "s20" : "s0"}>
           <QuizAnswer onClick={handleNextPage} disabled isSubmit>

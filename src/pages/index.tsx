@@ -9,7 +9,6 @@ import {
   Footer,
 } from "components";
 import { CheckOutContainer } from "components/atoms/checkOut/CheckOutContainer";
-
 const Landing: React.FC = () => (
   <>
     <Navigation />

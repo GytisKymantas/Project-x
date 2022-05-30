@@ -28,6 +28,25 @@ export const NAVIGATION_LINKS = [
   },
 ];
 
+export const CHECKOUT_LINKS = [
+  {
+    title: "Summary",
+    id: "1",
+  },
+  {
+    title: "Weight",
+    id: "2",
+  },
+  {
+    title: "Health",
+    id: "3",
+  },
+  {
+    title: "Plans",
+    id: "4",
+  },
+];
+
 export const FAQ_DETAILS = [
   {
     id: "1412",
@@ -87,28 +106,40 @@ export const REVIEW_CARD_ARRAY = [
 
 export const REVIEW_DATA = [
   {
-    id: "2452",
-    header: "Great service!",
+    id: 0,
+    header: "Very Informative!",
+    imageSrc: "jdepp",
     name: "Johnny Depp",
     paragraph:
-      "“Are so beguiled and demoralized by the charms of pleasure. Six curiosity day assurance bed necessary.”",
+      "“This has helped me to stay in shape and to go through my divorce. Best Fitness e-book I have ever had !”",
     occupation: "Actor",
   },
   {
-    id: "2454",
-    header: "Amazing service!",
+    id: 1,
+    header: "Simple Amazing!",
+    imageSrc: "amber",
     name: "Amber Heard",
     paragraph:
-      "“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+      "“Helped me lose weight! And to get my role for Aquaman!. Best thing I have ever purchased!.”",
     occupation: "Actress",
   },
   {
-    id: "2455",
-    header: "The best service!",
-    name: "Will Smith",
+    id: 2,
+    header: "Outstanding!",
+    imageSrc: "joerogan2",
+    name: "Joe Rogan",
     paragraph:
-      "“Men who are so beguiled and demoralized by the charms of pleasure.Blessing welcomed ladyship she met humoured sir breeding her. Six curiosity day assurance bed necessary.”",
+      "“I start every day with this e-books workout routine, absolutely the BEST thing on the market.”",
     occupation: "Comedian",
+  },
+  {
+    id: 3,
+    header: "Ain't bad!",
+    imageSrc: "elon",
+    name: "Elon Musk",
+    paragraph:
+      "“Great way to get SpaceX Astronauts in shape. Highly recommended!.”",
+    occupation: "Innovator",
   },
 ];
 
@@ -195,6 +226,9 @@ export const BULLET_ARRAY = [
   {
     id: 2,
   },
+  {
+    id: 3,
+  },
 ];
 
 export const PARTNER_IMAGES = [
@@ -211,24 +245,24 @@ export const SCALE_BULLETS = [
     id: "1",
     top: "-9%",
     left: "13%",
-    coeficient: 12,
+    coeficient: 1, //12
   },
   {
     id: "2",
     top: "13%",
     left: "31%",
-    coeficient: 10,
+    coeficient: 1, //10
   },
   {
     id: "3",
     top: "26%",
     left: "52%",
-    coeficient: 8,
+    coeficient: 1, //8
   },
   {
     id: "4",
     top: "42%",
     left: "67%",
-    coeficient: 11.3,
+    coeficient: 1, //11.3
   },
 ];

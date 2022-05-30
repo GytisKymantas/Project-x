@@ -2,8 +2,8 @@ import React from "react";
 import { Box, QuizAnswer } from "components";
 import { useDispatch } from "react-redux";
 import { pageNext } from "state/slices/pageSlice";
-import { IQuizData, IQuestionQuizData } from "state/types";
-import { ANSWERS_ARRAY } from "constants/QuestionsArray";
+import { IQuizData } from "state/types";
+
 import {
   setIsAsthmatic,
   setIsWorkingOut,
@@ -12,17 +12,17 @@ import {
 } from "state/slices/quizAnswersSlice";
 
 interface SingleAnswerTestProps {
-  quizAnswers: any;
+  quizAnswers: IQuizData[];
   page: number;
 }
 export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
   quizAnswers,
   page,
 }) => {
-  console.log(page);
   const dispatch = useDispatch();
-  const test = quizAnswers[page]?.question?.answers;
-  const handlePage = (answers: Array<string>) => {
+  const answers = quizAnswers[page]?.question?.answers;
+
+  const handlePage = (answers: string[]) => {
     switch (page) {
       case 0:
         return dispatch(setIsWorkingOut(answers)), dispatch(pageNext());
@@ -39,9 +39,13 @@ export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
 
   return (
     <Box>
-      {test?.map((answers: string[], i: number) => (
+      {answers?.map((answers, i) => (
         <Box key={i}>
-          <QuizAnswer onClick={() => handlePage(answers)}>{answers}</QuizAnswer>
+          <QuizAnswer
+            onClick={() => handlePage(answers as unknown as string[])}
+          >
+            {answers as unknown as React.ReactNode}
+          </QuizAnswer>
         </Box>
       ))}
     </Box>

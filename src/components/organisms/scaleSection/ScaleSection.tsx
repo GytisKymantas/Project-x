@@ -25,7 +25,7 @@ export const ScaleSection: React.FC = () => (
       }}
       display={{ _: "block", ltablet: "flex" }}
       justifyContent="center"
-      p="s40"
+      p={{ _: "s0", ltablet: "s40" }}
     >
       <ScaleResult />
       <CaloricCounter />

@@ -43,6 +43,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <Box
+      as="header"
       height="10vh"
       width="100%"
       backgroundColor="white"
@@ -97,7 +98,9 @@ export const Navigation: React.FC<NavigationProps> = ({
         )}
         {defaultPage ? (
           <Box display={successPage ? "none" : "block"}>
-            <QuizStartButton>Check Product</QuizStartButton>
+            <BaseButton onClick={() => scrollTo(`#Plans`)}>
+              Check Product
+            </BaseButton>
           </Box>
         ) : (
           <BaseButton onClick={() => scrollTo(`#Check`)} width="8.5625rem">
@@ -106,24 +109,28 @@ export const Navigation: React.FC<NavigationProps> = ({
         )}
 
         {!defaultPage && (
-          <Box zIndex="master">
+          <>
             {mobileView ? (
-              <MobileWrapper
-                onClick={() => setMobileView(false)}
-                zIndex="overall"
-                display={{ _: "block", ltablet: "none" }}
-              >
-                <MobCross />
-              </MobileWrapper>
+              <Box zIndex="master">
+                <MobileWrapper
+                  onClick={() => setMobileView(false)}
+                  zIndex="overall"
+                  display={{ _: "block", ltablet: "none" }}
+                >
+                  <MobCross />
+                </MobileWrapper>
+              </Box>
             ) : (
-              <MobileWrapper
-                display={{ _: "block", ltablet: "none" }}
-                onClick={() => setMobileView(true)}
-              >
-                <Mobnav />
-              </MobileWrapper>
+              <Box zIndex="master" display={{ _: "block", ltablet: "none" }}>
+                <MobileWrapper
+                  display={{ _: "block", ltablet: "none" }}
+                  onClick={() => setMobileView(true)}
+                >
+                  <Mobnav />
+                </MobileWrapper>
+              </Box>
             )}
-          </Box>
+          </>
         )}
       </FlexWrapper>
     </Box>

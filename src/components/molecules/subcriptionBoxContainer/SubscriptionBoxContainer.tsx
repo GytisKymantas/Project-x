@@ -4,7 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectPurchaseData } from "state/selectors";
 import { navigate } from "gatsby";
 import { theme } from "styles/theme";
-import { FlexWrapper, SubscriptionBox, Box, QuizAnswer } from "components";
+import {
+  FlexWrapper,
+  SubscriptionBox,
+  Box,
+  QuizAnswer,
+  Image,
+} from "components";
 import { setPurchaseData } from "state/slices/purchaseDataSlice";
 import styled from "styled-components/macro";
 
@@ -26,6 +32,7 @@ export const SubscriptionBoxContainer: React.FC = () => {
     <FlexWrapper
       flexDirection="column"
       alignItems="center"
+      id="Plans"
       gap="0.9375rem"
       mt="s50"
     >
@@ -58,14 +65,13 @@ export const SubscriptionBoxContainer: React.FC = () => {
         )
       )}
       {selectedUser.id ? (
-        <QuizAnswer mt="s50" onClick={handleSubscription}>
-          Purchase
-        </QuizAnswer>
+        <QuizAnswer onClick={handleSubscription}>Purchase</QuizAnswer>
       ) : (
         <QuizAnswer disabled isSubmit onClick={handleSubscription}>
           Purchase
         </QuizAnswer>
       )}
+      <Image src="checkOut" />
     </FlexWrapper>
   );
 };

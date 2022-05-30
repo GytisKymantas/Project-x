@@ -13,6 +13,7 @@ export const OrderSummaryContainer: React.FC = () => (
   <SectionWrapper>
     <Box>
       <SectionHeader
+        center
         type="h2"
         header="Thank You for Purchasing !"
         paragraph="We hope you will enjoy your new journey!"

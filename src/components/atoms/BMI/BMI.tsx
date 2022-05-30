@@ -16,6 +16,11 @@ export const BMI: React.FC = () => {
     userData.weight,
     heightInches
   );
+
+  console.log(userData, "userdata rounded");
+  console.log(BMIrounded, "bmi rounded");
+  console.log(imperialBMIrounded, "bmi rounded");
+
   return (
     <Box
       bg="white"
@@ -27,19 +32,25 @@ export const BMI: React.FC = () => {
     >
       <FlexWrapper flexDirection="column" gap="1.25rem">
         <FlexWrapper
+          bg={
+            (BMIrounded !== Infinity && BMIrounded >= 25) ||
+            (imperialBMIrounded !== Infinity && imperialBMIrounded >= 25)
+              ? "orange"
+              : "transparent"
+          }
           justifyContent={
-            (BMIrounded !== Infinity && BMIrounded > 25.0) ||
-            (imperialBMIrounded !== Infinity && imperialBMIrounded > 25.0)
+            (BMIrounded !== Infinity && BMIrounded >= 25) ||
+            (imperialBMIrounded !== Infinity && imperialBMIrounded >= 25)
               ? "space-around"
               : "flex-end"
           }
         >
-          {BMIrounded !== Infinity && BMIrounded > 25.0 && (
+          {BMIrounded !== Infinity && BMIrounded >= 25 && (
             <Typography type="h5" color="primary">
               BMI: {BMIrounded}%
             </Typography>
           )}
-          {imperialBMIrounded !== Infinity && imperialBMIrounded > 25.0 && (
+          {imperialBMIrounded !== Infinity && imperialBMIrounded >= 25 && (
             <Typography type="h5" color="primary">
               BMI: {imperialBMIrounded}%
             </Typography>
@@ -50,6 +61,14 @@ export const BMI: React.FC = () => {
         </FlexWrapper>
 
         <FlexWrapper
+          bg={
+            (BMIrounded !== Infinity && BMIrounded > 19 && BMIrounded < 24.9) ||
+            (imperialBMIrounded !== Infinity &&
+              imperialBMIrounded > 19 &&
+              imperialBMIrounded < 24.9)
+              ? "orange"
+              : "transparent"
+          }
           justifyContent={
             (BMIrounded !== Infinity && BMIrounded > 19 && BMIrounded < 24.9) ||
             (imperialBMIrounded !== Infinity &&
@@ -76,19 +95,25 @@ export const BMI: React.FC = () => {
           </Typography>
         </FlexWrapper>
         <FlexWrapper
+          bg={
+            (BMIrounded !== Infinity && BMIrounded <= 19) ||
+            (imperialBMIrounded !== Infinity && imperialBMIrounded <= 19)
+              ? "orange"
+              : "transparent"
+          }
           justifyContent={
-            (BMIrounded !== Infinity && BMIrounded < 19) ||
-            (imperialBMIrounded !== Infinity && imperialBMIrounded < 19)
+            (BMIrounded !== Infinity && BMIrounded <= 19) ||
+            (imperialBMIrounded !== Infinity && imperialBMIrounded <= 19)
               ? "space-around"
               : "flex-end"
           }
         >
-          {BMIrounded !== Infinity && BMIrounded < 19 && (
+          {BMIrounded !== Infinity && BMIrounded <= 19 && (
             <Typography type="h5" color="primary">
               BMI: {BMIrounded}%
             </Typography>
           )}
-          {imperialBMIrounded !== Infinity && imperialBMIrounded < 19 && (
+          {imperialBMIrounded !== Infinity && imperialBMIrounded <= 19 && (
             <Typography type="h5" color="primary">
               BMI: {imperialBMIrounded}%
             </Typography>

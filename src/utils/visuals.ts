@@ -29,7 +29,10 @@ import calories from "assets/images/calories.png";
 import dbgirl from "assets/images/dbgirl.png";
 import runninggirl from "assets/images/runninggirl.png";
 import amber from "assets/images/amber.png";
-import willsmith from "assets/images/willsmith.png";
+import joerogan from "assets/images/joerogan.png";
+import joerogan2 from "assets/images/joerogan2.png";
+import elon from "assets/images/elon.png";
+import checkOut from "assets/images/checkOut.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -65,5 +68,8 @@ export const visuals: Record<string, string> = {
   dbgirl,
   runninggirl,
   amber,
-  willsmith,
+  joerogan,
+  joerogan2,
+  elon,
+  checkOut,
 };

@@ -15,10 +15,14 @@ import { REVIEW_DATA } from "constants/Constants";
 export const ReviewContainer: React.FC = () => {
   const [index, setIndex] = useState(0);
 
+  const handleImageClick = () => {
+    setIndex(index === 3 ? index - 3 : index + 1);
+  };
+
   useEffect(() => {
     const timeout = setTimeout(
-      () => setIndex(index === 2 ? index - 2 : index + 1),
-      3000
+      () => setIndex(index === 3 ? index - 3 : index + 1),
+      55000
     );
 
     return () => clearTimeout(timeout);
@@ -44,6 +48,7 @@ export const ReviewContainer: React.FC = () => {
             m="s0s70"
           >
             <ReviewCard
+              handleImageClick={handleImageClick}
               key={REVIEW_DATA[index].id}
               header={REVIEW_DATA[index].header}
               name={REVIEW_DATA[index].name}

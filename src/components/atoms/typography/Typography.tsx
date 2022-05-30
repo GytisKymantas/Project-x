@@ -57,7 +57,7 @@ export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
   textTransform?: Property.TextTransform; // priims tik tokius
   textDecoration?: Property.TextDecoration;
   onClick?: () => void;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const Typography: React.FC<TextProps> = ({

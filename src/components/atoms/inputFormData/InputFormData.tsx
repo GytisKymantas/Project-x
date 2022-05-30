@@ -31,71 +31,87 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
   imperialMaxValue,
   imperialMeasurement,
   imperialValue,
-}) => (
-  <FlexWrapper width="100%" justifyContent="space-between" position="relative">
-    {imperial ? (
-      <FlexWrapper gap="1.625rem" width="100%">
-        <FlexWrapper
-          width="100%"
-          justifyContent="space-between"
-          position="relative"
-        >
-          <Input
-            type="number"
-            placeholder={placeholder}
-            required
-            value={value}
-            onChange={(e: any) => setStateValue!(e.target.value)}
-            minValue={minValue}
-            maxValue={maxValue}
-          />
-          <Box mt="s16" position="absolute" right="0">
-            <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
-              {placeholder === "Feet" ? measurement : imperialMeasurement}
-            </Typography>
-          </Box>
-        </FlexWrapper>
-        <FlexWrapper
-          width="100%"
-          justifyContent="space-between"
-          position="relative"
-        >
-          <Input
-            type="number"
-            placeholder={imperialPlaceholder}
-            required
-            value={imperialValue}
-            onChange={(e: any) => imperialSetStateValue!(e.target.value)}
-            minValue={imperialMinValue}
-            maxValue={imperialMaxValue}
-          />
+}) => {
+  const handleImperialInputValue = (e: React.FormEvent<HTMLInputElement>) => {
+    const eventTarget = e.target as HTMLInputElement;
+    imperialSetStateValue!(eventTarget.value);
+  };
 
-          <Box mt="s16" position="absolute" right="0">
-            <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
-              {imperialMeasurement}
-            </Typography>
-          </Box>
+  const handleInputValue = (e: React.FormEvent<HTMLInputElement>) => {
+    const eventTarget = e.target as HTMLInputElement;
+    setStateValue!(eventTarget.value);
+  };
+
+  return (
+    <FlexWrapper
+      width="100%"
+      justifyContent="space-between"
+      position="relative"
+    >
+      {imperial ? (
+        <FlexWrapper gap="1.625rem" width="100%">
+          <FlexWrapper
+            width="100%"
+            justifyContent="space-between"
+            position="relative"
+          >
+            <Input
+              type="number"
+              placeholder={placeholder}
+              required
+              value={value}
+              onChange={(e) => handleInputValue(e)}
+              minValue={minValue}
+              maxValue={maxValue}
+            />
+            <Box mt="s16" position="absolute" right="0">
+              <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
+                {placeholder === "Feet" ? measurement : imperialMeasurement}
+              </Typography>
+            </Box>
+          </FlexWrapper>
+          <FlexWrapper
+            width="100%"
+            justifyContent="space-between"
+            position="relative"
+          >
+            <Input
+              type="number"
+              placeholder={imperialPlaceholder}
+              required
+              value={imperialValue}
+              onChange={(e) => handleImperialInputValue!(e)}
+              minValue={imperialMinValue}
+              maxValue={imperialMaxValue}
+            />
+
+            <Box mt="s16" position="absolute" right="0">
+              <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
+                {imperialMeasurement}
+              </Typography>
+            </Box>
+          </FlexWrapper>
         </FlexWrapper>
-      </FlexWrapper>
-    ) : (
-      <Input
-        type="number"
-        placeholder={placeholder}
-        required
-        value={value}
-        onChange={(e: any) => setStateValue!(e.target.value)}
-        minValue={minValue}
-        maxValue={maxValue}
-      />
-    )}
-    {imperial ? (
-      " "
-    ) : (
-      <Box mt="s16" position="absolute" right="0">
-        <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
-          {placeholder === "Inches" ? "" : measurement}
-        </Typography>
-      </Box>
-    )}
-  </FlexWrapper>
-);
+      ) : (
+        <Input
+          type="number"
+          placeholder={placeholder}
+          required
+          value={value}
+          onChange={(e) => handleInputValue!(e)}
+          minValue={minValue}
+          maxValue={maxValue}
+        />
+      )}
+      {imperial ? (
+        " "
+      ) : (
+        <Box mt="s16" position="absolute" right="0">
+          <Typography color="primary" fontFamily="Satisfy" fontSize="fs16">
+            {placeholder === "Inches" ? "" : measurement}
+          </Typography>
+        </Box>
+      )}
+    </FlexWrapper>
+  );
+};

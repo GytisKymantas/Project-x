@@ -8,6 +8,7 @@ import {
   Container,
   SectionHeader,
   GenderButtons,
+  Image,
 } from "components";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -16,14 +17,10 @@ export const HeroSection: React.FC = () => (
     <ContentWrapper maxWidth="51.125rem">
       <GridWrapper gridTemplateColumns="1fr 1fr">
         <Container>
-          <Box>
-            <StaticImage
-              src="src/assets/images/skipper.png"
-              alt="healthfitness"
-              placeholder="tracedSVG"
-              draggable="false"
-            />
-          </Box>
+          {/* <Box> */}
+          <StaticImage src="https://placekitten.com/800/600" alt="A kitten" />
+
+          {/* </Box> */}
           <FlexWrapper flexDirection="column" maxWidth="26.125rem">
             <SectionHeader
               type="h1"

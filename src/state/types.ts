@@ -1,7 +1,21 @@
 import { rootReducer } from "./store";
 
+export interface IQuizAnswers {
+  answers?: string | React.ReactNode;
+}
+
+export interface IQuizQuestions {
+  answers?: IQuizAnswers[];
+  title: string;
+  // title: string;
+}
+export interface IQuizQuestionDetails {
+  question: IQuizQuestions;
+}
+
 export interface IQuizData {
-  quizData: string[];
+  question?: IQuizQuestions;
+  quizData: IQuizQuestionDetails[];
 }
 export interface IQuestionQuizData {
   question: string[];

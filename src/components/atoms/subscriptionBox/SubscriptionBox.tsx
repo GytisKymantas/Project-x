@@ -9,8 +9,8 @@ interface SubscriptionBoxProps {
   month: string;
   monthlyValue: string;
   selectedUserId: number;
-  oldValue?: string;
-  newValue?: number;
+  oldValue?: string | number;
+  newValue?: string | number;
   billed: string;
   id: number;
 }

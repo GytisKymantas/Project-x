@@ -18,11 +18,11 @@ export const CaloricCounter: React.FC = () => {
         </Typography>
         {feet ? (
           <Typography type="h4" color="primary">
-            {caloricIntakeImperial} - {caloricIntakeImperial + 200}
+            {caloricIntakeImperial} - {caloricIntakeImperial + 200}kcal
           </Typography>
         ) : (
           <Typography type="h4" color="primary">
-            {caloricIntake} - {caloricIntake + 200}
+            {caloricIntake} - {caloricIntake + 200}kcal
           </Typography>
         )}
         <Image src="shape360" />

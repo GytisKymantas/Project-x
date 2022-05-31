@@ -77,10 +77,10 @@ export const InputFormContainer: React.FC = () => {
               <InputFormData
                 setStateValue={setAge}
                 value={age}
-                placeholder={"Age"}
+                placeholder="Age"
                 minValue={18}
                 maxValue={100}
-                measurement={"years"}
+                measurement="years"
               />
               <InputFormData
                 imperial
@@ -88,30 +88,30 @@ export const InputFormContainer: React.FC = () => {
                 imperialSetStateValue={setInches}
                 value={feet}
                 imperialValue={inches}
-                placeholder={"Feet"}
-                imperialPlaceholder={"Inches"}
+                placeholder="Feet"
+                imperialPlaceholder="Inches"
                 minValue={4}
                 maxValue={6}
                 imperialMinValue={0}
                 imperialMaxValue={11}
-                measurement={"ft"}
-                imperialMeasurement={"in"}
+                measurement="ft"
+                imperialMeasurement="in"
               />
               <InputFormData
                 setStateValue={setWeight}
                 value={weight}
-                placeholder={"Weight"}
+                placeholder="Weight"
                 minValue={100}
                 maxValue={350}
-                measurement={"lb"}
+                measurement="lb"
               />
               <InputFormData
                 setStateValue={setDesiredWeight}
                 value={desiredWeight}
-                placeholder={"Desired Weight"}
+                placeholder="Desired Weight"
                 minValue={100}
                 maxValue={300}
-                measurement={"lb"}
+                measurement="lb"
               />
             </>
           ) : (
@@ -119,34 +119,34 @@ export const InputFormContainer: React.FC = () => {
               <InputFormData
                 setStateValue={setAge}
                 value={age}
-                placeholder={"Age"}
+                placeholder="Age"
                 minValue={18}
                 maxValue={100}
-                measurement={"years"}
+                measurement="years"
               />
               <InputFormData
                 setStateValue={setHeight}
                 value={height}
-                placeholder={"Height"}
+                placeholder="Height"
                 minValue={100}
                 maxValue={240}
-                measurement={"cm"}
+                measurement="cm"
               />
               <InputFormData
                 setStateValue={setWeight}
                 value={weight}
-                placeholder={"Weight"}
+                placeholder="Weight"
                 minValue={40}
                 maxValue={150}
-                measurement={"kg"}
+                measurement="kg"
               />
               <InputFormData
                 setStateValue={setDesiredWeight}
                 value={desiredWeight}
-                placeholder={"Desired Weight"}
+                placeholder="Desired Weight"
                 minValue={30}
                 maxValue={150}
-                measurement={"kg"}
+                measurement="kg"
               />
             </>
           )}

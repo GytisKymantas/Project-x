@@ -8,7 +8,7 @@ import {
   ScaleSection,
   BMI,
   CheckoutHero,
-  // MultipleChoiceResults,
+  MultipleChoiceResults,
 } from "components";
 
 const Checkout: React.FC = () => (
@@ -19,7 +19,7 @@ const Checkout: React.FC = () => (
     <BMI />
     <ScaleSection />
     <HealthInformationSection />
-    {/* <MultipleChoiceResults /> */}
+    <MultipleChoiceResults />
     <SubscriptionBoxSection />
     <Footer />
   </>

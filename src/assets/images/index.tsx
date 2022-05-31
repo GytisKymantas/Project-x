@@ -19,3 +19,4 @@ export * from "./icons/MobCross";
 export * from "./icons/Heart";
 export * from "./icons/GlowyStar";
 export * from "./icons/Verified";
+export * from "./icons/VerifiedYellow";

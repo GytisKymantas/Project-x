@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "components";
+import { Box, FlexWrapper, Typography } from "components";
 import styled, { keyframes } from "styled-components/macro";
 import { navigate } from "gatsby";
 import { Loader } from "components";
@@ -28,7 +28,6 @@ const Loading: React.FC = () => {
     </Box>
   );
 };
-//TODO fix colors
 export default Loading;
 
 const animate = keyframes`

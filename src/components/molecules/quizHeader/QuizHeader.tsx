@@ -1,6 +1,5 @@
 import React from "react";
 import { FlexWrapper, Box, Typography, HomeLink } from "components";
-import { ANSWERS } from "constants/QuestionMassive";
 
 interface QuizHeaderProps {
   page: number;

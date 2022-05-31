@@ -17,7 +17,6 @@ export const QuizQuestionsSection: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchUsersAction());
-    console.log(ANSWERS_ARRAY, "ARRAY ANSWERS");
   }, []);
 
   const handlePage = () => {
@@ -40,6 +39,7 @@ export const QuizQuestionsSection: React.FC = () => {
         return <MultipleChoiceAnswer quizAnswers={ANSWERS_ARRAY} page={page} />;
       case 6:
         return <InputFormContainer />;
+      case 7:
     }
   };
   return (

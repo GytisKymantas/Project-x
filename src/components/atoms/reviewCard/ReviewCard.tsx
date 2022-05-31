@@ -1,11 +1,8 @@
 import React from "react";
 import { FlexWrapper, Box, Typography, Image, SectionHeader } from "components";
-import { Star } from "assets/images";
-import {
-  RATING_STAR_ARRAY,
-  BULLET_ARRAY,
-  REVIEW_DATA,
-} from "constants/Constants";
+import { Star, Verified } from "assets/images";
+import { RATING_STAR_ARRAY, BULLET_ARRAY } from "constants/Constants";
+import styled from "styled-components/macro";
 
 interface ReviewCardProps {
   handleImageClick?: () => void;
@@ -14,9 +11,9 @@ interface ReviewCardProps {
   name: string;
   occupation: string;
   index: number;
+  imageSrc: string;
 }
-//TODO. map array
-//TODO: fix height of card
+
 export const ReviewCard: React.FC<ReviewCardProps> = ({
   header,
   paragraph,
@@ -24,21 +21,23 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   occupation,
   index,
   handleImageClick,
+  imageSrc,
 }) => (
-  <FlexWrapper
+  <ReviewCardContainer
     flexDirection="column"
     gap="3.875rem"
     p="s30"
     boxShadow="default"
     height="25rem"
     onClick={handleImageClick}
+    borderRadius="br20"
   >
     {" "}
     <Box maxHeight="6.25rem">
-      <SectionHeader type="h4" header={header} paragraph={paragraph} />
+      <SectionHeader center type="h4" header={header} paragraph={paragraph} />
     </Box>
     <Box mb="s25">
-      <FlexWrapper>
+      <FlexWrapper alignItems="center" justifyContent="center">
         {RATING_STAR_ARRAY.map(({ id }) => (
           <Star key={id} />
         ))}
@@ -53,44 +52,23 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           {occupation}
         </Typography>
       </FlexWrapper>
-      {index === 0 && (
-        <Box>
-          <Image height="55px" width="55px" borderRadius="50%" src="jdepp" />
-        </Box>
-      )}
-      {index === 1 && (
-        <Box>
-          <Image height="55px" width="55px" borderRadius="50%" src="amber" />
-        </Box>
-      )}
-      {index === 2 && (
-        <Box>
-          <Image
-            borderRadius="50%"
-            height="55px"
-            width="55px"
-            src="joerogan2"
-          />
-        </Box>
-      )}
-      {index === 3 && (
-        <Box>
-          <Image borderRadius="50%" height="55px" width="55px" src="elon" />
-        </Box>
-      )}
+      <Box>
+        <Image
+          height="3.4375rem"
+          width="3.4375rem"
+          borderRadius="50%"
+          src={imageSrc}
+        />
+      </Box>
     </FlexWrapper>
     <FlexWrapper gap="0.3125rem" justifyContent="center">
       {BULLET_ARRAY.map(({ id }) => (
         <Image key={id} src={index === id ? "bullet" : "bulletBlank"} />
       ))}
     </FlexWrapper>
-  </FlexWrapper>
+  </ReviewCardContainer>
 );
 
-// {REVIEW_DATA.map(({ imageSrc, id }) => {
-//   index === id && (
-//     <Box>
-//       <Image height="55px" width="55px" borderRadius="50%" src="amber" />
-//     </Box>
-//   );
-// })}
+const ReviewCardContainer = styled(FlexWrapper)`
+  cursor: pointer;
+`;

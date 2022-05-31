@@ -18,12 +18,17 @@ export const MeasurementCard: React.FC<MeasurementsProps> = ({
   feet,
   inches,
 }) => (
-  <Box bg="white" minWidth="12.5rem" p="s20" boxShadow="default">
+  <Box
+    minWidth="12.5rem"
+    p="s20"
+    boxShadow="grayshadowintense"
+    borderRadius="br24"
+  >
     <Box margin="s0auto" width="3.125rem">
       {image}
     </Box>
     {feet ? (
-      <Box p="s20">
+      <Box p="s20" m="s16">
         <SectionHeader
           type="h3"
           header={`${feet}'${inches}"`}
@@ -31,7 +36,7 @@ export const MeasurementCard: React.FC<MeasurementsProps> = ({
         />
       </Box>
     ) : (
-      <Box p="s20">
+      <Box m="s16" p="s20">
         <SectionHeader type="h3" header={title} paragraph={subtitle} />
       </Box>
     )}

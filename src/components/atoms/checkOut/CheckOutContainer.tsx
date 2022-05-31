@@ -1,9 +1,11 @@
 import React from "react";
-import { SectionWrapper } from "components";
+import { SectionWrapper, Box } from "components";
 import { CheckOut } from "./CheckOut";
 
 export const CheckOutContainer: React.FC = () => (
   <SectionWrapper>
-    <CheckOut />
+    <Box width="80%" m="auto">
+      <CheckOut />
+    </Box>
   </SectionWrapper>
 );

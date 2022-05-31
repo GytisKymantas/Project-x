@@ -15,13 +15,12 @@ import { StaticImage } from "gatsby-plugin-image";
 export const HeroSection: React.FC = () => (
   <SectionWrapper id="Home">
     <ContentWrapper maxWidth="51.125rem">
-      <GridWrapper gridTemplateColumns="1fr 1fr">
+      <GridWrapper gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}>
         <Container>
-          {/* <Box> */}
-          <StaticImage src="https://placekitten.com/800/600" alt="A kitten" />
-
-          {/* </Box> */}
-          <FlexWrapper flexDirection="column" maxWidth="26.125rem">
+          <FlexWrapper justifyContent="center">
+            <Image src="healthfitness" />
+          </FlexWrapper>
+          <FlexWrapper flexDirection="column" maxWidth="26.125rem" m="s0auto">
             <SectionHeader
               type="h1"
               header="Reach your Fitness goals today!"
@@ -30,13 +29,8 @@ export const HeroSection: React.FC = () => (
             <GenderButtons />
           </FlexWrapper>
         </Container>
-        <Box position="relative">
-          <StaticImage
-            src="src/assets/images/dbgirl.png"
-            alt="skipping"
-            placeholder="tracedSVG"
-            draggable="false"
-          />
+        <Box position="relative" display={{ _: "none", ltablet: "block" }}>
+          <Image src="skipper" />
         </Box>
       </GridWrapper>
     </ContentWrapper>

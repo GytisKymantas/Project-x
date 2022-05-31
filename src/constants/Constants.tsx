@@ -116,7 +116,7 @@ export const REVIEW_DATA = [
   },
   {
     id: 1,
-    header: "Simple Amazing!",
+    header: "Simply Amazing!",
     imageSrc: "amber",
     name: "Amber Heard",
     paragraph:

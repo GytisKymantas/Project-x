@@ -23,13 +23,20 @@ export const HealthInformation: React.FC<HealthInformationProps> = ({
             </Box>
             <Box position="absolute" top="35%" left="33%"></Box>
           </Box>
-          <FlexWrapper flexDirection="column" width="85%" gap="1.25rem">
-            <Typography textAlign="center" color="primary" type="h2">
+          <FlexWrapper flexDirection="column" width="85%" gap="2rem">
+            <Typography textAlign="center" color="primary" type="h4">
               {title}
             </Typography>
-            <Typography textAlign="justify" color="gray">
-              {treatment}
-            </Typography>
+            <Box maxWidth="26.25rem" margin="s0auto">
+              <Typography
+                type="caption12"
+                letterSpacing="2px"
+                textAlign="justify"
+                color="gray"
+              >
+                {treatment}
+              </Typography>
+            </Box>
           </FlexWrapper>
         </FlexWrapper>
       </Box>

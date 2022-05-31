@@ -28,15 +28,18 @@ export const theme = {
     fs32: "2rem",
   },
   radii: {
-    br14: 14,
-    br24: 24,
+    br14: "14px",
+    br20: "20px",
+    br24: "1.5rem",
     br50: "50%",
   },
   fontWeights: {
     fw700: 700,
   },
   shadows: {
-    default: `1px 1px 11px ${colors.primary}`,
+    default: `1px 1px 6px ${colors.primary}`,
+    grayshadow: `1px 1px 8px ${colors.lightwhite}`,
+    grayshadowintense: `1px 1px 60px ${colors.lightwhite}`,
   },
   borders: {
     default: `1px solid ${colors.primary}`,
@@ -44,6 +47,7 @@ export const theme = {
     answer: `2px solid ${colors.primary}`,
     transparent: `2px solid ${colors.transparent}`,
     scale: `3px solid ${colors.lightwhite}`,
+    orangethick: `5px solid ${colors.orange}`,
   },
   zIndices: {
     base: 0,
@@ -77,6 +81,7 @@ export const theme = {
     s80: "5rem",
     s100: "6.25rem",
     sautos100: "auto 6.25rem",
+    s16s42x3: "1rem 3rem 3rem 3rem",
   },
   typography: {
     h1: {
@@ -126,6 +131,13 @@ export const theme = {
       fontSizeMobile: "1rem",
       lineHeightMobile: "1.5rem",
       lineHeight: "1.75rem",
+      fontWeight: 400,
+    },
+    caption12: {
+      fontSize: "1rem",
+      fontSizeMobile: "1rem",
+      lineHeightMobile: "1.875rem",
+      lineHeight: "1.875rem",
       fontWeight: 400,
     },
   },

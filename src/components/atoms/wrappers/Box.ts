@@ -54,7 +54,6 @@ export interface Styles<T>
 
 export const Box = styled.div<Styles<Theme>>`
   position: ${({ fixed }) => fixed || ""};
-
   && {
     ${boxProps};
   }

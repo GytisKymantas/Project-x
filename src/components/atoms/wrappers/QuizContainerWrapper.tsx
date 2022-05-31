@@ -22,7 +22,7 @@ export const QuizContainerWrapper: React.FC<QuizContainerWrapperProps> = ({
   return (
     <>
       <ProgressBar width={WIDTH_SCALE[page]} />
-      <SectionWrapper p="1rem 3rem 3rem 3rem">
+      <SectionWrapper>
         <ContentWrapper maxWidth="100%">
           <QuizHeader page={page} answers={answers} />
           <FlexWrapper

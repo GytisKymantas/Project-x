@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box } from "components";
 import styled, { keyframes } from "styled-components/macro";
 import { navigate } from "gatsby";
+import { Loader } from "components";
 
 const Loading: React.FC = () => {
   const [state, setState] = useState(false);
@@ -23,10 +24,11 @@ const Loading: React.FC = () => {
           <Progress></Progress>
         </Bar>
       </LoadingBar>
+      <Loader />
     </Box>
   );
 };
-
+//TODO fix colors
 export default Loading;
 
 const animate = keyframes`
@@ -69,7 +71,7 @@ const animate = keyframes`
 `;
 
 const LoadingBar = styled(Box)`
-  border-radius: 60px;
+  border-radius: 3.75rem;
   overflow: hidden;
   width: 100%;
 `;
@@ -84,6 +86,6 @@ const Progress = styled.span`
   animation: ${animate} 3s ease infinite;
   background: green;
   color: #fff;
-  padding: 5px;
+  padding: 0.3125rem;
   width: 0;
 `;

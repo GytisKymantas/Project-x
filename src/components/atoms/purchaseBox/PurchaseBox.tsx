@@ -6,8 +6,15 @@ import { selectPurchaseData } from "state/selectors";
 export const PurchaseBox: React.FC = () => {
   const purchaseData = useSelector(selectPurchaseData);
   return (
-    <Box bg="lightwhite" m="s80">
-      <FlexWrapper justifyContent="space-around">
+    <Box
+      bg="orangelight"
+      m="1rem auto"
+      border="orangethick"
+      p="s32"
+      boxShadow=""
+      maxWidth="500px"
+    >
+      <FlexWrapper justifyContent="space-between" p="s16" borderBottom="answer">
         <Box>
           <Typography color="primary">
             Purchased title: {purchaseData?.month}
@@ -19,9 +26,14 @@ export const PurchaseBox: React.FC = () => {
           </Typography>
         </Box>
       </FlexWrapper>
-      <FlexWrapper justifyContent="center" borderBottom="default" p="s10">
+      <FlexWrapper
+        justifyContent="center"
+        p="s16"
+        flexDirection="column"
+        alignItems="flex-end"
+      >
         <Typography fontWeight="fw700" color="primary">
-          Total:
+          Total
         </Typography>
         <Typography fontWeight="fw700" color="primary">
           {purchaseData?.newValue}

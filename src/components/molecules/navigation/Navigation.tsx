@@ -4,7 +4,6 @@ import {
   FlexWrapper,
   HomeLink,
   BaseButton,
-  QuizStartButton,
   Typography,
   GenderButtons,
 } from "components";
@@ -48,7 +47,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       width="100%"
       backgroundColor="white"
       position={fix ? "fixed" : "initial"}
-      boxShadow="default"
+      boxShadow="grayshadow"
       zIndex="loader"
     >
       {mobileView && (
@@ -139,6 +138,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
 const ListItem = styled.li`
   cursor: pointer;
+  font-weight: 700;
   list-style-type: none;
   text-transform: uppercase;
 `;

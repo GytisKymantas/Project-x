@@ -6,8 +6,10 @@ import {
   Box,
   QuestionsCard,
   CheckOut,
+  Image,
 } from "components";
 import { FAQ_DETAILS } from "constants/Constants";
+import { GlowyStar } from "assets/images";
 
 export const QuestionsCardContainer: React.FC = () => (
   <SectionWrapper>
@@ -25,5 +27,6 @@ export const QuestionsCardContainer: React.FC = () => (
       </Box>
       <CheckOut />
     </GridWrapper>
+    {/* <GlowyStar /> */}
   </SectionWrapper>
 );

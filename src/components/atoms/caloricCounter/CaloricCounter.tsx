@@ -11,7 +11,7 @@ export const CaloricCounter: React.FC = () => {
   const caloricIntakeImperial = caloricImperialIntake(userData?.weight);
   //TODO: fix
   return (
-    <Box bg="white" height="26.5625rem">
+    <Box bg="white" height="26.5625rem" m="s0auto">
       <FlexWrapper flexDirection="column" alignItems="center" gap={"0.625rem"}>
         <Typography type="h5" color="primary">
           Daily Calory Intake
@@ -25,7 +25,7 @@ export const CaloricCounter: React.FC = () => {
             {caloricIntake} - {caloricIntake + 200}kcal
           </Typography>
         )}
-        <Image src="shape360" />
+        <Image src="orange360" />
       </FlexWrapper>
     </Box>
   );

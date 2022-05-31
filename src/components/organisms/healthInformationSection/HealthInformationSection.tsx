@@ -1,7 +1,9 @@
 import React from "react";
-import { HealthInformation, SectionWrapper } from "components";
+import { HealthInformation, SectionWrapper, Typography } from "components";
 import { useSelector } from "react-redux";
 import { selectQuizAnswers } from "state/selectors";
+import styled from "styled-components/macro";
+import { theme } from "styles/theme";
 
 export const HealthInformationSection: React.FC = () => {
   const userQuizAnswers = useSelector(selectQuizAnswers);
@@ -43,6 +45,14 @@ export const HealthInformationSection: React.FC = () => {
 
   return (
     <SectionWrapper>
+      <HeaderTitle
+        textAlign="center"
+        color="primary"
+        type="h4"
+        // letterSpacing="0.3125rem"
+      >
+        Health Facts You should know!
+      </HeaderTitle>
       {HEALTH_INFORMATION_DATA.map(({ id, title, treatment, answer }) => (
         <HealthInformation
           key={id}
@@ -54,3 +64,15 @@ export const HealthInformationSection: React.FC = () => {
     </SectionWrapper>
   );
 };
+
+const HeaderTitle = styled(Typography)`
+  :after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: ${theme.colors.orange};
+    margin: 30px auto;
+    border-radius: 3px;
+  }
+`;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { pageBack } from "state/slices/pageSlice";
 import { Box, InputFormContainer, ReturnButton } from "components";
@@ -8,6 +8,7 @@ import { selectPage } from "state/selectors";
 import { selectQuizData } from "state/selectors";
 import { SingleChoiceAnswer } from "components/atoms/singleChoiceAnswer/SingleAnswer";
 import { MultipleChoiceAnswer } from "components/atoms/multipleChoiceAnswer/MultipleChoiceAnswer";
+import { Loader } from "components/atoms/loader/Loader";
 
 export const QuizQuestionsSection: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export const QuizQuestionsSection: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchUsersAction());
+    console.log(ANSWERS_ARRAY, "ARRAY ANSWERS");
   }, []);
 
   const handlePage = () => {
@@ -43,9 +45,14 @@ export const QuizQuestionsSection: React.FC = () => {
   return (
     <>
       <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
+        <Box position="absolute" top="90%" left="40%">
+          {ANSWERS_ARRAY.length === 0 && <Loader />}
+        </Box>
         <Box>{Questions()}</Box>
       </QuizContainerWrapper>
-      <ReturnButton width="6.25rem" onClick={() => handlePage()} />
+      {ANSWERS_ARRAY.length !== 0 && (
+        <ReturnButton width="6.25rem" onClick={() => handlePage()} />
+      )}
     </>
   );
 };

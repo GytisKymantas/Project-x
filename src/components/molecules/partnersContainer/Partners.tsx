@@ -17,6 +17,7 @@ export const Partners: React.FC = () => (
     >
       <FlexWrapper width="100%">
         <SectionHeader
+          center
           type="h3"
           header="Our Partners"
           paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little gerret repair to desire he esteem"

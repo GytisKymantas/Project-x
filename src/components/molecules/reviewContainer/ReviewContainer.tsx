@@ -7,6 +7,7 @@ import {
   GridWrapper,
   ReviewCard,
   SectionHeader,
+  Image,
 } from "components";
 import { StaticImage } from "gatsby-plugin-image";
 import { REVIEW_DATA } from "constants/Constants";
@@ -22,7 +23,7 @@ export const ReviewContainer: React.FC = () => {
   useEffect(() => {
     const timeout = setTimeout(
       () => setIndex(index === 3 ? index - 3 : index + 1),
-      55000
+      5000
     );
 
     return () => clearTimeout(timeout);
@@ -31,12 +32,13 @@ export const ReviewContainer: React.FC = () => {
   return (
     <SectionWrapper id="Testimonials">
       <Container>
-        <Box mx="auto" my="s50" textAlign="center" maxWidth="750px">
+        <Box mx="auto" my="s50" textAlign="center" maxWidth="46.875rem">
           <FlexWrapper flexDirection="column">
-            <Box pb="s100">
+            <Box pb={{ _: "s40", ltablet: "s100" }}>
               <SectionHeader
+                center
                 type="h3"
-                header="What Customes Say"
+                header="What Customers Say?"
                 paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
               />
             </Box>
@@ -45,6 +47,7 @@ export const ReviewContainer: React.FC = () => {
         <Box>
           <GridWrapper
             gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
+            gap="5rem"
             m="s0s70"
           >
             <ReviewCard
@@ -53,38 +56,19 @@ export const ReviewContainer: React.FC = () => {
               header={REVIEW_DATA[index].header}
               name={REVIEW_DATA[index].name}
               index={index}
+              imageSrc={REVIEW_DATA[index].imageSrc}
               paragraph={REVIEW_DATA[index].paragraph}
               occupation={REVIEW_DATA[index].occupation}
             />
-            <Box margin="s0auto" position="relative">
-              <StaticImage
-                src="src/assets/images/yoga.png"
-                alt="foto"
-                placeholder="tracedSVG"
-                draggable="false"
-                style={{
-                  maxWidth: "31.25rem",
-                  margin: "0 auto",
-                }}
-              />
+            <Box margin="auto" position="relative">
+              <Image src="squad" />
               <Box
                 position="absolute"
                 top="0"
                 left="19%"
                 opacity="0.6"
                 zIndex={-1}
-              >
-                <StaticImage
-                  src="../../assets/images/yogabackground.png"
-                  alt="yoga background"
-                  placeholder="tracedSVG"
-                  draggable="false"
-                  style={{
-                    maxWidth: "31.25rem",
-                    margin: "0 auto",
-                  }}
-                />
-              </Box>
+              ></Box>
             </Box>
           </GridWrapper>
         </Box>

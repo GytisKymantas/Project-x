@@ -33,6 +33,11 @@ import joerogan from "assets/images/joerogan.png";
 import joerogan2 from "assets/images/joerogan2.png";
 import elon from "assets/images/elon.png";
 import checkOut from "assets/images/checkOut.png";
+import gytis from "assets/images/gytis.png";
+import squad from "assets/images/squad.png";
+import girlpost from "assets/images/girlpost.png";
+import deadlift from "assets/images/deadlift.png";
+import orange360 from "assets/images/orange360.png";
 
 export type Visuals = keyof typeof visuals;
 
@@ -50,6 +55,7 @@ export const visuals: Record<string, string> = {
   logotrans2,
   spiral,
   curl,
+  gytis,
   lunge,
   logofinal,
   logoblack,
@@ -72,4 +78,8 @@ export const visuals: Record<string, string> = {
   joerogan2,
   elon,
   checkOut,
+  squad,
+  girlpost,
+  deadlift,
+  orange360,
 };

@@ -1,5 +1,11 @@
 import React from "react";
-import { SectionWrapper, GridWrapper, MeasurementCard } from "components";
+import {
+  SectionWrapper,
+  GridWrapper,
+  Box,
+  Typography,
+  MeasurementCard,
+} from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
 import { Gender, Height, Scales, Age } from "assets/images";
@@ -13,8 +19,6 @@ export const MeasurementsInfoContainer: React.FC = () => {
   const inches = userData.inches;
   const desiredWeight = userData.desiredWeight;
   const isMale = userData.isMale;
-
-  console.log(userData, "this is userData");
 
   const MEASUREMENT_CONTAINER_DATA = [
     {
@@ -55,6 +59,11 @@ export const MeasurementsInfoContainer: React.FC = () => {
 
   return (
     <SectionWrapper>
+      <Box m={{ _: "s20", ltablet: "s50" }}>
+        <Typography color="primary" fontWeight="fw700" textAlign="center">
+          Your summary:
+        </Typography>
+      </Box>
       <GridWrapper
         gridTemplateColumns={{
           _: "repeat(1,1fr)",
@@ -62,7 +71,7 @@ export const MeasurementsInfoContainer: React.FC = () => {
         }}
         maxWidth="71.875rem"
         m="s0auto"
-        p={{ _: "s32", ltablet: "0rem" }}
+        p={{ _: "s32", ltablet: "s0" }}
         gap="1.25rem"
       >
         {MEASUREMENT_CONTAINER_DATA.map(

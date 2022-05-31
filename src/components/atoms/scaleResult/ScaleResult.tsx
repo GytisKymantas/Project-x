@@ -12,7 +12,7 @@ export const ScaleResult: React.FC = () => {
   const desiredWeight = userData.desiredWeight;
 
   return (
-    <Box width="26.5625rem" bg="white" p="s20">
+    <Box width="26.5625rem" bg="white" p="s20" m="auto">
       <Box position="absolute" width="24.0625rem" height="24.0625rem">
         <FlexWrapper
           position="absolute"
@@ -79,7 +79,3 @@ export const ScaleResult: React.FC = () => {
     </Box>
   );
 };
-const Point = styled.div`
-  ::after {
-  }
-`;

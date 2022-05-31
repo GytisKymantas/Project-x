@@ -6,8 +6,8 @@ export const CheckOut: React.FC = () => (
     <SectionHeader
       center
       type="h3"
-      header="Check It Out"
-      paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
+      header="Check It Out!"
+      paragraph="Take a quick survey with our quiz to determine your personal Fitness needs! My little garret repair to desire he esteem."
     />
     <FlexWrapper justifyContent="center">
       <GenderButtons />

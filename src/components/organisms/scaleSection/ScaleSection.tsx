@@ -4,18 +4,18 @@ import {
   Typography,
   Container,
   ScaleResult,
-  Box,
   GridWrapper,
-  QuizStartButton,
+  BaseButton,
   CaloricCounter,
+  FlexWrapper,
 } from "components";
-import { FlexWrapper } from "components/atoms/wrappers/FlexWrapper";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 export const ScaleSection: React.FC = () => (
   <SectionWrapper>
-    <Container mb={{ _: "s20", ltablet: "s50" }}>
+    <Container m={{ _: "s20", ltablet: "s16" }}>
       <Typography fontWeight="fw700" color="primary" textAlign="center">
-        Based on quiz results, you will be
+        Based on quiz results, you will be:
       </Typography>
     </Container>
     <GridWrapper
@@ -30,8 +30,10 @@ export const ScaleSection: React.FC = () => (
       <ScaleResult />
       <CaloricCounter />
     </GridWrapper>
-    <FlexWrapper justifyContent="center" margin="s0auto">
-      <QuizStartButton width="12.5rem">Get the product!</QuizStartButton>
+    <FlexWrapper justifyContent="center" margin="s0auto" mt="s30">
+      <BaseButton onClick={() => scrollTo(`#Plans`)} width="12.5rem">
+        Get the product!
+      </BaseButton>
     </FlexWrapper>
   </SectionWrapper>
 );

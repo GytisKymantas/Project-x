@@ -25,7 +25,7 @@ export * from "./atoms/reviewCard/ReviewCard";
 export * from "./atoms/FAQcard/QuestionsCard";
 export * from "./molecules/FAQuestionsCardContainer/QuestionsCardContainer";
 //partners
-export * from "./molecules/partners/Partners";
+export * from "./molecules/partnersContainer/Partners";
 //checkout
 export * from "./atoms/checkOut/CheckOut";
 //footer
@@ -75,3 +75,7 @@ export * from "./atoms/BMI/BMI";
 export * from "./atoms/measurementsCard/MeasurementCard";
 //Order summary container
 export * from "./molecules/orderSummaryContainer/OrderSummaryContainer";
+// multiple choice results
+export * from "./atoms/multipleChoiceResults/MultipleChoiceResults";
+//loader
+export * from "./atoms/loader/Loader";

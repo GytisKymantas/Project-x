@@ -75,7 +75,7 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
                 {answer as unknown as React.ReactNode}
               </QuizAnswer>
               {selectedAnswer.includes("none") && i === 9 && (
-                <Box position="absolute" top="28%" left="5%">
+                <Box position="absolute" top="35%" left="5%">
                   <Check />
                 </Box>
               )}

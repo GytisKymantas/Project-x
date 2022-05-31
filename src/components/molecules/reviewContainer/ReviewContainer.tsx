@@ -9,7 +9,6 @@ import {
   SectionHeader,
   Image,
 } from "components";
-import { StaticImage } from "gatsby-plugin-image";
 import { REVIEW_DATA } from "constants/Constants";
 
 //TODO: fix z index
@@ -32,14 +31,14 @@ export const ReviewContainer: React.FC = () => {
   return (
     <SectionWrapper id="Testimonials">
       <Container>
-        <Box mx="auto" my="s50" textAlign="center" maxWidth="46.875rem">
+        <Box maxWidth="46.875rem" m="s50sauto" textAlign="center">
           <FlexWrapper flexDirection="column">
             <Box pb={{ _: "s40", ltablet: "s100" }}>
               <SectionHeader
                 center
-                type="h3"
                 header="What Customers Say?"
                 paragraph="Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem."
+                type="h3"
               />
             </Box>
           </FlexWrapper>
@@ -52,23 +51,23 @@ export const ReviewContainer: React.FC = () => {
           >
             <ReviewCard
               handleImageClick={handleImageClick}
-              key={REVIEW_DATA[index].id}
               header={REVIEW_DATA[index].header}
-              name={REVIEW_DATA[index].name}
               index={index}
               imageSrc={REVIEW_DATA[index].imageSrc}
-              paragraph={REVIEW_DATA[index].paragraph}
+              key={REVIEW_DATA[index].id}
+              name={REVIEW_DATA[index].name}
               occupation={REVIEW_DATA[index].occupation}
+              paragraph={REVIEW_DATA[index].paragraph}
             />
             <Box margin="auto" position="relative">
               <Image src="squad" />
-              <Box
-                position="absolute"
-                top="0"
+              {/* <Box
                 left="19%"
                 opacity="0.6"
+                position="absolute"
+                top="0"
                 zIndex={-1}
-              ></Box>
+              ></Box> */}
             </Box>
           </GridWrapper>
         </Box>

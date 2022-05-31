@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import { SUBSCRIPTION_DETAILS } from "constants/Constants";
-import { useSelector, useDispatch } from "react-redux";
-import { selectPurchaseData } from "state/selectors";
-import { navigate } from "gatsby";
-import { theme } from "styles/theme";
 import {
   FlexWrapper,
   SubscriptionBox,
@@ -11,6 +6,10 @@ import {
   QuizAnswer,
   Image,
 } from "components";
+import { SUBSCRIPTION_DETAILS } from "constants/Constants";
+import { useDispatch } from "react-redux";
+import { navigate } from "gatsby";
+import { theme } from "styles/theme";
 import { setPurchaseData } from "state/slices/purchaseDataSlice";
 import styled from "styled-components/macro";
 
@@ -21,7 +20,6 @@ export const SubscriptionBoxContainer: React.FC = () => {
     month: "",
     newValue: null as unknown as string,
   });
-  const purchaseData = useSelector(selectPurchaseData);
 
   const handleSubscription = () => {
     dispatch(setPurchaseData(selectedUser));
@@ -30,25 +28,25 @@ export const SubscriptionBoxContainer: React.FC = () => {
 
   return (
     <FlexWrapper
-      flexDirection="column"
       alignItems="center"
-      id="Plans"
+      flexDirection="column"
       gap="0.9375rem"
+      id="Plans"
       mt="s50"
     >
       {SUBSCRIPTION_DETAILS.map(
-        ({ discount, month, monthlyValue, oldValue, id, newValue, billed }) => (
+        ({ billed, discount, id, month, monthlyValue, newValue, oldValue }) => (
           <Subscription
             borderRadius="br14"
-            key={id}
-            width="22.5rem"
-            p="s16"
             border={
               selectedUser.id === id
                 ? `2px solid ${theme.colors.orange}`
                 : `2px solid ${theme.colors.lightwhite}`
             }
+            key={id}
             onClick={() => setSelectedUser({ id, month, newValue })}
+            p="s16"
+            width="22.5rem"
           >
             <SubscriptionBox
               discount={discount}

@@ -8,37 +8,37 @@ import styled from "styled-components/macro";
 export type InputType = "text" | "email" | "password" | "date" | "number";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  type?: InputType;
-  placeholder?: string;
   error?: string;
+  label?: string;
   minValue?: number;
   maxValue?: number;
-  value?: number | string;
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  type?: InputType;
+  value?: number | string;
 }
 
 type InputFieldProps = InputProps & Styles<Theme>;
 
 export const Input: React.FC<InputFieldProps> = ({
+  error,
+  label,
   minValue,
   maxValue,
-  label,
-  type,
   onChange,
-  error,
   placeholder,
+  type,
   ...rest
 }) => (
   <>
     {label && <label htmlFor="input">{label}</label>}
     <InputElement
       id={label}
-      type={type}
-      placeholder={placeholder}
       min={minValue}
       max={maxValue}
       onChange={onChange}
+      placeholder={placeholder}
+      type={type}
       {...rest}
     />
     {error && <span>{error}</span>}
@@ -47,9 +47,9 @@ export const Input: React.FC<InputFieldProps> = ({
 
 const InputElement = styled.input`
   border: none;
+  border-bottom: 1px solid ${theme.colors.lightwhite};
   outline: none;
   padding: 1rem 1rem 0.2rem 1rem;
-  border-bottom: 1px solid ${theme.colors.lightwhite};
   width: 100%;
 
   ::-webkit-inner-spin-button,

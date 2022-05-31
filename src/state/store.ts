@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers, CombinedState, AnyAction } from "redux";
 import { useDispatch } from "react-redux";
 import { persistReducer, persistStore } from "redux-persist";
+import localStorage from "redux-persist/es/storage";
 import sessionStorage from "redux-persist/es/storage/session";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "./rootSaga";
@@ -12,19 +13,19 @@ import QuizAnswersSlice from "./slices/quizAnswersSlice";
 import QuizDataSlice from "./slices/quizDataSlice";
 import UserDataSlice from "./slices/userDataSlice";
 import {
-  IQuizData,
-  IQuizAnswers,
+  IQuizDataSlice,
   IPageination,
   IMultipleChoice,
-  IPurchaseData,
+  IPurchaseDataSlice,
   IUserDataSlice,
+  IQuizAnswersSlice,
 } from "./types";
 
 export interface RootState {
-  purchaseData: IPurchaseData;
+  purchaseData: IPurchaseDataSlice;
   pageination: IPageination;
-  quizAnswers: IQuizAnswers;
-  quizData: IQuizData;
+  quizAnswers: IQuizAnswersSlice;
+  quizData: IQuizDataSlice;
   question: IMultipleChoice;
   userData: IUserDataSlice;
 }

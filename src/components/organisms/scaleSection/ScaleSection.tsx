@@ -14,16 +14,16 @@ import scrollTo from "gatsby-plugin-smoothscroll";
 export const ScaleSection: React.FC = () => (
   <SectionWrapper>
     <Container m={{ _: "s20", ltablet: "s16" }}>
-      <Typography fontWeight="fw700" color="primary" textAlign="center">
+      <Typography color="primary" fontWeight="fw700" textAlign="center">
         Based on quiz results, you will be:
       </Typography>
     </Container>
     <GridWrapper
+      display={{ _: "block", ltablet: "flex" }}
       gridTemplateColumns={{
-        _: "repeat(1,1fr)",
+        _: "1fr",
         ltablet: "repeat(2,1fr)",
       }}
-      display={{ _: "block", ltablet: "flex" }}
       justifyContent="center"
       p={{ _: "s0", ltablet: "s40" }}
     >

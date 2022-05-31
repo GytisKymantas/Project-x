@@ -43,28 +43,28 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <Box
       as="header"
-      height="10vh"
-      width="100%"
       backgroundColor="white"
-      position={fix ? "fixed" : "initial"}
       boxShadow="grayshadow"
+      height="10vh"
+      position={fix ? "fixed" : "initial"}
+      width="100%"
       zIndex="loader"
     >
       {mobileView && (
         <MobileCover>
           <FlexWrapper
-            gap="1.25rem"
-            justifyContent="center"
             alignItems="center"
             flexDirection="column"
+            gap="1.25rem"
+            justifyContent="center"
           >
-            {NAVIGATION_LINKS.map(({ title, id }) => (
+            {NAVIGATION_LINKS.map(({ id, title }) => (
               <ListItem onClick={() => scrollTo(`#${title}`)} key={id}>
                 {title}
               </ListItem>
             ))}
             <Box p="s40">
-              <Typography textAlign="center" color="primary">
+              <Typography color="primary" textAlign="center">
                 Start The Quiz Now!
               </Typography>
               <Box>
@@ -76,8 +76,8 @@ export const Navigation: React.FC<NavigationProps> = ({
       )}
       <FlexWrapper
         alignItems="center"
-        justifyContent="space-around"
         height="100%"
+        justifyContent="space-around"
       >
         <HomeLink />
         {defaultPage ? (
@@ -85,10 +85,10 @@ export const Navigation: React.FC<NavigationProps> = ({
         ) : (
           <FlexWrapper
             as="ul"
-            gap="0.625rem"
             display={{ _: "none", ltablet: "flex" }}
+            gap="0.625rem"
           >
-            {NAVIGATION_LINKS.map(({ title, id }) => (
+            {NAVIGATION_LINKS.map(({ id, title }) => (
               <ListItem onClick={() => scrollTo(`#${title}`)} key={id}>
                 {title}
               </ListItem>
@@ -112,15 +112,15 @@ export const Navigation: React.FC<NavigationProps> = ({
             {mobileView ? (
               <Box zIndex="master">
                 <MobileWrapper
+                  display={{ _: "block", ltablet: "none" }}
                   onClick={() => setMobileView(false)}
                   zIndex="overall"
-                  display={{ _: "block", ltablet: "none" }}
                 >
                   <MobCross />
                 </MobileWrapper>
               </Box>
             ) : (
-              <Box zIndex="master" display={{ _: "block", ltablet: "none" }}>
+              <Box display={{ _: "block", ltablet: "none" }} zIndex="master">
                 <MobileWrapper
                   display={{ _: "block", ltablet: "none" }}
                   onClick={() => setMobileView(true)}

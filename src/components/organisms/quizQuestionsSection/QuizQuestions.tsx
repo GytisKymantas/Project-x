@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import {
+  Box,
+  InputFormContainer,
+  ReturnButton,
+  Loader,
+  QuizContainerWrapper,
+  SingleChoiceAnswer,
+  MultipleChoiceAnswer,
+} from "components";
 import { useSelector, useDispatch } from "react-redux";
 import { pageBack } from "state/slices/pageSlice";
-import { Box, InputFormContainer, ReturnButton } from "components";
-import { QuizContainerWrapper } from "../../atoms/wrappers/QuizContainerWrapper";
 import { fetchUsersAction } from "state/sagasActions";
 import { selectPage } from "state/selectors";
 import { selectQuizData } from "state/selectors";
-import { SingleChoiceAnswer } from "components/atoms/singleChoiceAnswer/SingleAnswer";
-import { MultipleChoiceAnswer } from "components/atoms/multipleChoiceAnswer/MultipleChoiceAnswer";
-import { Loader } from "components/atoms/loader/Loader";
 
 export const QuizQuestionsSection: React.FC = () => {
+  const ANSWERS_ARRAY = useSelector(selectQuizData);
   const dispatch = useDispatch();
   const page = useSelector(selectPage);
-  const ANSWERS_ARRAY = useSelector(selectQuizData);
 
   useEffect(() => {
     dispatch(fetchUsersAction());
@@ -45,13 +49,13 @@ export const QuizQuestionsSection: React.FC = () => {
   return (
     <>
       <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
-        <Box position="absolute" top="90%" left="40%">
+        <Box left="40%" position="absolute" top="90%">
           {ANSWERS_ARRAY.length === 0 && <Loader />}
         </Box>
         <Box>{Questions()}</Box>
       </QuizContainerWrapper>
       {ANSWERS_ARRAY.length !== 0 && (
-        <ReturnButton width="6.25rem" onClick={() => handlePage()} />
+        <ReturnButton onClick={() => handlePage()} width="6.25rem" />
       )}
     </>
   );

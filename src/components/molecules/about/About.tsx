@@ -7,7 +7,6 @@ import {
   SectionHeader,
   Image,
 } from "components";
-import { mobile } from "styles/breakpoints";
 
 export const About: React.FC = () => (
   <SectionWrapper id="About">
@@ -23,12 +22,12 @@ export const About: React.FC = () => (
       </Box>
       <Box m="auto" width="80%">
         <SectionHeader
-          type="h2"
           header="What we do?"
           paragraph="Changing lives since 2020!"
+          type="h2"
         />
       </Box>
-      <Box width="80%" m="auto">
+      <Box m="auto" width="80%">
         <Typography color="primary" textAlign="justify">
           Wise busy past both park when an ye no. Nay likely her length sooner
           thrown back lively income. The expense <b>Windows</b> adapted sir.

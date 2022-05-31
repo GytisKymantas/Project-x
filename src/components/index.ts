@@ -47,6 +47,8 @@ export * from "./organisms/subscriptionBoxSection/SubscriptionBoxSection";
 // about
 export * from "./molecules/about/About";
 // checkout container
+export * from "./molecules/checkoutContainer/CheckOutContainer";
+//health info
 export * from "./atoms/healthInformation/HealthInformation";
 // health results
 export * from "./organisms/healthInformationSection/HealthInformationSection";
@@ -54,6 +56,12 @@ export * from "./organisms/healthInformationSection/HealthInformationSection";
 export * from "./molecules/quizHeader/QuizHeader";
 //caloric counter
 export * from "./atoms/caloricCounter/CaloricCounter";
+//quizContainerWrapper
+export * from "./atoms/wrappers/QuizContainerWrapper";
+//singleChoiceAnswers
+export * from "./atoms/singleChoiceAnswer/SingleAnswer";
+// multiple choice answers
+export * from "./atoms/multipleChoiceAnswer/MultipleChoiceAnswer";
 //homelink
 export * from "./atoms/homeLink/HomeLink";
 // scale

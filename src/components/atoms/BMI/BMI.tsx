@@ -17,35 +17,31 @@ export const BMI: React.FC = () => {
     heightInches
   );
 
-  console.log(userData, "userdata rounded");
-  console.log(BMIrounded, "bmi rounded");
-  console.log(imperialBMIrounded, "bmi rounded");
-
   return (
     <FlexWrapper
-      justifyContent="center"
-      flexDirection="column"
       alignItems="center"
-      gap="25px"
+      flexDirection="column"
+      gap="1.5625rem"
+      justifyContent="center"
     >
       <Box mb="s20">
-        <Typography fontWeight="fw700" color="primary">
+        <Typography color="primary" fontWeight="fw700">
           Your Body Mass Index:
         </Typography>
       </Box>
       <Box
         bg="white"
-        width="20.625rem"
-        margin="s0auto"
         boxShadow="default"
         borderRadius="br24"
+        margin="s0auto"
+        mx="s20"
         py="s10"
         px="s5"
-        mx="s20"
+        width="20.625rem"
       >
         <FlexWrapper flexDirection="column" gap="1.25rem">
           <FlexWrapper
-            borderRadius="0.75rem"
+            borderRadius="br14"
             bg={
               (BMIrounded !== Infinity && BMIrounded >= 25) ||
               (imperialBMIrounded !== Infinity && imperialBMIrounded >= 25)
@@ -75,7 +71,7 @@ export const BMI: React.FC = () => {
           </FlexWrapper>
 
           <FlexWrapper
-            borderRadius="0.75rem"
+            borderRadius="br14"
             bg={
               (BMIrounded !== Infinity &&
                 BMIrounded > 19 &&
@@ -114,7 +110,7 @@ export const BMI: React.FC = () => {
             </Typography>
           </FlexWrapper>
           <FlexWrapper
-            borderRadius="0.75rem"
+            borderRadius="br14"
             bg={
               (BMIrounded !== Infinity && BMIrounded <= 19) ||
               (imperialBMIrounded !== Infinity && imperialBMIrounded <= 19)

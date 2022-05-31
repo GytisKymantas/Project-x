@@ -17,33 +17,33 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
     <ContentWrapper margin="s0auto" width="25rem">
       <FlexWrapper flexDirection="column" alignItems="center">
         <FlexWrapper
-          gap="0.625rem"
-          width="100%"
-          pt="s10"
-          mb="s25"
-          justifyContent="center"
           borderBottom="scales"
+          gap="0.625rem"
+          justifyContent="center"
+          mb="s25"
+          pt="s10"
+          width="100%"
         >
           <MeasurementWrapper
-            pb="s10"
             borderBottom={Imperial ? "orangedefault" : "transparent"}
             onClick={handleSystem}
+            pb="s10"
           >
             <Typography
-              fontWeight="fw700"
               color={Imperial ? "orange" : "primary"}
+              fontWeight="fw700"
             >
               Imperial
             </Typography>
           </MeasurementWrapper>
           <MeasurementWrapper
-            pb="s10"
             borderBottom={!Imperial ? "orangedefault" : "transparent"}
             onClick={handleSystem}
+            pb="s10"
           >
             <Typography
-              fontWeight="fw700"
               color={Imperial ? "primary" : "orange"}
+              fontWeight="fw700"
             >
               Metric
             </Typography>

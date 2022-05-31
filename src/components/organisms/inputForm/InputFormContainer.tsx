@@ -5,52 +5,53 @@ import {
   MetricWrapper,
   QuizAnswer,
 } from "components";
-import styled from "styled-components/macro";
 import { navigate } from "gatsby";
 import { useDispatch } from "react-redux";
 import { setUserData } from "state/slices/userDataSlice";
+import styled from "styled-components/macro";
 
 export const InputFormContainer: React.FC = () => {
-  const [ifImperial, setIfImperial] = useState(false);
   const [age, setAge] = useState<string>("");
-  const [height, setHeight] = useState<string>("");
-  const [feet, setFeet] = useState<string>("");
-  const [inches, setInches] = useState<string>("");
-  const [weight, setWeight] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
   const [desiredWeight, setDesiredWeight] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [feet, setFeet] = useState<string>("");
+  const [height, setHeight] = useState<string>("");
+  const [ifImperial, setIfImperial] = useState(false);
+  const [inches, setInches] = useState<string>("");
   const [userState, setUserState] = useState({
     age: null as unknown as string,
-    height: null as unknown as string,
-    weight: null as unknown as string,
-    feet: null as unknown as string,
-    inches: null as unknown as string,
     desiredWeight: null as unknown as string,
     email: "",
+    feet: null as unknown as string,
+    height: null as unknown as string,
+    inches: null as unknown as string,
+    weight: null as unknown as string,
   });
+  const [weight, setWeight] = useState<string>("");
+
   const dispatch = useDispatch();
 
   const handleFunction = () => {
     setUserState({
       age: age,
-      height: height,
-      weight: weight,
       desiredWeight: desiredWeight,
-      feet: feet,
-      inches: inches,
       email: email,
+      feet: feet,
+      height: height,
+      inches: inches,
+      weight: weight,
     });
   };
 
   const handleSystem = () => {
-    setIfImperial(!ifImperial);
     setAge("");
-    setHeight("");
-    setFeet("");
-    setInches("");
-    setWeight("");
     setDesiredWeight("");
     setEmail("");
+    setFeet("");
+    setHeight("");
+    setIfImperial(!ifImperial);
+    setInches("");
+    setWeight("");
   };
 
   useEffect(() => {
@@ -70,99 +71,99 @@ export const InputFormContainer: React.FC = () => {
             <>
               <InputFormData
                 setStateValue={setAge}
-                value={age}
-                placeholder="Age"
-                minValue={18}
                 maxValue={100}
                 measurement="years"
+                minValue={18}
+                placeholder="Age"
                 type="number"
+                value={age}
               />
               <InputFormData
                 imperial
-                setStateValue={setFeet}
                 imperialSetStateValue={setInches}
-                value={feet}
                 imperialValue={inches}
-                placeholder="Feet"
-                imperialPlaceholder="Inches"
-                minValue={4}
-                maxValue={6}
                 imperialMinValue={0}
                 imperialMaxValue={11}
-                measurement="ft"
+                imperialPlaceholder="Inches"
                 imperialMeasurement="in"
+                setStateValue={setFeet}
+                maxValue={6}
+                measurement="ft"
+                minValue={4}
+                placeholder="Feet"
                 type="number"
+                value={feet}
               />
               <InputFormData
                 setStateValue={setWeight}
-                value={weight}
-                placeholder="Weight"
                 minValue={100}
-                maxValue={350}
-                type="number"
                 measurement="lb"
+                maxValue={350}
+                placeholder="Weight"
+                type="number"
+                value={weight}
               />
               <InputFormData
                 setStateValue={setDesiredWeight}
-                value={desiredWeight}
-                placeholder="Desired Weight"
                 minValue={100}
-                maxValue={300}
-                type="number"
                 measurement="lb"
+                maxValue={300}
+                placeholder="Desired Weight"
+                type="number"
+                value={desiredWeight}
               />
               <InputFormData
                 setStateValue={setEmail}
-                value={email}
+                measurement="email"
                 placeholder="E-mail"
                 type="email"
-                measurement="email"
+                value={email}
               />
             </>
           ) : (
             <>
               <InputFormData
-                setStateValue={setAge}
-                value={age}
                 placeholder="Age"
-                minValue={18}
                 maxValue={100}
-                type="number"
                 measurement="years"
+                minValue={18}
+                setStateValue={setAge}
+                type="number"
+                value={age}
               />
               <InputFormData
-                setStateValue={setHeight}
-                value={height}
                 placeholder="Height"
-                minValue={100}
                 maxValue={240}
-                type="number"
                 measurement="cm"
+                minValue={100}
+                setStateValue={setHeight}
+                type="number"
+                value={height}
               />
               <InputFormData
-                setStateValue={setWeight}
-                value={weight}
                 placeholder="Weight"
+                maxValue={150}
+                measurement="kg"
                 minValue={40}
-                maxValue={150}
+                setStateValue={setWeight}
                 type="number"
-                measurement="kg"
+                value={weight}
               />
               <InputFormData
-                setStateValue={setDesiredWeight}
-                value={desiredWeight}
                 placeholder="Desired Weight"
-                minValue={30}
                 maxValue={150}
-                type="number"
                 measurement="kg"
+                minValue={30}
+                setStateValue={setDesiredWeight}
+                type="number"
+                value={desiredWeight}
               />
               <InputFormData
-                setStateValue={setEmail}
-                value={email}
                 placeholder="E-mail"
-                type="email"
                 measurement="email"
+                setStateValue={setEmail}
+                type="email"
+                value={email}
               />
             </>
           )}

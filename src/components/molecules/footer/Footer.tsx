@@ -4,9 +4,9 @@ import { mobile } from "styles/breakpoints";
 import { SOCIALS_ARRAY } from "constants/Constants";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-
+//TODO:mobile?
 export const Footer: React.FC = () => (
-  <Box id="Check" as="footer" borderTop="scale" mt="s80">
+  <Box as="footer" borderTop="scale" id="Check" mt="s80">
     <Box p="s35s0">
       <FlexWrapper
         justifyContent="space-around"
@@ -14,10 +14,10 @@ export const Footer: React.FC = () => (
         pt="s20"
       >
         <FlexWrapper
-          textAlign={{ _: "center" }}
           flexDirection="column"
           gap="1.25rem"
           pb="s20"
+          textAlign={{ _: "center" }}
         >
           <HomeLink />
           <Typography color="gray">
@@ -26,8 +26,8 @@ export const Footer: React.FC = () => (
           </Typography>
         </FlexWrapper>
         <FlexWrapper
-          gap="1.25rem"
           flexDirection={mobile ? "row" : "column"}
+          gap="1.25rem"
           justifyContent={mobile ? "center" : "flex-end"}
           pb={{ _: "s20", ltablet: "s0" }}
         >
@@ -38,9 +38,9 @@ export const Footer: React.FC = () => (
       </FlexWrapper>
     </Box>
     <FlexWrapper
-      height="10vh"
-      bg="primary"
       alignItems="center"
+      bg="primary"
+      height="10vh"
       justifyContent="center"
     >
       <Typography color="white">

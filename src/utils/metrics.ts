@@ -1,16 +1,3 @@
-// import { useSelector } from "react-redux";
-// import { selectUserData, selectQuizAnswers } from "state/selectors";
-
-// export const userData = useSelector(selectUserData);
-// export const weight = userData.weight;
-// export const desiredWeight = userData.desiredWeight;
-
-// export const userQuizAnswers = useSelector(selectQuizAnswers);
-// export const workoutFrequencyAnswer = userQuizAnswers?.isWorkingOut;
-// export const isSmoking = userQuizAnswers?.isSmoking;
-// export const isHeartCondition = userQuizAnswers?.isHeartCondition;
-// export const isAsthmatic = userQuizAnswers?.isAsthmatic;
-
 export const metricBMIcalculator = (weight: number, height: number) =>
   Math.floor(((weight * 1000) / (height * height)) * 10);
 export const heightToInches = (feet: number, inches: number) =>

@@ -19,22 +19,22 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
   onClick,
 }) => (
   <Box
-    minWidth="22.5625rem"
     height="3rem"
-    position={"relative"}
+    minWidth="22.5625rem"
     m={isSubmit ? "s8" : "s8"}
     onClick={onClick}
+    position={"relative"}
   >
     {isSubmit ? (
       <BaseButton
-        type="submit"
         boxShadow={disabled ? "" : `${theme.shadows.default}`}
         disabled={disabled}
+        type="submit"
       >
         {children}
       </BaseButton>
     ) : (
-      <BaseButton type="button" background="graylight" border={border}>
+      <BaseButton background="graylight" border={border} type="button">
         <FlexWrapper justifyContent="center">{children}</FlexWrapper>
       </BaseButton>
     )}

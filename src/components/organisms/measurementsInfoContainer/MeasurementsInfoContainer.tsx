@@ -13,49 +13,41 @@ import { Gender, Height, Scales, Age } from "assets/images";
 export const MeasurementsInfoContainer: React.FC = () => {
   const userData = useSelector(selectUserData);
   const age = userData.age;
-  const height = userData.height;
-  const weight = userData.weight;
   const feet = userData.feet;
-  const inches = userData.inches;
-  const desiredWeight = userData.desiredWeight;
+  const height = userData.height;
   const isMale = userData.isMale;
+  const inches = userData.inches;
+  const weight = userData.weight;
 
   const MEASUREMENT_CONTAINER_DATA = [
     {
-      image: <Gender />,
-      title: isMale,
-      subtitle: "Gender",
       id: "1",
+      image: <Gender />,
+      subtitle: "Gender",
+      title: isMale,
     },
     {
-      image: <Age />,
-      title: age,
-      subtitle: "Age",
       id: "2",
+      image: <Age />,
+      subtitle: "Age",
+      title: age,
     },
     {
-      image: <Height />,
-      title: height,
       feet: feet,
+      id: "3",
+      image: <Height />,
       inches: inches,
       imperialSubtitle: "Height ft",
       subtitle: "Height cm",
-      id: "3",
+      title: height,
     },
     {
-      image: <Scales />,
-      title: weight,
-      subtitle: "Weight",
       id: "4",
+      image: <Scales />,
+      subtitle: "Weight",
+      title: weight,
     },
   ];
-
-  console.log(userData, "this is from redux measurements");
-  console.log(age, "this is from redux age");
-  console.log(height, "this is from redux height");
-  console.log(weight, "this is from redux weight");
-  console.log(desiredWeight, "this is from redux desiredWeight");
-  console.log(isMale, "this is from redux gender");
 
   return (
     <SectionWrapper>
@@ -65,6 +57,7 @@ export const MeasurementsInfoContainer: React.FC = () => {
         </Typography>
       </Box>
       <GridWrapper
+        gap="1.25rem"
         gridTemplateColumns={{
           _: "repeat(1,1fr)",
           ltablet: "repeat(4,1fr)",
@@ -72,18 +65,17 @@ export const MeasurementsInfoContainer: React.FC = () => {
         maxWidth="71.875rem"
         m="s0auto"
         p={{ _: "s32", ltablet: "s0" }}
-        gap="1.25rem"
       >
         {MEASUREMENT_CONTAINER_DATA.map(
-          ({ id, image, title, subtitle, feet, inches, imperialSubtitle }) => (
+          ({ feet, inches, imperialSubtitle, id, image, subtitle, title }) => (
             <MeasurementCard
-              key={id}
-              title={title}
-              subtitle={subtitle}
-              image={image}
               feet={feet}
+              image={image}
               inches={inches}
               imperialSubtitle={imperialSubtitle}
+              key={id}
+              subtitle={subtitle}
+              title={title}
             />
           )
         )}
@@ -91,5 +83,3 @@ export const MeasurementsInfoContainer: React.FC = () => {
     </SectionWrapper>
   );
 };
-
-export default MeasurementsInfoContainer;

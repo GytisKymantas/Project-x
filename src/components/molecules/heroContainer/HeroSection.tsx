@@ -10,7 +10,6 @@ import {
   GenderButtons,
   Image,
 } from "components";
-import { StaticImage } from "gatsby-plugin-image";
 
 export const HeroSection: React.FC = () => (
   <SectionWrapper id="Home">
@@ -22,14 +21,14 @@ export const HeroSection: React.FC = () => (
           </FlexWrapper>
           <FlexWrapper flexDirection="column" maxWidth="26.125rem" m="s0auto">
             <SectionHeader
-              type="h1"
               header="Reach your Fitness goals today!"
               paragraph="Take a few minute to go through our quick quiz to determine which personal Fitness plan for You!."
+              type="h1"
             />
             <GenderButtons />
           </FlexWrapper>
         </Container>
-        <Box position="relative" display={{ _: "none", ltablet: "block" }}>
+        <Box display={{ _: "none", ltablet: "block" }} position="relative">
           <Image src="skipper" />
         </Box>
       </GridWrapper>

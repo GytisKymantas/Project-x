@@ -13,7 +13,7 @@ export interface IQuizData {
   question?: IQuizQuestions;
 }
 export interface IQuizDataSlice {
-  quizData?: IQuizData[];
+  quizData: IQuizData[];
 }
 
 export interface IUserData {
@@ -26,7 +26,7 @@ export interface IUserData {
   isMale: boolean;
   email: string;
 }
-export interface IUserDataSlicer {
+export interface IUserDataSlice {
   user_data: IUserData;
 }
 

@@ -13,9 +13,9 @@ export const ReturnButton: React.FC<ReturnButtonProps> = ({
   <FlexWrapper justifyContent="center" gap="0.625rem" mb="s30">
     <BaseButton
       background="transparent"
-      width={width}
       onClick={onClick}
       type="button"
+      width={width}
     >
       <Arrow />
     </BaseButton>

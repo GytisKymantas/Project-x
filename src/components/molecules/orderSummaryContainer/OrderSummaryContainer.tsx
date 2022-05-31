@@ -14,19 +14,18 @@ import { selectUserData } from "state/selectors";
 export const OrderSummaryContainer: React.FC = () => {
   const emailData = useSelector(selectUserData);
   const email = emailData.email;
-  console.log(email, "this is email");
   return (
     <SectionWrapper>
       <Box>
         <SectionHeader
           center
-          type="h2"
           header="Thank You for Purchasing!"
           paragraph="We hope you will enjoy your new journey!"
+          type="h2"
         />
         <Box>
           <Box mt="s50">
-            <Typography textAlign="center" color="primary" fontWeight="fw700">
+            <Typography color="primary" fontWeight="fw700" textAlign="center">
               Order Summary:
             </Typography>
           </Box>
@@ -36,12 +35,12 @@ export const OrderSummaryContainer: React.FC = () => {
           <Box>
             <SectionHeader
               center
-              type="h6"
               header="How to start the Anxietless program?"
               paragraph="We have just sent out a letter to your email address:"
+              type="h6"
             />
             <Box p="s16">
-              <Typography fontWeight="fw700" color="primary" textAlign="center">
+              <Typography color="primary" fontWeight="fw700" textAlign="center">
                 {email}
               </Typography>
               <Typography color="primary" textAlign="center">
@@ -49,7 +48,7 @@ export const OrderSummaryContainer: React.FC = () => {
               </Typography>
             </Box>
           </Box>
-          <Box position="absolute" top="80%" zIndex={-4} opacity="0.2">
+          <Box opacity="0.2" position="absolute" top="80%" zIndex={-4}>
             <Image src="party" />
           </Box>
         </FlexWrapper>

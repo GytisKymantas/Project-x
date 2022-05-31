@@ -5,10 +5,10 @@ import { flexbox } from "styled-system";
 import { Box } from "components";
 
 interface FlexWrapperProps {
-  justifyContent?: string;
-  flexDirection?: string;
   alignItems?: string;
   flexWrap?: string;
+  justifyContent?: string;
+  flexDirection?: string;
 }
 export const FlexWrapper = styled(Box)<FlexWrapperProps>`
   display: flex;

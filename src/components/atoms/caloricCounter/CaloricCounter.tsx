@@ -12,16 +12,16 @@ export const CaloricCounter: React.FC = () => {
   //TODO: fix
   return (
     <Box bg="white" height="26.5625rem" m="s0auto">
-      <FlexWrapper flexDirection="column" alignItems="center" gap={"0.625rem"}>
-        <Typography type="h5" color="primary">
+      <FlexWrapper alignItems="center" flexDirection="column" gap="0.625rem">
+        <Typography color="primary" type="h5">
           Daily Calory Intake
         </Typography>
         {feet ? (
-          <Typography type="h4" color="primary">
+          <Typography color="primary" type="h4">
             {caloricIntakeImperial} - {caloricIntakeImperial + 200}kcal
           </Typography>
         ) : (
-          <Typography type="h4" color="primary">
+          <Typography color="primary" type="h4">
             {caloricIntake} - {caloricIntake + 200}kcal
           </Typography>
         )}

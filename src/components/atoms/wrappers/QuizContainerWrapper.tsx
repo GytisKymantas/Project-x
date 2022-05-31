@@ -6,18 +6,19 @@ import {
   QuizHeader,
   FlexWrapper,
 } from "components";
+import { IQuizData } from "state/types";
 import { WIDTH_SCALE } from "constants/Constants";
 
 interface QuizContainerWrapperProps {
-  page: number;
+  answers: IQuizData[];
   children: React.ReactNode;
-  answers?: string[];
+  page: number;
 }
 
 export const QuizContainerWrapper: React.FC<QuizContainerWrapperProps> = ({
-  page,
-  children,
   answers,
+  children,
+  page,
 }) => {
   return (
     <>
@@ -26,9 +27,9 @@ export const QuizContainerWrapper: React.FC<QuizContainerWrapperProps> = ({
         <ContentWrapper maxWidth="100%">
           <QuizHeader page={page} answers={answers} />
           <FlexWrapper
+            alignItems="center"
             flexDirection={page === 2 || page === 5 ? "row" : "column"}
             flexWrap="wrap"
-            alignItems="center"
             justifyContent="center"
             mt="s50"
           >

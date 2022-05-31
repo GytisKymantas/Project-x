@@ -6,7 +6,7 @@ Atomic Design, by Gytis
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Atomic Design, by Gytis
 </h1>
 
 ## 🚀 Quick start

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IUserDataSlice } from "state/types";
+import { IUserDataSlicer } from "state/types";
 
-export const initialState: IUserDataSlice = {
+export const initialState: IUserDataSlicer = {
   user_data: {
     age: null as unknown as number,
     height: null as unknown as number,
@@ -10,6 +10,7 @@ export const initialState: IUserDataSlice = {
     feet: null as unknown as number,
     inches: null as unknown as number,
     isMale: null as unknown as boolean,
+    email: "" as string,
   },
 };
 
@@ -23,8 +24,11 @@ export const UserDataSlice = createSlice({
     setGenderData: (state, actions) => {
       state.user_data = { ...state.user_data, isMale: actions.payload };
     },
+    setEmail: (state, actions) => {
+      state.user_data = { ...state.user_data, isMale: actions.payload };
+    },
   },
 });
 
-export const { setUserData, setGenderData } = UserDataSlice.actions;
+export const { setUserData, setEmail, setGenderData } = UserDataSlice.actions;
 export default UserDataSlice;

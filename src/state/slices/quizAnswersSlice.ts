@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IQuizAnswers } from "state/types";
+import { createSlice } from "@reduxjs/toolkit";
+import { IQuizAnswersSlice } from "state/types";
 
-export const initialState: IQuizAnswers = {
+export const initialState: IQuizAnswersSlice = {
   quiz_answers: {
     isWorkingOut: "",
     isSmoking: "",

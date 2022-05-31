@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Input, FlexWrapper, Typography } from "components";
+import { InputType } from "../wrappers/Input";
 
 interface InputFormDataProps {
   setStateValue?: React.Dispatch<React.SetStateAction<string>>;
@@ -15,6 +16,7 @@ interface InputFormDataProps {
   imperialMaxValue?: number;
   imperialMeasurement?: string;
   imperialValue?: string;
+  type: InputType;
 }
 
 export const InputFormData: React.FC<InputFormDataProps> = ({
@@ -31,6 +33,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
   imperialMaxValue,
   imperialMeasurement,
   imperialValue,
+  type,
 }) => {
   const handleImperialInputValue = (e: React.FormEvent<HTMLInputElement>) => {
     const eventTarget = e.target as HTMLInputElement;
@@ -56,7 +59,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
             position="relative"
           >
             <Input
-              type="number"
+              type={type}
               placeholder={placeholder}
               required
               value={value}
@@ -76,7 +79,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
             position="relative"
           >
             <Input
-              type="number"
+              type={type}
               placeholder={imperialPlaceholder}
               required
               value={imperialValue}
@@ -94,7 +97,7 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
         </FlexWrapper>
       ) : (
         <Input
-          type="number"
+          type={type}
           placeholder={placeholder}
           required
           value={value}

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IPurchaseData } from "state/types";
+import { IPurchaseDataSlice } from "state/types";
 
-export const initialState: IPurchaseData = {
+export const initialState: IPurchaseDataSlice = {
   purchase_data: {
     id: null as unknown as number,
     month: "",

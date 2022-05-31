@@ -4,15 +4,13 @@ import styled from "styled-components/macro";
 
 interface MetricWrapperProps {
   children: React.ReactNode;
-  handleImperial?: () => void;
-  handleMetric?: () => void;
+  handleSystem?: () => void;
   Imperial?: boolean;
 }
 
 export const MetricWrapper: React.FC<MetricWrapperProps> = ({
   children,
-  handleImperial,
-  handleMetric,
+  handleSystem,
   Imperial,
 }) => {
   return (
@@ -29,7 +27,7 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
           <MeasurementWrapper
             pb="s10"
             borderBottom={Imperial ? "orangedefault" : "transparent"}
-            onClick={handleImperial}
+            onClick={handleSystem}
           >
             <Typography
               fontWeight="fw700"
@@ -41,7 +39,7 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
           <MeasurementWrapper
             pb="s10"
             borderBottom={!Imperial ? "orangedefault" : "transparent"}
-            onClick={handleMetric}
+            onClick={handleSystem}
           >
             <Typography
               fontWeight="fw700"

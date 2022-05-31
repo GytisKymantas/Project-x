@@ -7,30 +7,27 @@ export interface IQuizAnswers {
 export interface IQuizQuestions {
   answers?: IQuizAnswers[];
   title: string;
-  // title: string;
-}
-export interface IQuizQuestionDetails {
-  question: IQuizQuestions;
 }
 
 export interface IQuizData {
   question?: IQuizQuestions;
-  quizData: IQuizQuestionDetails[];
 }
-export interface IQuestionQuizData {
-  question: string[];
-  page: number;
+export interface IQuizDataSlice {
+  quizData?: IQuizData[];
 }
-export interface IUserDataSlice {
-  user_data: {
-    age: number;
-    height: number;
-    weight: number;
-    desiredWeight: number;
-    feet: number;
-    inches: number;
-    isMale: boolean;
-  };
+
+export interface IUserData {
+  age: number;
+  height: number;
+  weight: number;
+  desiredWeight: number;
+  feet: number;
+  inches: number;
+  isMale: boolean;
+  email: string;
+}
+export interface IUserDataSlicer {
+  user_data: IUserData;
 }
 
 export interface IMultipleChoice {
@@ -42,20 +39,22 @@ export interface IPageination {
 }
 
 export interface IPurchaseData {
-  purchase_data: {
-    id: number;
-    month: string;
-    newValue: number;
-  };
+  id: number;
+  month: string;
+  newValue: number;
+}
+export interface IPurchaseDataSlice {
+  purchase_data: IPurchaseData;
 }
 
 export interface IQuizAnswers {
-  quiz_answers: {
-    isWorkingOut: string;
-    isSmoking: string;
-    isAsthmatic: string;
-    isHeartCondition: string;
-  };
+  isWorkingOut: string;
+  isSmoking: string;
+  isAsthmatic: string;
+  isHeartCondition: string;
+}
+export interface IQuizAnswersSlice {
+  quiz_answers: IQuizAnswers;
 }
 
 export type AppState = ReturnType<typeof rootReducer>;

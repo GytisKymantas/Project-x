@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IQuizData } from "state/types";
+import { IQuizDataSlice } from "state/types";
 
-export const initialState: IQuizData = {
+export const initialState: IQuizDataSlice = {
   quizData: [],
 };
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Box, FlexWrapper, Typography } from "components";
+import { Box } from "components";
 import styled, { keyframes } from "styled-components/macro";
 import { navigate } from "gatsby";
 import { Loader } from "components";
 
-const Loading: React.FC = () => {
+export const LoadingPage: React.FC = () => {
   const [state, setState] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,6 @@ const Loading: React.FC = () => {
     </Box>
   );
 };
-export default Loading;
 
 const animate = keyframes`
 0% { width: 0; }

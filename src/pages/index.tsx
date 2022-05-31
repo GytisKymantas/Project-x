@@ -9,6 +9,7 @@ import {
   Footer,
   CheckOutContainer,
 } from "components";
+
 const Landing: React.FC = () => (
   <>
     <Navigation />

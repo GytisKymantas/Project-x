@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigation, Footer, OrderSummaryContainer } from "components";
 
-const success: React.FC = () => (
+const Success: React.FC = () => (
   <>
     <Navigation defaultPage successPage />
     <OrderSummaryContainer />
@@ -9,4 +9,4 @@ const success: React.FC = () => (
   </>
 );
 
-export default success;
+export default Success;

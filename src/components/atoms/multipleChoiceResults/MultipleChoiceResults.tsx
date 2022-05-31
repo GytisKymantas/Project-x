@@ -24,7 +24,7 @@ export const MultipleChoiceResults: React.FC = () => {
         The personalised e-book plan will include:
       </Typography>
       <FlexWrapper justifyContent="center" gap="50px">
-        <FlexWrapper justifyContent="flex-end" flexDirection="column">
+        <FlexWrapper flexDirection="column">
           <Typography textAlign="center" color="primary" py="s10">
             Your conditions:
           </Typography>

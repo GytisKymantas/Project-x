@@ -42,7 +42,7 @@ export * from "./molecules/heroContainer/HeroSection";
 export * from "./atoms/progressBar/ProgressBar";
 //sub box
 export * from "./atoms/subscriptionBox/SubscriptionBox";
-export * from "./molecules/subcriptionBoxContainer/SubscriptionBoxContainer";
+export * from "./molecules/subscriptionBoxContainer/SubscriptionBoxContainer";
 export * from "./organisms/subscriptionBoxSection/SubscriptionBoxSection";
 // about
 export * from "./molecules/about/About";
@@ -87,3 +87,5 @@ export * from "./molecules/orderSummaryContainer/OrderSummaryContainer";
 export * from "./atoms/multipleChoiceResults/MultipleChoiceResults";
 //loader
 export * from "./atoms/loader/Loader";
+//loadingpage
+export * from "./molecules/loadingPage/LoadingPage";

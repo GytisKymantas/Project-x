@@ -9,6 +9,7 @@ import { navigate } from "gatsby";
 import { useDispatch } from "react-redux";
 import { setUserData } from "state/slices/userDataSlice";
 import styled from "styled-components/macro";
+import { pageNext } from "state/slices/pageSlice";
 
 export const InputFormContainer: React.FC = () => {
   const [age, setAge] = useState<string>("");
@@ -63,7 +64,7 @@ export const InputFormContainer: React.FC = () => {
       <FormContainer
         onSubmit={(e) => {
           e.preventDefault();
-          navigate("/loading");
+          dispatch(pageNext());
         }}
       >
         <FlexWrapper flexDirection="column" gap="1.5625rem" width="100%">

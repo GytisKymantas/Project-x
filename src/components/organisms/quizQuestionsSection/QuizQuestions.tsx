@@ -4,6 +4,7 @@ import {
   InputFormContainer,
   ReturnButton,
   Loader,
+  LoadingPage,
   QuizContainerWrapper,
   SingleChoiceAnswer,
   MultipleChoiceAnswer,
@@ -44,18 +45,27 @@ export const QuizQuestionsSection: React.FC = () => {
       case 6:
         return <InputFormContainer />;
       case 7:
+        return <LoadingPage />;
     }
   };
   return (
     <>
-      <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
-        <Box left="40%" position="absolute" top="90%">
-          {ANSWERS_ARRAY.length === 0 && <Loader />}
+      {page < 7 ? (
+        <Box>
+          <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
+            {ANSWERS_ARRAY.length === 0 && (
+              <Box left="40%" position="absolute" top="90%">
+                <Loader />{" "}
+              </Box>
+            )}
+            <Box>{Questions()}</Box>
+          </QuizContainerWrapper>
+          {ANSWERS_ARRAY.length !== 0 && (
+            <ReturnButton onClick={() => handlePage()} width="6.25rem" />
+          )}
         </Box>
+      ) : (
         <Box>{Questions()}</Box>
-      </QuizContainerWrapper>
-      {ANSWERS_ARRAY.length !== 0 && (
-        <ReturnButton onClick={() => handlePage()} width="6.25rem" />
       )}
     </>
   );

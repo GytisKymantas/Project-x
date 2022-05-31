@@ -1,4 +1,3 @@
-Atomic Design, by Gytis
 
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">

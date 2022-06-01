@@ -24,11 +24,8 @@ export const UserDataSlice = createSlice({
     setGenderData: (state, actions) => {
       state.user_data = { ...state.user_data, isMale: actions.payload };
     },
-    setEmail: (state, actions) => {
-      state.user_data = { ...state.user_data, isMale: actions.payload };
-    },
   },
 });
 
-export const { setUserData, setEmail, setGenderData } = UserDataSlice.actions;
+export const { setUserData, setGenderData } = UserDataSlice.actions;
 export default UserDataSlice;

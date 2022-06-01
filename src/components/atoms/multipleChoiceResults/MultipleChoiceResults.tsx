@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Box,
-  SectionWrapper,
-  GridWrapper,
-  Typography,
-  FlexWrapper,
-} from "components";
+import { Box, SectionWrapper, Typography, FlexWrapper } from "components";
 import { useSelector } from "react-redux";
 import {
   selectMultipleChoice,
@@ -13,6 +7,7 @@ import {
 } from "state/selectors";
 import { Verified, VerifiedYellow } from "assets/images";
 import styled from "styled-components/macro";
+import { mobile } from "styles/breakpoints";
 
 export const MultipleChoiceResults: React.FC = () => {
   const multipleData = useSelector(selectMultipleChoice);
@@ -27,7 +22,7 @@ export const MultipleChoiceResults: React.FC = () => {
       </Box>
       <FlexWrapper
         justifyContent="center"
-        gap={{ _: "1.5625rem", ltablet: "3.125rem" }}
+        gap={mobile ? "1.5625rem" : "3.125rem"}
       >
         <FlexWrapper flexDirection="column">
           <Typography textAlign="center" color="primary" py="s10">
@@ -59,6 +54,6 @@ const ListItem = styled.li`
   font-family: satisfy;
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 10px;
+  gap: 0.9375rem;
+  padding: 0.625rem;
 `;

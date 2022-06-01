@@ -1,7 +1,6 @@
 import React from "react";
 import { Styles } from "components/atoms/wrappers/Box";
 import { color } from "styled-system";
-
 import { theme, Theme } from "../../../styles/theme";
 import styled from "styled-components/macro";
 

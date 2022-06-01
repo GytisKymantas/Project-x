@@ -1,13 +1,13 @@
 import React from "react";
 import {
-  Navigation,
+  About,
+  CheckOutContainer,
+  Footer,
   HeroSection,
+  Navigation,
+  Partners,
   QuestionsCardContainer,
   ReviewContainer,
-  About,
-  Partners,
-  Footer,
-  CheckOutContainer,
 } from "components";
 
 const Landing: React.FC = () => (

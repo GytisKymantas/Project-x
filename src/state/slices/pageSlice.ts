@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { IPageination } from "state/types";
 
 export const initialState: IPageination = { value: 0 };

@@ -12,13 +12,11 @@ export interface IQuizQuestions {
 export interface IQuizData {
   question?: IQuizQuestions;
 }
+
 export interface IQuizDataSlice {
   quizData: IQuizData[];
 }
 
-// interface isMale {
-//   isMale: string;
-// }
 export interface IUserData {
   age: number;
   height: number;
@@ -29,6 +27,7 @@ export interface IUserData {
   isMale?: string;
   email: string;
 }
+
 export interface IUserDataSlice {
   user_data: IUserData;
 }
@@ -37,6 +36,7 @@ export interface IMultipleChoice {
   multiple_choice: string[];
   multiple_choiceGoals: string[];
 }
+
 export interface IPageination {
   value: number;
 }
@@ -46,6 +46,7 @@ export interface IPurchaseData {
   month: string;
   newValue: string;
 }
+
 export interface IPurchaseDataSlice {
   purchase_data: IPurchaseData;
 }
@@ -56,6 +57,7 @@ export interface IQuizSingleAnswers {
   isAsthmatic: string | IQuizSingleAnswers;
   isHeartCondition: string | IQuizSingleAnswers;
 }
+
 export interface IQuizAnswersSlice {
   quiz_answers: IQuizSingleAnswers;
 }

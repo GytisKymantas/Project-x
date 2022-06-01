@@ -50,6 +50,7 @@ export const theme = {
     orangethick: `5px solid ${colors.orange}`,
   },
   zIndices: {
+    sub: -4,
     base: 0,
     upperElement: 1,
     modal: 10,

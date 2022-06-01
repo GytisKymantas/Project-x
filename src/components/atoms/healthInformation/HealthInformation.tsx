@@ -1,7 +1,7 @@
 import React from "react";
+import { Box, Typography, FlexWrapper } from "components";
 import { Heart } from "assets/images";
 import { IQuizSingleAnswers } from "state/types";
-import { Box, Typography, FlexWrapper } from "components";
 
 interface HealthInformationProps {
   answer: string | boolean | IQuizSingleAnswers;

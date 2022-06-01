@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Container,
-  ContentWrapper,
-  Typography,
-  FlexWrapper,
-  Box,
-} from "components";
+import { ContentWrapper, Typography, FlexWrapper, Box } from "components";
 import { Cross, Minus } from "assets/images";
 import styled from "styled-components/macro";
 

@@ -14,19 +14,19 @@ interface Styles {
 }
 
 interface ImageProps extends Styles {
-  src: Visuals;
+  alt?: string;
   mobile_src?: Visuals;
   onClick?: () => void;
-  alt?: string;
+  src: Visuals;
 }
 
 const Img = styled.img<Styles>`
   border-radius: ${({ borderRadius }) => borderRadius || ""};
+  height: ${({ height }) => height || ""};
   margin: ${({ margin }) => margin || ""};
   max-width: ${({ maxWidth }) => maxWidth || ""};
-  width: ${({ width }) => width || ""};
-  height: ${({ height }) => height || ""};
   max-height: ${({ maxHeight }) => maxHeight || ""};
+  width: ${({ width }) => width || ""};
 `;
 
 export const Image: React.FC<ImageProps> = ({

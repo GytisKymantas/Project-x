@@ -55,9 +55,9 @@ export const ScaleResult: React.FC = () => {
           {SCALE_BULLETS.map(({ id, left, top }) => (
             <Box position="absolute" key={id} left={left} top={top}>
               <FlexWrapper
-                width="3.75rem"
                 flexDirection="column"
                 justifyContent="center"
+                width="3.75rem"
               >
                 <Typography color="primary">
                   {userData.height
@@ -67,10 +67,10 @@ export const ScaleResult: React.FC = () => {
               </FlexWrapper>
               <Box
                 bg="red"
-                borderRadius="br50"
-                width="0.9375rem"
-                height="0.9375rem"
                 border="scale"
+                borderRadius="br50"
+                height="0.9375rem"
+                width="0.9375rem"
               />
             </Box>
           ))}

@@ -8,7 +8,6 @@ export const LoadingPage: React.FC = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => setState(!state), 2900);
-
     return () => clearTimeout(timeout);
   }, []);
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
+  BaseButton,
   Box,
   FlexWrapper,
-  HomeLink,
-  BaseButton,
-  Typography,
   GenderButtons,
+  HomeLink,
+  Typography,
 } from "components";
 import { theme } from "styles/theme";
 import styled from "styled-components/macro";

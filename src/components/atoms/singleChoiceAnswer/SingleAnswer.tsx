@@ -41,9 +41,7 @@ export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
     <Box>
       {answers?.map((answers, i) => (
         <Box key={i}>
-          <QuizAnswer
-            onClick={() => handlePage(answers as unknown as string[])}
-          >
+          <QuizAnswer onClick={() => handlePage(answers as IQuizSingleAnswers)}>
             {answers as unknown as React.ReactNode}
           </QuizAnswer>
         </Box>

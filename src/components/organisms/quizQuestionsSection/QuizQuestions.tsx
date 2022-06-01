@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import {
   Box,
   InputFormContainer,
-  ReturnButton,
   Loader,
   LoadingPage,
-  QuizContainerWrapper,
-  SingleChoiceAnswer,
   MultipleChoiceAnswer,
+  QuizContainerWrapper,
+  ReturnButton,
+  SingleChoiceAnswer,
 } from "components";
 import { useSelector, useDispatch } from "react-redux";
 import { pageBack } from "state/slices/pageSlice";

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-  FlexWrapper,
-  SubscriptionBox,
   Box,
-  QuizAnswer,
+  FlexWrapper,
   Image,
+  SubscriptionBox,
+  QuizAnswer,
 } from "components";
 import { SUBSCRIPTION_DETAILS } from "constants/Constants";
 import { useDispatch } from "react-redux";
@@ -12,10 +12,11 @@ import { navigate } from "gatsby";
 import { theme } from "styles/theme";
 import { setPurchaseData } from "state/slices/purchaseDataSlice";
 import styled from "styled-components/macro";
+import { IPurchaseData } from "state/types";
 
 export const SubscriptionBoxContainer: React.FC = () => {
   const dispatch = useDispatch();
-  const [selectedUser, setSelectedUser] = useState({
+  const [selectedUser, setSelectedUser] = useState<IPurchaseData>({
     id: null as unknown as number,
     month: "",
     newValue: null as unknown as string,
@@ -49,15 +50,15 @@ export const SubscriptionBoxContainer: React.FC = () => {
             width="22.5rem"
           >
             <SubscriptionBox
+              billed={billed}
               discount={discount}
               month={month}
-              key={id}
               id={id}
-              selectedUserId={selectedUser.id}
+              key={id}
               monthlyValue={monthlyValue}
-              oldValue={oldValue}
               newValue={newValue}
-              billed={billed}
+              oldValue={oldValue}
+              selectedUserId={selectedUser.id}
             />
           </Subscription>
         )

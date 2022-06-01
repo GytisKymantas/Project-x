@@ -12,25 +12,25 @@ import { Gender, Height, Scales, Age } from "assets/images";
 
 export const MeasurementsInfoContainer: React.FC = () => {
   const userData = useSelector(selectUserData);
-  const age = userData.age;
-  const feet = userData.feet;
-  const height = userData.height;
-  const isMale = userData.isMale;
-  const inches = userData.inches;
-  const weight = userData.weight;
+  const age = userData?.age;
+  const feet = userData?.feet;
+  const height = userData?.height;
+  const isMale = userData?.isMale;
+  const inches = userData?.inches;
+  const weight = userData?.weight;
 
   const MEASUREMENT_CONTAINER_DATA = [
     {
       id: "1",
       image: <Gender />,
       subtitle: "Gender",
-      title: isMale,
+      title: isMale as unknown as string,
     },
     {
       id: "2",
       image: <Age />,
       subtitle: "Age",
-      title: age,
+      title: age as unknown as string,
     },
     {
       feet: feet,
@@ -39,13 +39,13 @@ export const MeasurementsInfoContainer: React.FC = () => {
       inches: inches,
       imperialSubtitle: "Height ft",
       subtitle: "Height cm",
-      title: height,
+      title: height as unknown as string,
     },
     {
       id: "4",
       image: <Scales />,
       subtitle: "Weight",
-      title: weight,
+      title: weight as unknown as string,
     },
   ];
 

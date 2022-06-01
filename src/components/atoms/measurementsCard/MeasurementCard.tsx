@@ -2,7 +2,7 @@ import React from "react";
 import { Box, SectionHeader } from "components";
 
 interface MeasurementsProps {
-  title: number | boolean;
+  title: string | number;
   subtitle: string;
   image: React.ReactNode;
   imperialSubtitle?: string;

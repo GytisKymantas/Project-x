@@ -3,36 +3,36 @@ import { Box, Typography, FlexWrapper } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
 import { Scale, BackwardArrow } from "assets/images";
-import styled from "styled-components/macro";
 import { SCALE_BULLETS, SCALE_ARRAY } from "constants/Constants";
 import { nameOfTwoMonths, nameOfCurrentMonth } from "utils/metrics";
+
 export const ScaleResult: React.FC = () => {
   const userData = useSelector(selectUserData);
   const weight = userData.weight;
   const desiredWeight = userData.desiredWeight;
 
   return (
-    <Box width="26.5625rem" bg="white" p="s20" m="auto">
-      <Box position="absolute" width="24.0625rem" height="24.0625rem">
+    <Box bg="white" m="auto" p="s20" width="26.5625rem">
+      <Box height="24.0625rem" position="absolute" width="24.0625rem">
         <FlexWrapper
-          position="absolute"
-          width="100%"
           height="71.5%"
-          top="28%"
           justifyContent="space-between"
+          position="absolute"
+          top="28%"
+          width="100%"
         >
           {SCALE_ARRAY.map((week, i) => (
-            <Box key={i} width="1px" height="100%" bg="lightwhite">
+            <Box height="100%" bg="lightwhite" key={i} width="1px">
               {week}
             </Box>
           ))}
         </FlexWrapper>
       </Box>
-      <Box bg="white" width="24.0625rem" height="23.9375rem">
+      <Box bg="white" height="23.9375rem" width="24.0625rem">
         <Box mb="s50" p="s50">
           <FlexWrapper justifyContent="space-around">
             <FlexWrapper flexDirection="column">
-              <Typography fontWeight="fw700" color="primary">
+              <Typography color="primary" fontWeight="fw700">
                 {nameOfCurrentMonth}
               </Typography>
               <Typography color="primary">
@@ -52,8 +52,8 @@ export const ScaleResult: React.FC = () => {
         </Box>
         <Box position="relative">
           <Scale />
-          {SCALE_BULLETS.map(({ id, top, left, coeficient }) => (
-            <Box position="absolute" key={id} top={top} left={left}>
+          {SCALE_BULLETS.map(({ id, left, top }) => (
+            <Box position="absolute" key={id} left={left} top={top}>
               <FlexWrapper
                 width="3.75rem"
                 flexDirection="column"

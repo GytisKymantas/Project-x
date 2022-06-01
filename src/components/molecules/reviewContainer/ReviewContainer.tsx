@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import {
-  SectionWrapper,
-  Container,
   Box,
+  Container,
   FlexWrapper,
   GridWrapper,
+  Image,
   ReviewCard,
   SectionHeader,
-  Image,
+  SectionWrapper,
 } from "components";
 import { REVIEW_DATA } from "constants/Constants";
 
-//TODO: fix z index
 export const ReviewContainer: React.FC = () => {
   const [index, setIndex] = useState(0);
 

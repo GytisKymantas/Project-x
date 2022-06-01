@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation, Footer, OrderSummaryContainer } from "components";
+import { Footer, Navigation, OrderSummaryContainer } from "components";
 
 const Success: React.FC = () => (
   <>

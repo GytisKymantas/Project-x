@@ -18,7 +18,7 @@ export const About: React.FC = () => (
       margin={{ _: "s16", ltablet: "s50" }}
       textAlign={{ _: "justify", ltablet: "unset" }}
     >
-      <Box m="s0auto">
+      <Box mx="auto">
         <Image src="girlpost" />
       </Box>
       <Box m="auto" width="80%">

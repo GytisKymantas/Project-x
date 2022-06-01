@@ -48,7 +48,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
         <Typography color="primary" fontWeight="fw700" type="span">
           {name}
         </Typography>
-        <Typography fontSize="fs16" color="gray" type="span">
+        <Typography color="gray" fontSize="fs16" type="span">
           {occupation}
         </Typography>
       </FlexWrapper>

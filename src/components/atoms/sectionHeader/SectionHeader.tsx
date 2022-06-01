@@ -30,13 +30,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       justifyContent="center"
     >
       <Typography
-        type={type}
         color="primary"
         textAlign={center ? "center" : "justify"}
+        type={type}
       >
         {header}
       </Typography>
-      <Typography textAlign={center ? "center" : "justify"} color="gray">
+      <Typography color="gray" textAlign={center ? "center" : "justify"}>
         {paragraph}
       </Typography>
     </FlexWrapper>

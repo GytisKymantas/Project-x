@@ -1,14 +1,14 @@
 import React from "react";
 import {
-  Footer,
-  Navigation,
-  HealthInformationSection,
-  MeasurementsInfoContainer,
-  SubscriptionBoxSection,
-  ScaleSection,
   BMI,
   CheckoutHero,
+  Footer,
+  HealthInformationSection,
+  MeasurementsInfoContainer,
   MultipleChoiceResults,
+  Navigation,
+  SubscriptionBoxSection,
+  ScaleSection,
 } from "components";
 
 const Checkout: React.FC = () => (

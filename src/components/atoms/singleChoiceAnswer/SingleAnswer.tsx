@@ -3,7 +3,7 @@ import { Box, QuizAnswer } from "components";
 import { useDispatch } from "react-redux";
 import { pageNext } from "state/slices/pageSlice";
 import { IQuizData } from "state/types";
-
+import { IQuizSingleAnswers } from "state/types";
 import {
   setIsAsthmatic,
   setIsWorkingOut,
@@ -22,7 +22,7 @@ export const SingleChoiceAnswer: React.FC<SingleAnswerTestProps> = ({
   const dispatch = useDispatch();
   const answers = quizAnswers[page]?.question?.answers;
 
-  const handlePage = (answers: string[]) => {
+  const handlePage = (answers: IQuizSingleAnswers) => {
     switch (page) {
       case 0:
         return dispatch(setIsWorkingOut(answers)), dispatch(pageNext());

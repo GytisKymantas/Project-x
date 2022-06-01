@@ -17,13 +17,6 @@ interface NavigationProps {
   defaultPage?: boolean;
   successPage?: boolean;
 }
-
-//TODO: fix weight values,
-// TODO: fix FAQ cursor
-//TODO: fix About page
-// TODO fix navigation display on success has to be unique
-//TODO fix success page to be more pleasant,
-
 export const Navigation: React.FC<NavigationProps> = ({
   defaultPage,
   successPage,
@@ -53,7 +46,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       zIndex="loader"
     >
       {mobileView && (
-        <MobileCover>
+        <MobileCover display={{ _: "flex", ltablet: "none" }}>
           <FlexWrapper
             alignItems="center"
             flexDirection="column"
@@ -154,10 +147,6 @@ const MobileCover = styled(FlexWrapper)`
   position: fixed;
   width: 100%;
   z-index: ${theme.zIndices.loader};
-
-  @media (width: 1068px) {
-    display: none !important;
-  }
 `;
 const MobileWrapper = styled(Box)`
   cursor: pointer;

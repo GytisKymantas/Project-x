@@ -28,8 +28,8 @@ export const theme = {
     fs32: "2rem",
   },
   radii: {
-    br14: "14px",
-    br20: "20px",
+    br14: "0.875rem",
+    br20: "1.25rem",
     br24: "1.5rem",
     br50: "50%",
   },
@@ -137,7 +137,7 @@ export const theme = {
     caption12: {
       fontSize: "1rem",
       fontSizeMobile: "0.8rem",
-      lineHeightMobile: "1.475rem",
+      lineHeightMobile: "1.75rem",
       lineHeight: "1.875rem",
       fontWeight: 400,
     },

@@ -19,13 +19,13 @@ export const InputFormContainer: React.FC = () => {
   const [ifImperial, setIfImperial] = useState(false);
   const [inches, setInches] = useState<string>("");
   const [userState, setUserState] = useState({
-    age: null as unknown as string,
-    desiredWeight: null as unknown as string,
+    age: null as unknown as number,
+    desiredWeight: null as unknown as number,
     email: "",
-    feet: null as unknown as string,
-    height: null as unknown as string,
-    inches: null as unknown as string,
-    weight: null as unknown as string,
+    feet: null as unknown as number,
+    height: null as unknown as number,
+    inches: null as unknown as number,
+    weight: null as unknown as number,
   });
   const [weight, setWeight] = useState<string>("");
 
@@ -33,13 +33,13 @@ export const InputFormContainer: React.FC = () => {
 
   const handleFunction = () => {
     setUserState({
-      age: age,
-      desiredWeight: desiredWeight,
+      age: parseInt(age),
+      desiredWeight: parseInt(desiredWeight),
       email: email,
-      feet: feet,
-      height: height,
-      inches: inches,
-      weight: weight,
+      feet: parseInt(feet),
+      height: parseInt(height),
+      inches: parseInt(inches),
+      weight: parseInt(weight),
     });
   };
 
@@ -73,7 +73,7 @@ export const InputFormContainer: React.FC = () => {
                 setStateValue={setAge}
                 maxValue={100}
                 measurement="years"
-                minValue={18}
+                minValue={13}
                 placeholder="Age"
                 type="number"
                 value={age}
@@ -96,7 +96,7 @@ export const InputFormContainer: React.FC = () => {
               />
               <InputFormData
                 setStateValue={setWeight}
-                minValue={100}
+                minValue={80}
                 measurement="lb"
                 maxValue={350}
                 placeholder="Weight"
@@ -105,9 +105,9 @@ export const InputFormContainer: React.FC = () => {
               />
               <InputFormData
                 setStateValue={setDesiredWeight}
-                minValue={100}
+                minValue={80}
                 measurement="lb"
-                maxValue={300}
+                maxValue={350}
                 placeholder="Desired Weight"
                 type="number"
                 value={desiredWeight}
@@ -128,7 +128,7 @@ export const InputFormContainer: React.FC = () => {
                 placeholder="Age"
                 maxValue={100}
                 measurement="years"
-                minValue={18}
+                minValue={13}
                 setStateValue={setAge}
                 type="number"
                 value={age}
@@ -146,7 +146,7 @@ export const InputFormContainer: React.FC = () => {
                 placeholder="Weight"
                 maxValue={150}
                 measurement="kg"
-                minValue={40}
+                minValue={35}
                 setStateValue={setWeight}
                 type="number"
                 value={weight}
@@ -155,7 +155,7 @@ export const InputFormContainer: React.FC = () => {
                 placeholder="Desired Weight"
                 maxValue={150}
                 measurement="kg"
-                minValue={30}
+                minValue={35}
                 setStateValue={setDesiredWeight}
                 type="number"
                 value={desiredWeight}

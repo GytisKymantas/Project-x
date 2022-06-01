@@ -5,12 +5,12 @@ import { mobile } from "styles/breakpoints";
 import { Visuals, visuals } from "utils/visuals";
 
 interface Styles {
-  maxWidth?: string;
-  width?: string;
-  height?: string;
+  borderRadius?: string;
   margin?: string;
   maxHeight?: string;
-  borderRadius?: string;
+  maxWidth?: string;
+  height?: string;
+  width?: string;
 }
 
 interface ImageProps extends Styles {

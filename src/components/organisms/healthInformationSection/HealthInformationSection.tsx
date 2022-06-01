@@ -16,7 +16,7 @@ export const HealthInformationSection: React.FC = () => {
     {
       answer: true,
       id: "1",
-      title: workoutFrequencyAnswer,
+      title: workoutFrequencyAnswer as string,
       treatment:
         "Get at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week",
     },
@@ -63,11 +63,11 @@ export const HealthInformationSection: React.FC = () => {
 export const HeaderTitle = styled(Typography)`
   :after {
     background: ${theme.colors.orange};
-    border-radius: 3px;
+    border-radius: 0.1875rem;
     content: "";
     display: block;
-    height: 2px;
-    margin: 30px auto;
-    width: 80px;
+    height: 0.125rem;
+    margin: 1.875rem auto;
+    width: 5rem;
   }
 `;

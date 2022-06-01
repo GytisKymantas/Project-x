@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexWrapper, Box, Typography, HomeLink } from "components";
+import { Box, FlexWrapper, HomeLink, Typography } from "components";
 import { IQuizData } from "state/types";
 
 interface QuizHeaderProps {

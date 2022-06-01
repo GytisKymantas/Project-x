@@ -1,13 +1,13 @@
 import React from "react";
 import {
-  SectionWrapper,
-  Typography,
-  Container,
-  ScaleResult,
-  GridWrapper,
   BaseButton,
   CaloricCounter,
+  Container,
   FlexWrapper,
+  GridWrapper,
+  SectionWrapper,
+  ScaleResult,
+  Typography,
 } from "components";
 import scrollTo from "gatsby-plugin-smoothscroll";
 

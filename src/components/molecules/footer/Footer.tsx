@@ -1,10 +1,10 @@
 import React from "react";
-import { FlexWrapper, Box, Typography, HomeLink } from "components";
+import { Box, FlexWrapper, HomeLink, Typography } from "components";
 import { mobile } from "styles/breakpoints";
 import { SOCIALS_ARRAY } from "constants/Constants";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-//TODO:mobile?
+
 export const Footer: React.FC = () => (
   <Box as="footer" borderTop="scale" id="Check" mt="s80">
     <Box p="s35s0">

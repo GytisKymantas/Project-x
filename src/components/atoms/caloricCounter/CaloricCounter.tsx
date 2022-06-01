@@ -6,10 +6,9 @@ import { caloricImperialIntake, caloricMetricIntake } from "utils/metrics";
 
 export const CaloricCounter: React.FC = () => {
   const userData = useSelector(selectUserData);
-  const feet = userData.feet;
   const caloricIntake = caloricMetricIntake(userData?.weight);
   const caloricIntakeImperial = caloricImperialIntake(userData?.weight);
-  //TODO: fix
+  const feet = userData.feet;
   return (
     <Box bg="white" height="26.5625rem" m="s0auto">
       <FlexWrapper alignItems="center" flexDirection="column" gap="0.625rem">

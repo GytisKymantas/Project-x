@@ -31,7 +31,7 @@ export type ButtonStyles = Pick<
 
 export const BaseButton = styled.button<ButtonStyles>`
   border-style: none;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   border: ${({ border }) => border};
   background-color: ${({ background }) => background || ""};
   box-shadow: ${({ boxShadow }) => boxShadow || ""};

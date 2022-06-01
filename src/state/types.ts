@@ -16,6 +16,9 @@ export interface IQuizDataSlice {
   quizData: IQuizData[];
 }
 
+// interface isMale {
+//   isMale: string;
+// }
 export interface IUserData {
   age: number;
   height: number;
@@ -23,7 +26,7 @@ export interface IUserData {
   desiredWeight: number;
   feet: number;
   inches: number;
-  isMale: boolean | IUserData;
+  isMale?: string;
   email: string;
 }
 export interface IUserDataSlice {
@@ -41,7 +44,7 @@ export interface IPageination {
 export interface IPurchaseData {
   id: number;
   month: string;
-  newValue: number;
+  newValue: string;
 }
 export interface IPurchaseDataSlice {
   purchase_data: IPurchaseData;

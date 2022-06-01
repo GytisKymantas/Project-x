@@ -9,7 +9,7 @@ export const initialState: IUserDataSlice = {
     desiredWeight: null as unknown as number,
     feet: null as unknown as number,
     inches: null as unknown as number,
-    isMale: null as unknown as boolean,
+    isMale: "",
     email: "",
   },
 };
@@ -21,7 +21,7 @@ export const UserDataSlice = createSlice({
     setUserData: (state, actions: PayloadAction<IUserData>) => {
       state.user_data = { ...state.user_data, ...actions.payload };
     },
-    setGenderData: (state, actions: PayloadAction<IUserData>) => {
+    setGenderData: (state, actions: PayloadAction<string>) => {
       state.user_data = { ...state.user_data, isMale: actions.payload };
     },
   },

@@ -8,13 +8,13 @@ export const PurchaseBox: React.FC = () => {
   return (
     <Box
       bg="orangelight"
-      m="1rem auto"
       border="orangethick"
+      maxWidth="31.25rem"
+      mx="s16"
+      my="auto"
       p="s32"
-      boxShadow=""
-      maxWidth="500px"
     >
-      <FlexWrapper justifyContent="space-between" p="s16" borderBottom="answer">
+      <FlexWrapper borderBottom="answer" justifyContent="space-between" p="s16">
         <Box>
           <Typography color="primary">
             Purchased title: {purchaseData?.month}
@@ -27,15 +27,15 @@ export const PurchaseBox: React.FC = () => {
         </Box>
       </FlexWrapper>
       <FlexWrapper
+        alignItems="flex-end"
+        flexDirection="column"
         justifyContent="center"
         p="s16"
-        flexDirection="column"
-        alignItems="flex-end"
       >
-        <Typography fontWeight="fw700" color="primary">
+        <Typography color="primary" fontWeight="fw700">
           Total
         </Typography>
-        <Typography fontWeight="fw700" color="primary">
+        <Typography color="primary" fontWeight="fw700">
           {purchaseData?.newValue}
         </Typography>
       </FlexWrapper>

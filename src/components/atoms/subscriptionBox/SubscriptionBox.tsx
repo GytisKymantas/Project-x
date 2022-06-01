@@ -5,37 +5,37 @@ import { Box, Typography, FlexWrapper } from "components";
 import styled from "styled-components/macro";
 
 interface SubscriptionBoxProps {
+  billed: string;
   discount: string;
+  id: number;
   month: string;
   monthlyValue: string;
-  selectedUserId: number;
-  oldValue?: string | number;
   newValue?: string | number;
-  billed: string;
-  id: number;
+  oldValue?: string | number;
+  selectedUserId: number;
 }
 
 export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
+  billed,
   discount,
+  id,
   month,
   monthlyValue,
-  selectedUserId,
-  oldValue,
   newValue,
-  billed,
-  id,
+  oldValue,
+  selectedUserId,
 }) => (
   <>
     <FlexWrapper alignItems="center" gap="0.5rem">
       <Typography color="primary">{month}</Typography>
       <Box bg="taxi" p="s5">
-        <Typography fontWeight="fw700" color="primary">
+        <Typography color="primary" fontWeight="fw700">
           {discount}
         </Typography>
       </Box>
     </FlexWrapper>
     <FlexWrapper alignItems="center" gap="0.5rem" pt="s18">
-      <Typography fontWeight="fw700" fontSize="fs20" color="primary">
+      <Typography color="primary" fontWeight="fw700" fontSize="fs20">
         {monthlyValue}
       </Typography>
       <FlexWrapper justifyContent="space-between" width="100%">
@@ -46,7 +46,7 @@ export const SubscriptionBox: React.FC<SubscriptionBoxProps> = ({
       </FlexWrapper>
     </FlexWrapper>
     <FlexWrapper alignItems="center" gap="0.5rem" pt="s18">
-      <Typography fontWeight="fw700" fontSize="fs20" color="orange">
+      <Typography color="orange" fontWeight="fw700" fontSize="fs20">
         <CrossedPrice>{oldValue}</CrossedPrice>
         {newValue}
       </Typography>

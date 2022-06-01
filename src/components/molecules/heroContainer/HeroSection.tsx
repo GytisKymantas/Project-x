@@ -1,14 +1,14 @@
 import React from "react";
 import {
   Box,
-  SectionWrapper,
   ContentWrapper,
+  Container,
   FlexWrapper,
   GridWrapper,
-  Container,
-  SectionHeader,
   GenderButtons,
   Image,
+  SectionWrapper,
+  SectionHeader,
 } from "components";
 import { mobile } from "styles/breakpoints";
 

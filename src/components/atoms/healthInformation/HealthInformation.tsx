@@ -1,17 +1,18 @@
 import React from "react";
 import { Heart } from "assets/images";
-import { Box, Typography, FlexWrapper, Image } from "components";
+import { IQuizSingleAnswers } from "state/types";
+import { Box, Typography, FlexWrapper } from "components";
 
 interface HealthInformationProps {
-  title: string;
+  answer: string | boolean | IQuizSingleAnswers;
+  title: string | React.ReactNode;
   treatment: string;
-  answer?: string | boolean;
 }
 
 export const HealthInformation: React.FC<HealthInformationProps> = ({
+  answer,
   title,
   treatment,
-  answer,
 }) => (
   <>
     {answer !== "False" && (
@@ -21,19 +22,13 @@ export const HealthInformation: React.FC<HealthInformationProps> = ({
             <Box position="relative">
               <Heart />
             </Box>
-            <Box position="absolute" top="35%" left="33%"></Box>
           </Box>
-          <FlexWrapper flexDirection="column" width="85%" gap="2rem">
-            <Typography textAlign="center" color="primary" type="h4">
+          <FlexWrapper flexDirection="column" gap="2rem" width="85%">
+            <Typography color="primary" textAlign="center" type="h4">
               {title}
             </Typography>
             <Box maxWidth="26.25rem" margin="s0auto">
-              <Typography
-                type="caption12"
-                letterSpacing="2px"
-                textAlign="justify"
-                color="gray"
-              >
+              <Typography color="gray" textAlign="justify" type="caption12">
                 {treatment}
               </Typography>
             </Box>

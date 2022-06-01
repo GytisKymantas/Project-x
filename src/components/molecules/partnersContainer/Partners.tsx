@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  SectionWrapper,
-  GridWrapper,
   FlexWrapper,
+  GridWrapper,
   Image,
+  SectionWrapper,
   SectionHeader,
 } from "components";
 import { PARTNER_IMAGES } from "constants/Constants";

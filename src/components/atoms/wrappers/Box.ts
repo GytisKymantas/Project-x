@@ -1,8 +1,6 @@
 import styled from "styled-components/macro";
 import { Theme } from "styles/theme";
 import {
-  alignSelf,
-  AlignSelfProps,
   border,
   BorderProps,
   BoxShadowProps,

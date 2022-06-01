@@ -1,5 +1,5 @@
 import { Property } from "csstype";
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import {
   compose,
@@ -12,9 +12,7 @@ import {
   textStyle,
   typography,
 } from "styled-system";
-
 import { Colors, Theme } from "styles/theme";
-
 import { applyTextType } from "./TypographyHelpers";
 
 export type TextType =
@@ -43,21 +41,21 @@ export enum TextTag {
 type AsAttributeType = string | React.ComponentType;
 
 const typographyProperties = compose(
-  textAlign,
   fontWeight,
   lineHeight,
+  space,
+  textAlign,
   textStyle,
-  typography,
-  space
+  typography
 );
 
 export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
   color?: Colors;
-  type?: TextType;
-  textTransform?: Property.TextTransform; // priims tik tokius
-  textDecoration?: Property.TextDecoration;
-  onClick?: () => void;
   children: React.ReactNode;
+  onClick?: () => void;
+  textTransform?: Property.TextTransform;
+  textDecoration?: Property.TextDecoration;
+  type?: TextType;
 }
 
 export const Typography: React.FC<TextProps> = ({
@@ -75,14 +73,14 @@ export const Typography: React.FC<TextProps> = ({
 };
 
 const Text = styled.p<TextProps>`
-  padding: 0;
-  ${({ type, theme }) =>
-    type && applyTextType(type as TextType, theme as Theme)};
   color: ${({ theme, color }) =>
     color ? theme.colors[color] : theme.colors.white};
   && {
     ${typographyProperties}
   }
+  padding: 0;
+  ${({ type, theme }) =>
+    type && applyTextType(type as TextType, theme as Theme)};
   text-transform: ${({ textTransform }) => textTransform || ""};
   text-decoration: ${({ textDecoration }) => textDecoration || ""};
 `;

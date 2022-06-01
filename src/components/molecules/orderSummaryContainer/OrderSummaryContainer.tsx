@@ -2,10 +2,10 @@ import React from "react";
 import {
   Box,
   FlexWrapper,
-  SectionHeader,
-  SectionWrapper,
   Image,
   PurchaseBox,
+  SectionHeader,
+  SectionWrapper,
   Typography,
 } from "components";
 import { useSelector } from "react-redux";
@@ -48,7 +48,7 @@ export const OrderSummaryContainer: React.FC = () => {
               </Typography>
             </Box>
           </Box>
-          <Box opacity="0.2" position="absolute" top="80%" zIndex={-4}>
+          <Box opacity="0.2" position="absolute" top="80%" zIndex="sub">
             <Image src="party" />
           </Box>
         </FlexWrapper>

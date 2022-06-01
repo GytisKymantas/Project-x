@@ -61,13 +61,6 @@ export const ReviewContainer: React.FC = () => {
             />
             <Box margin="auto" position="relative">
               <Image src="squad" />
-              {/* <Box
-                left="19%"
-                opacity="0.6"
-                position="absolute"
-                top="0"
-                zIndex={-1}
-              ></Box> */}
             </Box>
           </GridWrapper>
         </Box>

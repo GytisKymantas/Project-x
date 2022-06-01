@@ -43,7 +43,7 @@ export const Footer: React.FC = () => (
       height="10vh"
       justifyContent="center"
     >
-      <Typography color="white">
+      <Typography color="white" textAlign="center">
         {new Date().getFullYear()} © All rights reserved,{" "}
         <span style={{ color: `${theme.colors.orange}` }}>Gytis Kymantas</span>,
         Vilnius, Lithuania

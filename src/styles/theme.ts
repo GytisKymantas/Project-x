@@ -94,7 +94,7 @@ export const theme = {
     },
     h2: {
       fontSize: "4.5rem",
-      fontSizeMobile: "3.5rem",
+      fontSizeMobile: "3em",
       lineHeightMobile: "3.5rem",
       lineHeight: "5.875rem",
       fontWeight: 500,
@@ -108,8 +108,8 @@ export const theme = {
     },
     h4: {
       fontSize: "2.125rem",
-      fontSizeMobile: "2rem",
-      lineHeightMobile: "3rem",
+      fontSizeMobile: "1.5rem",
+      lineHeightMobile: "2rem",
       lineHeight: "3rem",
       fontWeight: 700,
     },
@@ -136,8 +136,8 @@ export const theme = {
     },
     caption12: {
       fontSize: "1rem",
-      fontSizeMobile: "1rem",
-      lineHeightMobile: "1.875rem",
+      fontSizeMobile: "0.8rem",
+      lineHeightMobile: "1.475rem",
       lineHeight: "1.875rem",
       fontWeight: 400,
     },

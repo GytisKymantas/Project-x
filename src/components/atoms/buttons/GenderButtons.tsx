@@ -21,7 +21,7 @@ export const GenderButtons: React.FC = () => {
   }, [isMale]);
 
   return (
-    <FlexWrapper gap="0.625rem" mt="s20">
+    <FlexWrapper gap="0.625rem" justifyContent="center" mt="s20">
       <Box onClick={handleQuizStart}>
         <BaseButton
           onClick={() => setIsMale({ isMale: "Male" })}

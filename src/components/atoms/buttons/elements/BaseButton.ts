@@ -26,6 +26,7 @@ export type ButtonStyles = Pick<
   | "boxShadow"
   | "cursor"
   | "pointer"
+  | "minWidth"
 >;
 
 export const BaseButton = styled.button<ButtonStyles>`
@@ -35,10 +36,11 @@ export const BaseButton = styled.button<ButtonStyles>`
   background-color: ${({ background }) => background || ""};
   box-shadow: ${({ boxShadow }) => boxShadow || ""};
   display: block;
-  transition: 0.3s;
-  padding: ${({ padding }) => padding || "1rem 1.5rem"};
-  width: 100%;
   font-weight: ${({ theme }) => theme.fontWeights.fw700};
+  min-width: ${({ minWidth }) => minWidth || ""};
+  padding: ${({ padding }) => padding || "1rem 1.5rem"};
+  transition: 0.3s;
+  width: 100%;
 
   &:hover:enabled {
     background: ${theme.colors.orange};

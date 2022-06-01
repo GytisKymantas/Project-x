@@ -20,10 +20,15 @@ export const MultipleChoiceResults: React.FC = () => {
 
   return (
     <SectionWrapper>
-      <Typography type="h4" textAlign="center" color="primary" pb="s50">
-        The personalised e-book plan will include:
-      </Typography>
-      <FlexWrapper justifyContent="center" gap="50px">
+      <Box m="auto" width={{ _: "80%", ltablet: "100%" }}>
+        <Typography type="h4" textAlign="center" color="primary" pb="s50">
+          The personalised e-book plan will include:
+        </Typography>
+      </Box>
+      <FlexWrapper
+        justifyContent="center"
+        gap={{ _: "1.5625rem", ltablet: "3.125rem" }}
+      >
         <FlexWrapper flexDirection="column">
           <Typography textAlign="center" color="primary" py="s10">
             Your conditions:

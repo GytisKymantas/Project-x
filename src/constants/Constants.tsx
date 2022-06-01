@@ -120,7 +120,7 @@ export const REVIEW_DATA = [
     imageSrc: "amber",
     name: "Amber Heard",
     paragraph:
-      "“Helped me lose weight! And to get my role for Aquaman!. Best thing I have ever purchased!.”",
+      "“Helped me lose weight! And to get my role for Aquaman!. Best thing I have ever purchased!”",
     occupation: "Actress",
   },
   {
@@ -138,7 +138,7 @@ export const REVIEW_DATA = [
     imageSrc: "elon",
     name: "Elon Musk",
     paragraph:
-      "“Great way to get SpaceX Astronauts in shape. Highly recommended!.”",
+      "“Great way to get SpaceX Astronauts in shape to withstand zero G. Highly recommended!”",
     occupation: "Innovator",
   },
 ];

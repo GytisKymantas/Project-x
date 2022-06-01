@@ -34,6 +34,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   const handleScrollY = () => {
     if (window.scrollY >= 780) {
       setFix(true);
+    } else if (mobileView === true) {
+      setFix(true);
     } else {
       setFix(false);
     }

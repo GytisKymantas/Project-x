@@ -67,25 +67,25 @@ export * from "./atoms/homeLink/HomeLink";
 // scale
 export * from "./atoms/scaleResult/ScaleResult";
 export * from "./organisms/scaleSection/ScaleSection";
-// //genderButtons
+// genderButtons
 export * from "./atoms/buttons/GenderButtons";
-//purchasd box
+//purchase box
 export * from "./atoms/purchaseBox/PurchaseBox";
 // quizQUESTIONS
 export * from "./organisms/quizQuestionsSection/QuizQuestions";
-//return button
+// return button
 export * from "./atoms/buttons/ReturnButton";
 // section header
 export * from "./atoms/sectionHeader/SectionHeader";
-//BMI
+// BMI
 export * from "./atoms/BMI/BMI";
-//measuremnt info
+// Measuremnt info
 export * from "./atoms/measurementsCard/MeasurementCard";
-//Order summary container
+// Order summary container
 export * from "./molecules/orderSummaryContainer/OrderSummaryContainer";
-// multiple choice results
+// Multiple choice results
 export * from "./atoms/multipleChoiceResults/MultipleChoiceResults";
-//loader
+// Loader
 export * from "./atoms/loader/Loader";
-//loadingpage
+// Loadingpage
 export * from "./molecules/loadingPage/LoadingPage";

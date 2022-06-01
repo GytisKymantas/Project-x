@@ -1,6 +1,6 @@
 import React from "react";
 import { FlexWrapper, Box, Typography, Image, SectionHeader } from "components";
-import { Star, Verified } from "assets/images";
+import { Star } from "assets/images";
 import { RATING_STAR_ARRAY, BULLET_ARRAY } from "constants/Constants";
 import styled from "styled-components/macro";
 
@@ -16,25 +16,25 @@ interface ReviewCardProps {
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({
   header,
-  paragraph,
+  handleImageClick,
+  index,
+  imageSrc,
   name,
   occupation,
-  index,
-  handleImageClick,
-  imageSrc,
+  paragraph,
 }) => (
   <ReviewCardContainer
-    flexDirection="column"
-    gap="3.875rem"
-    p="s30"
-    boxShadow="default"
-    height="25rem"
-    onClick={handleImageClick}
     borderRadius="br20"
+    boxShadow="default"
+    flexDirection="column"
+    height="25rem"
+    gap="3.875rem"
+    onClick={handleImageClick}
+    p="s30"
   >
     {" "}
-    <Box maxHeight="6.25rem">
-      <SectionHeader center type="h4" header={header} paragraph={paragraph} />
+    <Box height="6.25rem">
+      <SectionHeader center header={header} paragraph={paragraph} type="h4" />
     </Box>
     <Box mb="s25">
       <FlexWrapper alignItems="center" justifyContent="center">
@@ -45,19 +45,19 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
     </Box>
     <FlexWrapper alignItems="center" gap="7.5rem" justifyContent="space-around">
       <FlexWrapper flexDirection="column" gap="0.3125rem" width="7.5rem">
-        <Typography type="span" fontWeight="fw700" color="primary">
+        <Typography color="primary" fontWeight="fw700" type="span">
           {name}
         </Typography>
-        <Typography type="span" fontSize="fs16" color="gray">
+        <Typography fontSize="fs16" color="gray" type="span">
           {occupation}
         </Typography>
       </FlexWrapper>
       <Box>
         <Image
-          height="3.4375rem"
-          width="3.4375rem"
           borderRadius="50%"
+          height="3.4375rem"
           src={imageSrc}
+          width="3.4375rem"
         />
       </Box>
     </FlexWrapper>

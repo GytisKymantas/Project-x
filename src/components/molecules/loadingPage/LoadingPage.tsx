@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Box } from "components";
 import styled, { keyframes } from "styled-components/macro";
 import { navigate } from "gatsby";
-import { Loader } from "components";
 
 export const LoadingPage: React.FC = () => {
   const [state, setState] = useState(false);
@@ -24,7 +23,6 @@ export const LoadingPage: React.FC = () => {
           <Progress></Progress>
         </Bar>
       </LoadingBar>
-      <Loader />
     </Box>
   );
 };

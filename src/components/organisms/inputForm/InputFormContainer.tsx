@@ -5,7 +5,6 @@ import {
   MetricWrapper,
   QuizAnswer,
 } from "components";
-import { navigate } from "gatsby";
 import { useDispatch } from "react-redux";
 import { setUserData } from "state/slices/userDataSlice";
 import styled from "styled-components/macro";
@@ -115,6 +114,8 @@ export const InputFormContainer: React.FC = () => {
               />
               <InputFormData
                 setStateValue={setEmail}
+                maxLength={50}
+                minLength={3}
                 measurement="email"
                 placeholder="E-mail"
                 type="email"
@@ -161,6 +162,8 @@ export const InputFormContainer: React.FC = () => {
               />
               <InputFormData
                 placeholder="E-mail"
+                maxLength={50}
+                minLength={3}
                 measurement="email"
                 setStateValue={setEmail}
                 type="email"

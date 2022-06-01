@@ -8,6 +8,8 @@ interface InputFormDataProps {
   imperial?: boolean;
   value?: string;
   placeholder?: string;
+  maxLength?: number;
+  minLength?: number;
   minValue?: number;
   maxValue?: number;
   measurement: string;
@@ -26,6 +28,8 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
   value,
   measurement,
   placeholder,
+  maxLength,
+  minLength,
   minValue,
   maxValue,
   imperialPlaceholder,
@@ -104,6 +108,8 @@ export const InputFormData: React.FC<InputFormDataProps> = ({
           onChange={(e) => handleInputValue!(e)}
           minValue={minValue}
           maxValue={maxValue}
+          maxLength={maxLength}
+          minLength={minLength}
         />
       )}
       {imperial ? (

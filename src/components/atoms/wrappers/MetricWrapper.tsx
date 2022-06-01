@@ -14,7 +14,7 @@ export const MetricWrapper: React.FC<MetricWrapperProps> = ({
   Imperial,
 }) => {
   return (
-    <ContentWrapper margin="s0auto" width="25rem">
+    <ContentWrapper margin="s0auto" width={{ _: "20rem", ltablet: "25rem" }}>
       <FlexWrapper flexDirection="column" alignItems="center">
         <FlexWrapper
           borderBottom="scales"

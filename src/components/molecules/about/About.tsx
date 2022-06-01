@@ -7,6 +7,7 @@ import {
   SectionHeader,
   Image,
 } from "components";
+import { mobile } from "styles/breakpoints";
 
 export const About: React.FC = () => (
   <SectionWrapper id="About">
@@ -54,7 +55,7 @@ export const About: React.FC = () => (
         </Typography>
       </Box>
       <Box m="auto">
-        <Image src="spiral" />
+        <Image src="spiral" width={mobile ? "21.875rem" : "35.5rem"} />
       </Box>
     </GridWrapper>
   </SectionWrapper>

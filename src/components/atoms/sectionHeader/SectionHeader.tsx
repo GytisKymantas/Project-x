@@ -24,10 +24,10 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => (
   <Box>
     <FlexWrapper
+      alignItems="center"
       flexDirection="column"
       gap="1.25rem"
       justifyContent="center"
-      alignItems="center"
     >
       <Typography
         type={type}

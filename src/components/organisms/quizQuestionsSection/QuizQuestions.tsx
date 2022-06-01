@@ -54,7 +54,11 @@ export const QuizQuestionsSection: React.FC = () => {
         <Box>
           <QuizContainerWrapper answers={ANSWERS_ARRAY} page={page}>
             {ANSWERS_ARRAY.length === 0 && (
-              <Box left="40%" position="absolute" top="90%">
+              <Box
+                left={{ _: "35%", ltablet: "47%" }}
+                position="absolute"
+                top="130%"
+              >
                 <Loader />{" "}
               </Box>
             )}

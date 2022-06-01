@@ -60,7 +60,7 @@ export const HealthInformationSection: React.FC = () => {
   );
 };
 
-const HeaderTitle = styled(Typography)`
+export const HeaderTitle = styled(Typography)`
   :after {
     background: ${theme.colors.orange};
     border-radius: 3px;

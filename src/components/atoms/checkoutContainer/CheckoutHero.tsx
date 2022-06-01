@@ -3,7 +3,7 @@ import { SectionWrapper, SectionHeader, Typography, Box } from "components";
 
 export const CheckoutHero: React.FC = () => (
   <SectionWrapper>
-    <Box width="80%" margin="auto">
+    <Box width="80%" my="s30" mx="auto">
       <SectionHeader
         center
         type="h4"

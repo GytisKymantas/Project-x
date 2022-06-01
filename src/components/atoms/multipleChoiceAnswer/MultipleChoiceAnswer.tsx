@@ -58,7 +58,11 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
   };
 
   return (
-    <FlexWrapper flexWrap="wrap" justifyContent="center" maxWidth="66.25rem">
+    <FlexWrapper
+      flexWrap="wrap"
+      justifyContent="center"
+      maxWidth={{ _: "23rem", ltablet: "66.25rem" }}
+    >
       {answers?.map((answer, i) => (
         <Box position="relative" key={i}>
           {selectedAnswer.includes("none") ? (

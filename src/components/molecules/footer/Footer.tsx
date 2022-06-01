@@ -6,7 +6,12 @@ import styled from "styled-components/macro";
 import { theme } from "styles/theme";
 
 export const Footer: React.FC = () => (
-  <Box as="footer" borderTop="scale" id="Check" mt="s80">
+  <Box
+    as="footer"
+    borderTop="scale"
+    id="Check"
+    mt={{ _: "s30", ltablet: "s80" }}
+  >
     <Box p="s35s0">
       <FlexWrapper
         justifyContent="space-around"

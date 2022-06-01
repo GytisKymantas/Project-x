@@ -171,7 +171,12 @@ export const InputFormContainer: React.FC = () => {
               />
             </>
           )}
-          <QuizAnswer isSubmit onClick={handleFunction} type="submit">
+          <QuizAnswer
+            isSubmit
+            onClick={handleFunction}
+            type="submit"
+            minWidth="17rem"
+          >
             SUBMIT
           </QuizAnswer>
         </FlexWrapper>

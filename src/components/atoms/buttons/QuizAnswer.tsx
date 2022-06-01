@@ -9,14 +9,16 @@ interface QuizAnswerProps {
   border?: string;
   type?: "button" | "submit";
   onClick?: () => void;
+  minWidth: string;
 }
 
 export const QuizAnswer: React.FC<QuizAnswerProps> = ({
-  children,
-  isSubmit,
-  disabled,
   border,
+  children,
+  disabled,
+  isSubmit,
   onClick,
+  minWidth,
 }) => (
   <Box
     height="3rem"
@@ -29,7 +31,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
         boxShadow={disabled ? "" : `${theme.shadows.default}`}
         disabled={disabled}
         type="submit"
-        minWidth={{ _: "17.5rem", ltablet: "20.625rem" }}
+        minWidth={minWidth ? minWidth : "18.5rem"}
       >
         {children}
       </BaseButton>
@@ -37,7 +39,7 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
       <BaseButton
         background="graylight"
         border={border}
-        minWidth={{ _: "20.5625rem", ltablet: "22.5625rem" }}
+        minWidth={{ _: "18.55rem", ltablet: "22.5625rem" }}
         type="button"
       >
         <FlexWrapper justifyContent="center">{children}</FlexWrapper>

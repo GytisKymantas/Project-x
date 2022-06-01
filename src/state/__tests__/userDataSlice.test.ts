@@ -6,15 +6,13 @@ import {
 } from "../slices/userDataSlice";
 
 describe("user data reducer", () => {
-  const isMale = true;
-
   it("dispatches setGenderData value correctly to initial state", () => {
     expect(UserDataSlice.reducer(undefined, setUserData)).toEqual(initialState);
   });
 
   it("dispatches setGenderData value correctly to initial state", () => {
-    expect(UserDataSlice.reducer(initialState, setGenderData(isMale))).toEqual(
-      {}
-    );
+    expect(UserDataSlice.reducer(initialState, setGenderData("true"))).toEqual({
+      user_data: { ...initialState.user_data, isMale: "true" },
+    });
   });
 });

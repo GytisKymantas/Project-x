@@ -7,13 +7,14 @@ import {
   SectionWrapper,
   QuestionsCard,
 } from "components";
+import { mobile } from "styles/breakpoints";
 import { FAQ_DETAILS } from "constants/Constants";
 
 export const QuestionsCardContainer: React.FC = () => (
   <SectionWrapper>
     <GridWrapper
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-      gap="1.875rem"
+      gap={mobile ? "5.875rem" : "1.875rem"}
       margin="s20s50"
     >
       <Box borderRight={{ _: "none" }} pr={{ _: "s0", ltablet: "s50" }}>

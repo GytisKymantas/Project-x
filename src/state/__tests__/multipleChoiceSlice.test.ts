@@ -8,7 +8,7 @@ import {
 
 describe("user data reducer", () => {
   const isMale = ["smoking", "diabetes"];
-  const nullValue = [""] as unknown;
+  const nullValue = [""] as string[];
 
   it("dispatches setMultipleChoice array value correctly to initial state", () => {
     expect(

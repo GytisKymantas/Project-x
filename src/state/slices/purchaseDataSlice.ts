@@ -5,7 +5,7 @@ export const initialState: IPurchaseDataSlice = {
   purchase_data: {
     id: null as unknown as number,
     month: "",
-    newValue: null as unknown as string,
+    newValue: "",
   },
 };
 

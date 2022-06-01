@@ -75,7 +75,7 @@ export const theme = {
     s35s0: "2.1875rem 0",
     s40: "2.5rem",
     s50s0: "3.125rem 0",
-    s50sauto: "s50 auto",
+    s50sauto: "3.125rem auto",
     sautos50: "auto 3.125rem",
     s0s70: "0 4.375rem",
     s25: "1.5625rem",

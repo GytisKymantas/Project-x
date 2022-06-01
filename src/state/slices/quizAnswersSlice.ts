@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IQuizAnswersSlice } from "state/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IQuizAnswersSlice, IQuizSingleAnswers } from "state/types";
 
 export const initialState: IQuizAnswersSlice = {
   quiz_answers: {
@@ -14,25 +14,25 @@ export const QuizAnswersSlice = createSlice({
   name: "quizAnswers",
   initialState,
   reducers: {
-    setIsWorkingOut: (state, actions) => {
+    setIsWorkingOut: (state, actions: PayloadAction<IQuizSingleAnswers>) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isWorkingOut: actions.payload,
       };
     },
-    setIsSmoking: (state, actions) => {
+    setIsSmoking: (state, actions: PayloadAction<IQuizSingleAnswers>) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isSmoking: actions.payload,
       };
     },
-    setIsAsthmatic: (state, actions) => {
+    setIsAsthmatic: (state, actions: PayloadAction<IQuizSingleAnswers>) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isAsthmatic: actions.payload,
       };
     },
-    setIsHeart: (state, actions) => {
+    setIsHeart: (state, actions: PayloadAction<IQuizSingleAnswers>) => {
       state.quiz_answers = {
         ...state.quiz_answers,
         isHeartCondition: actions.payload,

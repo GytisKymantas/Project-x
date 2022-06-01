@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IQuizDataSlice } from "state/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IQuizDataSlice, IQuizData } from "state/types";
 
 export const initialState: IQuizDataSlice = {
   quizData: [],
@@ -9,7 +9,7 @@ export const QuizDataSlice = createSlice({
   name: "quizData",
   initialState,
   reducers: {
-    setUsers: (state, actions) => {
+    setUsers: (state, actions: PayloadAction<IQuizData[]>) => {
       state.quizData = actions.payload;
     },
   },

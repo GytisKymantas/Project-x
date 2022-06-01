@@ -10,16 +10,16 @@ export const MultipleChoiceSlice = createSlice({
   name: "question",
   initialState,
   reducers: {
-    setMultipleChoice: (state, actions) => {
+    setMultipleChoice: (state, actions: PayloadAction<string[]>) => {
       state.multiple_choice = [...state.multiple_choice, ...actions.payload];
     },
-    setMultipleChoiceGoals: (state, actions) => {
+    setMultipleChoiceGoals: (state, actions: PayloadAction<string[]>) => {
       state.multiple_choiceGoals = [
         ...state.multiple_choiceGoals,
         ...actions.payload,
       ];
     },
-    setMultipleReset: (state, actions) => {
+    setMultipleReset: (state, actions: PayloadAction<string[]>) => {
       state.multiple_choice = [...actions.payload];
       state.multiple_choiceGoals = [...actions.payload];
     },

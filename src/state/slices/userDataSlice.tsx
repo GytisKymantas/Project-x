@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IUserDataSlice } from "state/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IUserDataSlice, IUserData } from "state/types";
 
 export const initialState: IUserDataSlice = {
   user_data: {
@@ -18,10 +18,10 @@ export const UserDataSlice = createSlice({
   name: "userData",
   initialState,
   reducers: {
-    setUserData: (state, actions) => {
+    setUserData: (state, actions: PayloadAction<IUserData>) => {
       state.user_data = { ...state.user_data, ...actions.payload };
     },
-    setGenderData: (state, actions) => {
+    setGenderData: (state, actions: PayloadAction<IUserData>) => {
       state.user_data = { ...state.user_data, isMale: actions.payload };
     },
   },

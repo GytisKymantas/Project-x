@@ -23,7 +23,7 @@ export interface IUserData {
   desiredWeight: number;
   feet: number;
   inches: number;
-  isMale: boolean;
+  isMale: boolean | IUserData;
   email: string;
 }
 export interface IUserDataSlice {
@@ -47,14 +47,14 @@ export interface IPurchaseDataSlice {
   purchase_data: IPurchaseData;
 }
 
-export interface IQuizAnswers {
-  isWorkingOut: string;
-  isSmoking: string;
-  isAsthmatic: string;
-  isHeartCondition: string;
+export interface IQuizSingleAnswers {
+  isWorkingOut: string | IQuizSingleAnswers;
+  isSmoking: string | IQuizSingleAnswers;
+  isAsthmatic: string | IQuizSingleAnswers;
+  isHeartCondition: string | IQuizSingleAnswers;
 }
 export interface IQuizAnswersSlice {
-  quiz_answers: IQuizAnswers;
+  quiz_answers: IQuizSingleAnswers;
 }
 
 export type AppState = ReturnType<typeof rootReducer>;

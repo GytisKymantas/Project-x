@@ -32,7 +32,6 @@ export const SubscriptionBoxContainer: React.FC = () => {
       alignItems="center"
       flexDirection="column"
       gap="0.9375rem"
-      id="Plans"
       mt="s50"
     >
       {SUBSCRIPTION_DETAILS.map(

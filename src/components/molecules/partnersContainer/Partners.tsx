@@ -13,7 +13,7 @@ export const Partners: React.FC = () => (
     <GridWrapper
       gap="3.125rem"
       gridTemplateColumns={{ _: "1fr", ltablet: "repeat(2,1fr)" }}
-      margin={{ _: "sautos50", ltablet: "sautos100" }}
+      margin="s50"
     >
       <FlexWrapper width="100%">
         <SectionHeader

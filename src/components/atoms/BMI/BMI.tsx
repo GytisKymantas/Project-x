@@ -3,9 +3,9 @@ import { Box, FlexWrapper, Typography } from "components";
 import { useSelector } from "react-redux";
 import { selectUserData } from "state/selectors";
 import {
-  metricBMIcalculator,
   heightToInches,
   imperialBMIcalculator,
+  metricBMIcalculator,
 } from "utils/metrics";
 
 export const BMI: React.FC = () => {

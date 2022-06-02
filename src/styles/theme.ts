@@ -75,6 +75,7 @@ export const theme = {
     s35s0: "2.1875rem 0",
     s40: "2.5rem",
     s50s0: "3.125rem 0",
+    s16sauto: "1rem auto",
     s50sauto: "3.125rem auto",
     sautos50: "auto 3.125rem",
     s0s70: "0 4.375rem",
@@ -88,9 +89,9 @@ export const theme = {
   typography: {
     h1: {
       fontSize: "1.5rem",
-      fontSizeMobile: "1rem",
+      fontSizeMobile: "1.3rem",
       lineHeight: "2rem",
-      lineHeightMobile: "1.5rem",
+      lineHeightMobile: "2rem",
       fontWeight: 700,
     },
     h2: {

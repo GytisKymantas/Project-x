@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => (
             m="s0auto"
           >
             <SectionHeader
-              header="Reach your Fitness goals today!"
+              header="Reach out to your Fitness goals today!"
               paragraph="Take a few minute to go through our quick quiz to determine which personal Fitness plan for You!"
               type="h1"
             />

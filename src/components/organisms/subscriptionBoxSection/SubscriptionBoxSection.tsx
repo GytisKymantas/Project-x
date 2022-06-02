@@ -8,7 +8,7 @@ import {
 
 export const SubscriptionBoxSection: React.FC = () => (
   <SectionWrapper>
-    <Box m="auto" pt="s100" width={{ _: "92%", ltablet: "100%" }}>
+    <Box id="Plans" m="auto" pt="s100" width={{ _: "92%", ltablet: "100%" }}>
       <SectionHeader
         center
         header="Choose from one of our customized subscription options!"

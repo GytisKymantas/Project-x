@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, QuizAnswer, FlexWrapper } from "components";
 import { Check } from "assets/images";
-import { mobile } from "styles/breakpoints";
 import {
   setMultipleChoice,
   setMultipleChoiceGoals,
@@ -105,14 +104,14 @@ export const MultipleChoiceAnswer: React.FC<MultipleChoiceAnswerProps> = ({
         </Box>
       ))}
       {selectedAnswer.length < 1 && (
-        <Box mt={mobile ? "s20" : "s0"}>
+        <Box mt={{ _: "s20", ltablet: "s0" }}>
           <QuizAnswer onClick={handleNextPage} disabled isSubmit>
             Submit
           </QuizAnswer>
         </Box>
       )}
       {selectedAnswer.length >= 1 && (
-        <Box mt={mobile ? "s20" : "s0"}>
+        <Box mt={{ _: "s20", ltablet: "s0" }}>
           <QuizAnswer isSubmit onClick={handleNextPage}>
             Submit
           </QuizAnswer>{" "}

@@ -7,7 +7,6 @@ import {
   SectionHeader,
   Image,
 } from "components";
-import { mobile } from "styles/breakpoints";
 
 export const About: React.FC = () => (
   <SectionWrapper id="About">
@@ -15,7 +14,7 @@ export const About: React.FC = () => (
       gridTemplateColumns={{ _: "1fr", desktop: "repeat(2,1fr)" }}
       gridTemplateRows={{ _: "1fr", desktop: "repeat(2,1fr)" }}
       gap="2.5rem"
-      margin={{ _: "s16", ltablet: "s50" }}
+      margin={{ _: "s16" }}
       textAlign={{ _: "justify", ltablet: "unset" }}
     >
       <Box mx="auto">
@@ -54,8 +53,8 @@ export const About: React.FC = () => (
           am secure of estate genius at.
         </Typography>
       </Box>
-      <Box m="auto">
-        <Image src="spiral" width={mobile ? "21.875rem" : "35.5rem"} />
+      <Box m="auto" width={{ _: "21.875rem", ltablet: "35.5rem" }}>
+        <Image src="spiral" width="100%" />
       </Box>
     </GridWrapper>
   </SectionWrapper>

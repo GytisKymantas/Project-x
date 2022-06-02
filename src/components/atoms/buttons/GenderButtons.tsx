@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlexWrapper, BaseButton, Box } from "components";
+import { BaseButton, Box, FlexWrapper } from "components";
 import { setGenderData } from "state/slices/userDataSlice";
 import { navigate } from "gatsby";
 import { pageReset } from "state/slices/pageSlice";

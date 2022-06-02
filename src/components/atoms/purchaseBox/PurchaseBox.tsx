@@ -10,8 +10,7 @@ export const PurchaseBox: React.FC = () => {
       bg="orangelight"
       border="orangethick"
       maxWidth="31.25rem"
-      mx="s16"
-      my="auto"
+      m="s16sauto"
       p="s32"
     >
       <FlexWrapper borderBottom="answer" justifyContent="space-between" p="s16">

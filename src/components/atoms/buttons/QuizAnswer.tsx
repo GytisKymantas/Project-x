@@ -1,6 +1,6 @@
 import React from "react";
 import { theme } from "styles/theme";
-import { Box, FlexWrapper, BaseButton } from "components";
+import { BaseButton, Box, FlexWrapper } from "components";
 
 interface QuizAnswerProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface QuizAnswerProps {
   border?: string;
   type?: "button" | "submit";
   onClick?: () => void;
-  minWidth: string;
+  minWidth?: string;
 }
 
 export const QuizAnswer: React.FC<QuizAnswerProps> = ({

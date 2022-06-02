@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionWrapper, Box, CheckOut } from "components";
+import { Box, CheckOut, SectionWrapper } from "components";
 
 export const CheckOutContainer: React.FC = () => (
   <SectionWrapper>

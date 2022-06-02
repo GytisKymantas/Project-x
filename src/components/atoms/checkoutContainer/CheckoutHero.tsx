@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionWrapper, SectionHeader, Typography, Box } from "components";
+import { SectionWrapper, SectionHeader, Box } from "components";
 
 export const CheckoutHero: React.FC = () => (
   <SectionWrapper>
@@ -7,8 +7,8 @@ export const CheckoutHero: React.FC = () => (
       <SectionHeader
         center
         type="h4"
-        header="See how Fit on-time can improve your daily life"
-        paragraph="Bond with your baby and support his or her development with creative, fun and easy activities."
+        header="See how we can improve your daily life!"
+        paragraph="Bond with your body and support its development with creative, fun and easy activities."
       />
     </Box>
   </SectionWrapper>

@@ -27,12 +27,15 @@ export const Navigation: React.FC<NavigationProps> = ({
   const handleScrollY = () => {
     if (window.scrollY >= 780) {
       setFix(true);
-    } else if (mobileView === true) {
+    } else if (mobileView && window.scrollY > 100) {
       setFix(true);
+    } else if (mobileView && window.scrollY <= 100) {
+      setFix(false);
     } else {
       setFix(false);
     }
   };
+
   window.addEventListener("scroll", handleScrollY);
 
   return (
@@ -108,7 +111,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               <Box zIndex="master">
                 <MobileWrapper
                   display={{ _: "block", ltablet: "none" }}
-                  onClick={() => setMobileView(false)}
+                  onClick={() => setMobileView(!mobileView)}
                   zIndex="overall"
                 >
                   <MobCross />
@@ -118,7 +121,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               <Box display={{ _: "block", ltablet: "none" }} zIndex="master">
                 <MobileWrapper
                   display={{ _: "block", ltablet: "none" }}
-                  onClick={() => setMobileView(true)}
+                  onClick={() => setMobileView(!mobileView)}
                 >
                   <Mobnav />
                 </MobileWrapper>

@@ -16,12 +16,12 @@ export const PurchaseBox: React.FC = () => {
       <FlexWrapper borderBottom="answer" justifyContent="space-between" p="s16">
         <Box>
           <Typography color="primary">
-            Purchased title: {purchaseData?.month}
+            <b>Purchased title:</b> {purchaseData?.month}
           </Typography>
         </Box>
         <Box>
           <Typography color="primary">
-            Price: {purchaseData?.newValue}
+            <b>Price:</b> {purchaseData?.newValue}
           </Typography>
         </Box>
       </FlexWrapper>

@@ -35,8 +35,9 @@ export const Navigation: React.FC<NavigationProps> = ({
       setFix(false);
     }
   };
-
-  window.addEventListener("scroll", handleScrollY);
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", handleScrollY);
+  }
 
   return (
     <Box

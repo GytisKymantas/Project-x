@@ -28,11 +28,11 @@ export const ReviewContainer: React.FC = () => {
   }, [index]);
 
   return (
-    <SectionWrapper id="Testimonials">
+    <SectionWrapper>
       <Container>
         <Box maxWidth="46.875rem" m="s50sauto" textAlign="center">
           <FlexWrapper flexDirection="column">
-            <Box pb={{ _: "s40", ltablet: "s100" }}>
+            <Box pb={{ _: "s40", ltablet: "s100" }} id="Testimonials">
               <SectionHeader
                 center
                 header="What Customers Say?"

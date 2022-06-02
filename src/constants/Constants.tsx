@@ -15,11 +15,11 @@ export const NAVIGATION_LINKS = [
     id: "1",
   },
   {
-    title: "About",
+    title: "Testimonials",
     id: "2",
   },
   {
-    title: "Testimonials",
+    title: "About",
     id: "3",
   },
   {

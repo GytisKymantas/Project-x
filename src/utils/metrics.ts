@@ -19,4 +19,4 @@ export const nameOfCurrentMonth = new Date().toLocaleString("default", {
 
 export const nameOfTwoMonths = new Intl.DateTimeFormat("en-US", {
   month: "long",
-}).format(new Date("6-6-2022"));
+}).format(new Date("8-6-2022"));
